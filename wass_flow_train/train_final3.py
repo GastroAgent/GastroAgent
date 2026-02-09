@@ -20,12 +20,12 @@ from torch.utils.tensorboard import SummaryWriter
 from einops.layers.torch import Rearrange
 import sys
 sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
-from utils.data_loader_test import MedicalJsonDataset
+from utils.data_loader import MedicalJsonDataset
 from utils.train_utils import infiniteloop
 from utils.optim import *
 from flow_matcher import create_generator # 不包含 x0, x1.
-from loss import *
-from model import *
+from model_utils.my_loss import *
+from model_utils.model import *
 
 if __name__ == '__main__':
     # 加载数据集

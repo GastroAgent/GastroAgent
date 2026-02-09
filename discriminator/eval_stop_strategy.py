@@ -3,11 +3,11 @@ from copy import deepcopy
 import os
 import random
 from timm.models.vision_transformer import VisionTransformer
-# os.environ['CUDA_VISIBLE_DEVICES'] = '1,3'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 # os.environ["TOKENIZERS_PARALLELISM="] = "False"
 import sys
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
+
 import glob
 from data_loader_test import MedicalDataset, MedicalJsonDataset
 from data_utils_test import *

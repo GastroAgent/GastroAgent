@@ -12,7 +12,6 @@ from torch.utils.data import DataLoader
 from tqdm.autonotebook import tqdm
 from transformers import AutoModelForVision2Seq, AutoProcessor, AutoModel
 
-
 class GmeQwen2VL:
     def __init__(
         self,

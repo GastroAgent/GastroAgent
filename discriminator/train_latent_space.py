@@ -6,7 +6,6 @@ import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import sys
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/utils')
 
 import random
 from torch.utils.data import Dataset
@@ -19,10 +18,10 @@ import torch
 import torch.nn as nn
 import torchvision.models as models
 import torch.nn.functional as F
-from utils.data_loader_test import MedicalJsonDataset
-from data_loader import MedicalTripletJsonDataset
+from utils.data_loader import MedicalJsonDataset
+from utils.data_loader import MedicalTripletJsonDataset
 from utils.train_utils import infiniteloop
-from utils.data_utils_test import create_dataloaders_by_pairs
+from utils.data_utils import create_dataloaders_by_pairs
 from torch.utils.tensorboard import SummaryWriter
 from diffusers import AutoencoderKL
 

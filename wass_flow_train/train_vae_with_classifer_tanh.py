@@ -15,8 +15,8 @@ import torch.nn as nn
 import torchvision.models as models
 import torch.nn.functional as F
 from flow_matcher import create_generator # 不包含 x0, x1.
-from utils.data_loader_test import MedicalClSJsonDataset, MedicalJsonDataset
-from utils.data_utils_test import create_dataloaders_by_pairs
+from utils.data_loader import MedicalClSJsonDataset, MedicalJsonDataset
+from utils.data_utils import create_dataloaders_by_pairs
 from utils.train_utils import infiniteloop
 from PIL import Image
 from math import sqrt
@@ -24,8 +24,8 @@ from copy import deepcopy
 from torch.utils.tensorboard import SummaryWriter
 from einops.layers.torch import Rearrange
 from my_models.model_wass import *
-from loss import *
-from model import *
+from model_utils.my_loss import *
+from model_utils.model import *
 
 if __name__ == '__main__':
     # 加载数据集

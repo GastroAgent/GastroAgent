@@ -16,8 +16,8 @@ import torch.nn as nn
 import torchvision.models as models
 import torch.nn.functional as F
 
-from utils.data_loader_test import MedicalJsonDataset
-from utils.data_utils_test import create_dataloaders_by_pairs
+from utils.data_loader import MedicalJsonDataset
+from utils.data_utils import create_dataloaders_by_pairs
 from utils.train_utils import infiniteloop
 from PIL import Image
 from math import sqrt
@@ -303,26 +303,9 @@ if __name__ == '__main__':
         print(f"Evaluation Accuracy: {accuracy:.4f} Top 3: {(correct_topk / total):.4f}")
         return accuracy
     
-    # train_triplet(model, dataloaders, criterion=criterion, optimizer=optimizer, device=device,
-    #               generator=generator, criterion_contrastive=criterion_contrastive,
-    #               cal_wasserstein_loss=cal_wasserstein_loss, epochs=5) 
+    train_triplet(model, dataloaders, criterion=criterion, optimizer=optimizer, device=device,
+                  generator=generator, criterion_contrastive=criterion_contrastive,
+                  cal_wasserstein_loss=cal_wasserstein_loss, epochs=5) 
 
     dataset = json.load(open(test_json, "r"))
     evaluate_triplet(model, dataset, device, generator, 0, 5)
-    # checkpoinsts = [
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_energy.pt", # best
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_gs.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_lp.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_sk_test.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_sk.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention_sk2.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention.pt",
-    #     # "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_1114/simple_attention2.pt",
-    #     "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/best_weights_食管/attention.pt"
-    # ]
-    # for path in checkpoinsts:
-    #     state_dict = torch.load(path, weights_only=False)
-    #     print(path)
-    #     model.load_state_dict(state_dict)
-    #     evaluate_triplet(model, dataset, device, generator, 0, 1)
-    #     print("-"*50)

@@ -25,10 +25,10 @@ sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match')
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/utils')
 
 # ------------------ 自定义模块导入 ------------------
-from utils.data_loader_test import MedicalJsonDataset
-from data_loader import MedicalTripletJsonDataset
+from utils.data_loader import MedicalJsonDataset
+from utils.data_loader import MedicalTripletJsonDataset
 from utils.train_utils import infiniteloop
-from utils.data_utils_test import create_dataloaders_by_pairs
+from utils.data_utils import create_dataloaders_by_pairs
 from torch.utils.tensorboard import SummaryWriter
 
 # ------------------ 模型定义 ------------------

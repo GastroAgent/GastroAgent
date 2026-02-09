@@ -16,8 +16,6 @@ from transformers.cache_utils import Cache
 from transformers.utils.generic import check_model_inputs
 from qwen_vl_utils.vision_process import process_vision_info
 
-logger = logging.getLogger(__name__)
-
 # Constants for configuration
 MAX_LENGTH = 8192
 IMAGE_BASE_FACTOR = 16
@@ -281,7 +279,7 @@ class Qwen3VLEmbedder():
                 return_video_metadata=True, return_video_kwargs=True
             )
         except Exception as e:
-            logger.error(f"Error in processing vision info: {e}")
+            print(f"Error in processing vision info: {e}")
             images = None
             video_inputs = None
             video_kwargs = {'do_sample_frames': False}
