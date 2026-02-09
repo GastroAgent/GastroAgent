@@ -1,0 +1,1593 @@
+[
+    {
+        "data_id": "Kvasir_0725",
+        "question_id": "Kvasir_0725",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ab146ccd-524d-4fc1-a22e-5b180380dfae.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Arthritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis"
+        ],
+        "x1_labels": [
+            "Arthritis",
+            "Meningitis",
+            "Esophagitis",
+            "Nephritis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Arthritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            112,
+            113,
+            66,
+            114
+        ],
+        "ys": [
+            112,
+            113,
+            66,
+            114
+        ]
+    },
+    {
+        "data_id": "Kvasir_0731",
+        "question_id": "Kvasir_0731",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/4c3db910-ff52-45e3-b8f1-6957cd88e11e.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis"
+        ],
+        "x1_labels": [
+            "Gastritis",
+            "Meningitis",
+            "Otitis media",
+            "Esophagitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            99,
+            113,
+            117,
+            66
+        ],
+        "ys": [
+            99,
+            113,
+            117,
+            66
+        ]
+    },
+    {
+        "data_id": "Kvasir_0733",
+        "question_id": "Kvasir_0733",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/91391ec6-d297-45b2-b7a7-82a2a473641c.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media"
+        ],
+        "x1_labels": [
+            "Colitis",
+            "Nephritis",
+            "Esophagitis",
+            "Otitis media"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            104,
+            114,
+            66,
+            117
+        ],
+        "ys": [
+            104,
+            114,
+            66,
+            117
+        ]
+    },
+    {
+        "data_id": "Kvasir_0737",
+        "question_id": "Kvasir_0737",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c09be39d-58b8-4f32-864d-310d39cd300a.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Arthritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis"
+        ],
+        "x1_labels": [
+            "Meningitis",
+            "Esophagitis",
+            "Arthritis",
+            "Gastritis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Arthritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            113,
+            66,
+            112,
+            99
+        ],
+        "ys": [
+            113,
+            66,
+            112,
+            99
+        ]
+    },
+    {
+        "data_id": "Kvasir_0743",
+        "question_id": "Kvasir_0743",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/69d9d3d4-ceb9-4ad4-a6f7-95d3ca9ed64a.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis"
+        ],
+        "x1_labels": [
+            "Esophagitis",
+            "Uveitis",
+            "Nephritis",
+            "Colitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            66,
+            116,
+            114,
+            104
+        ],
+        "ys": [
+            66,
+            116,
+            114,
+            104
+        ]
+    },
+    {
+        "data_id": "Kvasir_0745",
+        "question_id": "Kvasir_0745",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/b0768234-5fd3-42a5-ad88-940fc8159ca2.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis"
+        ],
+        "x1_labels": [
+            "Esophagitis",
+            "Gastritis",
+            "Colitis",
+            "Meningitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            66,
+            99,
+            104,
+            113
+        ],
+        "ys": [
+            66,
+            99,
+            104,
+            113
+        ]
+    },
+    {
+        "data_id": "Kvasir_0750",
+        "question_id": "Kvasir_0750",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/2f36e72b-e789-4649-9054-fda57ed295d7.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Arthritis"
+        ],
+        "x1_labels": [
+            "Colitis",
+            "Meningitis",
+            "Esophagitis",
+            "Arthritis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Arthritis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            104,
+            113,
+            66,
+            112
+        ],
+        "ys": [
+            104,
+            113,
+            66,
+            112
+        ]
+    },
+    {
+        "data_id": "Kvasir_0751",
+        "question_id": "Kvasir_0751",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/74233815-f763-4c59-90b2-e2ce7b3d69e6.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media"
+        ],
+        "x1_labels": [
+            "Myocarditis",
+            "Esophagitis",
+            "Gastritis",
+            "Otitis media"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            118,
+            66,
+            99,
+            117
+        ],
+        "ys": [
+            118,
+            66,
+            99,
+            117
+        ]
+    },
+    {
+        "data_id": "Kvasir_0757",
+        "question_id": "Kvasir_0757",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/3ea886f3-0220-4b8e-ae13-6960a6866846.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis"
+        ],
+        "x1_labels": [
+            "Bronchitis",
+            "Otitis media",
+            "Esophagitis",
+            "Meningitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            115,
+            117,
+            66,
+            113
+        ],
+        "ys": [
+            115,
+            117,
+            66,
+            113
+        ]
+    },
+    {
+        "data_id": "Kvasir_0762",
+        "question_id": "Kvasir_0762",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4e76b7b-64a2-41f0-b418-21dad8bedc7b.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis"
+        ],
+        "x1_labels": [
+            "Bronchitis",
+            "Colitis",
+            "Esophagitis",
+            "Myocarditis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            115,
+            104,
+            66,
+            118
+        ],
+        "ys": [
+            115,
+            104,
+            66,
+            118
+        ]
+    },
+    {
+        "data_id": "Kvasir_0772",
+        "question_id": "Kvasir_0772",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/edf42906-f3a7-4db6-98d6-0a8d2a846fc0.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis"
+        ],
+        "x1_labels": [
+            "Uveitis",
+            "Gastritis",
+            "Esophagitis",
+            "Myocarditis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            116,
+            99,
+            66,
+            118
+        ],
+        "ys": [
+            116,
+            99,
+            66,
+            118
+        ]
+    },
+    {
+        "data_id": "Kvasir_0776",
+        "question_id": "Kvasir_0776",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/a13f92bd-8996-4f40-b37d-30616c743980.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis"
+        ],
+        "x1_labels": [
+            "Nephritis",
+            "Esophagitis",
+            "Otitis media",
+            "Colitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            114,
+            66,
+            117,
+            104
+        ],
+        "ys": [
+            114,
+            66,
+            117,
+            104
+        ]
+    },
+    {
+        "data_id": "Kvasir_0790",
+        "question_id": "Kvasir_0790",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c2f04625-e5e3-4404-a3e9-b9609430904b.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis"
+        ],
+        "x1_labels": [
+            "Colitis",
+            "Uveitis",
+            "Nephritis",
+            "Esophagitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            104,
+            116,
+            114,
+            66
+        ],
+        "ys": [
+            104,
+            116,
+            114,
+            66
+        ]
+    },
+    {
+        "data_id": "Kvasir_0792",
+        "question_id": "Kvasir_0792",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/29bcacbd-7a7d-47c4-a696-aa74f8e4dffb.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Appendicitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis"
+        ],
+        "x1_labels": [
+            "Appendicitis",
+            "Bronchitis",
+            "Otitis media",
+            "Esophagitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Appendicitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            87,
+            115,
+            117,
+            66
+        ],
+        "ys": [
+            87,
+            115,
+            117,
+            66
+        ]
+    },
+    {
+        "data_id": "Kvasir_0802",
+        "question_id": "Kvasir_0802",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/20fcf45c-065f-484a-bbf3-0969e5cf500f.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Appendicitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media"
+        ],
+        "x1_labels": [
+            "Appendicitis",
+            "Esophagitis",
+            "Myocarditis",
+            "Otitis media"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Appendicitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            87,
+            66,
+            118,
+            117
+        ],
+        "ys": [
+            87,
+            66,
+            118,
+            117
+        ]
+    },
+    {
+        "data_id": "Kvasir_0810",
+        "question_id": "Kvasir_0810",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/d7ae6930-e393-460c-8e0c-19414dada5a9.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Colitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media"
+        ],
+        "x1_labels": [
+            "Colitis",
+            "Esophagitis",
+            "Nephritis",
+            "Otitis media"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Colitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            104,
+            66,
+            114,
+            117
+        ],
+        "ys": [
+            104,
+            66,
+            114,
+            117
+        ]
+    },
+    {
+        "data_id": "Kvasir_0814",
+        "question_id": "Kvasir_0814",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/993000b5-b801-4604-bb22-a4590d743b47.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis"
+        ],
+        "x1_labels": [
+            "Esophagitis",
+            "Myocarditis",
+            "Uveitis",
+            "Gastritis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            66,
+            118,
+            116,
+            99
+        ],
+        "ys": [
+            66,
+            118,
+            116,
+            99
+        ]
+    },
+    {
+        "data_id": "Kvasir_0833",
+        "question_id": "Kvasir_0833",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ee9948d8-36f7-47b8-9424-999071cc0c7a.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nephritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis"
+        ],
+        "x1_labels": [
+            "Bronchitis",
+            "Esophagitis",
+            "Nephritis",
+            "Uveitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nephritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            115,
+            66,
+            114,
+            116
+        ],
+        "ys": [
+            115,
+            66,
+            114,
+            116
+        ]
+    },
+    {
+        "data_id": "Kvasir_0836",
+        "question_id": "Kvasir_0836",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/fd378895-becb-47f0-9a71-560c2cc244fa.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis"
+        ],
+        "x1_labels": [
+            "Myocarditis",
+            "Meningitis",
+            "Otitis media",
+            "Esophagitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            118,
+            113,
+            117,
+            66
+        ],
+        "ys": [
+            118,
+            113,
+            117,
+            66
+        ]
+    },
+    {
+        "data_id": "Kvasir_0837",
+        "question_id": "Kvasir_0837",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4216c39-46ff-47f3-8395-d2c5fdc5d0a4.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis"
+        ],
+        "x1_labels": [
+            "Myocarditis",
+            "Bronchitis",
+            "Esophagitis",
+            "Meningitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            118,
+            115,
+            66,
+            113
+        ],
+        "ys": [
+            118,
+            115,
+            66,
+            113
+        ]
+    },
+    {
+        "data_id": "Kvasir_0840",
+        "question_id": "Kvasir_0840",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/cf22c0c7-3200-444a-a35d-ed2cfcedc9c6.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Otitis media",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Meningitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Bronchitis"
+        ],
+        "x1_labels": [
+            "Otitis media",
+            "Esophagitis",
+            "Meningitis",
+            "Bronchitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Otitis media 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Meningitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Bronchitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            117,
+            66,
+            113,
+            115
+        ],
+        "ys": [
+            117,
+            66,
+            113,
+            115
+        ]
+    },
+    {
+        "data_id": "Kvasir_0842",
+        "question_id": "Kvasir_0842",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/48ea43aa-0e90-421c-a0ff-807b5a136d04.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Uveitis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Gastritis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Myocarditis",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Esophagitis"
+        ],
+        "x1_labels": [
+            "Uveitis",
+            "Gastritis",
+            "Myocarditis",
+            "Esophagitis"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Uveitis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Gastritis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Myocarditis 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Esophagitis 等相关病症图像。"
+        ],
+        "label_A": "Esophagitis",
+        "label_A_id": 66,
+        "label_B_ids": [
+            116,
+            99,
+            118,
+            66
+        ],
+        "ys": [
+            116,
+            99,
+            118,
+            66
+        ]
+    },
+    {
+        "data_id": "Kvasir_1268",
+        "question_id": "Kvasir_1268",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/96b241e4-c180-4e17-90b9-a4eaee89ea8b.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Lesions",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Lesions",
+            "Hemorrhages",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Lesions 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            29,
+            55,
+            52
+        ],
+        "ys": [
+            30,
+            29,
+            55,
+            52
+        ]
+    },
+    {
+        "data_id": "Kvasir_1275",
+        "question_id": "Kvasir_1275",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/30c1a4f7-b096-4b06-8766-04a75197d613.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Abscesses"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Hemorrhages",
+            "Polyps",
+            "Abscesses"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Abscesses 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            55,
+            30,
+            32
+        ],
+        "ys": [
+            7,
+            55,
+            30,
+            32
+        ]
+    },
+    {
+        "data_id": "Kvasir_1287",
+        "question_id": "Kvasir_1287",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/f94ec7a8-52e2-4b99-af5a-e6d4e95a340b.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Cysts",
+            "Polyps",
+            "Inflammation"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            47,
+            30,
+            8
+        ],
+        "ys": [
+            7,
+            47,
+            30,
+            8
+        ]
+    },
+    {
+        "data_id": "Kvasir_1297",
+        "question_id": "Kvasir_1297",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/19fc878a-905c-4c42-9760-e0c39d728d16.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Polyps",
+            "Hemorrhages",
+            "Fibroids"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            30,
+            55,
+            119
+        ],
+        "ys": [
+            7,
+            30,
+            55,
+            119
+        ]
+    },
+    {
+        "data_id": "Kvasir_1302",
+        "question_id": "Kvasir_1302",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/d7ad9e7c-2ac0-43b9-a6e5-4e15c772454e.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Lesions",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts"
+        ],
+        "x1_labels": [
+            "Adenomas",
+            "Polyps",
+            "Lesions",
+            "Cysts"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Lesions 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            20,
+            30,
+            29,
+            47
+        ],
+        "ys": [
+            20,
+            30,
+            29,
+            47
+        ]
+    },
+    {
+        "data_id": "Kvasir_1306",
+        "question_id": "Kvasir_1306",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56302cb8-619b-4eaf-a163-549328cac581.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Nodules",
+            "Cysts",
+            "Inflammation"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            7,
+            47,
+            8
+        ],
+        "ys": [
+            30,
+            7,
+            47,
+            8
+        ]
+    },
+    {
+        "data_id": "Kvasir_1312",
+        "question_id": "Kvasir_1312",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/dbec48ea-ff3c-45a0-932b-73fe23dae6ad.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Tumors",
+            "Fibroids",
+            "Polyps"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            52,
+            119,
+            30
+        ],
+        "ys": [
+            7,
+            52,
+            119,
+            30
+        ]
+    },
+    {
+        "data_id": "Kvasir_1326",
+        "question_id": "Kvasir_1326",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ccd07ae5-4037-4f6c-a6ad-d9372d8580bf.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Adenomas",
+            "Polyps",
+            "Nodules",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            20,
+            30,
+            7,
+            52
+        ],
+        "ys": [
+            20,
+            30,
+            7,
+            52
+        ]
+    },
+    {
+        "data_id": "Kvasir_1337",
+        "question_id": "Kvasir_1337",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/1e15c2d6-b6b3-4804-9b84-f8047356e9cb.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Abscesses",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Abscesses",
+            "Nodules",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Abscesses 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            32,
+            7,
+            52
+        ],
+        "ys": [
+            30,
+            32,
+            7,
+            52
+        ]
+    },
+    {
+        "data_id": "Kvasir_1338",
+        "question_id": "Kvasir_1338",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/0fa8810f-f91f-4434-931b-458eabe9543e.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Abscesses",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Lesions"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Abscesses",
+            "Cysts",
+            "Lesions"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Abscesses 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Lesions 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            32,
+            47,
+            29
+        ],
+        "ys": [
+            30,
+            32,
+            47,
+            29
+        ]
+    },
+    {
+        "data_id": "Kvasir_1343",
+        "question_id": "Kvasir_1343",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56efb458-ec08-4e8a-9baa-bbae08489120.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Abscesses"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Inflammation",
+            "Tumors",
+            "Abscesses"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Abscesses 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            8,
+            52,
+            32
+        ],
+        "ys": [
+            30,
+            8,
+            52,
+            32
+        ]
+    },
+    {
+        "data_id": "Kvasir_1349",
+        "question_id": "Kvasir_1349",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fd49618e-96fc-45ec-a917-9d04421faa3f.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Lesions",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Lesions",
+            "Fibroids",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Lesions 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            29,
+            119,
+            52
+        ],
+        "ys": [
+            30,
+            29,
+            119,
+            52
+        ]
+    },
+    {
+        "data_id": "Kvasir_1357",
+        "question_id": "Kvasir_1357",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fafc5bb2-6d32-445a-97c3-f249ae556f22.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Polyps",
+            "Adenomas",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            30,
+            20,
+            52
+        ],
+        "ys": [
+            7,
+            30,
+            20,
+            52
+        ]
+    },
+    {
+        "data_id": "Kvasir_1367",
+        "question_id": "Kvasir_1367",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/92177bcd-eeee-4dd4-b904-fb902771f334.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas"
+        ],
+        "x1_labels": [
+            "Hemorrhages",
+            "Cysts",
+            "Polyps",
+            "Adenomas"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            55,
+            47,
+            30,
+            20
+        ],
+        "ys": [
+            55,
+            47,
+            30,
+            20
+        ]
+    },
+    {
+        "data_id": "Kvasir_1368",
+        "question_id": "Kvasir_1368",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/3f862efc-5bd6-42b5-98b6-659a7fe99679.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages"
+        ],
+        "x1_labels": [
+            "Adenomas",
+            "Polyps",
+            "Inflammation",
+            "Hemorrhages"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            20,
+            30,
+            8,
+            55
+        ],
+        "ys": [
+            20,
+            30,
+            8,
+            55
+        ]
+    },
+    {
+        "data_id": "Kvasir_1370",
+        "question_id": "Kvasir_1370",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ec2f87eb-d652-4296-9ca0-b60881ce8939.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Hemorrhages",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Hemorrhages",
+            "Polyps",
+            "Inflammation"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Hemorrhages 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            55,
+            30,
+            8
+        ],
+        "ys": [
+            7,
+            55,
+            30,
+            8
+        ]
+    },
+    {
+        "data_id": "Kvasir_1386",
+        "question_id": "Kvasir_1386",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/53aa8af7-1846-49eb-83ec-2cc531b6babd.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Nodules",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Cysts"
+        ],
+        "x1_labels": [
+            "Nodules",
+            "Polyps",
+            "Inflammation",
+            "Cysts"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Nodules 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Cysts 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            7,
+            30,
+            8,
+            47
+        ],
+        "ys": [
+            7,
+            30,
+            8,
+            47
+        ]
+    },
+    {
+        "data_id": "Kvasir_1388",
+        "question_id": "Kvasir_1388",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/6a2e9528-7abb-4456-9797-31f3c6b301bb.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Adenomas",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps"
+        ],
+        "x1_labels": [
+            "Adenomas",
+            "Inflammation",
+            "Fibroids",
+            "Polyps"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Adenomas 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            20,
+            8,
+            119,
+            30
+        ],
+        "ys": [
+            20,
+            8,
+            119,
+            30
+        ]
+    },
+    {
+        "data_id": "Kvasir_1393",
+        "question_id": "Kvasir_1393",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/10a1fb7c-6e0a-4d67-9745-3ca48230fdc8.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids"
+        ],
+        "x1_labels": [
+            "Inflammation",
+            "Tumors",
+            "Polyps",
+            "Fibroids"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            8,
+            52,
+            30,
+            119
+        ],
+        "ys": [
+            8,
+            52,
+            30,
+            119
+        ]
+    },
+    {
+        "data_id": "Kvasir_1394",
+        "question_id": "Kvasir_1394",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Abscesses",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Inflammation",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Ulcers"
+        ],
+        "x1_labels": [
+            "Abscesses",
+            "Polyps",
+            "Inflammation",
+            "Ulcers"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Abscesses 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Inflammation 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Ulcers 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            32,
+            30,
+            8,
+            46
+        ],
+        "ys": [
+            32,
+            30,
+            8,
+            46
+        ]
+    },
+    {
+        "data_id": "Kvasir_1395",
+        "question_id": "Kvasir_1395",
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56d36c2a-a318-4aef-a454-2b58be054342.jpg",
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Polyps",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Fibroids",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Ulcers",
+            "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/image_options_two_label/Tumors"
+        ],
+        "x1_labels": [
+            "Polyps",
+            "Fibroids",
+            "Ulcers",
+            "Tumors"
+        ],
+        "caption": [
+            "将当前未知的医疗图像病症 转化为 Polyps 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Fibroids 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Ulcers 等相关病症图像。",
+            "将当前未知的医疗图像病症 转化为 Tumors 等相关病症图像。"
+        ],
+        "label_A": "Polyps",
+        "label_A_id": 30,
+        "label_B_ids": [
+            30,
+            119,
+            46,
+            52
+        ],
+        "ys": [
+            30,
+            119,
+            46,
+            52
+        ]
+    }
+]

@@ -24,8 +24,8 @@ from math import sqrt
 from copy import deepcopy
 from torch.utils.tensorboard import SummaryWriter
 from old_flow_matcher import create_generator # 不包含 x0, x1.
-from old_model import *
-from old_loss import *
+from model_utils.model import *
+from model_utils.my_loss import *
 
 if __name__ == '__main__':
     # 加载数据集

@@ -1,0 +1,513 @@
+[
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082000107_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.0075966357059466345,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061800325_2_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.025195107329636812,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013073100216_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.015618006077905497,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_4_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.023634116475780804,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014062100005_7_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.04222224745899439,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.0019607544139338038,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061100231_5_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.008641735670001557,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500204_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.011662849535544714,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2012062700075_1_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.007095210021361709,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500119_17_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.015601476343969503,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014020500092_5.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.005311457343244304,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2015041300348_10.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.19201771914958954,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019110400474_36.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0001380598017325004,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500001_19.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.004521401754269998,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019090600163_10.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00046950966740647954,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017042400169_30.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00021004641894251108,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019061200017_21.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.016576083170043096,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020030400156_22.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00028280631846023933,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032500508_17.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00018370896577835083,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2018051800186_16.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 1.5956873912364244,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017112900359_5.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠正常",
+    "dist": 1.2940223453462951,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032900490_17.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.004936775296098656,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019070800577_13.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00028993328063127893,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020040200398_14.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0010364046320319176,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500373_15.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0009809972640747826,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019120600502_10.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00884986926232361,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017070300199_52.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0012683869960407417,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019121600205_14.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 1.3716602584140167,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017020700237_16.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00022702223375543125,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2020020600087_9_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.008775155215213696,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019110510022_19_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.02116635659088691,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2005011000184_2_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.000853792803051571,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_71.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.06214811218281587,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_62.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.012681707312973836,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2008070400101_9_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.004088147606429023,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2012082100312_2_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.005160618146571021,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017030700151_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0023646365540723004,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2010011800079_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0034200982190668583,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2013030900033_6.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00015352565484742323,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012091700106_10.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.001099522691220045,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014021400056_1.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.003183730451079706,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014031400012_1.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0013327439923563765,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_62.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0011884205353756745,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_27.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0010058561456389725,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2019011400527_5.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00026036919249842566,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017092800163_13.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00032720565407847363,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012051000068_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00033747340785339475,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014042900215_10.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.002184295570865894,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00046232583311696845,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017072700295_29.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0003933906555175781,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2008021900243_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00030576395026097697,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_60.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00029280971890936297,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012032000291_3.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0004050890759875377,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_5.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.002131684683263302,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2011040400026_16_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠钩虫",
+    "dist": 0.0018181006113688152,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2013061300345_1_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠炎",
+    "dist": 0.007102998216093208,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2006032100083_1_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠溃疡",
+    "dist": 0.031647300347685814,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019061200462_36_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠球部息肉",
+    "dist": 0.48431401847240824,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_22_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.0029678186983801425,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_20_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.0060250284150242805,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019072400503_23_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.009250370707983771,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2012050800159_13_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.00025579133701588336,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2018120500667_29_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠溃疡",
+    "dist": 6.355761806170146,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2020022700092_31_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠溃疡",
+    "dist": 7.750725110371907,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2013110600248_8_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.013492393676036349,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_4_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.04271717121203741,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2018120600324_18_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.01973646454926994,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2005032400064_3.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.2301041684889545,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_3_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.4210016056895256,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2017031400136_7_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 1.2467241783936818,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008120300221_4.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.1711063424105911,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2014010900309_11_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.039867704190934695,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2019011900136_27_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.004516220147100587,
+    "correct": false
+  }
+]

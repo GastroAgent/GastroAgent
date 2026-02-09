@@ -1,0 +1,352 @@
+[
+  {
+    "question_id": "0",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2019092000194_25.jpg"
+    ]
+  },
+  {
+    "question_id": "1",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2015112400136_6.jpg"
+    ]
+  },
+  {
+    "question_id": "2",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2018071700315_3.jpg"
+    ]
+  },
+  {
+    "question_id": "3",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2019111900101_5.jpg"
+    ]
+  },
+  {
+    "question_id": "4",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2019121800505_1.jpg"
+    ]
+  },
+  {
+    "question_id": "5",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2018122300031_4.jpg"
+    ]
+  },
+  {
+    "question_id": "6",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2019102900483_8.jpg"
+    ]
+  },
+  {
+    "question_id": "7",
+    "gt_answer": "Esophageal Glycogenic Acanthosis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/Esophageal Glycogenic Acanthosis/01.2012022100263_11.jpg"
+    ]
+  },
+  {
+    "question_id": "8",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2018061500287_40.jpg"
+    ]
+  },
+  {
+    "question_id": "9",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2020051800477_17.jpg"
+    ]
+  },
+  {
+    "question_id": "10",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2017051600219_273.jpg"
+    ]
+  },
+  {
+    "question_id": "11",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2017051600219_28.jpg"
+    ]
+  },
+  {
+    "question_id": "12",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2017051600219_132.jpg"
+    ]
+  },
+  {
+    "question_id": "13",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2017051600219_394.jpg"
+    ]
+  },
+  {
+    "question_id": "15",
+    "gt_answer": "食管癌",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管癌/01.2014030500015_16.jpg"
+    ]
+  },
+  {
+    "question_id": "16",
+    "gt_answer": "食管炎B级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎B级/01.2020122610066_36.jpg"
+    ]
+  },
+  {
+    "question_id": "18",
+    "gt_answer": "食管炎B级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎B级/01.2020122610066_6.jpg"
+    ]
+  },
+  {
+    "question_id": "19",
+    "gt_answer": "食管炎B级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎B级/01.2020122610066_4.jpg"
+    ]
+  },
+  {
+    "question_id": "20",
+    "gt_answer": "食管炎B级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎B级/01.2020112010306_8.jpg"
+    ]
+  },
+  {
+    "question_id": "21",
+    "gt_answer": "食管炎B级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎B级/01.2020122610066_21.jpg"
+    ]
+  },
+  {
+    "question_id": "22",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.0000001370675_24.jpg"
+    ]
+  },
+  {
+    "question_id": "23",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2021112410120_51.jpg"
+    ]
+  },
+  {
+    "question_id": "24",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2020041400003_10.jpg"
+    ]
+  },
+  {
+    "question_id": "25",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2020030400432_14.jpg"
+    ]
+  },
+  {
+    "question_id": "26",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2021112410120_16.jpg"
+    ]
+  },
+  {
+    "question_id": "27",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2021112410120_17.jpg"
+    ]
+  },
+  {
+    "question_id": "28",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.2021052810271_39.jpg"
+    ]
+  },
+  {
+    "question_id": "29",
+    "gt_answer": "巴雷特食管",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/巴雷特食管/01.0000001365338_69.jpg"
+    ]
+  },
+  {
+    "question_id": "30",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.0000001409486_17.jpg"
+    ]
+  },
+  {
+    "question_id": "31",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.2013081900113_11.jpg"
+    ]
+  },
+  {
+    "question_id": "32",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.2013032100215_10.jpg"
+    ]
+  },
+  {
+    "question_id": "33",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.0000001409486_38.jpg"
+    ]
+  },
+  {
+    "question_id": "34",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.2012123100178_3.jpg"
+    ]
+  },
+  {
+    "question_id": "35",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.2013012500214_3.jpg"
+    ]
+  },
+  {
+    "question_id": "36",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.0000001425048_59.jpg"
+    ]
+  },
+  {
+    "question_id": "37",
+    "gt_answer": "食管炎D级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎D级/01.2013081900113_2.jpg"
+    ]
+  },
+  {
+    "question_id": "38",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.0000001431464_5.jpg"
+    ]
+  },
+  {
+    "question_id": "39",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.2011103100013_1.jpg"
+    ]
+  },
+  {
+    "question_id": "40",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.2017011300127_3.jpg"
+    ]
+  },
+  {
+    "question_id": "41",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.0000001347524_4.jpg"
+    ]
+  },
+  {
+    "question_id": "42",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.0000001347524_2.jpg"
+    ]
+  },
+  {
+    "question_id": "43",
+    "gt_answer": "正常",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/正常/01.2017030600117_25.jpg"
+    ]
+  },
+  {
+    "question_id": "44",
+    "gt_answer": "食管炎C级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎C级/01.0000001344043_12.jpg"
+    ]
+  },
+  {
+    "question_id": "45",
+    "gt_answer": "食管炎C级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎C级/01.0000001351477_8.jpg"
+    ]
+  },
+  {
+    "question_id": "46",
+    "gt_answer": "食管炎C级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎C级/01.0000001344043_70.jpg"
+    ]
+  },
+  {
+    "question_id": "47",
+    "gt_answer": "食管炎C级",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/食管炎C级/01.0000001351477_7.jpg"
+    ]
+  },
+  {
+    "question_id": "48",
+    "gt_answer": "嗜酸食管炎",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/嗜酸食管炎/食管_01.2017061900343_23.jpg"
+    ]
+  },
+  {
+    "question_id": "49",
+    "gt_answer": "嗜酸食管炎",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/嗜酸食管炎/食管_01.2017061900343_3.jpg"
+    ]
+  },
+  {
+    "question_id": "50",
+    "gt_answer": "嗜酸食管炎",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/嗜酸食管炎/食管_01.2019020200009_8.jpg"
+    ]
+  },
+  {
+    "question_id": "51",
+    "gt_answer": "嗜酸食管炎",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/嗜酸食管炎/01.0000001961408.21016.0039.10523700672.jpg"
+    ]
+  }
+]

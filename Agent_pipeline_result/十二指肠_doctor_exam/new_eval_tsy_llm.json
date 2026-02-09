@@ -1,0 +1,1462 @@
+[
+    {
+        "dataset": "十二指肠",
+        "question_id": "0",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082000107_6_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082000107_6_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "1",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061800325_2_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061800325_2_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠憩室\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠憩室\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "2",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013073100216_6_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013073100216_6_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠炎\n  option_D: 十二指肠正常\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠炎\n  option_D: 十二指肠正常\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "3",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_4_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_4_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠正常\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠正常\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "4",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠副乳头",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014062100005_7_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014062100005_7_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "5",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠副乳头",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_6_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_6_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "6",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061100231_5_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061100231_5_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "7",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500204_6_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500204_6_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "8",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2012062700075_1_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2012062700075_1_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "9",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500119_17_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500119_17_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "10",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014020500092_5.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014020500092_5.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠炎\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠炎\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "11",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠炎",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2015041300348_10.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2015041300348_10.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "12",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019110400474_36.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019110400474_36.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠炎\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠炎\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "13",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠副乳头",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500001_19.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500001_19.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "14",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019090600163_10.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019090600163_10.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "15",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017042400169_30.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017042400169_30.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠炎\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠正常\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠炎\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠正常\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "16",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019061200017_21.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019061200017_21.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "17",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020030400156_22.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020030400156_22.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "18",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032500508_17.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032500508_17.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠炎\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠炎\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "19",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2018051800186_16.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2018051800186_16.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠憩室\n  option_E: 十二指肠炎\n  option_F: 十二指肠正常\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠憩室\n  option_E: 十二指肠炎\n  option_F: 十二指肠正常\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "20",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017112900359_5.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017112900359_5.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "21",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠溃疡",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032900490_17.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032900490_17.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠憩室\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠憩室\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "22",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019070800577_13.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019070800577_13.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "23",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020040200398_14.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020040200398_14.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "24",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500373_15.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500373_15.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "25",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019120600502_10.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019120600502_10.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "26",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017070300199_52.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017070300199_52.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠正常\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠正常\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "27",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019121600205_14.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019121600205_14.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠正常\n  option_E: 十二指肠炎\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠正常\n  option_E: 十二指肠炎\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "28",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠副乳头",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017020700237_16.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017020700237_16.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠正常\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠正常\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "29",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2020020600087_9_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2020020600087_9_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "30",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019110510022_19_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019110510022_19_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "31",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠憩室",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2005011000184_2_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2005011000184_2_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠正常\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠正常\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "32",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_71.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_71.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠正常\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠正常\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "33",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠憩室",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_62.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_62.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠正常\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠正常\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "34",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2008070400101_9_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2008070400101_9_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "35",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠溃疡",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2012082100312_2_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2012082100312_2_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "36",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017030700151_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017030700151_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "37",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2010011800079_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2010011800079_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "38",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2013030900033_6.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2013030900033_6.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠炎\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠炎\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "39",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012091700106_10.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012091700106_10.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠炎\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠炎\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "40",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014021400056_1.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014021400056_1.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "41",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014031400012_1.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014031400012_1.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠憩室\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "42",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_62.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_62.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠正常\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠正常\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "43",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_27.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_27.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠憩室\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠憩室\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "44",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2019011400527_5.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2019011400527_5.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "45",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017092800163_13.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017092800163_13.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "46",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012051000068_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012051000068_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "47",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠炎",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014042900215_10.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014042900215_10.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠炎\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "48",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠副乳头",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "49",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017072700295_29.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017072700295_29.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "50",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠溃疡",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2008021900243_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2008021900243_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠炎\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠憩室\n  option_E: 十二指肠正常\n  option_F: 十二指肠炎\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "51",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠憩室",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_60.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_60.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠憩室\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "52",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012032000291_3.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012032000291_3.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "53",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠正常",
+        "option_A": "十二指肠憩室",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_5.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_5.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠炎\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠炎\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "54",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠钩虫",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2011040400026_16_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2011040400026_16_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠憩室\n  option_C: 十二指肠正常\n  option_D: 十二指肠炎\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "55",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠钩虫",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2013061300345_1_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2013061300345_1_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠正常\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠正常\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "56",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠钩虫",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠钩虫",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2006032100083_1_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2006032100083_1_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠正常\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠正常\n  option_F: 十二指肠憩室\n  option_G: 十二指肠钩虫\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "57",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠球部息肉",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019061200462_36_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019061200462_36_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠正常\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠球部息肉\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "58",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠溃疡",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_22_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_22_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠炎\n  option_C: 十二指肠正常\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠憩室\n  option_G: 十二指肠溃疡\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "59",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠溃疡",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠憩室",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_20_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_20_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠正常\n  option_C: 十二指肠溃疡\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠憩室\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "60",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠炎",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019072400503_23_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019072400503_23_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠炎\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "61",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠球部息肉",
+        "option_C": "十二指肠正常",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2012050800159_13_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2012050800159_13_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠球部息肉\n  option_C: 十二指肠正常\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "62",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2018120500667_29_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2018120500667_29_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠憩室\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "63",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠球部息肉",
+        "option_A": "十二指肠憩室",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠球部息肉",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2020022700092_31_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2020022700092_31_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠球部息肉\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "64",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2013110600248_8_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2013110600248_8_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠憩室\n  option_D: 十二指肠正常\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠憩室\n  option_D: 十二指肠正常\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "65",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠正常",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠钩虫",
+        "option_G": "十二指肠副乳头",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_4_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_4_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠正常\n  option_C: 十二指肠憩室\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠炎\n  option_F: 十二指肠钩虫\n  option_G: 十二指肠副乳头\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "66",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠溃疡",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠憩室",
+        "option_D": "十二指肠副乳头",
+        "option_E": "十二指肠钩虫",
+        "option_F": "十二指肠正常",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2018120600324_18_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2018120600324_18_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠炎\n  option_C: 十二指肠憩室\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠溃疡\n  option_B: 十二指肠炎\n  option_C: 十二指肠憩室\n  option_D: 十二指肠副乳头\n  option_E: 十二指肠钩虫\n  option_F: 十二指肠正常\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "67",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠钩虫",
+        "option_C": "十二指肠球部息肉",
+        "option_D": "十二指肠正常",
+        "option_E": "十二指肠溃疡",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠憩室",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2005032400064_3.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2005032400064_3.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠正常\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠钩虫\n  option_C: 十二指肠球部息肉\n  option_D: 十二指肠正常\n  option_E: 十二指肠溃疡\n  option_F: 十二指肠炎\n  option_G: 十二指肠憩室\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "68",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠钩虫",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠副乳头",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠炎",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_3_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_3_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠憩室\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠炎\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠钩虫\n  option_B: 十二指肠憩室\n  option_C: 十二指肠副乳头\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠炎\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "69",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠球部息肉",
+        "option_B": "十二指肠憩室",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠溃疡",
+        "option_E": "十二指肠副乳头",
+        "option_F": "十二指肠炎",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2017031400136_7_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2017031400136_7_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠憩室\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠炎\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠球部息肉\n  option_B: 十二指肠憩室\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠溃疡\n  option_E: 十二指肠副乳头\n  option_F: 十二指肠炎\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "70",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠副乳头",
+        "option_B": "十二指肠炎",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠球部息肉",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠正常",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008120300221_4.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008120300221_4.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠副乳头\n  option_B: 十二指肠炎\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠球部息肉\n  option_E: 十二指肠憩室\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠正常\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "71",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠正常",
+        "option_B": "十二指肠溃疡",
+        "option_C": "十二指肠钩虫",
+        "option_D": "十二指肠炎",
+        "option_E": "十二指肠憩室",
+        "option_F": "十二指肠副乳头",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2014010900309_11_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2014010900309_11_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠正常\n  option_B: 十二指肠溃疡\n  option_C: 十二指肠钩虫\n  option_D: 十二指肠炎\n  option_E: 十二指肠憩室\n  option_F: 十二指肠副乳头\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    },
+    {
+        "dataset": "十二指肠",
+        "question_id": "72",
+        "question_type": "Disease Diagnosis",
+        "question": "这张图像最可能代表了下列哪种疾病？",
+        "gt_answer": "十二指肠憩室",
+        "option_A": "十二指肠憩室",
+        "option_B": "十二指肠副乳头",
+        "option_C": "十二指肠炎",
+        "option_D": "十二指肠钩虫",
+        "option_E": "十二指肠正常",
+        "option_F": "十二指肠溃疡",
+        "option_G": "十二指肠球部息肉",
+        "image": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2019011900136_27_masked_crop.jpg",
+        "image_paths": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2019011900136_27_masked_crop.jpg"
+        ],
+        "prompt_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag.",
+        "formatted_text": "You are currently participating in a Visual Question Answering examination. \nPlease strictly observe the following instructions.\nAccording to the content of the image, answer the following single-choice question.\nImage: <|Image_start|><image><|Image_end|>\n这张图像最可能代表了下列哪种疾病？\n  option_A: 十二指肠憩室\n  option_B: 十二指肠副乳头\n  option_C: 十二指肠炎\n  option_D: 十二指肠钩虫\n  option_E: 十二指肠正常\n  option_F: 十二指肠溃疡\n  option_G: 十二指肠球部息肉\n\nNote: Put the Corresponding Option for the final answer inside the '<answer></answer>' tag."
+    }
+]

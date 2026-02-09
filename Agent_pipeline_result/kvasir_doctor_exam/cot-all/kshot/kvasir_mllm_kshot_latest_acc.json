@@ -1,0 +1,1211 @@
+[
+  {
+    "question_id": "0",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/604f920c-05d2-4481-94a9-d8d5978654ab.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/604f920c-05d2-4481-94a9-d8d5978654ab.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452912162989378,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/604f920c-05d2-4481-94a9-d8d5978654ab.jpg"
+  },
+  {
+    "question_id": "1",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0da9c916-f978-4cc6-b1a2-e424c980bf17.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0da9c916-f978-4cc6-b1a2-e424c980bf17.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007460565047545565,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0da9c916-f978-4cc6-b1a2-e424c980bf17.jpg"
+  },
+  {
+    "question_id": "2",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5ffe22ef-457e-45e3-88a7-9e395ae9ecc3.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5ffe22ef-457e-45e3-88a7-9e395ae9ecc3.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007463437505066395,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5ffe22ef-457e-45e3-88a7-9e395ae9ecc3.jpg"
+  },
+  {
+    "question_id": "3",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/165afe0d-d619-4245-895a-72d711b95c18.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/165afe0d-d619-4245-895a-72d711b95c18.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452743438382943,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/165afe0d-d619-4245-895a-72d711b95c18.jpg"
+  },
+  {
+    "question_id": "4",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c653e67-57f6-49c5-a139-20de06ce4938.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c653e67-57f6-49c5-a139-20de06ce4938.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007451717534826862,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c653e67-57f6-49c5-a139-20de06ce4938.jpg"
+  },
+  {
+    "question_id": "5",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/22771fcc-5187-4270-b74f-2b4673059b72.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/22771fcc-5187-4270-b74f-2b4673059b72.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074522293483217554,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/22771fcc-5187-4270-b74f-2b4673059b72.jpg"
+  },
+  {
+    "question_id": "6",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0bfc9d41-bc95-4171-9e98-97e97c490b5a.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0bfc9d41-bc95-4171-9e98-97e97c490b5a.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007451665898164113,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0bfc9d41-bc95-4171-9e98-97e97c490b5a.jpg"
+  },
+  {
+    "question_id": "7",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0053d7cd-549c-48cd-b370-b4ad64a8098a.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0053d7cd-549c-48cd-b370-b4ad64a8098a.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.00746661274590426,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0053d7cd-549c-48cd-b370-b4ad64a8098a.jpg"
+  },
+  {
+    "question_id": "8",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3d266fb8-1d98-4e93-afd8-d339f4ad57bf.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3d266fb8-1d98-4e93-afd8-d339f4ad57bf.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074638801419900525,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3d266fb8-1d98-4e93-afd8-d339f4ad57bf.jpg"
+  },
+  {
+    "question_id": "9",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/7e34c502-1fd0-4e08-96a7-3308a586ecd4.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/7e34c502-1fd0-4e08-96a7-3308a586ecd4.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007457187244047721,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/7e34c502-1fd0-4e08-96a7-3308a586ecd4.jpg"
+  },
+  {
+    "question_id": "10",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/24210ceb-3a29-4386-a501-812f337ef6b6.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/24210ceb-3a29-4386-a501-812f337ef6b6.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074516660533845425,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/24210ceb-3a29-4386-a501-812f337ef6b6.jpg"
+  },
+  {
+    "question_id": "11",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/9390d7d4-2fb2-4716-aa16-cdcacaf58770.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/9390d7d4-2fb2-4716-aa16-cdcacaf58770.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007454180469115575,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/9390d7d4-2fb2-4716-aa16-cdcacaf58770.jpg"
+  },
+  {
+    "question_id": "12",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/6dea5840-12c4-4a09-9a05-53f5ca7c6fa5.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/6dea5840-12c4-4a09-9a05-53f5ca7c6fa5.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074500224242607755,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/6dea5840-12c4-4a09-9a05-53f5ca7c6fa5.jpg"
+  },
+  {
+    "question_id": "13",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4145f8a7-d4a5-4416-ba7f-ee692d0f764e.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4145f8a7-d4a5-4416-ba7f-ee692d0f764e.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007457771855923865,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4145f8a7-d4a5-4416-ba7f-ee692d0f764e.jpg"
+  },
+  {
+    "question_id": "14",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/83002a9f-d287-414f-b1df-f4deb85010bc.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/83002a9f-d287-414f-b1df-f4deb85010bc.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007447040639817715,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/83002a9f-d287-414f-b1df-f4deb85010bc.jpg"
+  },
+  {
+    "question_id": "15",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/35260f8c-9cdd-4e6c-b35c-1094835900fe.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/35260f8c-9cdd-4e6c-b35c-1094835900fe.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007455293865253528,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/35260f8c-9cdd-4e6c-b35c-1094835900fe.jpg"
+  },
+  {
+    "question_id": "16",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c06ec7b-4c83-4cf1-8d74-c303ec439b23.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c06ec7b-4c83-4cf1-8d74-c303ec439b23.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074520463434358435,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4c06ec7b-4c83-4cf1-8d74-c303ec439b23.jpg"
+  },
+  {
+    "question_id": "17",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c32104d1-ee93-436a-90ae-81015bec305f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c32104d1-ee93-436a-90ae-81015bec305f.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007470354903489351,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c32104d1-ee93-436a-90ae-81015bec305f.jpg"
+  },
+  {
+    "question_id": "18",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/59c6e1d9-2eef-406d-bd1e-65aa59ded4a8.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/59c6e1d9-2eef-406d-bd1e-65aa59ded4a8.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452797713792986,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/59c6e1d9-2eef-406d-bd1e-65aa59ded4a8.jpg"
+  },
+  {
+    "question_id": "19",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/2c3d00a1-22a5-48e6-bf4f-737606d98a34.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/2c3d00a1-22a5-48e6-bf4f-737606d98a34.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452874910086393,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/2c3d00a1-22a5-48e6-bf4f-737606d98a34.jpg"
+  },
+  {
+    "question_id": "20",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5a9117f2-5b4b-4173-a3dc-90f53e7d95e1.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5a9117f2-5b4b-4173-a3dc-90f53e7d95e1.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007450771518051624,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/5a9117f2-5b4b-4173-a3dc-90f53e7d95e1.jpg"
+  },
+  {
+    "question_id": "21",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0c2ecef0-333b-44ce-97cc-b7780bfc5848.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0c2ecef0-333b-44ce-97cc-b7780bfc5848.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074691930785775185,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0c2ecef0-333b-44ce-97cc-b7780bfc5848.jpg"
+  },
+  {
+    "question_id": "22",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/86d432fb-9e7a-4777-b236-bac42b819e4c.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/86d432fb-9e7a-4777-b236-bac42b819e4c.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007462694361391995,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/86d432fb-9e7a-4777-b236-bac42b819e4c.jpg"
+  },
+  {
+    "question_id": "23",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/995bc0cf-8158-46a2-9bcd-0d46a7aa8ef9.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/995bc0cf-8158-46a2-9bcd-0d46a7aa8ef9.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007474001031368971,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/995bc0cf-8158-46a2-9bcd-0d46a7aa8ef9.jpg"
+  },
+  {
+    "question_id": "24",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/274c61a7-69b5-400b-ac06-76539d737035.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/274c61a7-69b5-400b-ac06-76539d737035.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007473466607431571,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/274c61a7-69b5-400b-ac06-76539d737035.jpg"
+  },
+  {
+    "question_id": "25",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/51327bda-1c91-4a09-a896-e4a3c7221396.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/51327bda-1c91-4a09-a896-e4a3c7221396.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007450579510380824,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/51327bda-1c91-4a09-a896-e4a3c7221396.jpg"
+  },
+  {
+    "question_id": "26",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/fff562e6-137f-4641-8af1-b408aeee1e9b.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/fff562e6-137f-4641-8af1-b408aeee1e9b.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074626244604587555,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/fff562e6-137f-4641-8af1-b408aeee1e9b.jpg"
+  },
+  {
+    "question_id": "27",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a542bb0-0172-4bc4-890d-327fa45b85b3.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a542bb0-0172-4bc4-890d-327fa45b85b3.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007460748155911763,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a542bb0-0172-4bc4-890d-327fa45b85b3.jpg"
+  },
+  {
+    "question_id": "28",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e78d9e39-9269-4cf5-b0d2-364c010ec5a8.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e78d9e39-9269-4cf5-b0d2-364c010ec5a8.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007451346764961879,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e78d9e39-9269-4cf5-b0d2-364c010ec5a8.jpg"
+  },
+  {
+    "question_id": "29",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/8ba3968c-e27d-4536-ad92-8591883e1571.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/8ba3968c-e27d-4536-ad92-8591883e1571.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007456748901555936,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/8ba3968c-e27d-4536-ad92-8591883e1571.jpg"
+  },
+  {
+    "question_id": "30",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3c99c6a6-78dc-44ca-8674-e4e29aef91be.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3c99c6a6-78dc-44ca-8674-e4e29aef91be.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007450409233570099,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/3c99c6a6-78dc-44ca-8674-e4e29aef91be.jpg"
+  },
+  {
+    "question_id": "31",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c6d9329c-400b-42b7-b0ea-3f3647d16277.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c6d9329c-400b-42b7-b0ea-3f3647d16277.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452222518622875,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/c6d9329c-400b-42b7-b0ea-3f3647d16277.jpg"
+  },
+  {
+    "question_id": "32",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f004b232-558b-4da2-ac05-e680eb583913.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f004b232-558b-4da2-ac05-e680eb583913.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074543677684333585,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f004b232-558b-4da2-ac05-e680eb583913.jpg"
+  },
+  {
+    "question_id": "33",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/1fd2612b-18d5-4155-b426-72abaa45fac4.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/1fd2612b-18d5-4155-b426-72abaa45fac4.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007468555898716052,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/1fd2612b-18d5-4155-b426-72abaa45fac4.jpg"
+  },
+  {
+    "question_id": "34",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/aa73426e-5f8a-4a97-9dba-aa0c654b64f6.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/aa73426e-5f8a-4a97-9dba-aa0c654b64f6.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007457199558201764,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/aa73426e-5f8a-4a97-9dba-aa0c654b64f6.jpg"
+  },
+  {
+    "question_id": "35",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/ad10a865-c6ca-4563-9350-8a1764441b38.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/ad10a865-c6ca-4563-9350-8a1764441b38.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007445863292862971,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/ad10a865-c6ca-4563-9350-8a1764441b38.jpg"
+  },
+  {
+    "question_id": "37",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f03b88b6-5fa8-4c48-ae6d-68eabdb4935e.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f03b88b6-5fa8-4c48-ae6d-68eabdb4935e.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007455908072491487,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/f03b88b6-5fa8-4c48-ae6d-68eabdb4935e.jpg"
+  },
+  {
+    "question_id": "38",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/717bbe6d-22b0-4cff-8d9d-cfb80ec715b2.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/717bbe6d-22b0-4cff-8d9d-cfb80ec715b2.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007448785783102115,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/717bbe6d-22b0-4cff-8d9d-cfb80ec715b2.jpg"
+  },
+  {
+    "question_id": "39",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a7ece5b-caaa-496e-9e6e-0c7eab171527.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a7ece5b-caaa-496e-9e6e-0c7eab171527.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007464271193991105,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/0a7ece5b-caaa-496e-9e6e-0c7eab171527.jpg"
+  },
+  {
+    "question_id": "40",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4528b31c-b43d-49d7-a357-34749cbcb761.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4528b31c-b43d-49d7-a357-34749cbcb761.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.00748332729563117,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/4528b31c-b43d-49d7-a357-34749cbcb761.jpg"
+  },
+  {
+    "question_id": "41",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e427835d-4ef8-485d-ab90-c96b7a675b9e.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e427835d-4ef8-485d-ab90-c96b7a675b9e.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007485116211076577,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/e427835d-4ef8-485d-ab90-c96b7a675b9e.jpg"
+  },
+  {
+    "question_id": "42",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/52eb18e9-b328-461f-8961-280bc421104d.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/52eb18e9-b328-461f-8961-280bc421104d.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.0074554999979833765,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/52eb18e9-b328-461f-8961-280bc421104d.jpg"
+  },
+  {
+    "question_id": "43",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/cde932d8-dd60-4857-a5cf-bdbe274beb87.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/cde932d8-dd60-4857-a5cf-bdbe274beb87.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007467164192348719,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/cde932d8-dd60-4857-a5cf-bdbe274beb87.jpg"
+  },
+  {
+    "question_id": "44",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/89ddddc5-191e-4224-85bc-6d4416621df4.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/89ddddc5-191e-4224-85bc-6d4416621df4.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007452367132322656,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/89ddddc5-191e-4224-85bc-6d4416621df4.jpg"
+  },
+  {
+    "question_id": "45",
+    "gt_answer": "Dyed and lifted polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/386d9361-8919-489d-9058-41357b26200f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/386d9361-8919-489d-9058-41357b26200f.jpg",
+    "gt": "Dyed_and_lifted_polyps",
+    "pred": "Dyed_and_lifted_polyps",
+    "dist": 0.007449591842790444,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-lifted-polyps/386d9361-8919-489d-9058-41357b26200f.jpg"
+  },
+  {
+    "question_id": "46",
+    "gt_answer": "Dyed resection margins",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/0c1f49d8-c21d-45c8-85a4-087f4a4c5895.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/0c1f49d8-c21d-45c8-85a4-087f4a4c5895.jpg",
+    "gt": "Dyed_resection_margins",
+    "pred": "Dyed_resection_margins",
+    "dist": 0.007447558972570632,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/0c1f49d8-c21d-45c8-85a4-087f4a4c5895.jpg"
+  },
+  {
+    "question_id": "48",
+    "gt_answer": "Dyed resection margins",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/1266d8f7-d172-43d9-ab83-464a780cee54.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/1266d8f7-d172-43d9-ab83-464a780cee54.jpg",
+    "gt": "Dyed_resection_margins",
+    "pred": "Dyed_resection_margins",
+    "dist": 0.007437928165826533,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/1266d8f7-d172-43d9-ab83-464a780cee54.jpg"
+  },
+  {
+    "question_id": "49",
+    "gt_answer": "Dyed resection margins",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/6aa2aa3b-04d1-4895-81d3-ec1a634bd386.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/6aa2aa3b-04d1-4895-81d3-ec1a634bd386.jpg",
+    "gt": "Dyed_resection_margins",
+    "pred": "Dyed_resection_margins",
+    "dist": 0.007452127678940694,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/6aa2aa3b-04d1-4895-81d3-ec1a634bd386.jpg"
+  },
+  {
+    "question_id": "51",
+    "gt_answer": "Dyed resection margins",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/7c5d2d7e-2ef5-4903-a46c-a015bfb41297.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/7c5d2d7e-2ef5-4903-a46c-a015bfb41297.jpg",
+    "gt": "Dyed_resection_margins",
+    "pred": "Dyed_resection_margins",
+    "dist": 0.007452526440223058,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/dyed-resection-margins/7c5d2d7e-2ef5-4903-a46c-a015bfb41297.jpg"
+  },
+  {
+    "question_id": "52",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/43c42362-7ec0-4465-928d-e6239f5fc35f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/43c42362-7ec0-4465-928d-e6239f5fc35f.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Ulcerative_colitis",
+    "dist": 0.007472713633129994,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/43c42362-7ec0-4465-928d-e6239f5fc35f.jpg"
+  },
+  {
+    "question_id": "53",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/8a359e3e-25c2-4cbf-8f7e-41b8df34e359.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/8a359e3e-25c2-4cbf-8f7e-41b8df34e359.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Ulcerative_colitis",
+    "dist": 0.007449253927916288,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/8a359e3e-25c2-4cbf-8f7e-41b8df34e359.jpg"
+  },
+  {
+    "question_id": "54",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/aea245d6-2b16-43f7-b0c9-c5df9594fb75.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/aea245d6-2b16-43f7-b0c9-c5df9594fb75.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Normal_cecum",
+    "dist": 0.007500304374843836,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/aea245d6-2b16-43f7-b0c9-c5df9594fb75.jpg"
+  },
+  {
+    "question_id": "56",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/63f2020e-0a42-4d23-bf40-0aada55796a9.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/63f2020e-0a42-4d23-bf40-0aada55796a9.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Ulcerative_colitis",
+    "dist": 0.00747124876620041,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/63f2020e-0a42-4d23-bf40-0aada55796a9.jpg"
+  },
+  {
+    "question_id": "57",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/fc79c489-b358-4368-b965-330615af73d4_00000281.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/fc79c489-b358-4368-b965-330615af73d4_00000281.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Ulcerative_colitis",
+    "dist": 0.00747404604529341,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/fc79c489-b358-4368-b965-330615af73d4_00000281.jpg"
+  },
+  {
+    "question_id": "58",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/0ce3fa9c-6a96-4868-8d02-376afdc98157.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/0ce3fa9c-6a96-4868-8d02-376afdc98157.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Ulcerative_colitis",
+    "dist": 0.0074744608460201156,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/0ce3fa9c-6a96-4868-8d02-376afdc98157.jpg"
+  },
+  {
+    "question_id": "60",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/edd7db36-b7e4-415a-a0c9-681ab4f43ad6.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/edd7db36-b7e4-415a-a0c9-681ab4f43ad6.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Polyps",
+    "dist": 0.007493900290379922,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/edd7db36-b7e4-415a-a0c9-681ab4f43ad6.jpg"
+  },
+  {
+    "question_id": "61",
+    "gt_answer": "Ulcerative colitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/2e8ad03f-d0cd-47d7-82ac-91aaae2b613d.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/2e8ad03f-d0cd-47d7-82ac-91aaae2b613d.jpg",
+    "gt": "Ulcerative_colitis",
+    "pred": "Dyed_resection_margins",
+    "dist": 0.007483200480540593,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/kvasir-dataset-v2/ulcerative-colitis/2e8ad03f-d0cd-47d7-82ac-91aaae2b613d.jpg"
+  },
+  {
+    "question_id": "62",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ab146ccd-524d-4fc1-a22e-5b180380dfae.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ab146ccd-524d-4fc1-a22e-5b180380dfae.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00022502851788885891,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ab146ccd-524d-4fc1-a22e-5b180380dfae.jpg"
+  },
+  {
+    "question_id": "63",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/4c3db910-ff52-45e3-b8f1-6957cd88e11e.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/4c3db910-ff52-45e3-b8f1-6957cd88e11e.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00038567233908300597,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/4c3db910-ff52-45e3-b8f1-6957cd88e11e.jpg"
+  },
+  {
+    "question_id": "65",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c09be39d-58b8-4f32-864d-310d39cd300a.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c09be39d-58b8-4f32-864d-310d39cd300a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003300953540019691,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c09be39d-58b8-4f32-864d-310d39cd300a.jpg"
+  },
+  {
+    "question_id": "66",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/69d9d3d4-ceb9-4ad4-a6f7-95d3ca9ed64a.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/69d9d3d4-ceb9-4ad4-a6f7-95d3ca9ed64a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0002920257231582784,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/69d9d3d4-ceb9-4ad4-a6f7-95d3ca9ed64a.jpg"
+  },
+  {
+    "question_id": "67",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/b0768234-5fd3-42a5-ad88-940fc8159ca2.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/b0768234-5fd3-42a5-ad88-940fc8159ca2.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0006320159057698523,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/b0768234-5fd3-42a5-ad88-940fc8159ca2.jpg"
+  },
+  {
+    "question_id": "68",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/2f36e72b-e789-4649-9054-fda57ed295d7.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/2f36e72b-e789-4649-9054-fda57ed295d7.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00016804350404224047,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/2f36e72b-e789-4649-9054-fda57ed295d7.jpg"
+  },
+  {
+    "question_id": "70",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/3ea886f3-0220-4b8e-ae13-6960a6866846.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/3ea886f3-0220-4b8e-ae13-6960a6866846.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00018545489001553506,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/3ea886f3-0220-4b8e-ae13-6960a6866846.jpg"
+  },
+  {
+    "question_id": "71",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4e76b7b-64a2-41f0-b418-21dad8bedc7b.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4e76b7b-64a2-41f0-b418-21dad8bedc7b.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003444511288156112,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4e76b7b-64a2-41f0-b418-21dad8bedc7b.jpg"
+  },
+  {
+    "question_id": "72",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/edf42906-f3a7-4db6-98d6-0a8d2a846fc0.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/edf42906-f3a7-4db6-98d6-0a8d2a846fc0.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003041887878983592,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/edf42906-f3a7-4db6-98d6-0a8d2a846fc0.jpg"
+  },
+  {
+    "question_id": "73",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/a13f92bd-8996-4f40-b37d-30616c743980.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/a13f92bd-8996-4f40-b37d-30616c743980.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00044631113996729255,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/a13f92bd-8996-4f40-b37d-30616c743980.jpg"
+  },
+  {
+    "question_id": "74",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c2f04625-e5e3-4404-a3e9-b9609430904b.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c2f04625-e5e3-4404-a3e9-b9609430904b.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00030726700788363814,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c2f04625-e5e3-4404-a3e9-b9609430904b.jpg"
+  },
+  {
+    "question_id": "76",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/20fcf45c-065f-484a-bbf3-0969e5cf500f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/20fcf45c-065f-484a-bbf3-0969e5cf500f.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0010117821317786972,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/20fcf45c-065f-484a-bbf3-0969e5cf500f.jpg"
+  },
+  {
+    "question_id": "77",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/d7ae6930-e393-460c-8e0c-19414dada5a9.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/d7ae6930-e393-460c-8e0c-19414dada5a9.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00045446885633282363,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/d7ae6930-e393-460c-8e0c-19414dada5a9.jpg"
+  },
+  {
+    "question_id": "78",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/993000b5-b801-4604-bb22-a4590d743b47.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/993000b5-b801-4604-bb22-a4590d743b47.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00032932211373311776,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/993000b5-b801-4604-bb22-a4590d743b47.jpg"
+  },
+  {
+    "question_id": "79",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ee9948d8-36f7-47b8-9424-999071cc0c7a.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ee9948d8-36f7-47b8-9424-999071cc0c7a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Uveitis",
+    "dist": 0.0005002486674735943,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ee9948d8-36f7-47b8-9424-999071cc0c7a.jpg"
+  },
+  {
+    "question_id": "80",
+    "gt_answer": "Esophagitis",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/fd378895-becb-47f0-9a71-560c2cc244fa.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/fd378895-becb-47f0-9a71-560c2cc244fa.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0007516362174000177,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/fd378895-becb-47f0-9a71-560c2cc244fa.jpg"
+  },
+  {
+    "question_id": "84",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/96b241e4-c180-4e17-90b9-a4eaee89ea8b.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/96b241e4-c180-4e17-90b9-a4eaee89ea8b.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00025422578619327396,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/96b241e4-c180-4e17-90b9-a4eaee89ea8b.jpg"
+  },
+  {
+    "question_id": "85",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/30c1a4f7-b096-4b06-8766-04a75197d613.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/30c1a4f7-b096-4b06-8766-04a75197d613.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0007662994418448458,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/30c1a4f7-b096-4b06-8766-04a75197d613.jpg"
+  },
+  {
+    "question_id": "86",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/f94ec7a8-52e2-4b99-af5a-e6d4e95a340b.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/f94ec7a8-52e2-4b99-af5a-e6d4e95a340b.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0011172684996078412,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/f94ec7a8-52e2-4b99-af5a-e6d4e95a340b.jpg"
+  },
+  {
+    "question_id": "87",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/19fc878a-905c-4c42-9760-e0c39d728d16.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/19fc878a-905c-4c42-9760-e0c39d728d16.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003926312233993991,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/19fc878a-905c-4c42-9760-e0c39d728d16.jpg"
+  },
+  {
+    "question_id": "89",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56302cb8-619b-4eaf-a163-549328cac581.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56302cb8-619b-4eaf-a163-549328cac581.jpg",
+    "gt": "Polyps",
+    "pred": "Nodules",
+    "dist": 0.0006008299856653644,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56302cb8-619b-4eaf-a163-549328cac581.jpg"
+  },
+  {
+    "question_id": "90",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/dbec48ea-ff3c-45a0-932b-73fe23dae6ad.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/dbec48ea-ff3c-45a0-932b-73fe23dae6ad.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00023239262130421898,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/dbec48ea-ff3c-45a0-932b-73fe23dae6ad.jpg"
+  },
+  {
+    "question_id": "91",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ccd07ae5-4037-4f6c-a6ad-d9372d8580bf.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ccd07ae5-4037-4f6c-a6ad-d9372d8580bf.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0002539293911670231,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ccd07ae5-4037-4f6c-a6ad-d9372d8580bf.jpg"
+  },
+  {
+    "question_id": "92",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/1e15c2d6-b6b3-4804-9b84-f8047356e9cb.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/1e15c2d6-b6b3-4804-9b84-f8047356e9cb.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00023884332202012755,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/1e15c2d6-b6b3-4804-9b84-f8047356e9cb.jpg"
+  },
+  {
+    "question_id": "93",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/0fa8810f-f91f-4434-931b-458eabe9543e.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/0fa8810f-f91f-4434-931b-458eabe9543e.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003770999125360201,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/0fa8810f-f91f-4434-931b-458eabe9543e.jpg"
+  },
+  {
+    "question_id": "94",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56efb458-ec08-4e8a-9baa-bbae08489120.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56efb458-ec08-4e8a-9baa-bbae08489120.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.000500357328241484,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56efb458-ec08-4e8a-9baa-bbae08489120.jpg"
+  },
+  {
+    "question_id": "95",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fd49618e-96fc-45ec-a917-9d04421faa3f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fd49618e-96fc-45ec-a917-9d04421faa3f.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0020863432437181473,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fd49618e-96fc-45ec-a917-9d04421faa3f.jpg"
+  },
+  {
+    "question_id": "96",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fafc5bb2-6d32-445a-97c3-f249ae556f22.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fafc5bb2-6d32-445a-97c3-f249ae556f22.jpg",
+    "gt": "Polyps",
+    "pred": "Nodules",
+    "dist": 0.0005430345966791114,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fafc5bb2-6d32-445a-97c3-f249ae556f22.jpg"
+  },
+  {
+    "question_id": "97",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/92177bcd-eeee-4dd4-b904-fb902771f334.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/92177bcd-eeee-4dd4-b904-fb902771f334.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003952888073399663,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/92177bcd-eeee-4dd4-b904-fb902771f334.jpg"
+  },
+  {
+    "question_id": "98",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/3f862efc-5bd6-42b5-98b6-659a7fe99679.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/3f862efc-5bd6-42b5-98b6-659a7fe99679.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0008221790582562486,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/3f862efc-5bd6-42b5-98b6-659a7fe99679.jpg"
+  },
+  {
+    "question_id": "99",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ec2f87eb-d652-4296-9ca0-b60881ce8939.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ec2f87eb-d652-4296-9ca0-b60881ce8939.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.001176245432967941,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ec2f87eb-d652-4296-9ca0-b60881ce8939.jpg"
+  },
+  {
+    "question_id": "100",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/53aa8af7-1846-49eb-83ec-2cc531b6babd.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/53aa8af7-1846-49eb-83ec-2cc531b6babd.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00022959895431995392,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/53aa8af7-1846-49eb-83ec-2cc531b6babd.jpg"
+  },
+  {
+    "question_id": "101",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/6a2e9528-7abb-4456-9797-31f3c6b301bb.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/6a2e9528-7abb-4456-9797-31f3c6b301bb.jpg",
+    "gt": "Polyps",
+    "pred": "Inflammation",
+    "dist": 0.00115592962053294,
+    "correct": false,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/6a2e9528-7abb-4456-9797-31f3c6b301bb.jpg"
+  },
+  {
+    "question_id": "102",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/10a1fb7c-6e0a-4d67-9745-3ca48230fdc8.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/10a1fb7c-6e0a-4d67-9745-3ca48230fdc8.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0004341521222765247,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/10a1fb7c-6e0a-4d67-9745-3ca48230fdc8.jpg"
+  },
+  {
+    "question_id": "103",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00018298418338720998,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg"
+  },
+  {
+    "question_id": "104",
+    "gt_answer": "Polyps",
+    "image_paths": [
+      "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56d36c2a-a318-4aef-a454-2b58be054342.jpg"
+    ],
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56d36c2a-a318-4aef-a454-2b58be054342.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0007155189911524454,
+    "correct": true,
+    "matched_x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56d36c2a-a318-4aef-a454-2b58be054342.jpg"
+  }
+]

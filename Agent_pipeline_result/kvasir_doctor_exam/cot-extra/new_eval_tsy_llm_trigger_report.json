@@ -1,0 +1,138 @@
+{
+    "dataset_info": {
+        "data_name": "kvasir",
+        "total_samples": 105,
+        "question_types": [
+            "Disease Diagnosis"
+        ]
+    },
+    "overall_performance": {
+        "total_samples": 105,
+        "triggered_count": 90,
+        "not_triggered_count": 15,
+        "trigger_rate": 0.8571428571428571,
+        "triggered_correct": 55,
+        "triggered_wrong": 35,
+        "triggered_accuracy": 0.6111111111111112,
+        "not_triggered_correct": 5,
+        "not_triggered_wrong": 10,
+        "safety_accuracy": 0.3333333333333333,
+        "precision": 0.3888888888888889,
+        "recall": 0.7777777777777778,
+        "overall_accuracy": 0.5714285714285714
+    },
+    "by_question_type": {
+        "Disease Diagnosis": {
+            "total_samples": 105,
+            "triggered_count": 90,
+            "not_triggered_count": 15,
+            "trigger_rate": 0.8571428571428571,
+            "triggered_correct": 55,
+            "triggered_wrong": 35,
+            "triggered_accuracy": 0.6111111111111112,
+            "not_triggered_correct": 5,
+            "not_triggered_wrong": 10,
+            "safety_accuracy": 0.3333333333333333,
+            "precision": 0.3888888888888889,
+            "recall": 0.7777777777777778,
+            "overall_accuracy": 0.5714285714285714
+        }
+    },
+    "probability_metrics": {
+        "overall": {
+            "max_prob": {
+                "mean": 0.6156994047619048,
+                "median": 0.58984375,
+                "std": 0.16336156298433532
+            },
+            "prob_gap": {
+                "mean": 0.35928199404761907,
+                "median": 0.2890625,
+                "std": 0.2658919817631894
+            },
+            "h_norm": {
+                "mean": 0.6293247767857143,
+                "median": 0.6640625,
+                "std": 0.17975101724381776
+            },
+            "entropy_score": {
+                "mean": 0.3706752232142857,
+                "median": 0.3359375,
+                "std": 0.17975101724381776
+            }
+        },
+        "by_correctness": {
+            "correct_samples": {
+                "max_prob_mean": 0.5779622395833334,
+                "prob_gap_mean": 0.29580078125
+            },
+            "wrong_samples": {
+                "max_prob_mean": 0.666015625,
+                "prob_gap_mean": 0.4439236111111111
+            }
+        }
+    },
+    "strategy_comparison": {
+        "新版三层过滤策略": {
+            "total_samples": 105,
+            "triggered_count": 90,
+            "not_triggered_count": 15,
+            "trigger_rate": 0.8571428571428571,
+            "triggered_correct": 55,
+            "triggered_wrong": 35,
+            "triggered_accuracy": 0.6111111111111112,
+            "not_triggered_correct": 5,
+            "not_triggered_wrong": 10,
+            "safety_accuracy": 0.3333333333333333,
+            "precision": 0.3888888888888889,
+            "recall": 0.7777777777777778,
+            "overall_accuracy": 0.5714285714285714
+        }
+    },
+    "consistency_analysis": {
+        "consistent": {
+            "count": 0,
+            "accuracy": 0,
+            "avg_max_prob": 0
+        },
+        "inconsistent": {
+            "count": 105,
+            "accuracy": 0.5714285714285714,
+            "avg_max_prob": 0.6156994047619048
+        }
+    },
+    "high_risk_analysis": {
+        "total_samples": 105,
+        "triggered_count": 90,
+        "not_triggered_count": 15,
+        "trigger_rate": 0.8571428571428571,
+        "triggered_correct": 55,
+        "triggered_wrong": 35,
+        "triggered_accuracy": 0.6111111111111112,
+        "not_triggered_correct": 5,
+        "not_triggered_wrong": 10,
+        "safety_accuracy": 0.3333333333333333,
+        "precision": 0.3888888888888889,
+        "recall": 0.7777777777777778,
+        "overall_accuracy": 0.5714285714285714
+    },
+    "trigger_thresholds": {
+        "THRES_MAX_P": 0.65,
+        "THRES_GAP": 0.2,
+        "THRES_ENTROPY": 0.4
+    },
+    "recommendations": [
+        {
+            "level": "WARNING",
+            "message": "未触发样本的准确率为 33.33%，低于95%安全线，建议调整阈值。"
+        },
+        {
+            "level": "INFO",
+            "message": "触发率为 85.71%，较高，可能需要人工审核资源较多。"
+        },
+        {
+            "level": "WARNING",
+            "message": "语义不一致率为 100.00%，模型可能存在内部矛盾。"
+        }
+    ]
+}

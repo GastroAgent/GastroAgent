@@ -312,3 +312,103 @@ def hinge_discriminator_loss(real_pred, fake_pred):
 
 def hinge_generator_loss(fake_pred):
     return - torch.mean(fake_pred)
+
+def min_match_wass_loss(anchor_emb, positive_emb, **kwargs):
+    """
+    每个 anchor 在 positive_emb 中找到最近邻（无梯度），
+    然后仅对匹配对计算可导的 MSE 损失。
+    """
+    anchor_emb = anchor_emb.reshape(anchor_emb.shape[0], -1)
+    positive_emb = positive_emb.reshape(positive_emb.shape[0], -1)
+    B, D = anchor_emb.shape
+
+    with torch.no_grad():
+        # 计算成对平方距离 [B, B]
+        diff = anchor_emb.unsqueeze(1) - positive_emb.unsqueeze(0)  # [B, B, D]
+        pairwise_sq_dist = torch.sum(diff ** 2, dim=-1)
+
+        # 可选：防止自匹配（如果 anchor[i] 和 positive[i] 是同一实例）
+        # pairwise_sq_dist.fill_diagonal_(float('inf'))
+
+        # 找到每个 anchor 最近的 positive 索引
+        min_indices = torch.argmin(pairwise_sq_dist, dim=1)  # [B]
+
+    # 使用索引提取匹配的 positive（此操作可导，因为索引是常量）
+    matched_positive = positive_emb[min_indices]  # [B, D]
+
+    loss = sinkhorn_loss(anchor_emb, matched_positive, **kwargs)
+    return loss
+
+def wasserstein_clip_triplet_loss(
+    anchor_emb,        # [B, N, D]
+    positive_emb,      # [B, N, D]
+    negative_emb,      # [B, N, D]
+    temperature=1.67,
+    p=2,               # Wasserstein-p (通常用 2)
+    blur=0.05,         # 控制 entropic regularization 强度 (≈ sqrt(ε))
+    scaling=0.95       # Sinkhorn scaling (加速收敛，<1)
+):
+    """
+    CLIP-style InfoNCE loss using SK-approximated Wasserstein distance.
+    Smaller Wasserstein distance → higher similarity.
+    """
+    device = anchor_emb.device
+    if anchor_emb.ndim == 2:
+        B, D = anchor_emb.shape
+        H = W = int((D // 4) ** 0.5)
+        anchor_emb = anchor_emb.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, 4)
+    elif anchor_emb.ndim == 4:
+        B, C, H, W = anchor_emb.shape
+        anchor_emb = anchor_emb.permute(0, 2, 3, 1).reshape(B, H*W, C)
+    if positive_emb.ndim == 2:
+        B, D = positive_emb.shape
+        H = W = int((D // 4) ** 0.5)
+        positive_emb = positive_emb.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, 4)
+    elif positive_emb.ndim == 4:
+        B, C, H, W = positive_emb.shape
+        positive_emb = positive_emb.permute(0, 2, 3, 1).reshape(B, H*W, C)
+    if negative_emb.ndim == 2:
+        B, D = negative_emb.shape
+        H = W = int((D // 4) ** 0.5)
+        negative_emb = negative_emb.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, 4)
+    elif negative_emb.ndim == 4:
+        B, C, H, W = negative_emb.shape
+        negative_emb = negative_emb.permute(0, 2, 3, 1).reshape(B, H*W, C)
+
+    # Step 1: Compute all pairwise W-distances between anchors and negatives
+    # We need a [B, B] matrix: W_ij = W(anchor_i, negative_j)
+    # To do this efficiently, we repeat and reshape.
+    B, N, D = anchor_emb.shape
+    # Repeat anchor_emb to [B, B, N, D]
+    anchor_rep = anchor_emb.unsqueeze(1).expand(-1, B, -1, -1)      # [B, B, N, D]
+    # Repeat negative_emb to [B, B, N, D]
+    negative_rep = negative_emb.unsqueeze(0).expand(B, -1, -1, -1)  # [B, B, N, D]
+
+    # Reshape to [B*B, N, D] for batched computation
+    anchor_flat = anchor_rep.reshape(B * B, N, D)
+    negative_flat = negative_rep.reshape(B * B, N, D)
+
+    # Compute pairwise Wasserstein distances (returns [B*B])
+    w_dist_flat = loss_fn(anchor_flat, negative_flat)  # [B*B]
+
+    # Reshape back to [B, B]
+    w_dist_matrix = w_dist_flat.reshape(B, B)  # W[i, j] = W(anchor_i, negative_j)
+
+    # Step 2: Replace diagonal with W(anchor_i, positive_i)
+    # Compute diagonal positive distances: [B]
+    pos_dist = loss_fn(anchor_emb, positive_emb)  # [B]
+
+    # Clone and replace diagonal
+    w_dist_matrix = w_dist_matrix.clone()
+    w_dist_matrix[range(B), range(B)] = pos_dist
+
+    # Step 3: Convert distance → similarity
+    # (Alternative Option B: exponential similarity)
+    # logits = torch.exp(-w_dist_matrix / temperature) 
+    logits = (-w_dist_matrix / temperature)
+
+    # Step 4: InfoNCE loss
+    labels = torch.arange(B, device=device)
+    loss = F.cross_entropy(logits, labels)
+
+    return loss

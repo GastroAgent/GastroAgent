@@ -624,3 +624,129 @@ class TripletNetwork(nn.Module):
         positive_emb = self.encode(positive, True)
         negative_emb = self.encode(negative, True)
         return anchor_emb, positive_emb, negative_emb
+
+class ResidualBlock(nn.Module):
+    def __init__(self, in_channels, out_channels=None, kernel_size=3, stride=1):
+        super().__init__()
+        if out_channels is None:
+            out_channels = in_channels
+        self.conv1 = nn.Conv2d(in_channels, out_channels, kernel_size, padding=kernel_size//2, stride=stride)
+        self.norm1 = nn.GroupNorm(8, out_channels)  # Stable with varying batch sizes
+        self.conv2 = nn.Conv2d(out_channels, out_channels, kernel_size, padding=kernel_size//2)
+        self.norm2 = nn.GroupNorm(8, out_channels)
+        self.relu = nn.ReLU(inplace=True)
+        
+        self.shortcut = nn.Identity()
+        if stride != 1 or in_channels != out_channels:
+            self.shortcut = nn.Sequential(
+                nn.Conv2d(in_channels, out_channels, 1, stride=stride),
+                nn.GroupNorm(8, out_channels)
+            )
+
+    def forward(self, x):
+        residual = self.shortcut(x)
+        x = self.relu(self.norm1(self.conv1(x)))
+        x = self.norm2(self.conv2(x))
+        x += residual
+        return self.relu(x)
+
+class AttentionBlock(nn.Module):
+    """Simplified channel-wise attention (SE-style)"""
+    def __init__(self, channels, reduction=4):
+        super().__init__()
+        self.avg_pool = nn.AdaptiveAvgPool2d(1)
+        self.fc = nn.Sequential(
+            nn.Linear(channels, channels // reduction, bias=False),
+            nn.ReLU(inplace=True),
+            nn.Linear(channels // reduction, channels, bias=False),
+            nn.Sigmoid()
+        )
+    def forward(self, x):
+        b, c, _, _ = x.size()
+        y = self.avg_pool(x).view(b, c)
+        y = self.fc(y).view(b, c, 1, 1)
+        return x * y.expand_as(x)
+
+class LatentDecoder(nn.Module):
+    def __init__(self, in_channels=4, out_channels=4, hidden_dim=64, use_attention=True):
+        """
+        Enhanced probabilistic decoder for VAE latent reconstruction.
+        Supports (16x16) or (64x64) input → always outputs (64x64).
+        Now with residual blocks, attention, better upsampling, and separate μ/logvar heads.
+        """
+        super().__init__()
+        self.in_channels = in_channels
+        self.out_channels = out_channels
+        self.use_attention = use_attention
+
+        # Stem: deeper with residual
+        self.stem = nn.Sequential(
+            nn.Conv2d(in_channels, hidden_dim // 2, 3, padding=1),
+            nn.GroupNorm(8, hidden_dim // 2),
+            nn.ReLU(inplace=True),
+            ResidualBlock(hidden_dim // 2, hidden_dim),
+            ResidualBlock(hidden_dim, hidden_dim)
+        )
+
+        # Upsampling path (for 16x16 input): use PixelShuffle + residual refinement
+        self.up1 = nn.Sequential(
+            nn.PixelShuffle(2),  # (B, hidden_dim, 16,16) → (B, hidden_dim//4, 32,32)
+            nn.Conv2d(hidden_dim // 4, hidden_dim // 2, 3, padding=1),
+            nn.GroupNorm(8, hidden_dim // 2),
+            nn.ReLU(inplace=True),
+            ResidualBlock(hidden_dim // 2, hidden_dim // 2)
+        )
+        self.up2 = nn.Sequential(
+            nn.PixelShuffle(2),  # → (B, hidden_dim//8, 64,64)
+            nn.Conv2d(hidden_dim // 8, hidden_dim // 4, 3, padding=1),
+            nn.GroupNorm(8, hidden_dim // 4),
+            nn.ReLU(inplace=True),
+            ResidualBlock(hidden_dim // 4, hidden_dim // 4)
+        )
+
+        # Direct path (for 64x64): just refine with residual blocks
+        self.direct_path = nn.Sequential(
+            ResidualBlock(hidden_dim, hidden_dim // 2),
+            ResidualBlock(hidden_dim // 2, hidden_dim // 4)
+        )
+
+        # Optional attention before head
+        if use_attention:
+            self.attn = AttentionBlock(hidden_dim // 4)
+
+        # Separate heads for μ and logσ (more stable than chunking)
+        self.mu_head = nn.Conv2d(hidden_dim // 4, out_channels, kernel_size=1)
+        self.logvar_head = nn.Conv2d(hidden_dim // 4, out_channels, kernel_size=1)
+
+        # Initialize heads to small values to avoid instability
+        nn.init.normal_(self.mu_head.weight, mean=0.0, std=0.01)
+        nn.init.constant_(self.mu_head.bias, 0.0)
+        nn.init.normal_(self.logvar_head.weight, mean=0.0, std=0.01)
+        nn.init.constant_(self.logvar_head.bias, 0.0)
+
+    def forward(self, h):
+        B, C, H, W = h.shape
+        assert C == self.in_channels, f"Expected {self.in_channels} input channels, got {C}"
+        assert (H, W) in [(16, 16), (64, 64)], f"Unsupported input size: {H}x{W}"
+
+        x = self.stem(h)  # (B, hidden_dim, H, W)
+
+        if H == 16:
+            # 16 → 32 → 64 with learnable upsampling
+            x = self.up1(x)      # (B, hidden_dim//2, 32, 32)
+            x = self.up2(x)      # (B, hidden_dim//4, 64, 64)
+        else:
+            # 64x64: direct refinement
+            x = self.direct_path(x)  # (B, hidden_dim//4, 64, 64)
+
+        if self.use_attention:
+            x = self.attn(x)
+
+        mu = self.mu_head(x)
+        logvar = self.logvar_head(x)
+
+        # Optional: clamp logvar for numerical stability
+        logvar = torch.clamp(logvar, min=-10, max=5)
+
+        return mu + logvar
+    

@@ -1,0 +1,47 @@
+{
+  "total_samples": 105,
+  "accuracy": {
+    "mllm": 0.5523809523809524,
+    "flow": 0.9142857142857143,
+    "fusion": 0.9428571428571428
+  },
+  "improvement": {
+    "over_mllm_count": 41,
+    "over_mllm_rate": 0.3904761904761905,
+    "over_flow_count": 5,
+    "over_flow_rate": 0.047619047619047616
+  },
+  "degradation": {
+    "from_mllm_count": 0,
+    "from_mllm_rate": 0.0,
+    "from_flow_count": 2,
+    "from_flow_rate": 0.01904761904761905
+  },
+  "alpha_statistics": {
+    "mean": 0.8618717814384066,
+    "std": 0.11955536926554032,
+    "min": 0.3040157105545709,
+    "max": 0.895984289136248,
+    "median": 0.895984289136248
+  },
+  "by_alpha_range": {
+    "high_confidence_mllm (α>0.7)": {
+      "count": 99,
+      "fusion_accuracy": 0.9494949494949495,
+      "mllm_accuracy": 0.5757575757575758,
+      "flow_accuracy": 0.9191919191919192
+    },
+    "medium_confidence (0.5<α≤0.7)": {
+      "count": 2,
+      "fusion_accuracy": 0.5,
+      "mllm_accuracy": 0.5,
+      "flow_accuracy": 0.5
+    },
+    "low_confidence_mllm (α≤0.5)": {
+      "count": 4,
+      "fusion_accuracy": 1.0,
+      "mllm_accuracy": 0.0,
+      "flow_accuracy": 1.0
+    }
+  }
+}

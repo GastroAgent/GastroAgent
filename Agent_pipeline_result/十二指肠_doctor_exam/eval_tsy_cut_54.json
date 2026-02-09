@@ -1,0 +1,3798 @@
+[
+    {
+        "question_id": 0,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082000107_6_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 1,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061800325_2_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 2,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013073100216_6_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 3,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_4_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 4,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014062100005_7_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 5,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_6_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 6,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061100231_5_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 7,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500204_6_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 8,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2012062700075_1_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 9,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500119_17_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 10,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014020500092_5.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 11,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2015041300348_10.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 109,
+        "label_A": "十二指肠炎",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 12,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019110400474_36.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 13,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500001_19.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 14,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019090600163_10.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 15,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017042400169_30.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 16,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019061200017_21.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 17,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020030400156_22.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 18,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032500508_17.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 19,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2018051800186_16.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 20,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017112900359_5.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 21,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032900490_17.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 22,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019070800577_13.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 23,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020040200398_14.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 24,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500373_15.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 25,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019120600502_10.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 26,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017070300199_52.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 27,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019121600205_14.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 28,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017020700237_16.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 110,
+        "label_A": "十二指肠副乳头",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 29,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2020020600087_9_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 30,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019110510022_19_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 31,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2005011000184_2_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 32,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_71.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠溃疡",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠溃疡",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            27,
+            110,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            27,
+            110,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 33,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_62.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 34,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2008070400101_9_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠溃疡",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠溃疡",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            27,
+            110,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            27,
+            110,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 35,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2012082100312_2_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 27,
+        "label_A": "十二指肠溃疡",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 36,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017030700151_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 37,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2010011800079_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 38,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2013030900033_6.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠正常",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠正常",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            33,
+            110,
+            27,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            33,
+            110,
+            27,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 39,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012091700106_10.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 40,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014021400056_1.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 41,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014031400012_1.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 42,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_62.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 43,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_27.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 44,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2019011400527_5.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 45,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017092800163_13.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 46,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012051000068_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 47,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014042900215_10.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 48,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 49,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017072700295_29.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠正常",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            33,
+            27,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 50,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2008021900243_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 51,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_60.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 52,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012032000291_3.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 53,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_5.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 33,
+        "label_A": "十二指肠正常",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 54,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2011040400026_16_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠钩虫",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            42,
+            33,
+            48,
+            111
+        ],
+        "label_A_id": 42,
+        "label_A": "十二指肠钩虫",
+        "ys": [
+            109,
+            110,
+            27,
+            42,
+            33,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 55,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2013061300345_1_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠钩虫",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠钩虫",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            42,
+            110,
+            27,
+            33,
+            48,
+            111
+        ],
+        "label_A_id": 42,
+        "label_A": "十二指肠钩虫",
+        "ys": [
+            109,
+            42,
+            110,
+            27,
+            33,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 56,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2006032100083_1_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠钩虫",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠钩虫",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            42,
+            110,
+            27,
+            33,
+            48,
+            111
+        ],
+        "label_A_id": 42,
+        "label_A": "十二指肠钩虫",
+        "ys": [
+            109,
+            42,
+            110,
+            27,
+            33,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 57,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019061200462_36_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 58,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_22_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠球部息肉",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠球部息肉",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            48,
+            27,
+            33,
+            42,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            110,
+            48,
+            27,
+            33,
+            42,
+            111
+        ]
+    },
+    {
+        "question_id": 59,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_20_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠球部息肉",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠球部息肉",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            48,
+            33,
+            42,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            110,
+            27,
+            48,
+            33,
+            42,
+            111
+        ]
+    },
+    {
+        "question_id": 60,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019072400503_23_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 61,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2012050800159_13_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠球部息肉",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠球部息肉",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            48,
+            27,
+            33,
+            42,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            110,
+            48,
+            27,
+            33,
+            42,
+            111
+        ]
+    },
+    {
+        "question_id": 62,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2018120500667_29_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠球部息肉",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠球部息肉",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            48,
+            110,
+            27,
+            33,
+            42,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            48,
+            110,
+            27,
+            33,
+            42,
+            111
+        ]
+    },
+    {
+        "question_id": 63,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2020022700092_31_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠球部息肉",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠球部息肉",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            48,
+            110,
+            27,
+            33,
+            42,
+            111
+        ],
+        "label_A_id": 48,
+        "label_A": "十二指肠球部息肉",
+        "ys": [
+            109,
+            48,
+            110,
+            27,
+            33,
+            42,
+            111
+        ]
+    },
+    {
+        "question_id": 64,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2013110600248_8_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室",
+            "十二指肠球部息肉"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室",
+            "十二指肠球部息肉"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            111,
+            48
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            111,
+            48
+        ]
+    },
+    {
+        "question_id": 65,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_4_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 66,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2018120600324_18_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 67,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2005032400064_3.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 68,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_3_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室",
+            "十二指肠球部息肉"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠憩室",
+            "十二指肠球部息肉"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            111,
+            48
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            111,
+            48
+        ]
+    },
+    {
+        "question_id": 69,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2017031400136_7_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 70,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008120300221_4.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉",
+            "十二指肠憩室"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            27,
+            33,
+            42,
+            48,
+            111
+        ]
+    },
+    {
+        "question_id": 71,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2014010900309_11_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠憩室",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠副乳头",
+            "十二指肠憩室",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉"
+        ],
+        "label_B_ids": [
+            109,
+            110,
+            111,
+            27,
+            33,
+            42,
+            48
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            110,
+            111,
+            27,
+            33,
+            42,
+            48
+        ]
+    },
+    {
+        "question_id": 72,
+        "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2019011900136_27_masked_crop.jpg",
+        "caption": [
+            "十二指肠炎",
+            "十二指肠憩室",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉"
+        ],
+        "data_id": 0,
+        "x1_dirs": [
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠炎",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠憩室",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠副乳头",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠溃疡",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠正常",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠钩虫",
+            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/support_54/十二指肠球部息肉"
+        ],
+        "x1_labels": [
+            "十二指肠炎",
+            "十二指肠憩室",
+            "十二指肠副乳头",
+            "十二指肠溃疡",
+            "十二指肠正常",
+            "十二指肠钩虫",
+            "十二指肠球部息肉"
+        ],
+        "label_B_ids": [
+            109,
+            111,
+            110,
+            27,
+            33,
+            42,
+            48
+        ],
+        "label_A_id": 111,
+        "label_A": "十二指肠憩室",
+        "ys": [
+            109,
+            111,
+            110,
+            27,
+            33,
+            42,
+            48
+        ]
+    }
+]

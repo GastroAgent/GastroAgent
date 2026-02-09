@@ -1,0 +1,80 @@
+{
+    "dataset_info": {
+        "data_name": "十二指肠",
+        "total_samples": 73
+    },
+    "overall_performance": {
+        "total_samples": 73,
+        "triggered_count": 67,
+        "not_triggered_count": 6,
+        "trigger_rate": 0.9178082191780822,
+        "triggered_correct": 20,
+        "triggered_wrong": 47,
+        "triggered_accuracy": 0.29850746268656714,
+        "not_triggered_correct": 5,
+        "not_triggered_wrong": 1,
+        "safety_accuracy": 0.8333333333333334,
+        "precision": 0.7014925373134329,
+        "recall": 0.9791666666666666,
+        "overall_accuracy": 0.3424657534246575
+    },
+    "probability_metrics": {
+        "overall": {
+            "max_prob": {
+                "mean": 0.6046928510273972,
+                "median": 0.59765625,
+                "std": 0.06550554957513836
+            },
+            "prob_gap": {
+                "mean": 0.2436857876712329,
+                "median": 0.21875,
+                "std": 0.13155574027055594
+            },
+            "h_norm": {
+                "mean": 0.564533390410959,
+                "median": 0.5703125,
+                "std": 0.037270981656548456
+            },
+            "entropy_score": {
+                "mean": 0.4354666095890411,
+                "median": 0.4296875,
+                "std": 0.037270981656548456
+            }
+        },
+        "by_correctness": {
+            "correct_samples": {
+                "max_prob_mean": 0.626328125,
+                "prob_gap_mean": 0.283671875
+            },
+            "wrong_samples": {
+                "max_prob_mean": 0.5934244791666666,
+                "prob_gap_mean": 0.22285970052083334
+            }
+        }
+    },
+    "high_risk_analysis": {
+        "total_samples": 73,
+        "triggered_count": 67,
+        "not_triggered_count": 6,
+        "trigger_rate": 0.9178082191780822,
+        "triggered_correct": 20,
+        "triggered_wrong": 47,
+        "triggered_accuracy": 0.29850746268656714,
+        "not_triggered_correct": 5,
+        "not_triggered_wrong": 1,
+        "safety_accuracy": 0.8333333333333334,
+        "precision": 0.7014925373134329,
+        "recall": 0.9791666666666666,
+        "overall_accuracy": 0.3424657534246575
+    },
+    "recommendations": [
+        {
+            "level": "WARNING",
+            "message": "未触发样本的准确率为 83.33%，低于95%安全线，建议调整阈值。"
+        },
+        {
+            "level": "INFO",
+            "message": "触发率为 91.78%，较高，可能需要人工审核资源较多。"
+        }
+    ]
+}

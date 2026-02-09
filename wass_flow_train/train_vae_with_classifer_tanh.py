@@ -23,7 +23,6 @@ from math import sqrt
 from copy import deepcopy
 from torch.utils.tensorboard import SummaryWriter
 from einops.layers.torch import Rearrange
-from my_models.model_wass import *
 from model_utils.my_loss import *
 from model_utils.model import *
 

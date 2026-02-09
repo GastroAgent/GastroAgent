@@ -1,13 +1,13 @@
 from copy import deepcopy
 import os
 from timm.models.vision_transformer import VisionTransformer
-os.environ['CUDA_VISIBLE_DEVICES'] = '7,5'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 import sys
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
 from collections import OrderedDict
-from data_loader_test import MedicalDataset, MedicalJsonDataset
-from data_utils_test import *
+from utils.data_loader import MedicalDataset, MedicalJsonDataset
+from utils.data_utils import *
 from functools import partial
 import torch
 import torch.nn as nn
@@ -30,7 +30,6 @@ from data_loader_hiaug import MedicalCLIPTinyAUGDataset
 import ot
 from my_models.unet_2d_condition import UNet2DConditionModel
 from my_models.model_dispatch import dispatch_model
-from my_models.model_wass import AttentionAutoencoder
 from diffusers import AutoencoderKL
 from transformers import ChineseCLIPConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor
@@ -1466,110 +1465,7 @@ class ImageGenerator:
         with open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data/new_new_eval_all_flatten.json', 'w', encoding='utf-8') as f:
             json.dump(dataset, f, ensure_ascii=False, indent=4)
             
-        dataset = MedicalJsonDataset(
-            path="/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/simple_data_test/eval_all_flatten.json",
-            transform=transform,
-            transform_A=transform,
-            transform_B=transform,
-            hint_transform=transform_grey
-        )
-
-        idx = 0
-        op_match_batch = False
-        new_dataset = []
-        caption_hidden_states_mode = 'cat'
-        sigma = 0.0
-
-        FM = OptimalTransportConditionalFlowMatcher(sigma=sigma, ot_method='exact')
-        text_embeds_map = {}
-        for idx in tqdm(range(len(dataset))):
-            if idx < 0:
-                continue
-            batch = deepcopy(dataset[idx])
-            if idx % 100 == 0:
-                print(f"{batch['label_A']}:{batch['label_A_id']} --> {batch['label_B']}:{batch['label_B_id']}")
-                print(f'---------------------------------{idx}/{len(dataset)}----------------------------------')
-                
-            x0 = batch['x0'].to(self.vae.device).unsqueeze(0)
-            x1 = batch['x1'].to(self.vae.device).unsqueeze(0)
-            caption = [batch['caption']]
-            y = batch['class_id'].to(self.vae.device).unsqueeze(0)
-            x1_path = [batch['x1_path']]
-            hint = batch['hint'].to(self.vae.device).unsqueeze(0)
-
-            images = torch.cat([x0, x1], dim=0)
-            with torch.no_grad():
-                posterior = self.vae.encode(images).latent_dist
-                images = posterior.sample() * 0.18215
-                x0, x1 = images.chunk(2, dim=0)
-                    
-            if self.args.solver == 'euler':
-                self.text_model = None
-                self.vision_model = None
-
-            if self.text_model is not None and caption[0] not in text_embeds_map:
-                with torch.no_grad():
-                    caption_input = self.text_tokenizer(caption, return_tensors="pt", padding=True).to(
-                        self.text_model.device)
-                    caption_outputs = self.text_model(**caption_input)
-                    text_embeds = caption_outputs['last_hidden_state'].to(self.text_model.device)
-                if len(text_embeds_map) < 200:
-                    text_embeds_map[caption[0]] = text_embeds
-            elif caption[0] in text_embeds_map:
-                text_embeds = text_embeds_map[caption[0]]
-            else:
-                text_embeds = torch.zeros((len(y), 2, 1))
-            if self.vision_model is not None:
-                with torch.no_grad():
-                    x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                    vision_embeds = self.vision_model.forward_features(x1_images.to(self.vision_model.device))
-            else:
-                vision_embeds = torch.zeros((len(y), 2, 1))
-
-            if caption_hidden_states_mode == 'cat':
-                caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(self.net_model.device),
-                                                   text_embeds[:, 1:, ...].to(self.net_model.device)], dim=1)
-            elif caption_hidden_states_mode == 'only_text':
-                caption_hidden_states = text_embeds[:, 1:, ...].to(self.net_model.device)
-
-            conds = {
-                'x0': x0,
-                'x1': x1,
-                'x0_path': [batch['x0_path']],
-                'x1_path': [batch['x1_path']],
-                'caption': caption,
-                'caption_hidden_states': caption_hidden_states.to(self.device),
-                'y': y.to(self.device),
-                'hint': hint.to(self.device),
-                'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
-                'image_embeds': vision_embeds[:, 0].to(self.device)  # [B, D]
-            }
-            self.use_gt_vt = self.args.use_gt_vt
-            if self.use_gt_vt:
-                t, xt, ut = FM.get_sample_location_and_conditional_flow(x0, x1,
-                                                                    sample_plan=op_match_batch,
-                                                                    cond=conds,
-                                                                    print_info=False)
-                conds['ut'] = ut.to(self.device)
-            wass_dict = self.cal_Wass_with_T(idx, conds)
-            wass_dict.update(dataset[idx])
-            wass_dict.pop('x0', None)
-            wass_dict.pop('x1', None)
-            wass_dict.pop('hint', None)
-            wass_dict.pop('mask_hint', None)
-            wass_dict['class_id'] = int(wass_dict['class_id'].item())
-            new_dataset.append(wass_dict)
-
-            if idx % 1000 == 0:
-                output_path = os.path.join(self.args.output_dir, 'result.json')
-                with open(output_path, 'w') as f:
-                    json.dump(new_dataset, f, indent=4, ensure_ascii=False)
-                print(f'Current Saved to {output_path}')
-        output_path = os.path.join(self.args.output_dir, 'result.json')
-        with open(output_path, 'w') as f:
-            json.dump(new_dataset, f, indent=4, ensure_ascii=False)
-        print(f'Saved to {output_path}')
-        return new_dataset
+        return {}
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
