@@ -1,0 +1,19 @@
+================================================================================
+医疗VQA推理与分析完整Pipeline
+================================================================================
+
+流程概览:
+  1. 步骤1: 模型推理 + Trigger策略分析
+  2. 步骤2: LLM提取答案
+  3. 步骤3: 重新评估correct
+  4. 步骤4: 重新分析Trigger性能
+
+================================================================================
+
+是否开始执行完整流程? (y/n): Traceback (most recent call last):
+  File "/mnt/inaisfs/data/home/tansy_criait/VLM-R1/src/open-r1-multimodal/src/open_r1/infer/shiguan/run_full_pipeline.py", line 131, in <module>
+    main()
+  File "/mnt/inaisfs/data/home/tansy_criait/VLM-R1/src/open-r1-multimodal/src/open_r1/infer/shiguan/run_full_pipeline.py", line 92, in main
+    response = input("\n是否开始执行完整流程? (y/n): ").strip().lower()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+EOFError: EOF when reading a line

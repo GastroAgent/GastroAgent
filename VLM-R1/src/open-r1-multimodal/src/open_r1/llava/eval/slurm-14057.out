@@ -1,0 +1,76 @@
+ERROR: Illegal operation on a directory on '/home/dalhxwlyjsuo/criait_tansy/anaconda3'
+Loading LLaVA from base model...
+---Qwen2---
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.26s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.31s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.31s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.25s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:05<00:00,  1.27s/it]
+Some weights of LlavaQwen2ForCausalLM were not initialized from the model checkpoint at /home/dalhxwlyjsuo/criait_tansy/project/LLaVA-1/LLaVA-Med-1.0.0/Qwen2-7B-Instruct and are newly initialized: ['model.mm_projector.0.bias', 'model.mm_projector.0.weight', 'model.mm_projector.2.bias', 'model.mm_projector.2.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+---tokenizer--- Qwen2Tokenizer(name_or_path='/home/dalhxwlyjsuo/criait_tansy/project/LLaVA-1/LLaVA-Med-1.0.0/Qwen2-7B-Instruct', vocab_size=151643, model_max_length=131072, is_fast=False, padding_side='right', truncation_side='right', special_tokens={'eos_token': '<|im_end|>', 'pad_token': '<|endoftext|>', 'additional_special_tokens': ['<|im_start|>', '<|im_end|>']}, clean_up_tokenization_spaces=False, added_tokens_decoder={
+	151643: AddedToken("<|endoftext|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151644: AddedToken("<|im_start|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+	151645: AddedToken("<|im_end|>", rstrip=False, lstrip=False, single_word=False, normalized=False, special=True),
+}
+)
+---model--- LlavaQwen2ForCausalLM(
+  (model): LlavaQwen2Model(
+    (embed_tokens): Embedding(152064, 3584)
+    (layers): ModuleList(
+      (0-27): 28 x Qwen2DecoderLayer(
+        (self_attn): Qwen2Attention(
+          (q_proj): Linear(in_features=3584, out_features=3584, bias=True)
+          (k_proj): Linear(in_features=3584, out_features=512, bias=True)
+          (v_proj): Linear(in_features=3584, out_features=512, bias=True)
+          (o_proj): Linear(in_features=3584, out_features=3584, bias=False)
+        )
+        (mlp): Qwen2MLP(
+          (gate_proj): Linear(in_features=3584, out_features=18944, bias=False)
+          (up_proj): Linear(in_features=3584, out_features=18944, bias=False)
+          (down_proj): Linear(in_features=18944, out_features=3584, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+        (post_attention_layernorm): Qwen2RMSNorm((3584,), eps=1e-06)
+      )
+    )
+    (norm): Qwen2RMSNorm((3584,), eps=1e-06)
+    (rotary_emb): Qwen2RotaryEmbedding()
+    (vision_tower): CLIPVisionTower()
+    (mm_projector): Sequential(
+      (0): Linear(in_features=1024, out_features=3584, bias=True)
+      (1): GELU(approximate='none')
+      (2): Linear(in_features=3584, out_features=3584, bias=True)
+    )
+  )
+  (lm_head): Linear(in_features=3584, out_features=152064, bias=False)
+)
+---image_processor--- CLIPImageProcessor {
+  "crop_size": {
+    "height": 336,
+    "width": 336
+  },
+  "do_center_crop": true,
+  "do_convert_rgb": true,
+  "do_normalize": true,
+  "do_rescale": true,
+  "do_resize": true,
+  "image_mean": [
+    0.48145466,
+    0.4578275,
+    0.40821073
+  ],
+  "image_processor_type": "CLIPImageProcessor",
+  "image_std": [
+    0.26862954,
+    0.26130258,
+    0.27577711
+  ],
+  "resample": 3,
+  "rescale_factor": 0.00392156862745098,
+  "size": {
+    "shortest_edge": 336
+  }
+}
+
+Traceback (most recent call last):
+  File "/home/dalhxwlyjsuo/criait_tansy/project/Llava_Qwen2/llava/eval/mir.py", line 84, in <module>
+    with open(os.path.expanduser(args.text_data_path), "r") as f:
+IsADirectoryError: [Errno 21] Is a directory: '/home/dalhxwlyjsuo/criait_tansy/project/Llava_Qwen2/data/eval'

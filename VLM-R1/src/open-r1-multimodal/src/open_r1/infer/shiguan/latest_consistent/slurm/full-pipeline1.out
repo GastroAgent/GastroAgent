@@ -1,0 +1,323 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+正在加载模型...
+Not delay load....................................
+Vision Module Path:  /mnt/inaisfs/data/home/tansy_criait/weights/my-clip-vision
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:05<00:15,  5.18s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:10<00:10,  5.20s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:15<00:05,  5.30s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:17<00:00,  4.29s/it]
+The tokenizer you are loading from '/mnt/inaisfs/data/home/tansy_criait/weights/tsy/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft' with an incorrect regex pattern: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84#69121093e8b480e709447d5e. This will lead to incorrect tokenization. You should set the `fix_mistral_regex=True` flag when loading this tokenizer to fix this issue.
+`generation_config` default values have been modified to match model-specific defaults: {'bos_token_id': 151643, 'eos_token_id': 151645}. If this is not desired, please set these values explicitly.
+模型加载完成!
+正在读取数据: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/new_eval_tsy_llm.json
+数据集大小: 52
+输出路径: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_with_trigger.json
+开始推理...
+
+处理进度: 1/52
+处理进度: 2/52
+处理进度: 3/52
+处理进度: 4/52
+处理进度: 5/52
+处理进度: 6/52
+处理进度: 7/52
+处理进度: 8/52
+处理进度: 9/52
+处理进度: 10/52
+
+--- 调试信息 ---
+问题类型: Disease Diagnosis, is_tail=True
+临时答案: None, 预测索引: 1
+概率分布: {'p_A': 0.0033721923828125, 'p_B': 0.5625, 'p_C': 0.412109375, 'p_D': 0.024169921875}
+max_prob=0.562, prob_gap=0.150, H_norm=0.574
+Trigger (新版): True
+----------------
+
+处理进度: 11/52
+处理进度: 12/52
+处理进度: 13/52
+处理进度: 14/52
+处理进度: 15/52
+处理进度: 16/52
+处理进度: 17/52
+处理进度: 18/52
+处理进度: 19/52
+处理进度: 20/52
+处理进度: 21/52
+处理进度: 22/52
+处理进度: 23/52
+
+--- 调试信息 ---
+问题类型: Disease Diagnosis, is_tail=True
+临时答案: D, 预测索引: 1
+概率分布: {'p_A': 0.005828857421875, 'p_B': 0.64453125, 'p_C': 0.302734375, 'p_D': 0.046630859375}
+max_prob=0.645, prob_gap=0.342, H_norm=0.590
+Trigger (新版): True
+----------------
+
+处理进度: 24/52
+处理进度: 25/52
+处理进度: 26/52
+处理进度: 27/52
+处理进度: 28/52
+处理进度: 29/52
+处理进度: 30/52
+处理进度: 31/52
+处理进度: 32/52
+处理进度: 33/52
+处理进度: 34/52
+处理进度: 35/52
+
+--- 调试信息 ---
+问题类型: Disease Diagnosis, is_tail=True
+临时答案: None, 预测索引: 1
+概率分布: {'p_A': 0.00616455078125, 'p_B': 0.734375, 'p_C': 0.236328125, 'p_D': 0.023193359375}
+max_prob=0.734, prob_gap=0.498, H_norm=0.496
+Trigger (新版): True
+----------------
+
+处理进度: 36/52
+处理进度: 37/52
+处理进度: 38/52
+处理进度: 39/52
+处理进度: 40/52
+处理进度: 41/52
+处理进度: 42/52
+处理进度: 43/52
+处理进度: 44/52
+处理进度: 45/52
+处理进度: 46/52
+处理进度: 47/52
+处理进度: 48/52
+处理进度: 49/52
+处理进度: 50/52
+处理进度: 51/52
+处理进度: 52/52
+
+正在保存结果到: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_with_trigger.json
+================================================================================
+步骤1完成！
+共处理 52 条数据
+输出文件: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_with_trigger.json
+================================================================================
+Gemini初始化失败: No module named 'google.generativeai'
+将使用规则提取方法
+正在读取数据: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_with_trigger.json
+数据集大小: 52
+开始提取答案...
+
+
+--- 样本 1 ---
+生成文本片段: answer> option_B: 食管炎C级 </answer>...
+提取答案: B
+Ground Truth: Esophageal Glycogenic Acanthosis
+----------------
+
+
+--- 样本 2 ---
+生成文本片段: answer> option_G </answer>...
+提取答案: G
+Ground Truth: Esophageal Glycogenic Acanthosis
+----------------
+
+
+--- 样本 3 ---
+生成文本片段: answer> option_F: Baarrett食管,option_G: Baarrett食管,option_H: Baarrett食管,option_I: Baarrett食heets!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!...
+提取答案: F
+Ground Truth: Esophageal Glycogenic Acanthosis
+----------------
+
+
+--- 样本 4 ---
+生成文本片段: <answer>E</answer>!...
+提取答案: E
+Ground Truth: Esophageal Glycogenic Acanthosis
+----------------
+
+
+--- 样本 5 ---
+生成文本片段: <answer>E</answer>!...
+提取答案: E
+Ground Truth: Esophageal Glycogenic Acanthosis
+----------------
+
+进度: 50/52
+
+正在保存结果到: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_extracted.json
+================================================================================
+步骤2完成！
+成功提取: 52/52 (100.0%)
+提取失败: 0/52 (0.0%)
+输出文件: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_extracted.json
+================================================================================
+正在读取数据: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_extracted.json
+数据集大小: 52
+开始重新评估correct...
+
+
+--- 样本 1 ---
+GT答案: G (Esophageal Glycogenic Acanthosis...)
+提取答案: B
+正确性: 0
+p_chosen: 0.76953125
+----------------
+
+
+--- 样本 2 ---
+GT答案: H (Esophageal Glycogenic Acanthosis...)
+提取答案: G
+正确性: 0
+p_chosen: None
+----------------
+
+
+--- 样本 3 ---
+GT答案: H (Esophageal Glycogenic Acanthosis...)
+提取答案: F
+正确性: 0
+p_chosen: None
+----------------
+
+
+--- 样本 4 ---
+GT答案: E (Esophageal Glycogenic Acanthosis...)
+提取答案: E
+正确性: 1
+p_chosen: None
+----------------
+
+
+--- 样本 5 ---
+GT答案: E (Esophageal Glycogenic Acanthosis...)
+提取答案: E
+正确性: 1
+p_chosen: None
+----------------
+
+
+================================================================================
+评估统计:
+总样本数: 52
+成功提取答案: 52 (100.0%)
+正确数量: 5
+准确率: 9.62% (5/52)
+================================================================================
+
+正在保存结果到: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_final.json
+================================================================================
+步骤3完成！
+输出文件: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_final.json
+================================================================================
+正在读取数据: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_final.json
+数据集大小: 52
+开始分析Trigger性能...
+
+1. 分析整体性能...
+2. 按问题类型分析...
+3. 分析概率指标...
+4. 对比不同策略...
+5. 分析语义一致性...
+6. 分析高风险样本...
+
+================================================================================
+Trigger性能分析报告
+================================================================================
+
+【整体性能】
+  总样本数: 52
+  触发率: 78.85%
+  整体准确率: 9.62%
+  [v2] 触发率: 98.08%
+  [v2] 整体准确率: 9.62%
+
+【安全性指标】
+  未触发样本数: 11
+  未触发样本准确率: 9.09%
+  未触发中的错误数: 10
+  [v2] 未触发样本数: 1
+  [v2] 未触发样本准确率: 0.00%
+  [v2] 未触发中的错误数: 1
+
+【触发样本分析】
+  触发样本数: 41
+  触发样本准确率: 9.76%
+  触发中的错误数: 37
+  [v2] 触发样本数: 51
+  [v2] 触发样本准确率: 9.80%
+  [v2] 触发中的错误数: 46
+
+【错误捕获能力】
+  Precision (触发中的错误率): 90.24%
+  Recall (错误召回率): 78.72%
+  [v2] Precision (触发中的错误率): 90.20%
+  [v2] Recall (错误召回率): 97.87%
+
+【语义一致性】
+  一致样本: 0 (准确率: 0.00%)
+  不一致样本: 52 (准确率: 9.62%)
+
+【建议】
+  [WARNING] 未触发样本的准确率为 9.09%，低于95%安全线，建议调整阈值。
+  [INFO] 触发率为 78.85%，较高，可能需要人工审核资源较多。
+  [WARNING] 语义不一致率为 100.00%，模型可能存在内部矛盾。
+
+================================================================================
+
+正在保存报告到: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_trigger_report.json
+================================================================================
+步骤4完成！
+输出文件: /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/食管_doctor_exam/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-sft1/new_eval_tsy_llm_trigger_report.json
+================================================================================
+================================================================================
+医疗VQA推理与分析完整Pipeline (自动执行模式)
+================================================================================
+
+流程概览:
+  1. 步骤1: 模型推理 + Trigger策略分析
+  2. 步骤2: LLM提取答案
+  3. 步骤3: 重新评估correct
+  4. 步骤4: 重新分析Trigger性能
+
+================================================================================
+
+================================================================================
+开始执行: 步骤1: 模型推理 + Trigger策略分析
+描述: 对输入数据进行模型推理，计算概率分布和trigger指标
+================================================================================
+
+
+✓ 步骤1: 模型推理 + Trigger策略分析 完成 (耗时: 177.1秒)
+
+================================================================================
+开始执行: 步骤2: LLM提取答案
+描述: 使用LLM从生成文本中提取标准化答案
+================================================================================
+
+
+✓ 步骤2: LLM提取答案 完成 (耗时: 0.2秒)
+
+================================================================================
+开始执行: 步骤3: 重新评估correct
+描述: 根据提取的答案重新计算correct字段
+================================================================================
+
+
+✓ 步骤3: 重新评估correct 完成 (耗时: 0.1秒)
+
+================================================================================
+开始执行: 步骤4: 重新分析Trigger性能
+描述: 基于最终数据分析Trigger策略的性能
+================================================================================
+
+
+✓ 步骤4: 重新分析Trigger性能 完成 (耗时: 0.2秒)
+
+================================================================================
+🎉 完整Pipeline执行成功!
+总耗时: 180.5秒 (3.0分钟)
+================================================================================
+
+生成的文件:
+  1. new_eval_tsy_llm_with_trigger.json - 推理结果 + trigger字段
+  2. new_eval_tsy_llm_extracted.json - 添加LLM提取的答案
+  3. new_eval_tsy_llm_final.json - 最终评估结果
+  4. new_eval_tsy_llm_trigger_report.json - Trigger性能分析报告
+
+================================================================================

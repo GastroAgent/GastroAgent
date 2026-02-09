@@ -1,0 +1,395 @@
+[
+    {
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},
+   {
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},
+    {
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+},{
+    "question_id": "1_0",
+    "pair_id": 0,
+    "text": "<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n<image>\n对于该病例最准确的诊断是什么？",
+    "gpt4_answer": "",
+    "fig_caption": "",
+    "in_text_mention": [],
+    "domain": {
+        "chest_xray": false,
+        "mri": false,
+        "ct_scan": false,
+        "histology": false,
+        "gross": false
+    },
+    "type": "conversation",
+    "fig_label": "Fig. 1",
+    "images": [
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/1.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/2.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/3.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/4.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/5.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/6.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/7.png",
+        "/home/dalhxwlyjsuo/criait_tansy/jmf/VLM-R1/src/open-r1-multimodal/data/test2/8.png"
+    ]
+}
+]
