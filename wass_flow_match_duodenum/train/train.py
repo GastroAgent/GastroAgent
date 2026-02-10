@@ -18,14 +18,15 @@ import torchvision.models as models
 import torch.nn.functional as F
 from flow_matcher import create_generator # 不包含 x0, x1.
 from utils.data_loader import MedicalJsonDataset
+from utils.data_utils import create_dataloaders_by_pairs
 from utils.train_utils import infiniteloop
 from PIL import Image
 from math import sqrt
 from copy import deepcopy
 from torch.utils.tensorboard import SummaryWriter
 from einops.layers.torch import Rearrange
-from model_utils.model import *
 from model_utils.my_loss import *
+from model_utils.model import *
 
 if __name__ == '__main__':
     # 加载数据集
@@ -36,6 +37,13 @@ if __name__ == '__main__':
     ])
 
     transform_A = transforms.Compose([
+        # transforms.RandomApply([        
+        #     transforms.RandomRotation(
+        #         degrees=30,
+        #         expand=True,            # 是否扩展画布以容纳完整图像（True会改变图像大小）
+        #         center=None,             # 旋转中心，默认中心点；可设为 (x, y)
+        #         fill=(0, 0, 0)           # 填充颜色，例如填白色：(255, 255, 255)
+        #     )], p=0.25),
         transforms.Resize((512, 512)), 
         transforms.RandomHorizontalFlip(p=0.5), 
         transforms.RandomVerticalFlip(p=0.5),
@@ -48,7 +56,7 @@ if __name__ == '__main__':
     transform_grey = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
-        transforms.RandomGrayscale(p=1), 
+        transforms.RandomGrayscale(p=1),  # 数据增强：50% 概率灰度化
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
     batch_size = 3
@@ -58,7 +66,7 @@ if __name__ == '__main__':
     
     json_paths = glob.glob(
         "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/train_json/data_pairs_flow_54/*.json")
-
+    # json_paths = json_paths[:4]
     for json_path in tqdm(json_paths):
         class_name = os.path.splitext(os.path.basename(json_path))[0]
         dataset = MedicalJsonDataset(

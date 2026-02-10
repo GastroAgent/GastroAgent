@@ -16,11 +16,12 @@ from torchvision import transforms as T
 
 from PIL import Image
 from diffusers import AutoencoderKL, StableDiffusionPipeline
-from my_models.unet_2d_condition import UNet2DConditionModel
+
 from transformers import ChineseCLIPModel, ChineseCLIPTextModel, AutoTokenizer, ChineseCLIPTextConfig
 from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
-
+from my_models.vae_sim import VAE
 from my_models.model_dispatch import dispatch_model
+from my_models.unet_2d_condition import UNet2DConditionModel
 from model import *
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
@@ -38,7 +39,7 @@ def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.228
     return processed_image
 
 class ImageGenerator:
-    def __init__(self, args, only_vae=False, device=None, use_gt=False, need_ut=False, num_device=1):
+    def __init__(self, args, only_vae=False, device=None, use_gt=False, need_ut=False):
         self.only_vae = only_vae
         self.args = args
         self.solver = self.args.solver
@@ -48,21 +49,30 @@ class ImageGenerator:
             self.need_ut = True
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
         net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image) = self._load_model(
-            args.checkpoint, args.use_ema, num_device=num_device)
-
-        self.net_model = net_model.to(self.device) if net_model is not None else net_model
-        self.vae = vae.to(self.device) if vae is not None else vae
-        self.text_model = text_model.to(self.device) if text_model is not None else text_model
-        self.text_tokenizer = text_tokenizer 
-        self.vision_model = vision_model.to(self.device) if vision_model is not None else vision_model
-        if vision_model is not None:
-            self.vision_model.device = self.device
-
+            args.checkpoint, args.use_ema)
+        if device is not None:
+            self.net_model = net_model.to(self.device) if net_model is not None else net_model
+            self.vae = vae.to(self.device) if vae is not None else vae
+            self.text_model = text_model.to(self.device) if text_model is not None else text_model
+            self.text_tokenizer = text_tokenizer 
+            self.vision_model = vision_model.to(self.device) if vision_model is not None else vision_model
+            if vision_model is not None:
+                self.vision_model.device = self.device
+        else:
+            self.net_model = net_model
+            self.vae = vae
+            self.text_model = text_model
+            self.text_tokenizer = text_tokenizer 
+            self.vision_model = vision_model
+            try:
+                self.vision_model.device
+            except:
+                self.vision_model.device = self.device
                 
         self.process_single_image = process_single_image
         self.FM = OptimalTransportConditionalFlowMatcher(sigma=0.0, ot_method='exact')
 
-    def _load_model(self, checkpoint: str, use_ema=False, num_device=1):
+    def _load_model(self, checkpoint: str, use_ema=False):
         """Initialize and load the model"""
         if not self.only_vae:
             config = json.load(open(
@@ -78,10 +88,15 @@ class ImageGenerator:
             elif 'net_model' in state_dict:
                 net_model.load_state_dict(state_dict['net_model'], strict=False)
 
-            vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vae').to(
-                device=self.device).eval()
-
+            encoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
+            decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
+            vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False)
+            # Optional: load pre-trained VAE
+            state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vit_vae/vit_vae_ema.pth', map_location=self.device)
+            vae.load_state_dict(state_dict, strict=False)
+            vae = vae.to(device=self.device).eval()
+            vae.device = self.device
+            
             text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_encoder/config.json','r'))
             text_model_config = ChineseCLIPTextConfig(**text_model_config)
             text_model = ChineseCLIPTextModel(text_model_config).eval()
@@ -128,7 +143,7 @@ class ImageGenerator:
             else:
                 self.controlnet = None
 
-            net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model, num_device = num_device)
+            net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model, num_device = 1)
             def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
                                     dataset_std=[0.2520, 0.2128, 0.2093]):
                 transform = T.Compose([
@@ -704,10 +719,10 @@ def generate_parse_args():
                         default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data/胃/new_eval_all_flatten.json',
                         help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vae/otcfm/otcfm_weights_step_90000.pt',
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vit-vae/otcfm/otcfm_weights_step_60000.pt',
                         help='Path to the checkpoint file') 
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/result/attention_dy_tsy_90000',
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/result/image_hint_Anatomy',
                         help='Directory to save generated images')
     parser.add_argument('--num_steps', type=int, default=8,
                         help='Max Number of steps in the ODE solver')
@@ -727,7 +742,7 @@ def generate_parse_args():
                         choices=['diff', 'second_diff', 'direct'],
                         help='判停策略')
     parser.add_argument('--wass_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights2/attention_tsy.pt",
+                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_dy_tsy.pt",
                         help='优先级 高于 权重')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'], 

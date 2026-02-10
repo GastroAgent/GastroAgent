@@ -38,7 +38,7 @@ def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.228
     return processed_image
 
 class ImageGenerator:
-    def __init__(self, args, only_vae=False, device=None, use_gt=False, need_ut=False, num_device=1):
+    def __init__(self, args, only_vae=False, device=None, use_gt=False, need_ut=False):
         self.only_vae = only_vae
         self.args = args
         self.solver = self.args.solver
@@ -48,25 +48,34 @@ class ImageGenerator:
             self.need_ut = True
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
         net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image) = self._load_model(
-            args.checkpoint, args.use_ema, num_device=num_device)
-
-        self.net_model = net_model.to(self.device) if net_model is not None else net_model
-        self.vae = vae.to(self.device) if vae is not None else vae
-        self.text_model = text_model.to(self.device) if text_model is not None else text_model
-        self.text_tokenizer = text_tokenizer 
-        self.vision_model = vision_model.to(self.device) if vision_model is not None else vision_model
-        if vision_model is not None:
-            self.vision_model.device = self.device
-
+            args.checkpoint, args.use_ema)
+        if device is not None:
+            self.net_model = net_model.to(self.device) if net_model is not None else net_model
+            self.vae = vae.to(self.device) if vae is not None else vae
+            self.text_model = text_model.to(self.device) if text_model is not None else text_model
+            self.text_tokenizer = text_tokenizer 
+            self.vision_model = vision_model.to(self.device) if vision_model is not None else vision_model
+            if vision_model is not None:
+                self.vision_model.device = self.device
+        else:
+            self.net_model = net_model
+            self.vae = vae
+            self.text_model = text_model
+            self.text_tokenizer = text_tokenizer 
+            self.vision_model = vision_model
+            try:
+                self.vision_model.device
+            except:
+                self.vision_model.device = self.device
                 
         self.process_single_image = process_single_image
         self.FM = OptimalTransportConditionalFlowMatcher(sigma=0.0, ot_method='exact')
 
-    def _load_model(self, checkpoint: str, use_ema=False, num_device=1):
+    def _load_model(self, checkpoint: str, use_ema=False):
         """Initialize and load the model"""
         if not self.only_vae:
             config = json.load(open(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/unet/config.json',
+                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/unet_mask/config.json',
                 'r'))
             net_model = UNet2DConditionModel(**config)
             if checkpoint:
@@ -128,7 +137,7 @@ class ImageGenerator:
             else:
                 self.controlnet = None
 
-            net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model, num_device = num_device)
+            net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model, num_device = 1)
             def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
                                     dataset_std=[0.2520, 0.2128, 0.2093]):
                 transform = T.Compose([
@@ -610,7 +619,15 @@ class ImageGenerator:
             mask_hint = batch['mask_hint']
         else:
             pass
-            
+        
+        if 'mask_hint' in batch:
+            mask_hint = batch['mask_hint']
+        else:
+            if use_image_mask:
+                mask_hint = torch.randn_like(x0)
+            else:
+                mask_hint = None
+
         x0_raw = x0.clone()
         result = {}
         with torch.no_grad():
@@ -654,20 +671,39 @@ class ImageGenerator:
                 'image_embeds': vision_embeds[:, 0] if self.vision_model is not None else None,  # [B, D]
             }
         else:
-            conds = {
-                'x0': x0.to(self.device),
-                'x0_path': x0_path,
-                # 'x0_raw': x0_raw,
-                'x1': x1.to(self.device),
-                'x1_path': x1_path,
-                # 'x1_raw': x1_raw,
-                'caption': caption,
-                'caption_hidden_states': caption_hidden_states.to(self.device),
-                'y': y.to(self.device),
-                "hint": hint.to(self.device),
-                'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
-                'image_embeds': vision_embeds[:, 0].to(self.device),  # [B, D]
-            }
+            if mask_hint is not None:
+                conds = {
+                    'x0': x0.to(self.device),
+                    'x0_path': x0_path,
+                    # 'x0_raw': x0_raw,
+                    'x1': x1.to(self.device),
+                    'x1_path': x1_path,
+                    # 'x1_raw': x1_raw,
+                    'caption': caption,
+                    'caption_hidden_states': caption_hidden_states.to(self.device),
+                    'y': y.to(self.device),
+                    "hint": hint.to(self.device),
+                    'mask_hint': mask_hint.to(self.device),
+                    'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
+                    'image_embeds': vision_embeds[:, 0].to(self.device),  # [B, D]
+                }
+            else:
+                conds = {
+                    'x0': x0.to(self.device),
+                    'x0_path': x0_path,
+                    # 'x0_raw': x0_raw,
+                    'x1': x1.to(self.device),
+                    'x1_path': x1_path,
+                    # 'x1_raw': x1_raw,
+                    'caption': caption,
+                    'caption_hidden_states': caption_hidden_states.to(self.device),
+                    'y': y.to(self.device),
+                    "hint": hint.to(self.device),
+                    'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
+                    'image_embeds': vision_embeds[:, 0].to(self.device),  # [B, D]
+                }     
+
+
         for key in batch:
             if key not in conds:
                 conds[key] = batch[key]
@@ -704,10 +740,10 @@ def generate_parse_args():
                         default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data/胃/new_eval_all_flatten.json',
                         help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vae/otcfm/otcfm_weights_step_90000.pt',
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vae_mask/otcfm/otcfm_weights_step_50000.pt',
                         help='Path to the checkpoint file') 
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/result/attention_dy_tsy_90000',
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/result/image_hint_Anatomy',
                         help='Directory to save generated images')
     parser.add_argument('--num_steps', type=int, default=8,
                         help='Max Number of steps in the ODE solver')
@@ -727,7 +763,7 @@ def generate_parse_args():
                         choices=['diff', 'second_diff', 'direct'],
                         help='判停策略')
     parser.add_argument('--wass_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights2/attention_tsy.pt",
+                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_tsy.pt",
                         help='优先级 高于 权重')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'], 
