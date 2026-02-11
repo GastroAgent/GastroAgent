@@ -174,18 +174,6 @@ class ImageGenerator:
 
     @staticmethod
     def normalize_samples(x):
-        """
-          对每个样本独立进行最大最小化归一化 (Min-Max Scaling)
-
-          参数:
-              x: Tensor, shape (B, C, H, W)
-              new_min: float, 缩放后的最小值
-              new_max: float, 缩放后的最大值
-              eps: float, 防止除以0的小值
-
-          返回:
-              x_scaled: Tensor, shape (B, C, H, W), 缩放后的数据
-          """
         x = (x / 2 + 0.5)
         # 计算每个样本的全局最小值和最大值 (在 C, H, W 维度上)
         # keepdim=True 保证维度不变，便于广播

@@ -2,7 +2,7 @@ from collections import OrderedDict
 from copy import copy
 import random
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
+sys.path.append("/mnt/inaisfs/data/home/tansy_criait/GasAgent-main")
 from safetensors.torch import load_file
 from functools import partial
 import torch.nn.functional as F
@@ -22,7 +22,7 @@ from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportCon
 from my_models.vae_sim import VAE
 from my_models.model_dispatch import dispatch_model
 from my_models.unet_2d_condition import UNet2DConditionModel
-from model import *
+from model_utils.model import *
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
                          dataset_std=[0.2520, 0.2128, 0.2093]):
@@ -248,18 +248,6 @@ class ImageGenerator:
 
     @staticmethod
     def normalize_samples(x):
-        """
-          对每个样本独立进行最大最小化归一化 (Min-Max Scaling)
-
-          参数:
-              x: Tensor, shape (B, C, H, W)
-              new_min: float, 缩放后的最小值
-              new_max: float, 缩放后的最大值
-              eps: float, 防止除以0的小值
-
-          返回:
-              x_scaled: Tensor, shape (B, C, H, W), 缩放后的数据
-          """
         x = (x / 2 + 0.5)
         # 计算每个样本的全局最小值和最大值 (在 C, H, W 维度上)
         # keepdim=True 保证维度不变，便于广播

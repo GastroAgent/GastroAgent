@@ -1,562 +1,513 @@
 [
   {
-    "question_id": 0,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃神经内分泌肿瘤/胃窦_01.2012031700022_8.jpg",
-    "gt": "胃神经内分泌肿瘤",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.3801751931508382,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082000107_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.0075966357059466345,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061800325_2_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.025195107329636812,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013073100216_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.015618006077905497,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_4_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.023634116475780804,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014062100005_7_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.04222224745899439,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2013123100169_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.0019607544139338038,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014061100231_5_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.008641735670001557,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500204_6_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.011662849535544714,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2012062700075_1_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.007095210021361709,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014082500119_17_masked_crop.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.015601476343969503,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2014020500092_5.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.005311457343244304,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠炎/01.2015041300348_10.jpg",
+    "gt": "十二指肠炎",
+    "pred": "十二指肠炎",
+    "dist": 0.19201771914958954,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019110400474_36.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0001380598017325004,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500001_19.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.004521401754269998,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019090600163_10.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00046950966740647954,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017042400169_30.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00021004641894251108,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019061200017_21.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.016576083170043096,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020030400156_22.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00028280631846023933,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032500508_17.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00018370896577835083,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2018051800186_16.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 1.5956873912364244,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017112900359_5.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠正常",
+    "dist": 1.2940223453462951,
     "correct": false
   },
   {
-    "question_id": 1,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃神经内分泌肿瘤/胃角_01.2017012000180_16.jpg",
-    "gt": "胃神经内分泌肿瘤",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 0.27000849694013596,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019032900490_17.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.004936775296098656,
     "correct": true
   },
   {
-    "question_id": 2,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃神经内分泌肿瘤/胃体_01.2017110300152_21.jpg",
-    "gt": "胃神经内分泌肿瘤",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 1.8242117886741955,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019070800577_13.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00028993328063127893,
     "correct": true
   },
   {
-    "question_id": 3,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2011011900102_4.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.009120893431827426,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020040200398_14.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0010364046320319176,
     "correct": true
   },
   {
-    "question_id": 4,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2011100600415_3.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.3867141008377075,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2020060500373_15.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0009809972640747826,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019120600502_10.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00884986926232361,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017070300199_52.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.0012683869960407417,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2019121600205_14.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 1.3716602584140167,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠副乳头/十二指肠_01.2017020700237_16.jpg",
+    "gt": "十二指肠副乳头",
+    "pred": "十二指肠副乳头",
+    "dist": 0.00022702223375543125,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2020020600087_9_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.008775155215213696,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019110510022_19_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.02116635659088691,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2005011000184_2_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.000853792803051571,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_71.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.06214811218281587,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2019112710008_62.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.012681707312973836,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2008070400101_9_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.004088147606429023,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠溃疡/01.2012082100312_2_masked_crop.jpg",
+    "gt": "十二指肠溃疡",
+    "pred": "十二指肠溃疡",
+    "dist": 0.005160618146571021,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017030700151_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0023646365540723004,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2010011800079_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0034200982190668583,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2013030900033_6.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00015352565484742323,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012091700106_10.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.001099522691220045,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014021400056_1.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.003183730451079706,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014031400012_1.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0013327439923563765,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_62.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0011884205353756745,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_27.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0010058561456389725,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2019011400527_5.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00026036919249842566,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017092800163_13.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00032720565407847363,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012051000068_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00033747340785339475,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2014042900215_10.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.002184295570865894,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00046232583311696845,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017072700295_29.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0003933906555175781,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2008021900243_4.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00030576395026097697,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2016080900175_60.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.00029280971890936297,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2012032000291_3.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.0004050890759875377,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠正常/01.2017090700043_5.jpg",
+    "gt": "十二指肠正常",
+    "pred": "十二指肠正常",
+    "dist": 0.002131684683263302,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2011040400026_16_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠钩虫",
+    "dist": 0.0018181006113688152,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2013061300345_1_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠炎",
+    "dist": 0.007102998216093208,
     "correct": false
   },
   {
-    "question_id": 5,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2015091900012_12.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.1382716248423511,
-    "correct": true
-  },
-  {
-    "question_id": 6,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2018122900152_21.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.2669073681657513,
-    "correct": true
-  },
-  {
-    "question_id": 7,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2010120800178_1.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.0818873080125589,
-    "correct": true
-  },
-  {
-    "question_id": 8,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2010070300007_14.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.0001533190480245139,
-    "correct": true
-  },
-  {
-    "question_id": 9,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2010011400085_4.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 1.384266306956609,
-    "correct": true
-  },
-  {
-    "question_id": 10,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2019011700328_3.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 1.0795024236043294,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠钩虫/01.2006032100083_1_masked_crop.jpg",
+    "gt": "十二指肠钩虫",
+    "pred": "十二指肠溃疡",
+    "dist": 0.031647300347685814,
     "correct": false
   },
   {
-    "question_id": 11,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（A1期）/01.2010052800328_3.jpg",
-    "gt": "胃窦溃疡（A1期）",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 0.05061718526606759,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019061200462_36_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠球部息肉",
+    "dist": 0.48431401847240824,
     "correct": true
   },
   {
-    "question_id": 12,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2014040900403_8.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.0062494439068056335,
-    "correct": true
-  },
-  {
-    "question_id": 13,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2008031100087_3.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.007019503940682625,
-    "correct": true
-  },
-  {
-    "question_id": 14,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2013121900233_9.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.006763696825752656,
-    "correct": true
-  },
-  {
-    "question_id": 15,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2020051400039_5.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.011271587650602063,
-    "correct": true
-  },
-  {
-    "question_id": 16,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2018071900328_21.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.29180536372587085,
-    "correct": true
-  },
-  {
-    "question_id": 17,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2011060700275_1.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.0026175339880865067,
-    "correct": true
-  },
-  {
-    "question_id": 18,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2014031700187_3.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.0017752170582146694,
-    "correct": true
-  },
-  {
-    "question_id": 19,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2015112300260_25.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.0011661371099762619,
-    "correct": true
-  },
-  {
-    "question_id": 20,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/残胃炎伴胆汁反流/01.2017041100201_5.jpg",
-    "gt": "残胃炎伴胆汁反流",
-    "pred": "残胃炎伴胆汁反流",
-    "dist": 0.0014421781136964758,
-    "correct": true
-  },
-  {
-    "question_id": 21,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2016030400061_18.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 1.034728475458299,
-    "correct": true
-  },
-  {
-    "question_id": 22,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2012120700065_6.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 0.7806117932001749,
-    "correct": true
-  },
-  {
-    "question_id": 23,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2010051100157_3.jpg",
-    "gt": "皮革胃",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 1.2423229813575745,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_22_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.0029678186983801425,
     "correct": false
   },
   {
-    "question_id": 24,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2016030400061_53.jpg",
-    "gt": "皮革胃",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 0.5521190365155538,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2015081200085_20_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.0060250284150242805,
     "correct": false
   },
   {
-    "question_id": 25,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2014052900191_9.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 3.5197596748669944,
-    "correct": true
-  },
-  {
-    "question_id": 26,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2012022300111_16.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 1.1978221895794074,
-    "correct": true
-  },
-  {
-    "question_id": 27,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2014052900191_7.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 0.6615024035175642,
-    "correct": true
-  },
-  {
-    "question_id": 28,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2011031600042_4.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 0.310769472271204,
-    "correct": true
-  },
-  {
-    "question_id": 29,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2009072800085_2.jpg",
-    "gt": "皮革胃",
-    "pred": "皮革胃",
-    "dist": 0.4398225446542104,
-    "correct": true
-  },
-  {
-    "question_id": 30,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2010091600177_9.jpg",
-    "gt": "皮革胃",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 5.043484608332316,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2019072400503_23_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.009250370707983771,
     "correct": false
   },
   {
-    "question_id": 31,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/皮革胃/01.2016021500067_32.jpg",
-    "gt": "皮革胃",
-    "pred": "胃神经内分泌肿瘤",
-    "dist": 3.0280399322509766,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2012050800159_13_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠炎",
+    "dist": 0.00025579133701588336,
     "correct": false
   },
   {
-    "question_id": 32,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2019102900165_27.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.05420456329735165,
-    "correct": true
-  },
-  {
-    "question_id": 33,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2020060100172_39.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.005422464959944288,
-    "correct": true
-  },
-  {
-    "question_id": 34,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2019102900165_21.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.07969667315552442,
-    "correct": true
-  },
-  {
-    "question_id": 35,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2019010200315_5.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.05197766826798519,
-    "correct": true
-  },
-  {
-    "question_id": 36,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2020061000103_52.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.0043617090365539,
-    "correct": true
-  },
-  {
-    "question_id": 37,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2019071000285_55.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.3176101902499795,
-    "correct": true
-  },
-  {
-    "question_id": 38,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2019022600309_9.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.0006176842644991768,
-    "correct": true
-  },
-  {
-    "question_id": 39,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2020061000395_147.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.469436359530467,
-    "correct": true
-  },
-  {
-    "question_id": 40,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃MALT淋巴瘤/01.2018050900308_4.jpg",
-    "gt": "胃MALT淋巴瘤",
-    "pred": "胃MALT淋巴瘤",
-    "dist": 0.000889206004406636,
-    "correct": true
-  },
-  {
-    "question_id": 41,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2008032100060_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.0012677192668585728,
-    "correct": true
-  },
-  {
-    "question_id": 42,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2004112200110_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.00032639503479003906,
-    "correct": true
-  },
-  {
-    "question_id": 43,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2004102600060_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.0005783558105273793,
-    "correct": true
-  },
-  {
-    "question_id": 44,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2005012600093_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.014256080612540245,
-    "correct": true
-  },
-  {
-    "question_id": 45,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2004112500035_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.0005135694991622586,
-    "correct": true
-  },
-  {
-    "question_id": 46,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2004112500110_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.0057057539621988935,
-    "correct": true
-  },
-  {
-    "question_id": 47,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2008010700103_2.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.017247009401520092,
-    "correct": true
-  },
-  {
-    "question_id": 48,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2005012400202_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.00024352073645180403,
-    "correct": true
-  },
-  {
-    "question_id": 49,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/正常胃窦/01.2004112500082_1.jpg",
-    "gt": "正常胃窦",
-    "pred": "正常胃窦",
-    "dist": 0.0037474314231076278,
-    "correct": true
-  },
-  {
-    "question_id": 50,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2012080900021_3.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.19931095248709121,
-    "correct": true
-  },
-  {
-    "question_id": 51,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2012100900234_1.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.04958281839085051,
-    "correct": true
-  },
-  {
-    "question_id": 52,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2013051400022_9.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.04644548248203743,
-    "correct": true
-  },
-  {
-    "question_id": 53,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2018081500166_25.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.12122526566963643,
-    "correct": true
-  },
-  {
-    "question_id": 54,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2011092600178_3.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.25829916447401047,
-    "correct": true
-  },
-  {
-    "question_id": 55,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2014123000417_18.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.0012790521141141653,
-    "correct": true
-  },
-  {
-    "question_id": 56,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2014123000417_7.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.001569445865849654,
-    "correct": true
-  },
-  {
-    "question_id": 57,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/胃窦溃疡（S1期）/01.2016031500189_5.jpg",
-    "gt": "胃窦溃疡（S1期）",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.02078089878583948,
-    "correct": true
-  },
-  {
-    "question_id": 58,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2015111600074_21.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.23336125910282135,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2018120500667_29_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠溃疡",
+    "dist": 6.355761806170146,
     "correct": false
   },
   {
-    "question_id": 59,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2017012400043_9.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "胃窦溃疡（A1期）",
-    "dist": 1.562819202740987,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠球部息肉/01.2020022700092_31_masked_crop.jpg",
+    "gt": "十二指肠球部息肉",
+    "pred": "十二指肠溃疡",
+    "dist": 7.750725110371907,
     "correct": false
   },
   {
-    "question_id": 60,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2015121400473_15.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.12325034290552139,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2013110600248_8_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.013492393676036349,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_4_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.04271717121203741,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2018120600324_18_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.01973646454926994,
     "correct": false
   },
   {
-    "question_id": 61,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2014081100175_11.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.177679605782032,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2005032400064_3.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.2301041684889545,
     "correct": true
   },
   {
-    "question_id": 62,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2017081400301_4.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.021777248630921047,
-    "correct": true
-  },
-  {
-    "question_id": 63,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2014061100412_8.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.33485978469252586,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008040300021_3_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.4210016056895256,
     "correct": false
   },
   {
-    "question_id": 64,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2017082100125_7.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "胃窦溃疡（S1期）",
-    "dist": 0.21806266903877258,
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2017031400136_7_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 1.2467241783936818,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2008120300221_4.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.1711063424105911,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2014010900309_11_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠憩室",
+    "dist": 0.039867704190934695,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/final_eval_img_doctor_check_cut/十二指肠憩室/01.2019011900136_27_masked_crop.jpg",
+    "gt": "十二指肠憩室",
+    "pred": "十二指肠正常",
+    "dist": 0.004516220147100587,
     "correct": false
-  },
-  {
-    "question_id": 65,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2018061400168_5.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.16063037514686584,
-    "correct": true
-  },
-  {
-    "question_id": 66,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2014040400018_8.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.13492149161174893,
-    "correct": true
-  },
-  {
-    "question_id": 67,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2016090200001_4.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 1.3761765640228987,
-    "correct": true
-  },
-  {
-    "question_id": 68,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2016092800055_17.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.3484060565630595,
-    "correct": true
-  },
-  {
-    "question_id": 69,
-    "x0": "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/胃_doctor/慢性非萎缩性胃窦炎伴痘疹/01.2016061400085_4.jpg",
-    "gt": "慢性非萎缩性胃窦炎伴痘疹",
-    "pred": "慢性非萎缩性胃窦炎伴痘疹",
-    "dist": 0.035128276174267135,
-    "correct": true
   }
 ]

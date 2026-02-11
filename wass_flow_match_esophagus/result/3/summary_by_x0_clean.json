@@ -1,46 +1,46 @@
 {
   "overall": {
-    "accuracy": 0.8571428571428571,
-    "correct": 60,
-    "total": 70
+    "accuracy": 0.7884615384615384,
+    "correct": 41,
+    "total": 52
   },
   "per_label": {
-    "慢性非萎缩性胃窦炎伴痘疹": {
-      "accuracy": 0.5833333333333334,
-      "correct": 7,
-      "total": 12
-    },
-    "正常胃窦": {
+    "Esophageal Glycogenic Acanthosis": {
       "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
-    },
-    "残胃炎伴胆汁反流": {
-      "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
-    },
-    "皮革胃": {
-      "accuracy": 0.7272727272727273,
       "correct": 8,
-      "total": 11
+      "total": 8
     },
-    "胃MALT淋巴瘤": {
+    "嗜酸食管炎": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 4
+    },
+    "巴雷特食管": {
       "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
+      "correct": 8,
+      "total": 8
     },
-    "胃神经内分泌肿瘤": {
-      "accuracy": 0.6666666666666666,
+    "正常": {
+      "accuracy": 0.3333333333333333,
       "correct": 2,
-      "total": 3
+      "total": 6
     },
-    "胃窦溃疡（A1期）": {
-      "accuracy": 0.8888888888888888,
+    "食管炎B级": {
+      "accuracy": 1.0,
+      "correct": 6,
+      "total": 6
+    },
+    "食管炎C级": {
+      "accuracy": 0.25,
+      "correct": 1,
+      "total": 4
+    },
+    "食管炎D级": {
+      "accuracy": 1.0,
       "correct": 8,
-      "total": 9
+      "total": 8
     },
-    "胃窦溃疡（S1期）": {
+    "食管癌": {
       "accuracy": 1.0,
       "correct": 8,
       "total": 8

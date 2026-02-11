@@ -1,14 +1,10 @@
-from copy import deepcopy
+from copy import deepcopy, copy
 import os
 from timm.models.vision_transformer import VisionTransformer
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
-import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 from collections import OrderedDict
-from utils.data_loader import MedicalDataset, MedicalJsonDataset
-from utils.data_utils import *
 from functools import partial
+from safetensors.torch import load_file
 import torch
 import torch.nn as nn
 import argparse
@@ -16,35 +12,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import json
-from torchvision import transforms
 from torchvision import transforms as T
 from torchvision.utils import save_image, make_grid
-from torchcfm.models.unet.unet import UNetModelWrapper
-from torch.utils.data import DataLoader
-# ===== 对照度量：L2_RMS / LPIPS / SWD =====
-import torch
 import torch.nn.functional as F
-import numpy as np
 from PIL import Image
-from data_loader_hiaug import MedicalCLIPTinyAUGDataset
 import ot
-from my_models.unet_2d_condition import UNet2DConditionModel
-from my_models.model_dispatch import dispatch_model
 from diffusers import AutoencoderKL
-from transformers import ChineseCLIPConfig as CLIPConfig
-from transformers import ChineseCLIPProcessor as CLIPProcessor
-from transformers import ChineseCLIPModel as CLIPModel
 from transformers import AutoTokenizer, AutoModel, AutoConfig, ChineseCLIPTextModel, ChineseCLIPTextConfig
-from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
+import uuid
+import sys
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
-# ---- LPIPS 初始化（若没有安装会跳过） ----
-_lpips_model = None
-try:
-    import lpips  # pip install lpips
-
-    # _lpips_model = lpips.LPIPS(net='alex').to('cuda' if torch.cuda.is_available() else 'cpu').eval()
-except Exception as e:
-    print("[WARN] LPIPS 未安装或初始化失败，将跳过 LPIPS 计算：", e)
+from utils.data_loader import MedicalJsonDataset
+# from utils.data_utils_test import *
+from model_utils.my_loss import *
+from my_models.unet_2d_condition import UNet2DConditionModel
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
                          dataset_std=[0.2520, 0.2128, 0.2093]):
@@ -60,142 +42,6 @@ def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.228
     # Apply the transformations
     processed_image = transform(image)
     return processed_image
-
-from geomloss import SamplesLoss
-# loss_fn = SamplesLoss("laplacian", p=2, blur=0.1**0.5)
-loss_fn = SamplesLoss("sinkhorn", p=2, blur=0.1**0.5)
-# sinkhorn hausdorff energy gaussian laplacian
-def sinkhorn_loss(bx, bx1, epsilon=0.1, n_iter=50, reduction='mean',  **kwargs):
-    """
-    Compute Sinkhorn loss (approximate Wasserstein distance) between two sets of samples.
-    
-    Args:
-        bx (Tensor): [B, N, D] or [B, C, H, W] or [B, D]
-        bx1 (Tensor): [B, N, D] or [B, C, H, W] or [B, D]
-        epsilon (float): Entropy regularization strength
-        n_iter (int): Number of Sinkhorn iterations
-        reduction (str): 'mean' or 'sum' for batch reduction
-
-    Returns:
-        Tensor: Scalar loss
-    """
-    if bx.ndim == 2:
-        B, D = bx.shape
-        H = W = int((D // 4) ** 0.5)
-        bx = bx.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx.ndim == 4:
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx.ndim == 3:
-        bx = bx.unsqueeze(0)
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-
-    if bx1.ndim == 2:
-        B, D = bx1.shape
-        H = W = int((D // 4) ** 0.5)
-        bx1 = bx1.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx1.ndim == 4:
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx1.ndim == 3:
-        bx1 = bx1.unsqueeze(0)
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    loss = loss_fn(bx, bx1)
-    return loss
-
-@torch.no_grad()
-def cal_wasserstein_loss(x, x1, **kwargs):
-    wass_loss = sinkhorn_loss(x, x1, **kwargs)
-    # wass_loss = wass_loss.sum()
-    return wass_loss
-
-# @torch.no_grad()
-# def sinkhorn_loss(bx, bx1, epsilon=0.1, n_iter=25, reduction='mean', **kwargs):
-#     """
-#     Compute Sinkhorn loss (approximate Wasserstein distance) between two sets of samples.
-    
-#     Args:
-#         bx (Tensor): [B, N, D] or [B, C, H, W] or [B, D]
-#         bx1 (Tensor): [B, N, D] or [B, C, H, W] or [B, D]
-#         epsilon (float): Entropy regularization strength
-#         n_iter (int): Number of Sinkhorn iterations
-#         reduction (str): 'mean' or 'sum' for batch reduction
-
-#     Returns:
-#         Tensor: Scalar loss
-#     """
-#     # Reshape input to [B, N, D]
-#     # Reshape input to [B, N, D]
-#     if bx.ndim == 2:
-#         B, D = bx.shape
-#         H = W = int((D // 4) ** 0.5)
-#         bx = bx.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-#     elif bx.ndim == 4:
-#         B, C, H, W = bx.shape
-#         bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-#     elif bx.ndim == 3:
-#         bx = bx.unsqueeze(0)
-#         B, C, H, W = bx.shape
-#         bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-
-#     if bx1.ndim == 2:
-#         B, D = bx1.shape
-#         H = W = int((D // 4) ** 0.5)
-#         bx1 = bx1.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-#     elif bx1.ndim == 4:
-#         B, C, H, W = bx1.shape
-#         bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-#     elif bx1.ndim == 3:
-#         bx1 = bx1.unsqueeze(0)
-#         B, C, H, W = bx1.shape
-#         bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-
-#     B, N, D = bx.shape
-#     _, M, _ = bx1.shape
-
-#     # Compute cost matrix: [B, N, M]
-#     x2 = torch.sum(bx**2, dim=-1, keepdim=True)                    # [B, N, 1]
-#     y2 = torch.sum(bx1**2, dim=-1, keepdim=True)                   # [B, M, 1]
-#     cross = torch.bmm(bx, bx1.transpose(-1, -2))                   # [B, N, M]
-#     cost_matrix = x2 - 2 * cross + y2.transpose(-1, -2)            # [B, N, M]
-#     cost_matrix = torch.clamp(cost_matrix, min=0.0)
-
-#     # Kernel matrix
-#     K = torch.exp(-cost_matrix / epsilon)                          # [B, N, M]
-
-#     # Uniform marginal distributions
-#     a = torch.ones(B, N, device=bx.device) / N                     # [B, N]
-#     b = torch.ones(B, M, device=bx.device) / M                     # [B, M]
-
-#     # Initialize dual variables
-#     u = torch.ones_like(a)                                         # [B, N]
-#     v = torch.ones_like(b)                                         # [B, M]
-
-#     # Sinkhorn iterations
-#     for _ in range(n_iter):
-#         u = a / (torch.bmm(K, v.unsqueeze(-1)).squeeze(-1) + 1e-8)  # [B, N]
-#         v = b / (torch.bmm(K.transpose(-1,-2), u.unsqueeze(-1)).squeeze(-1) + 1e-8)  # [B, M]
-
-#     # Compute transport plan
-#     P = u.unsqueeze(-1) * K * v.unsqueeze(-2)  # [B, N, M]
-
-#     # Compute loss
-#     loss = torch.sum(P * cost_matrix, dim=(1,2))  # [B]
-
-#     if reduction == 'mean':
-#         return loss.mean()
-#     elif reduction == 'sum':
-#         return loss.sum()
-#     else:
-#         return loss
-
-# @torch.no_grad()
-# def cal_wasserstein_loss(x, x1, **kwargs):
-#     wass_loss = sinkhorn_loss(x, x1, **kwargs)
-#     # wass_loss = wass_loss.sum()
-#     return float(wass_loss.cpu().item())
 
 class ImageGenerator:
     def __init__(self, args):
@@ -214,8 +60,7 @@ class ImageGenerator:
         self.process_single_image = process_single_image
         self._setup_directories()
         self.intermediate_images = []  # Store intermediate images
-        self.text_embeds_map = {}
-        self.FM = OptimalTransportConditionalFlowMatcher(sigma=0, ot_method='exact')
+        os.makedirs(self.args.temp, exist_ok = True)
         
     def _setup_directories(self):
         """Create necessary directories for outputs"""
@@ -228,7 +73,7 @@ class ImageGenerator:
         """Initialize and load the model"""
         if not self.use_gt_vt:
             config = json.load(open(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/unet/config.json',
+                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/unet/config.json',
                 'r'))
             net_model = UNet2DConditionModel(**config)
             # class_embedding = nn.Embedding(num_class_embeds, time_embed_dim)
@@ -240,21 +85,28 @@ class ImageGenerator:
                 net_model.load_state_dict(state_dict['net_model'], strict=False)
 
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/vae').to(
+                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vae').to(
                 device='cuda').eval()
+    
             # vae.load_state_dict(torch.load('/dev/shm/jmf/mllm_weight/sd-ema-vae_weight/sd-vae_epoch_ema.pth'), strict=False)
-            text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/text_encoder/config.json','r'))
+            text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_encoder/config.json','r'))
             text_model_config = ChineseCLIPTextConfig(**text_model_config)
             text_model = ChineseCLIPTextModel(text_model_config).eval()
             text_tokenizer = AutoTokenizer.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/text_encoder', use_fast=True)
+                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_encoder', use_fast=True)
+            try:
+                state_dict = load_file("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_encoder/model.safetensors")
+                text_model.load_state_dict(state_dict)
+            except:
+                pass
             if 'text_model' in state_dict:
                 text_model.load_state_dict(state_dict['text_model'], strict=False)
 
             # Define the model (ensure this matches your model's architecture)
             vision_model = VisionTransformer(patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4,
-                                             qkv_bias=True,
-                                             norm_layer=partial(nn.LayerNorm, eps=1e-6))
+                                             qkv_bias=False, 
+                                             norm_layer=partial(nn.LayerNorm, eps=1e-6)).eval()
+            vision_model.load_state_dict(torch.load("/mnt/inaisfs/data/home/tansy_criait/new_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin", weights_only=False), strict=False)
             if 'vision_model' in state_dict:
                 vision_model.load_state_dict(state_dict['vision_model'], strict=False)
 
@@ -283,30 +135,26 @@ class ImageGenerator:
                 processed_image = transform(image)
                 return processed_image
             
-            if  self.args.wass_model_path:
-                from train_vae_with_wass import TripletNetwork
-                if 'attention.pt' in self.args.wass_model_path:
-                    model = TripletNetwork(pretrained=True, freeze_base=False, model='attention')
-                else:
-                    model = TripletNetwork(pretrained=True, freeze_base=False, model='resnet34')
+            if self.args.wass_model_path:
+                print(self.args.wass_model_path)
+                model = TripletNetwork(pretrained=False, freeze_base=False, model='attention', dy=True)
                 state_dict = torch.load(self.args.wass_model_path, weights_only=True)
-                model.load_state_dict(state_dict, strict=False)
+                model.load_state_dict(state_dict, strict=True)
                 model = model.to("cuda")
-                self.wass_model = model.eval()
-                self.wass_model.eval()
+                self.wass_model = model
+                # self.wass_model.eval()
                 
             elif 'wass_model' in state_dict:
-                from train_vae_with_wass import TripletNetwork
                 if self.args.wass_model_type == '':
                     self.args.wass_model_type = 'resnet34'
-                model = TripletNetwork(pretrained=True, freeze_base=False, model=self.args.wass_model_type)
+                model = TripletNetwork(pretrained=True, freeze_base=False, model=self.args.wass_model_type, dy=False)
                 model.load_state_dict(state_dict['wass_model'], strict=False)
                 model = model.to("cuda")
                 self.wass_model = model.eval()
                 self.wass_model.eval()
             else:   
                 self.wass_model = None
-            
+            print(self.args.sim_model_path)
             if self.args.sim_model_type == 'gme':
                 from gme_inference import GmeQwen2VL
                 model = GmeQwen2VL(self.args.sim_model_path, device="cuda:1")
@@ -343,14 +191,11 @@ class ImageGenerator:
                     return embeds[0] @ embeds[1].T
                 self.similarity = similarity
             elif self.args.sim_model_type == 'convnext':
-                import sys
-                sys.path.append("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/discriminator")
-                sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
-                sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
+                sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
                 from discriminator.train_latent_space import TripletNetwork
                 model = TripletNetwork(pretrained=True, freeze_base=False, model='convnext')
                 try:
-                    state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/discriminator/latent_model_weight/convnext.pt", weights_only=True)
+                    state_dict = torch.load(self.args.sim_model_path, weights_only=True)
                     model.load_state_dict(state_dict, strict=False)
                 except:
                     pass
@@ -359,9 +204,10 @@ class ImageGenerator:
                     if step == 0:
                         return 0
                     with torch.inference_mode():
-                        outputs = model.encode(torch.cat([image1, image2], dim=0).to(model.device), False)
-                        embeds = outputs.pooler_output
-                    embeds = F.normalize(embeds, p=2, dim=1)  # dim=1 表示对每个向量做归一化
+                        image1 = image1.to("cuda")
+                        image2 = image2.to("cuda")
+                        embeds = model.encode(torch.cat([image1, image2], dim=0), False)
+                        embeds = F.normalize(embeds, p=2, dim=1)  # dim=1 表示对每个向量做归一化
                     return embeds[0] @ embeds[1].T
                 self.similarity = similarity
             return net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image)
@@ -373,24 +219,12 @@ class ImageGenerator:
             vision_model = None
             process_single_image = None
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/vae').to(
+                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vae').to(
                 device='cuda').eval()
             return net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image)
 
     @staticmethod
     def normalize_samples(x):
-        """
-          对每个样本独立进行最大最小化归一化 (Min-Max Scaling)
-
-          参数:
-              x: Tensor, shape (B, C, H, W)
-              new_min: float, 缩放后的最小值
-              new_max: float, 缩放后的最大值
-              eps: float, 防止除以0的小值
-
-          返回:
-              x_scaled: Tensor, shape (B, C, H, W), 缩放后的数据
-          """
         x = (x / 2 + 0.5)
         x_min = x.amin(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)
         x_max = x.amax(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)
@@ -402,15 +236,18 @@ class ImageGenerator:
         x_scaled = (x - x_min) / scale
         return x_scaled
 
-    def store_intermediate(self, x, step_idx):
+    def store_intermediate(self, x, step_idx, need_decode=True):
         """Store intermediate generation steps"""
-        x = self.vae.decode(x / 0.18215).sample
-        samples = self.normalize_samples(x)
+        if need_decode:
+            x = self.vae.decode(x / 0.18215).sample
+            samples = self.normalize_samples(x)
+        else:
+            samples = x
         grid = make_grid(samples, nrow=samples.shape[0])
         grid_np = grid.cpu().numpy().transpose(1, 2, 0)
         self.intermediate_images.append((step_idx, grid_np))
 
-    def save_intermediate_grid(self, batch_idx):
+    def save_intermediate_grid(self, image_name):
         """Save all intermediate steps in a single matplotlib grid"""
         if not self.intermediate_images:
             return
@@ -423,7 +260,7 @@ class ImageGenerator:
         if num_steps == 1:
             axes = [axes]
 
-        fig.suptitle(f'Generation Progress (Batch {batch_idx})', fontsize=16)
+        fig.suptitle(f'Generation Progress', fontsize=16)
 
         for (step_idx, img), ax in zip(self.intermediate_images, axes):
             ax.imshow(img)
@@ -431,7 +268,7 @@ class ImageGenerator:
             ax.axis('off')
 
         plt.tight_layout()
-        save_path = os.path.join(self.intermediates_dir, f'progress_batch_{batch_idx:03d}.png')
+        save_path = os.path.join(self.intermediates_dir, f'{image_name}.png')
         plt.savefig(save_path, bbox_inches='tight', dpi=150)
         plt.close()
 
@@ -452,31 +289,35 @@ class ImageGenerator:
         imgcache = OrderedDict()
         use_gt_vt = self.args.use_gt_vt
         max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
-        temp = batch['x0_path'][0]
         step = len(trajectory) - 1
-        
-        def continue_strategy(image1: str, image2: str, step: int, method='direct', *args, **kwargs):
+        temp = x0.clone()
+
+        def continue_strategy(image1, image2, step: int, method='direct', *args, **kwargs):
             if step == 0:
                 return True
             
             if method == 'direct':
-                return self.similarity(temp, batch['x1_path'][0], step) < self.args.stop_beta 
+                self.sim = self.similarity(image1, image2, step)
+                return self.sim < self.args.stop_beta 
             elif method == 'diff':
-                current_sim = self.similarity(temp, batch['x1_path'][0], step)
+                current_sim = self.similarity(image1, image2, step)
                 diff_sim = current_sim - self.last_sim
                 self.last_sim = current_sim
+                self.sim = current_sim
                 return abs(diff_sim) > self.args.stop_beta 
             elif method == 'second_diff':
-                current_sim = self.similarity(temp, batch['x1_path'][0], step)
+                current_sim = self.similarity(image1, image2, step)
                 current_diff_sim = current_sim - self.last_sim
                 self.last_sim = current_sim
                 second_diff_sim = current_diff_sim - self.last_diff_sim
                 self.last_diff_sim = current_diff_sim
+                self.sim = current_sim
                 return abs(second_diff_sim) > self.args.stop_beta 
             else:
-                return self.similarity(temp, batch['x1_path'][0], step) < self.args.stop_beta 
+                self.sim = self.similarity(image1, image2, step)
+                return self.sim < self.args.stop_beta 
             
-        while continue_strategy(temp, batch['x1_path'][0], step, method = self.args.stop_method) and max_t <= self.args.num_steps and (self.args.fix_num_steps < 0 or step == 0): 
+        while continue_strategy(temp, x1, step, method = self.args.stop_method) and max_t <= self.args.num_steps and (self.args.fix_num_steps < 0 or step == 0): 
             x = x0
             step += 1
             dt = t_span[1] - t_span[0]
@@ -522,19 +363,15 @@ class ImageGenerator:
             if step in imgcache:
                 temp = imgcache[step]
             else:
-                img = self.vae.decode(x.to(self.vae.device) / 0.18215).sample
-                img = self.normalize_samples(img)
-                os.makedirs(f"{self.args.temp}/{batch_idx}", exist_ok=True)
-                imgcache[step] = temp = f"{self.args.temp}/{batch_idx}/{step}.jpg"
-                save_image(img, temp)
+                imgcache[step] = x.clone()
 
         for t_idx, (_, xt) in enumerate(sorted(ycache.items())): 
             if (t_idx + 1) % self.args.intermediate_freq == 0:
                 trajectory.append(xt.detach().clone())
         trajectory.append(x1.detach().clone())
-        return x, trajectory
+        return x, trajectory, copy(self.sim)
 
-    def heun_solver(self, x0, t_span, batch_idx, batch, pbar=None):
+    def heun_solver(self, x0, t_span, batch_idx, batch, pbar=None, max_t=None):
         """Heun's solver that saves and returns the full latent trajectory."""
         x1 = batch['x1']
         x0 = batch['x0']
@@ -546,35 +383,51 @@ class ImageGenerator:
         ycache = OrderedDict()
         vcache = OrderedDict()
         imgcache = OrderedDict()
-        max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
-        temp = batch['x0_path'][0]
+        if max_t is None:
+            max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
+        temp = x0.clone()
         self.last_sim = 0
         self.last_diff_sim = 0
         step = len(trajectory) - 1
 
-        def continue_strategy(image1: str, image2: str, step: int, method='direct', *args, **kwargs):
+        def continue_strategy(image1, image2, step: int, method='direct', *args, **kwargs):
             if step == 0:
                 return True
-            
+            if not self.args.sim_model_type == 'convnext' and not isinstance(image1, str):
+                img = self.vae.decode(image1.to(self.vae.device) / 0.18215).sample
+                img = self.normalize_samples(img)
+                save_image(img, self.args.temp + '/x0.jpg')
+                image1 = self.args.temp + '/x0.jpg'
+                
+            if not self.args.sim_model_type == 'convnext' and not isinstance(image2, str):
+                img = self.vae.decode(image2.to(self.vae.device) / 0.18215).sample
+                img = self.normalize_samples(img)
+                save_image(img, self.args.temp + '/x1.jpg')
+                image2 = self.args.temp + '/x1.jpg'
+                
             if method == 'direct':
-                return self.similarity(temp, batch['x1_path'][0], step) < self.args.stop_beta 
+                self.sim = self.similarity(image1, image2, step)
+                return self.sim < self.args.stop_beta 
             elif method == 'diff':
-                current_sim = self.similarity(temp, batch['x1_path'][0], step)
+                current_sim = self.similarity(image1, image2, step)
                 diff_sim = current_sim - self.last_sim
                 self.last_sim = current_sim
+                self.sim = current_sim
                 return abs(diff_sim) > self.args.stop_beta 
             elif method == 'second_diff':
-                current_sim = self.similarity(temp, batch['x1_path'][0], step)
+                current_sim = self.similarity(image1, image2, step)
                 current_diff_sim = current_sim - self.last_sim
                 self.last_sim = current_sim
                 second_diff_sim = current_diff_sim - self.last_diff_sim
                 self.last_diff_sim = current_diff_sim
+                self.sim = current_sim
                 return abs(second_diff_sim) > self.args.stop_beta 
             else:
-                return self.similarity(temp, batch['x1_path'][0], step) < self.args.stop_beta 
+                self.sim = self.similarity(image1, image2, step)
+                return self.sim < self.args.stop_beta 
             
-        while continue_strategy(temp, batch['x1_path'][0], step, method = self.args.stop_method) and max_t <= self.args.num_steps and (self.args.fix_num_steps < 0 or step == 0):
-            x = x0
+        while continue_strategy(temp, x1, step, method = self.args.stop_method) and max_t <= self.args.num_steps and (self.args.fix_num_steps < 0 or step == 0): 
+            x = x0.to(self.net_model.device)
             step += 1
             print(f"Current Need Iteration is {max_t}")
             dt = t_span[1] - t_span[0]
@@ -604,34 +457,21 @@ class ImageGenerator:
                         x = x + (dx1 + dx2) * dt / 2
                         ycache[next_key_t] = x.clone()
 
-                    # ### 查看临时的 Temp 图像。
-                    # if (str(step) + '_' +next_key_t) in imgcache:
-                    #     temp = imgcache[(str(step) + '_' +next_key_t)]
-                    # else:
-                    #     img = self.vae.decode(x.to(self.vae.device) / 0.18215).sample
-                    #     img = self.normalize_samples(img)
-                    #     os.makedirs(f"{self.args.temp}/{batch_idx}", exist_ok=True)
-                    #     imgcache[(str(step) + '_' +next_key_t)] = temp = f"{self.args.temp}/{batch_idx}/{(str(step) + '_' +next_key_t)}.jpg"
-                    #     save_image(img, temp)  
             max_t *= 2
             t_span = torch.linspace(0, 1, max_t + 1, device=self.device)
             
             if step in imgcache:
                 temp = imgcache[step]
             else:
-                img = self.vae.decode(x.to(self.vae.device) / 0.18215).sample
-                img = self.normalize_samples(img)
-                os.makedirs(f"{self.args.temp}/{batch_idx}", exist_ok=True)
-                imgcache[step] = temp = f"{self.args.temp}/{batch_idx}/{step}.jpg"
-                save_image(img, temp)
+                temp = x.clone()
         
         for t_idx, (_, xt) in enumerate(sorted(ycache.items())): 
             if (t_idx + 1) % self.args.intermediate_freq == 0:
                 trajectory.append(xt.detach().clone())
         trajectory.append(x1.detach().clone())
-        return x, trajectory
+        return x, trajectory, copy(self.sim)
 
-    def save_batch(self, samples, batch_idx, start_idx):
+    def save_batch(self, samples, image_name):
         """Save a batch of generated samples"""
         # Save individual samples
         output_dir = os.path.join(
@@ -639,11 +479,12 @@ class ImageGenerator:
             f'samples'
         )
         os.makedirs(output_dir, exist_ok=True)
+        start_idx = 0
         for i, sample in enumerate(samples):
             sample_idx = start_idx + i
             individual_path = os.path.join(
                 output_dir,
-                f'sample_{sample_idx:05d}.png'
+                f'{image_name}.png'
             )
             save_image(sample, individual_path)
 
@@ -656,7 +497,7 @@ class ImageGenerator:
             os.makedirs(output_dir, exist_ok=True)
             grid_path = os.path.join(
                 output_dir,
-                f'grid_batch_{batch_idx:03d}.png'
+                f'grid_batch_{image_name}.png'
             )
             save_image(
                 samples,
@@ -666,172 +507,74 @@ class ImageGenerator:
 
         # Save intermediate progress grid
         if self.args.save_intermediates:
-            self.save_intermediate_grid(batch_idx)
+            self.save_intermediate_grid(image_name)
 
-    def _flatten_features(self, z, add_coords=False, coord_lambda=0.0):
-        """
-        z: [C, H, W] (单张) 或 [B, C, H, W]（批）
-        返回： [N, D] 或 [B, N, D]，其中 D = C (+ 2 如果拼空间坐标)
-        """
-        if z.dim() == 4:
-            B, C, H, W = z.shape
-            feats = z.permute(0, 2, 3, 1).reshape(B, H * W, C)  # [B,N,C]
-            if add_coords:
-                yy, xx = torch.meshgrid(
-                    torch.linspace(0, 1, H, device=z.device),
-                    torch.linspace(0, 1, W, device=z.device),
-                    indexing='ij'
-                )
-                coords = torch.stack([yy, xx], dim=-1).reshape(1, H * W, 2).repeat(B, 1, 1)  # [B,N,2]
-                feats = torch.cat([coord_lambda * coords, feats], dim=-1)  # [B,N,C+2]
-            return feats  # [B,N,D]
-        else:
-            C, H, W = z.shape
-            feats = z.permute(1, 2, 0).reshape(H * W, C)  # [N,C]
-            if add_coords:
-                yy, xx = torch.meshgrid(
-                    torch.linspace(0, 1, H, device=z.device),
-                    torch.linspace(0, 1, W, device=z.device),
-                    indexing='ij'
-                )
-                coords = torch.stack([yy, xx], dim=-1).reshape(H * W, 2)  # [N,2]
-                feats = torch.cat([coord_lambda * coords, feats], dim=-1)  # [N,C+2]
-            return feats  # [N,D]
-
-    def _random_subsample(self, X, max_points):
-        """
-        X: [N, D] 或 [B, N, D]
-        返回同形状但 N' = min(N, max_points)
-        """
-        if X.dim() == 3:
-            B, N, D = X.shape
-            n_take = min(N, max_points)
-            idx = torch.randperm(N, device=X.device)[:n_take]
-            return X[:, idx]  # [B, n_take, D]
-        else:
-            N, D = X.shape
-            n_take = min(N, max_points)
-            idx = torch.randperm(N, device=X.device)[:n_take]
-            return X[idx]  # [n_take, D]
-
-    def sinkhorn_w2_between(self, *, z1, z2, max_points=4096, epsilon=0.05,
-                            add_coords=False, coord_lambda=0.0):
-        """
-        计算两帧特征的 Sinkhorn W2（对 batch 取平均）。
-        z1, z2: [B,C,H,W] 或 [C,H,W]
-        返回：标量 float（W2）
-        """
-        F1 = self._flatten_features(z1, add_coords=add_coords, coord_lambda=coord_lambda) # [H * W, C]
-        F2 = self._flatten_features(z2, add_coords=add_coords, coord_lambda=coord_lambda) # [H * W, C]
-
-        if F1.dim() == 3:  # batched
-            B = F1.shape[0]
-            w2_list = []
-            for b in range(B):
-                X = self._random_subsample(F1[b], max_points)  # [N', D]
-                Y = self._random_subsample(F2[b], max_points)  # [N', D]
-                Xn = X.detach().cpu().numpy()
-                Yn = Y.detach().cpu().numpy()
-                Cmat = ot.dist(Xn, Yn, metric="euclidean") ** 2  # [N',N']
-                a = np.ones(Xn.shape[0]) / Xn.shape[0]
-                b = np.ones(Yn.shape[0]) / Yn.shape[0]
-                W2_sq = ot.sinkhorn2(a, b, Cmat, reg=epsilon, numItermax=200)  # 近似 W2^2
-                w2_list.append(float(np.sqrt(W2_sq)))
-            return float(np.mean(w2_list))
-        else:  # single
-            X = self._random_subsample(F1, max_points)
-            Y = self._random_subsample(F2, max_points)
-            Xn = X.detach().cpu().numpy()
-            Yn = Y.detach().cpu().numpy()
-            Cmat = ot.dist(Xn, Yn, metric="euclidean") ** 2
-            a = np.ones(Xn.shape[0]) / Xn.shape[0]
-            b = np.ones(Yn.shape[0]) / Yn.shape[0]
-            W2_sq = ot.sinkhorn2(a, b, Cmat, reg=epsilon, numItermax=200)
-            return float(np.sqrt(W2_sq))
+    def create_discriminator(self, device='cuda'):
+        from train_dis_off import DinoV3Discriminator
+        discriminator = DinoV3Discriminator(device=device)
+        discriminator.device = device
+        discriminator_checkpoints = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/discriminator/general_discriminator.pt"
+        try:
+            discriminator.load_state_dict(torch.load(discriminator_checkpoints, map_location='cpu'), strict=True)
+        except:
+            state_dict = torch.load(discriminator_checkpoints, map_location='cpu')
+            new_state_dict = {}
+            for name in state_dict:
+                new_state_dict[name.replace("module.", "")] = state_dict[name]
+            discriminator.load_state_dict(new_state_dict, strict=True)
+        discriminator = discriminator.to(device)
+        self.discriminator = discriminator
+        self.discriminator.eval()
 
     @torch.no_grad()
-    def _to_minus1_1(self, img):
-        """
-        img: [B,3,H,W]，数值可能在 [-1,1] 或 [0,1]
-        统一转为 LPIPS 需要的 [-1,1]
-        """
-        mn, mx = img.min().item(), img.max().item()
-        if mx <= 1.0 and mn >= 0.0:
-            img = img * 2.0 - 1.0
-        return img.clamp(-1, 1)
-
-    @torch.no_grad()
-    def compute_lpips_from_latents(self, z1, z2, vae):
-        """
-        z1, z2: [B,C,H,W] 的 VAE latent
-        vae.decode 期望输入是 latent / 0.18215 （SD 约定）
-        返回：标量（对 batch 求平均）
-        """
-        if _lpips_model is None:
-            return None
-        dev_img = next(_lpips_model.parameters()).device
-        # 解码到图像空间，范围约在 [-1,1]
-        x1 = self.vae.decode(z1.to(vae.device) / 0.18215).sample
-        x2 = self.vae.decode(z2.to(vae.device) / 0.18215).sample
-        x1 = self._to_minus1_1(x1).to(dev_img)
-        x2 = self._to_minus1_1(x2).to(dev_img)
-        val = _lpips_model(x1, x2)  # [B,1,1,1] 或 [B]
-        return float(val.mean().item())
-
-    @torch.no_grad()
-    def compute_l2_rms(self, z1, z2):
-        """
-        z1, z2: [B,C,H,W]
-        返回：标量（对 batch 的每个样本 RMS 后再平均）
-        """
-        diff = (z2 - z1).reshape(z1.shape[0], -1)  # [B, CHW]
-        rms = diff.pow(2).mean(dim=1).sqrt()  # [B]
-        return float(rms.mean().item())
-
-    @torch.no_grad()
-    def compute_swd(self, z1, z2, num_projections=128, eps=1e-8):
-        """
-        Sliced-Wasserstein-2（对 batch 取平均）：
-        - 把每个空间位置的 C 维向量当作一个点（忽略坐标）
-        - 随机投影到 1D 后，排序并计算两分布在 1D 上的 W2（等价于排序差的 L2）
-        z1, z2: [B,C,H,W]
-        返回：标量
-        """
-        B, C, H, W = z1.shape
-        X = z1.permute(0, 2, 3, 1).reshape(B, H * W, C)  # [B, N, C]
-        Y = z2.permute(0, 2, 3, 1).reshape(B, H * W, C)  # [B, N, C]
-        # 为了稳定，中心化（可选）
-        Xc = X - X.mean(dim=1, keepdim=True)
-        Yc = Y - Y.mean(dim=1, keepdim=True)
-
-        swd_list = []
-        for _ in range(num_projections):
-            # 生成单位随机方向 u: [B, C]（也可用共享方向，差别不大）
-            u = torch.randn(B, C, device=X.device)
-            u = u / (u.norm(dim=1, keepdim=True) + eps)  # 归一化
-            # 投影到 1D: [B, N]
-            x1d = (Xc * u.unsqueeze(1)).sum(dim=2)
-            y1d = (Yc * u.unsqueeze(1)).sum(dim=2)
-            # 排序后做 L2
-            x_sorted, _ = torch.sort(x1d, dim=1)
-            y_sorted, _ = torch.sort(y1d, dim=1)
-            w2_1d = (x_sorted - y_sorted).pow(2).mean(dim=1).sqrt()  # [B]
-            swd_list.append(w2_1d)  # 收集 [B]
-        swd_all = torch.stack(swd_list, dim=0).mean(dim=0)  # [B]，对投影平均
-        return float(swd_all.mean().item())  # 对 batch 平均
-
-    @torch.no_grad()
-    def cal_Wass_with_T(self, batch_idx, batch=None, pbar=None, result_path=None):
+    def cal_Wass_with_discriminator(self, batch_idx, batch=None, pbar=None, result_path=None, keep_last_generated=True):
         """Generate a batch of samples"""
         # Generate random initial noise
         x0 = batch['x0']
         # Create time steps
-        max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
+        max_t = self.args.num_steps
+        # max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
         t_span = torch.linspace(0, 1, max_t + 1, device=self.device)
 
         # Select solver and generate samples
         solver = self.euler_solver if self.args.solver == 'euler' else self.heun_solver
-        samples, trajectory = solver(x0, t_span, batch_idx, batch, pbar)
+        samples, trajectory, stop_step_sim = solver(x0, t_span, batch_idx, batch, pbar, max_t=max_t)
+        image_name = str(uuid.uuid4())
+        allowed_raw_trajectory = [self.normalize_samples(batch['x0_raw'])]
+        allowed_trajectory = [batch['x0']]
+        self.store_intermediate(allowed_raw_trajectory[0], 0, need_decode=False)
+        for step in range(1, len(trajectory[:-1])):
+            x = self.vae.decode(trajectory[step] / 0.18215).sample
+            sample = self.normalize_samples(x)
+            if step == len(trajectory) - 2 and keep_last_generated:
+                allowed_raw_trajectory.append(sample)
+                allowed_trajectory.append(trajectory[step])
+                self.store_intermediate(sample, step * self.args.intermediate_freq, need_decode=False)
+                continue
+            logits, _ = self.discriminator(sample.to(self.discriminator.device))
+            probs = torch.sigmoid(logits).cpu().numpy()
+            binary_pred = (probs >= 0.5).astype(int)
+            if binary_pred:
+                allowed_raw_trajectory.append(sample)
+                allowed_trajectory.append(trajectory[step])
+                self.store_intermediate(sample, step * self.args.intermediate_freq, need_decode=False)
+            else:
+                label_A = batch['x0_path'][0].split('/')[-2]
+                label_B = batch['x1_path'][0].split('/')[-2]
+                if label_A == label_B:
+                    fake_path = f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/fake_eval/cal_wass_dis/{label_A}#to#{label_B}"
+                else:
+                    fake_path = f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/hard_fake_eval/cal_wass_dis/{label_A}#to#{label_B}"
+                os.makedirs(fake_path, exist_ok=True)
+                save_image(sample, os.path.join(fake_path, image_name) + '.jpg')
+
+        allowed_raw_trajectory.append(self.normalize_samples(batch['x1_raw']))
+        allowed_trajectory.append(trajectory[-1])
+        self.store_intermediate(allowed_raw_trajectory[-1], 999, need_decode=False)
+        image_samples = self.vae.decode(samples.to(self.vae.device) / 0.18215).sample
+        image_samples = self.normalize_samples(image_samples)
+        self.save_batch(image_samples, image_name)
+         
         print('--------------------- 计算 Wass 距离 --------------------')
         # ====== 在你的生成代码中启用（替换原“计算 W₂”的注释块） ======
         distances_emd_w2 = []
@@ -845,7 +588,346 @@ class ImageGenerator:
         Neighbor_distances_sinkhorn_w2_latent_mapped = []
         Neighbor_distances_sinkhorn_w2_latent_mapped_bias1 = []
         Neighbor_distances_sinkhorn_w2_latent_mapped_bias2 = []
-        
+        dist_l2 = []
+        dist_lpips = []
+        dist_swd = []
+        full = self.args.full
+        max_points = self.args.max_points
+        freq = 1
+        indices = list(range(0, len(allowed_trajectory), freq))
+        if indices[-1] != len(allowed_trajectory) - 1:
+            indices.append(len(allowed_trajectory) - 1)
+
+        if not full:
+            z_last = allowed_trajectory[-1]
+            wass_cache = {len(indices) - 1: self.wass_model.encode(z_last, True).squeeze(0)}
+            for idx in range(len(indices) - 1):
+                i = indices[idx]
+                j = indices[idx + 1]
+                z1 = allowed_trajectory[i]  # [1,C,H,W]
+                z2 = allowed_trajectory[j] 
+                if self.wass_model is not None:
+                    if i in wass_cache:
+                        tz1 = wass_cache[i]
+                    else:
+                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
+                        wass_cache[i] = tz1
+                        
+                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
+                        tz1,
+                        wass_cache[len(indices) - 1],
+                        max_points=max_points,  # 控制规模（可调：1024~8192）
+                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                        add_coords=False,  # 是否拼接空间坐标
+                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                    ).item()
+                    distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
+                    if self.args.bias:
+                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
+                            tz1,
+                            tz1,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
+                        if len(distances_sinkhorn_w2_latent_mapped_bias2) == 0:
+                            W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
+                                wass_cache[len(indices) - 1],
+                                wass_cache[len(indices) - 1],
+                                max_points=max_points,  # 控制规模（可调：1024~8192）
+                                epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                                add_coords=False,  # 是否拼接空间坐标
+                                coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                            ).item()
+                            distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
+
+                ####################################### Neighbor #################################
+                if self.wass_model is not None:
+                    if i in wass_cache:
+                        tz1 = wass_cache[i]
+                    else:
+                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
+                        wass_cache[i] = tz1
+                    if j in wass_cache:
+                        tz2 = wass_cache[j]
+                    else:
+                        tz2 = self.wass_model.encode(z2, True).squeeze(0)
+                        wass_cache[j] = tz2
+                        
+                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
+                        tz1,
+                        tz2,
+                        max_points=max_points,  # 控制规模（可调：1024~8192）
+                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                        add_coords=False,  # 是否拼接空间坐标
+                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                    ).item()
+                    Neighbor_distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
+                    if self.args.bias:
+                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
+                            tz1,
+                            tz1,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
+                        W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
+                            tz2,
+                            tz2,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
+
+            results = {}
+        else:
+            z_last = allowed_trajectory[-1]
+            x_last = allowed_raw_trajectory[-1]
+            with torch.no_grad():
+                x_last = F.interpolate(
+                    x_last,
+                    size=(64, 64),
+                    mode='bilinear',
+                    align_corners=False
+                )
+            if self.wass_model is not None:
+                wass_cache = {len(indices) - 1: self.wass_model.encode(z_last, True).squeeze(0)}
+            x_cache = {len(indices) - 1: x_last}
+            for idx in range(len(indices) - 1):
+                i = indices[idx]
+                j = indices[idx + 1]
+                z1 = allowed_trajectory[i]  # [1,C,H,W]
+                z2 = allowed_trajectory[j] 
+                
+                W2_sinkhorn_latent = cal_wasserstein_loss(
+                    z1.squeeze(0),
+                    z_last.squeeze(0),
+                    max_points=max_points,  # 控制规模（可调：1024~8192）
+                    epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                    add_coords=False,  # 是否拼接空间坐标
+                    coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                ).item()
+                distances_sinkhorn_w2_latent.append(W2_sinkhorn_latent)
+                # print(f"step {i} → {j}: W₂_sinkhorn_latent = {W2_sinkhorn_latent:.6f}")
+                
+                if self.wass_model is not None:
+                    if i in wass_cache:
+                        tz1 = wass_cache[i]
+                    else:
+                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
+                        wass_cache[i] = tz1
+                        
+                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
+                        tz1,
+                        wass_cache[len(indices) - 1],
+                        max_points=max_points,  # 控制规模（可调：1024~8192）
+                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                        add_coords=False,  # 是否拼接空间坐标
+                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                    ).item()
+                    distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
+                    if self.args.bias:
+                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
+                            tz1,
+                            tz1,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
+                        if len(distances_sinkhorn_w2_latent_mapped_bias2) == 0:
+                            W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
+                                wass_cache[len(indices) - 1],
+                                wass_cache[len(indices) - 1],
+                                max_points=max_points,  # 控制规模（可调：1024~8192）
+                                epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                                add_coords=False,  # 是否拼接空间坐标
+                                coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                            ).item()
+                            distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
+                
+                # # ================sinkhorn_image_wass==================
+                if i in x_cache:
+                    x1 = x_cache[i]
+                else:
+                    x1 = allowed_raw_trajectory[i]
+                    with torch.no_grad():
+                        x1 = F.interpolate(
+                            x1,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
+                    x_cache[i] = x1
+
+                W2_sinkhorn_image = cal_wasserstein_loss(
+                    x1,
+                    x_cache[len(indices) - 1],
+                    max_points=max_points,  # 控制规模（可调：1024~8192）
+                    epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                    add_coords=False,  # 是否拼接空间坐标
+                    coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                ).item()
+                distances_sinkhorn_w2_image.append(W2_sinkhorn_image)
+                # print(f"step {i} → {j}: W₂_sinkhorn_image = {W2_sinkhorn_image:.6f}")
+
+                ####################################### Neighbor #################################
+                W2_sinkhorn_latent = cal_wasserstein_loss(
+                    z1.squeeze(0),
+                    z2.squeeze(0),
+                    max_points=max_points,  # 控制规模（可调：1024~8192）
+                    epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                    add_coords=False,  # 是否拼接空间坐标
+                    coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                ).item()
+                Neighbor_distances_sinkhorn_w2_latent.append(W2_sinkhorn_latent)
+                # print(f"step {i} → {j}: W₂_sinkhorn_latent = {W2_sinkhorn_latent:.6f}")
+                
+                if self.wass_model is not None:
+                    if i in wass_cache:
+                        tz1 = wass_cache[i]
+                    else:
+                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
+                        wass_cache[i] = tz1
+                    if j in wass_cache:
+                        tz2 = wass_cache[j]
+                    else:
+                        tz2 = self.wass_model.encode(z2, True).squeeze(0)
+                        wass_cache[j] = tz2
+                        
+                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
+                        tz1,
+                        tz2,
+                        max_points=max_points,  # 控制规模（可调：1024~8192）
+                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                        add_coords=False,  # 是否拼接空间坐标
+                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                    ).item()
+                    Neighbor_distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
+                    if self.args.bias:
+                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
+                            tz1,
+                            tz1,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
+                        W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
+                            tz2,
+                            tz2,
+                            max_points=max_points,  # 控制规模（可调：1024~8192）
+                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                            add_coords=False,  # 是否拼接空间坐标
+                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                        ).item()
+                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
+                
+                # # ================sinkhorn_image_wass==================
+                if i in x_cache:
+                    x1 = x_cache[i]
+                else:
+                    x1 = allowed_raw_trajectory[i]
+                    with torch.no_grad():
+                        x1 = F.interpolate(
+                            x1,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
+                    x_cache[i] = x1
+                    
+                if j in x_cache:
+                    x2 = x_cache[j]
+                else:
+                    x2 = allowed_raw_trajectory[j]
+                    with torch.no_grad():
+                        x2 = F.interpolate(
+                            x2,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
+                    x_cache[j] = x2
+                    
+                W2_sinkhorn_image = cal_wasserstein_loss(
+                    x1,
+                    x2,
+                    max_points=max_points,  # 控制规模（可调：1024~8192）
+                    epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
+                    add_coords=False,  # 是否拼接空间坐标
+                    coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
+                ).item()
+                Neighbor_distances_sinkhorn_w2_image.append(W2_sinkhorn_image)
+                # print(f"step {i} → {j}: W₂_sinkhorn_image = {W2_sinkhorn_image:.6f}")
+
+            results = {
+                'distances_sinkhorn_w2_latent': np.array(distances_sinkhorn_w2_latent).mean(),
+                'distances_sinkhorn_w2_latent_all': distances_sinkhorn_w2_latent,
+                'distances_sinkhorn_w2_image': np.array(distances_sinkhorn_w2_image).mean(),
+                'distances_sinkhorn_w2_image_all': distances_sinkhorn_w2_image,
+                
+                'Neighbor_distances_sinkhorn_w2_latent_': np.array(Neighbor_distances_sinkhorn_w2_latent).mean(),
+                'Neighbor_distances_sinkhorn_w2_latent_all': Neighbor_distances_sinkhorn_w2_latent,
+                'Neighbor_distances_sinkhorn_w2_image': np.array(Neighbor_distances_sinkhorn_w2_image).mean(),
+                'Neighbor_distances_sinkhorn_w2_image_all': Neighbor_distances_sinkhorn_w2_image,
+            }
+            
+        if self.wass_model is not None:
+            results['Neighbor_distances_sinkhorn_w2_latent_mapped'] = np.array(Neighbor_distances_sinkhorn_w2_latent_mapped).mean()
+            results['Neighbor_distances_sinkhorn_w2_latent_mapped_all'] = Neighbor_distances_sinkhorn_w2_latent_mapped
+            results['Neighbor_distances_sinkhorn_w2_latent_mapped_bias1'] = Neighbor_distances_sinkhorn_w2_latent_mapped_bias1
+            results['Neighbor_distances_sinkhorn_w2_latent_mapped_bias2'] = Neighbor_distances_sinkhorn_w2_latent_mapped_bias2
+            
+            results['distances_sinkhorn_w2_latent_mapped'] = np.array(distances_sinkhorn_w2_latent_mapped).mean()
+            results['distances_sinkhorn_w2_latent_mapped_all'] = distances_sinkhorn_w2_latent_mapped
+            results['distances_sinkhorn_w2_latent_mapped_bias1'] = distances_sinkhorn_w2_latent_mapped_bias1
+            results['distances_sinkhorn_w2_latent_mapped_bias2'] = distances_sinkhorn_w2_latent_mapped_bias2
+        results['stop_step_sim'] = stop_step_sim.item()
+        results['image_name'] = image_name
+        return results
+
+
+    @torch.no_grad()
+    def cal_Wass_with_T(self, batch_idx, batch=None, pbar=None, result_path=None):
+        """Generate a batch of samples"""
+        # Generate random initial noise
+        x0 = batch['x0']
+        # Create time steps
+        max_t = self.args.min_num_steps if self.args.fix_num_steps < 0 else self.args.fix_num_steps
+        t_span = torch.linspace(0, 1, max_t + 1, device=self.device)
+
+        # Select solver and generate samples
+        solver = self.euler_solver if self.args.solver == 'euler' else self.heun_solver
+        samples, trajectory, stop_step_sim = solver(x0, t_span, batch_idx, batch, pbar)
+        image_name = str(uuid.uuid4())
+        for step in range(len(trajectory[:-1])):
+            self.store_intermediate(trajectory[int(step)], step * self.args.intermediate_freq)
+        self.store_intermediate(trajectory[-1], 999)
+        image_samples = self.vae.decode(samples.to(self.vae.device) / 0.18215).sample
+        image_samples = self.normalize_samples(image_samples)
+        self.save_batch(image_samples, image_name)
+        print('--------------------- 计算 Wass 距离 --------------------')
+        # ====== 在你的生成代码中启用（替换原“计算 W₂”的注释块） ======
+        distances_emd_w2 = []
+        distances_sinkhorn_w2_latent = []
+        distances_sinkhorn_w2_latent_mapped = []
+        distances_sinkhorn_w2_latent_mapped_bias1 = []
+        distances_sinkhorn_w2_latent_mapped_bias2 = []
+        distances_sinkhorn_w2_image = []
+        Neighbor_distances_sinkhorn_w2_latent = []
+        Neighbor_distances_sinkhorn_w2_image = []
+        Neighbor_distances_sinkhorn_w2_latent_mapped = []
+        Neighbor_distances_sinkhorn_w2_latent_mapped_bias1 = []
+        Neighbor_distances_sinkhorn_w2_latent_mapped_bias2 = []
         dist_l2 = []
         dist_lpips = []
         dist_swd = []
@@ -949,12 +1031,13 @@ class ImageGenerator:
             z_last = trajectory[-1]
             x_last = self.vae.decode(z_last.to(self.vae.device) / 0.18215).sample
             x_last = self.normalize_samples(x_last)
-            x_last = F.interpolate(
-                x_last,
-                size=(64, 64),
-                mode='bilinear',
-                align_corners=False
-            )
+            with torch.no_grad():
+                x_last = F.interpolate(
+                    x_last,
+                    size=(64, 64),
+                    mode='bilinear',
+                    align_corners=False
+                )
             if self.wass_model is not None:
                 wass_cache = {len(indices) - 1: self.wass_model.encode(z_last, True).squeeze(0)}
             x_cache = {len(indices) - 1: x_last}
@@ -1018,12 +1101,13 @@ class ImageGenerator:
                 else:
                     x1 = self.vae.decode(z1.to(self.vae.device) / 0.18215).sample  # [B,3,H,W]
                     x1 = self.normalize_samples(x1)
-                    x1 = F.interpolate(
-                        x1,
-                        size=(64, 64),
-                        mode='bilinear',
-                        align_corners=False
-                    )
+                    with torch.no_grad():
+                        x1 = F.interpolate(
+                            x1,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
                     x_cache[i] = x1
 
                 W2_sinkhorn_image = cal_wasserstein_loss(
@@ -1096,12 +1180,13 @@ class ImageGenerator:
                 else:
                     x1 = self.vae.decode(z1.to(self.vae.device) / 0.18215).sample  # [B,3,H,W]
                     x1 = self.normalize_samples(x1)
-                    x1 = F.interpolate(
-                        x1,
-                        size=(64, 64),
-                        mode='bilinear',
-                        align_corners=False
-                    )
+                    with torch.no_grad():
+                        x1 = F.interpolate(
+                            x1,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
                     x_cache[i] = x1
                     
                 if j in x_cache:
@@ -1109,12 +1194,13 @@ class ImageGenerator:
                 else:
                     x2 = self.vae.decode(z2.to(self.vae.device) / 0.18215).sample  # [B,3,H,W]
                     x2 = self.normalize_samples(x2)
-                    x2 = F.interpolate(
-                        x2,
-                        size=(64, 64),
-                        mode='bilinear',
-                        align_corners=False
-                    )
+                    with torch.no_grad():
+                        x2 = F.interpolate(
+                            x2,
+                            size=(64, 64),
+                            mode='bilinear',
+                            align_corners=False
+                        )
                     x_cache[j] = x2
                     
                 W2_sinkhorn_image = cal_wasserstein_loss(
@@ -1150,280 +1236,10 @@ class ImageGenerator:
             results['distances_sinkhorn_w2_latent_mapped_all'] = distances_sinkhorn_w2_latent_mapped
             results['distances_sinkhorn_w2_latent_mapped_bias1'] = distances_sinkhorn_w2_latent_mapped_bias1
             results['distances_sinkhorn_w2_latent_mapped_bias2'] = distances_sinkhorn_w2_latent_mapped_bias2
-
+        results['stop_step_sim'] = stop_step_sim.item()
+        results['image_name'] = image_name
         return results
 
-    @torch.no_grad()
-    def cal_SingleWass_with_T(self, batch=None, mode='neighbor', max_points = 1024, 
-                              freq = 1, min_num_steps = -1, max_num_steps=-1):
-        """Generate a batch of samples"""
-        # Generate random initial noise
-        x0 = batch['x0']
-        # Create time steps
-        max_t = self.args.min_num_steps if min_num_steps < 0 else min_num_steps
-        if max_num_steps > max_t and max_num_steps > 0:
-            self.args.num_steps = max_num_steps
-        t_span = torch.linspace(0, 1, max_t + 1, device=self.device)
-
-        # Select solver and generate samples
-        solver = self.euler_solver if self.args.solver == 'euler' else self.heun_solver
-        samples, trajectory = solver(x0, t_span, 0, batch, None)
-        print('--------------------- 计算 Wass 距离 --------------------')
-        if mode == 'neighbor':
-            Neighbor_distances_sinkhorn_w2_latent_mapped = []
-            Neighbor_distances_sinkhorn_w2_latent_mapped_bias1 = []
-            Neighbor_distances_sinkhorn_w2_latent_mapped_bias2 = []
-        else:
-            distances_sinkhorn_w2_latent_mapped = []
-            distances_sinkhorn_w2_latent_mapped_bias1 = []
-            distances_sinkhorn_w2_latent_mapped_bias2 = []
-
-        indices = list(range(0, len(trajectory), freq))
-        if indices[-1] != len(trajectory) - 1:
-            indices.append(len(trajectory) - 1)
-
-        results = {}
-        z_last = trajectory[-1]
-        wass_cache = {len(indices) - 1: self.wass_model.encode(z_last, True).squeeze(0)}
-        for idx in range(len(indices) - 1):
-            i = indices[idx]
-            j = indices[idx + 1]
-            z1 = trajectory[i]  # [1,C,H,W]
-            z2 = trajectory[j] 
-            
-            if mode == 'neighbor':
-                ####################################### Neighbor #################################
-                if self.wass_model is not None:
-                    if i in wass_cache:
-                        tz1 = wass_cache[i]
-                    else:
-                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
-                        wass_cache[i] = tz1
-                    if j in wass_cache:
-                        tz2 = wass_cache[j]
-                    else:
-                        tz2 = self.wass_model.encode(z2, True).squeeze(0)
-                        wass_cache[j] = tz2
-                        
-                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
-                        tz1,
-                        tz2,
-                        max_points=max_points,  # 控制规模（可调：1024~8192）
-                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                        add_coords=False,  # 是否拼接空间坐标
-                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                    ).item()
-                    Neighbor_distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
-                    if self.args.bias:
-                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
-                            tz1,
-                            tz1,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
-                        W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
-                            tz2,
-                            tz2,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
-                else:
-                    if i in wass_cache:
-                        tz1 = wass_cache[i]
-                    else:
-                        tz1 = z1.squeeze(0)
-                        wass_cache[i] = tz1
-                    if j in wass_cache:
-                        tz2 = wass_cache[j]
-                    else:
-                        tz2 = z2.squeeze(0)
-                        wass_cache[j] = tz2
-                        
-                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
-                        tz1,
-                        tz2,
-                        max_points=max_points,  # 控制规模（可调：1024~8192）
-                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                        add_coords=False,  # 是否拼接空间坐标
-                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                    ).item()
-
-                    Neighbor_distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
-                    if self.args.bias:
-                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
-                            tz1,
-                            tz1,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
-                        W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
-                            tz2,
-                            tz2,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        Neighbor_distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
-            else:
-                if self.wass_model is not None:
-                    if i in wass_cache:
-                        tz1 = wass_cache[i]
-                    else:
-                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
-                        wass_cache[i] = tz1
-                        
-                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
-                        tz1,
-                        wass_cache[len(indices) - 1],
-                        max_points=max_points,  # 控制规模（可调：1024~8192）
-                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                        add_coords=False,  # 是否拼接空间坐标
-                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                    ).item()
-                    distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
-                    if self.args.bias:
-                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
-                            tz1,
-                            tz1,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
-                        if len(distances_sinkhorn_w2_latent_mapped_bias2) == 0:
-                            W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
-                                wass_cache[len(indices) - 1],
-                                wass_cache[len(indices) - 1],
-                                max_points=max_points,  # 控制规模（可调：1024~8192）
-                                epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                                add_coords=False,  # 是否拼接空间坐标
-                                coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                            ).item()
-                            distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
-                else:
-                    if i in wass_cache:
-                        tz1 = wass_cache[i]
-                    else:
-                        tz1 = self.wass_model.encode(z1, True).squeeze(0)
-                        wass_cache[i] = tz1
-                        
-                    W2_sinkhorn_latent_mapped = cal_wasserstein_loss(
-                        tz1,
-                        wass_cache[len(indices) - 1],
-                        max_points=max_points,  # 控制规模（可调：1024~8192）
-                        epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                        add_coords=False,  # 是否拼接空间坐标
-                        coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                    ).item()
-                    distances_sinkhorn_w2_latent_mapped.append(W2_sinkhorn_latent_mapped)
-                    if self.args.bias:
-                        W2_sinkhorn_latent_mapped_b1 = cal_wasserstein_loss(
-                            tz1,
-                            tz1,
-                            max_points=max_points,  # 控制规模（可调：1024~8192）
-                            epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                            add_coords=False,  # 是否拼接空间坐标
-                            coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                        ).item()
-                        distances_sinkhorn_w2_latent_mapped_bias1.append(W2_sinkhorn_latent_mapped_b1)
-                        if len(distances_sinkhorn_w2_latent_mapped_bias2) == 0:
-                            W2_sinkhorn_latent_mapped_b2 = cal_wasserstein_loss(
-                                wass_cache[len(indices) - 1],
-                                wass_cache[len(indices) - 1],
-                                max_points=max_points,  # 控制规模（可调：1024~8192）
-                                epsilon=0.05,  # Sinkhorn 熵正则（越大越平滑，越小越接近真 W2）
-                                add_coords=False,  # 是否拼接空间坐标
-                                coord_lambda=0.5  # 位移成本系数（0 表示不关心“像素移动”）
-                            ).item()
-                            distances_sinkhorn_w2_latent_mapped_bias2.append(W2_sinkhorn_latent_mapped_b2)
-            if mode == 'neighbor':
-                results['Neighbor_distances_sinkhorn_w2_latent_mapped'] = np.array(Neighbor_distances_sinkhorn_w2_latent_mapped).mean()
-                results['Neighbor_distances_sinkhorn_w2_latent_mapped_all'] = Neighbor_distances_sinkhorn_w2_latent_mapped
-                results['Neighbor_distances_sinkhorn_w2_latent_mapped_bias1'] = Neighbor_distances_sinkhorn_w2_latent_mapped_bias1
-                results['Neighbor_distances_sinkhorn_w2_latent_mapped_bias2'] = Neighbor_distances_sinkhorn_w2_latent_mapped_bias2
-            else:
-                results['distances_sinkhorn_w2_latent_mapped'] = np.array(distances_sinkhorn_w2_latent_mapped).mean()
-                results['distances_sinkhorn_w2_latent_mapped_all'] = distances_sinkhorn_w2_latent_mapped
-                results['distances_sinkhorn_w2_latent_mapped_bias1'] = distances_sinkhorn_w2_latent_mapped_bias1
-                results['distances_sinkhorn_w2_latent_mapped_bias2'] = distances_sinkhorn_w2_latent_mapped_bias2
-
-        return results
-
-    def get_conds_from_batch(self, batch, transform, transform_grey, **kwargs):
-        raise NotImplementedError
-    
-    def get_conds_from_items(self, x0, x1, label_id, caption, transform, transform_grey, **kwargs):
-        conds = {}
-        if isinstance(x0, str):
-            x0 = Image.open(x0).convert("RGB")
-        if isinstance(x1, str):
-            x1 = Image.open(x1).convert("RGB")
-
-        x0 = transform(x0).to(self.vae.device).unsqueeze(0)
-        x1 = transform(x1).to(self.vae.device).unsqueeze(0)
-
-        caption = [caption]
-        y = torch.LongTensor([label_id]).to(self.vae.device)
-        hint = transform_grey(x1).to(self.vae.device).unsqueeze(0)
-
-        images = torch.cat([x0, x1], dim=0)
-        with torch.no_grad():
-            posterior = self.vae.encode(images).latent_dist
-            images = posterior.sample() * 0.18215
-            x0, x1 = images.chunk(2, dim=0)
-                    
-            if self.text_model is not None and caption[0] not in self.text_embeds_map:
-                with torch.no_grad():
-                    caption_input = self.text_tokenizer(caption, return_tensors="pt", padding=True).to(
-                        self.text_model.device)
-                    caption_outputs = self.text_model(**caption_input)
-                    text_embeds = caption_outputs['last_hidden_state'].to(self.text_model.device)
-                if len(self.text_embeds_map) < 500:
-                    self.text_embeds_map[caption[0]] = text_embeds
-            elif caption[0] in self.text_embeds_map:
-                text_embeds = self.text_embeds_map[caption[0]]
-            else:
-                text_embeds = torch.zeros((len(y), 2, 1))
-            if self.vision_model is not None:
-                with torch.no_grad():
-                    x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                    vision_embeds = self.vision_model.forward_features(x1_images.to(self.vision_model.device))
-            else:
-                vision_embeds = torch.zeros((len(y), 2, 1))
-
-            caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(self.net_model.device),
-                                                   text_embeds[:, 1:, ...].to(self.net_model.device)], dim=1)
-
-            conds = {
-                'x0': x0.to(self.device),
-                'x1': x1.to(self.device),
-                'caption': caption,
-                'caption_hidden_states': caption_hidden_states.to(self.device),
-                'y': y.to(self.device),
-                'hint': hint.to(self.device),
-                'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
-                'image_embeds': vision_embeds[:, 0].to(self.device)  # [B, D]
-            }
-         
-            if self.args.use_gt_vt:
-                t, xt, ut = self.FM.get_sample_location_and_conditional_flow(x0, x1,
-                                                                    sample_plan=False,
-                                                                    cond=conds,
-                                                                    print_info=False)
-                conds['ut'] = ut.to(self.device)
-            return conds
-        
     def generate(self):
         """Main generation loop"""
         from torchvision import transforms
@@ -1436,81 +1252,171 @@ class ImageGenerator:
         transform_grey = transforms.Compose([
             transforms.Resize((512, 512)),
             transforms.ToTensor(),
-            transforms.RandomGrayscale(p=1),
+            transforms.RandomGrayscale(p=1),  # 数据增强：50% 概率灰度化
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
         ])
-        eval_dataset = json.load(open(self.args.data_path, "r"))
-        k = 5
-        dataset = []
-        for data in eval_dataset:
-            if not os.path.exists(data['x0']):
+
+        dataset = MedicalJsonDataset(
+            path=self.args.data_path,
+            transform=transform,
+            transform_A=transform,
+            transform_B=transform,
+            hint_transform=transform_grey
+        )
+
+        idx = 0
+        op_match_batch = False
+        new_dataset = []
+        caption_hidden_states_mode = 'cat'
+        sigma = 0.0
+        from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
+        FM = OptimalTransportConditionalFlowMatcher(sigma=sigma, ot_method='exact')
+        text_embeds_map = {}
+        self.create_discriminator(device="cuda")
+        for idx in tqdm(range(len(dataset))):
+            if idx < 0:
                 continue
-            for i in range(len(data['x1_dirs'])):
-                x1_paths = os.listdir(data['x1_dirs'][i])
-                for x1_path in x1_paths[:k]:
-                    x1_path = os.path.join(data['x1_dirs'][i], x1_path)
-                    if os.path.exists(x1_path):
-                        new_data = {}
-                        new_data["question_id"] = data["question_id"]
-                        new_data["x0"] = data["x0"]
-                        new_data["label_A"] = data["label_A"]
-                        new_data["label_A_id"] = data["label_A_id"]
-                        new_data["label_B"] = data["x1_labels"][i]
-                        new_data["label_B_id"] = data["label_B_ids"][i]
-                        new_data["caption"] = data["caption"][i]
-                        new_data["x1"] = x1_path
-                        new_data["hint_path"] = x1_path
-                        dataset.append(new_data)
-                        
-        with open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data/new_new_eval_all_flatten.json', 'w', encoding='utf-8') as f:
-            json.dump(dataset, f, ensure_ascii=False, indent=4)
+            batch = deepcopy(dataset[idx])
+            if idx % 100 == 0:
+                print(f"{batch['label_A']}:{batch['label_A_id']} --> {batch['label_B']}:{batch['label_B_id']}")
+                print(f'---------------------------------{idx}/{len(dataset)}----------------------------------')
+                
+            x0_raw = x0 = batch['x0'].to(self.vae.device).unsqueeze(0)
+            x1_raw = x1 = batch['x1'].to(self.vae.device).unsqueeze(0)
+            caption = [batch['caption']]
+            y = batch['class_id'].to(self.vae.device).unsqueeze(0)
+            x1_path = [batch['x1_path']]
+            hint = batch['hint'].to(self.vae.device).unsqueeze(0)
+
+            images = torch.cat([x0, x1], dim=0)
+            with torch.no_grad():
+                posterior = self.vae.encode(images).latent_dist
+                images = posterior.sample() * 0.18215
+                x0, x1 = images.chunk(2, dim=0)
+                    
+            if self.args.solver == 'euler':
+                self.text_model = None
+                self.vision_model = None
+                self.args.use_gt_vt = True
+
+            if self.text_model is not None and caption[0] not in text_embeds_map:
+                with torch.no_grad():
+                    caption_input = self.text_tokenizer(caption, return_tensors="pt", padding=True).to(
+                        self.text_model.device)
+                    caption_outputs = self.text_model(**caption_input)
+                    text_embeds = caption_outputs['last_hidden_state'].to(self.text_model.device)
+                if len(text_embeds_map) < 200:
+                    text_embeds_map[caption[0]] = text_embeds
+            elif caption[0] in text_embeds_map:
+                text_embeds = text_embeds_map[caption[0]]
+            else:
+                text_embeds = torch.zeros((len(y), 2, 1))
+            if self.vision_model is not None:
+                with torch.no_grad():
+                    x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
+                    vision_embeds = self.vision_model.forward_features(x1_images.to(self.vision_model.device))
+            else:
+                vision_embeds = torch.zeros((len(y), 2, 1))
+
+            if caption_hidden_states_mode == 'cat':
+                caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(self.net_model.device),
+                                                   text_embeds[:, 1:, ...].to(self.net_model.device)], dim=1)
+            elif caption_hidden_states_mode == 'only_text':
+                caption_hidden_states = text_embeds[:, 1:, ...].to(self.net_model.device)
+
+            conds = {
+                'x0': x0,
+                'x1': x1,
+                'x0_raw': x0_raw,
+                "x1_raw": x1_raw,
+                'x0_path': [batch['x0_path']],
+                'x1_path': [batch['x1_path']],
+                'caption': caption,
+                'caption_hidden_states': caption_hidden_states.to(self.device),
+                'y': y.to(self.device),
+                'hint': hint.to(self.device),
+                'text_embeds': text_embeds[:, 0].to(self.device),  # [B, D]
+                'image_embeds': vision_embeds[:, 0].to(self.device)  # [B, D]
+            }
+            # self.args.use_gt_vt = True
+            self.use_gt_vt = self.args.use_gt_vt
+            if self.use_gt_vt:
+                t, xt, ut = FM.get_sample_location_and_conditional_flow(x0, x1,
+                                                                    sample_plan=op_match_batch,
+                                                                    cond=conds,
+                                                                    print_info=False)
+                conds['ut'] = ut.to(self.device)
             
-        return {}
+            wass_dict = self.cal_Wass_with_discriminator(idx, conds)
+            # wass_dict = self.cal_Wass_with_T(idx, conds)
+
+            wass_dict.update(dataset[idx])
+            wass_dict.pop('x0', None)
+            wass_dict.pop('x1', None)
+            wass_dict.pop('hint', None)
+            wass_dict.pop('mask_hint', None)
+            wass_dict['class_id'] = int(wass_dict['class_id'].item())
+            new_dataset.append(wass_dict)
+
+            if idx % 100 == 0:
+                output_path = os.path.join(self.args.output_dir, 'result.json')
+                with open(output_path, 'w', encoding="utf-8") as f:
+                    json.dump(new_dataset, f, indent=4, ensure_ascii=False)
+                print(f'Current Saved to {output_path}')
+        output_path = os.path.join(self.args.output_dir, 'result.json')
+        with open(output_path, 'w', encoding="utf-8") as f:
+            json.dump(new_dataset, f, indent=4, ensure_ascii=False)
+        print(f'Saved to {output_path}')
+        return new_dataset
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--data_path', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/exam_dataset_extra.json',
-                        help='数据路径')
+                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/images_dia_exam_flatten.json',
+                        default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/final_eval_json/new_eval_tsy_flatten.json', # 食管
+                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/eval_json/eval_tsy_cut_54_flatten.json', # 十二指肠
+                        help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/new_flow_match/outputs/image_hint_十二指肠/otcfm/otcfm_weights_step_30000.pt',
-                        help='Path to the checkpoint file')
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/base-flow-match_vae/otcfm/otcfm_weights_step_55000.pt',
+                        help='Path to the checkpoint file') 
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/result/image_hint_attn_other',
+                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/result/shiguan_55000_dis',
                         help='Directory to save generated images')
+    parser.add_argument('--num_steps', type=int, default=8,
+                        help='Max Number of steps in the ODE solver')   
+    parser.add_argument('--min_num_steps', type=int, default=2,
+                        help='Min Number of steps in the ODE solver')   
+    parser.add_argument('--fix_num_steps', type=int, default=-1,
+                        help='Fix Number of steps in the ODE solver')                                   
+    parser.add_argument('--stop_beta', type=float, default=0.92,
+                        help='控制停止生成的阈值')
+    parser.add_argument('--use_cache', type=bool, default=False,
+                        help='使用 Cache 加速，但可能会影响结果。')
+    parser.add_argument('--bias', type=bool, default=False,
+                        help='')  
+    parser.add_argument('--temp', type=str, default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/temp/temp',
+                        help='')
+    parser.add_argument('--stop_method', type=str, default='direct',
+                        choices=['diff', 'second_diff', 'direct'],
+                        help='判停策略')
     parser.add_argument('--wass_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match_十二指肠/best_weights_min/old_attention_十二指肠球部.pt",
+                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_dy_tsy.pt",
+                        # default = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/attention_tiny_codex.pt",
                         help='优先级 高于 权重')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'], 
                         default="attention", 
                         # default="resnet34", 
                         help='指定模型类型') 
+    parser.add_argument('--sim_model_type', type=str, 
+                        choices=['convnext', 'gme', 'dinov3'],
+                        default="convnext",
+                        help='指定相似模型类型')
     parser.add_argument('--full', type=bool, default=True,
                         help='')
-    parser.add_argument('--bias', type=bool, default=True,
-                        help='')
-    parser.add_argument('--stop_method', type=str, default='direct',
-                        choices=['diff', 'second_diff', 'direct'],
-                        help='ODE solver type')
-    parser.add_argument('--use_cache', type=bool, default=False,
-                        help='使用 Cache 加速，但可能会影响结果。')
-    parser.add_argument('--sim_model_type', type=str, 
-                        choices=['gme', 'dinov3'],
-                        default="dinov3",
-                        help='指定相似模型类型')
-    parser.add_argument('--stop_beta', type=float, default=0.91,
-                        help='控制停止生成的阈值')
-    parser.add_argument('--num_steps', type=int, default=8,
-                        help='Max Number of steps in the ODE solver')
-    parser.add_argument('--min_num_steps', type=int, default=2,
-                        help='Min Number of steps in the ODE solver')
-    parser.add_argument('--fix_num_steps', type=int, default=-1,
-                        help='Fix Number of steps in the ODE solver')
-    parser.add_argument('--temp', type=str, default='/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/cal_wass/temp1',
-                        help='')
     parser.add_argument('--sim_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vit7b16",
+                        default = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext2.pt",
+                        # default="/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vit7b16",
                         help='指定相似模型类型')
     parser.add_argument('--num_channels', type=int, default=128,
                         help='Number of base channels in UNet')

@@ -1,7 +1,7 @@
 from copy import deepcopy, copy
 import os
 from timm.models.vision_transformer import VisionTransformer
-os.environ['CUDA_VISIBLE_DEVICES'] = '1'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 from collections import OrderedDict
 from functools import partial
 from safetensors.torch import load_file
@@ -21,11 +21,11 @@ from diffusers import AutoencoderKL
 from transformers import AutoTokenizer, AutoModel, AutoConfig, ChineseCLIPTextModel, ChineseCLIPTextConfig
 import uuid
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
-from utils.data_loader_test import MedicalJsonDataset
+from utils.data_loader import MedicalJsonDataset
 # from utils.data_utils_test import *
-from my_loss import *
+from model_utils.my_loss import *
 from my_models.unet_2d_condition import UNet2DConditionModel
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
@@ -137,7 +137,6 @@ class ImageGenerator:
             
             if self.args.wass_model_path:
                 print(self.args.wass_model_path)
-                from model import TripletNetwork
                 model = TripletNetwork(pretrained=False, freeze_base=False, model='attention', dy=True)
                 state_dict = torch.load(self.args.wass_model_path, weights_only=True)
                 model.load_state_dict(state_dict, strict=True)
@@ -146,7 +145,6 @@ class ImageGenerator:
                 # self.wass_model.eval()
                 
             elif 'wass_model' in state_dict:
-                from model import TripletNetwork
                 if self.args.wass_model_type == '':
                     self.args.wass_model_type = 'resnet34'
                 model = TripletNetwork(pretrained=True, freeze_base=False, model=self.args.wass_model_type, dy=False)
@@ -227,18 +225,6 @@ class ImageGenerator:
 
     @staticmethod
     def normalize_samples(x):
-        """
-          对每个样本独立进行最大最小化归一化 (Min-Max Scaling)
-
-          参数:
-              x: Tensor, shape (B, C, H, W)
-              new_min: float, 缩放后的最小值
-              new_max: float, 缩放后的最大值
-              eps: float, 防止除以0的小值
-
-          返回:
-              x_scaled: Tensor, shape (B, C, H, W), 缩放后的数据
-          """
         x = (x / 2 + 0.5)
         x_min = x.amin(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)
         x_max = x.amax(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)

@@ -1,49 +1,44 @@
 {
   "overall": {
-    "accuracy": 0.8571428571428571,
-    "correct": 60,
-    "total": 70
+    "accuracy": 0.8493150684931506,
+    "correct": 62,
+    "total": 73
   },
   "per_label": {
-    "慢性非萎缩性胃窦炎伴痘疹": {
-      "accuracy": 0.6666666666666666,
-      "correct": 8,
-      "total": 12
-    },
-    "正常胃窦": {
+    "十二指肠副乳头": {
       "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
+      "correct": 17,
+      "total": 17
     },
-    "残胃炎伴胆汁反流": {
-      "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
-    },
-    "皮革胃": {
-      "accuracy": 0.7272727272727273,
-      "correct": 8,
-      "total": 11
-    },
-    "胃MALT淋巴瘤": {
-      "accuracy": 1.0,
-      "correct": 9,
-      "total": 9
-    },
-    "胃神经内分泌肿瘤": {
-      "accuracy": 0.6666666666666666,
-      "correct": 2,
-      "total": 3
-    },
-    "胃窦溃疡（A1期）": {
+    "十二指肠憩室": {
       "accuracy": 0.7777777777777778,
       "correct": 7,
       "total": 9
     },
-    "胃窦溃疡（S1期）": {
+    "十二指肠正常": {
       "accuracy": 1.0,
-      "correct": 8,
-      "total": 8
+      "correct": 18,
+      "total": 18
+    },
+    "十二指肠溃疡": {
+      "accuracy": 1.0,
+      "correct": 7,
+      "total": 7
+    },
+    "十二指肠炎": {
+      "accuracy": 0.9166666666666666,
+      "correct": 11,
+      "total": 12
+    },
+    "十二指肠球部息肉": {
+      "accuracy": 0.14285714285714285,
+      "correct": 1,
+      "total": 7
+    },
+    "十二指肠钩虫": {
+      "accuracy": 0.3333333333333333,
+      "correct": 1,
+      "total": 3
     }
   }
 }
