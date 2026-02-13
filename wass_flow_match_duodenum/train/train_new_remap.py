@@ -50,7 +50,7 @@ if __name__ == '__main__':
     batch_size = 4
     dataloaders = []
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/eval_json/new_eval_tsy.json",
+        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/eval_tsy_cut_54.json"
     ]
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # model = TripletNetwork(pretrained=False, freeze_base=False, model='attention')

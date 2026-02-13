@@ -1012,9 +1012,7 @@ class ImageGenerator:
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--data_path', type=str,
-                        default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/images_dia_exam_flatten.json',
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/final_eval_json/new_eval_tsy_flatten.json', # 食管
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/eval_json/eval_tsy_cut_54_flatten.json', # 十二指肠
+                        default='/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/stomach_flat.json',
                         help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
                         default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v1/base-flow-match_vae/otcfm/otcfm_weights_step_55000.pt',

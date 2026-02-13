@@ -23,9 +23,8 @@ import numpy as np
 import torchvision.transforms as transforms
 from torchvision import datasets
 from transformers import AutoFeatureExtractor
-from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
-from utils_ import _get_vector_norm
+from utils.utils_ import _get_vector_norm
 import ot
 
 def compute_wasserstein_ot(z1: torch.Tensor, z2: torch.Tensor, p: int = 2) -> float:

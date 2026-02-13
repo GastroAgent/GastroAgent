@@ -1,6 +1,7 @@
 import gc
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "5"
+
 # import debugpy
 # try:
 #     # 5678 is the default attach port in the VS Code debug configurations. Unless a host and port are specified, host defaults to 127.0.0.1
@@ -11,6 +12,15 @@ import os
 # except Exception as e:
 #     pass
 
+# ### 禁用 高效 attention
+# import torch
+# torch.backends.cuda.enable_mem_efficient_sdp(False)
+# torch.backends.cuda.enable_flash_sdp(False)
+# torch.backends.cuda.enable_math_sdp(True)  # 强制使用数学实现（支持高阶导）
+
+from einops import rearrange, repeat, reduce
+# 或者只导入你需要的：
+from einops.layers.torch import Rearrange
 import random
 import sys
 import torch
@@ -32,36 +42,99 @@ import numpy as np
 torch.autograd.set_detect_anomaly(True)
 # --- 假设这些模块存在 ---
 from vae_sim import VAE, AddGaussianNoise, vae_loss
+from modelscope import AutoModel
 
 # ==============================
 # Discriminator: PatchGAN
 # ==============================
-class PatchDiscriminator(nn.Module):
-    def __init__(self, in_channels=3, ndf=64, n_layers=4):  # 4 层下采样
-        super().__init__()
-        layers = [
-            nn.Conv2d(in_channels, ndf, kernel_size=4, stride=2, padding=1),
-            nn.LeakyReLU(0.2, inplace=False)
-        ]
-        nf_mult = 1
-        for n in range(1, n_layers + 1):  # n=1,2,3,4 → 4次下采样
-            nf_mult_prev = nf_mult
-            nf_mult = min(2 ** n, 8)
-            layers += [
-                nn.Conv2d(ndf * nf_mult_prev, ndf * nf_mult,
-                          kernel_size=4, stride=2, padding=1, bias=False),
-                nn.InstanceNorm2d(ndf * nf_mult),
-                nn.LeakyReLU(0.2, inplace=False)
-            ]
-        # Final layer: kernel=3, padding=1, stride=1 → preserves spatial size (32 -> 32)
-        layers += [
-            nn.Conv2d(ndf * nf_mult, 1, kernel_size=3, stride=1, padding=1)
-        ]
-        self.model = nn.Sequential(*layers)
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from transformers import AutoModel
 
-    def forward(self, x):
-        return self.model(x)  # Output: (B, 1, 32, 32) for input (B, 3, 512, 512)
-    
+class DinoV3Discriminator(nn.Module):
+    def __init__(
+        self,
+        pretrained_model_name="/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vitb16",
+        device="cuda",  # ← 这个 device 应该是当前进程的 cuda:local_rank
+        mode="patch",
+        freeze_backbone=True,
+        img_size=512,
+        patch_size=16,
+    ):
+        super().__init__()
+        self.mode = mode
+        self.img_size = img_size
+        self.patch_size = patch_size
+        self.feat_h = img_size // patch_size
+        self.feat_w = img_size // patch_size
+        self.N_orig = self.feat_h * self.feat_w
+
+        # ❌ 移除 device_map="auto"
+        self.backbone = AutoModel.from_pretrained(pretrained_model_name)
+        
+        dim = self.backbone.norm.weight.shape[0]
+
+        self.head = nn.Sequential(
+            nn.LayerNorm(dim),
+            nn.Linear(dim, dim // 2),
+            nn.GELU(),
+            nn.Linear(dim // 2, 1),
+        )
+
+        self.patch_head = nn.Sequential(
+            nn.LayerNorm(dim),
+            Rearrange('b (h w) d -> b d h w', h=self.feat_h, w=self.feat_w),
+            nn.Conv2d(dim, dim // 2, kernel_size=3, stride=2, padding=1),
+            nn.GELU(),
+            nn.Conv2d(dim // 2, 1, kernel_size=3, stride=2, padding=1),
+            Rearrange('b 1 h w -> b (h w) 1')
+        )
+
+        # ✅ 手动将整个模型移到指定设备（由外部传入）
+        self.to(device)
+
+        if freeze_backbone:
+            for p in self.backbone.parameters():
+                p.requires_grad_(False)
+
+    def forward(self, x, return_features=False, mode='cls'):
+        """
+        return:
+          - logits: (B, 1) 真假判别分数（未sigmoid）
+          - patch_logits (可选): (B, N, 1) patch 分数
+          - features (可选): (B, D) 或 (B, N, D)
+        """
+        outputs = self.backbone(x) # [cls_token, register_tokens, patch_embeddings]
+
+        # 1) 取 token 表示（更稳：优先用 last_hidden_state）
+        if hasattr(outputs, "last_hidden_state") and outputs.last_hidden_state is not None:
+            tokens = outputs.last_hidden_state          # (B, N+1, D) 通常含 CLS
+        else:
+            tokens = None
+
+        # 2) global 表示：优先 CLS token；其次 pooler_output
+        if tokens is not None and mode == 'cls':
+            global_feat = tokens[:, 0, :]              # CLS (B, D)
+        elif hasattr(outputs, "pooler_output"):
+            global_feat = outputs.pooler_output        # (B, D)
+        else:
+            raise ValueError("Model outputs has neither last_hidden_state nor pooler_output.")
+
+        logits = self.head(global_feat)                # (B, 1)
+
+        patch_logits = None
+        patch_feat = None
+        if self.mode == "patch":
+            if tokens is None:
+                raise ValueError("Patch mode requires last_hidden_state.")
+            patch_feat = tokens[:, -self.N_orig:, :]              # (B, N, D)
+            patch_logits = self.patch_head(patch_feat) # (B, N, 1)
+
+        if return_features:
+            return logits, patch_logits, global_feat, patch_feat
+        return logits, patch_logits
+
 # ==============================
 # Hinge Loss Functions
 # ==============================
@@ -73,6 +146,29 @@ def hinge_discriminator_loss(real_pred, fake_pred):
 def hinge_generator_loss(fake_pred):
     return - torch.mean(fake_pred)
 
+def d_logistic_loss(d_real, d_fake):
+    return torch.mean(F.softplus(-d_real)) + torch.mean(F.softplus(d_fake))
+
+def g_logistic_loss(d_fake):
+    return torch.mean(F.softplus(-d_fake))
+
+def r1_reg(d_real, x_real, gamma=10.0):
+    # d_real: (B,1) logits; x_real requires_grad=True
+    grad = torch.autograd.grad(
+        outputs=d_real.sum(), inputs=x_real,
+        create_graph=True, retain_graph=True, only_inputs=True
+    )[0]
+    reg = grad.pow(2).reshape(grad.shape[0], -1).sum(1).mean()
+    return 0.5 * gamma * reg
+
+def d_patch_loss(patch_logits, real_or_fake_labels):
+    B, N = patch_logits.shape[:2]
+    # 假设 patch_logits 是 (B, N, 1)
+    patch_loss = F.binary_cross_entropy_with_logits(
+        patch_logits.view(-1, 1), 
+        real_or_fake_labels.reshape(-1, 1).float()
+    )
+    return patch_loss
 # ==============================
 # EMA & Utils
 # ==============================
@@ -143,8 +239,8 @@ def train_vae_with_gan(
         param for name, param in model.named_parameters()
         if "encoder" not in name and param.requires_grad
     ]
-    # optimizer_g = optim.AdamW(params_to_optimize, lr=lr, weight_decay=1e-3)
-    optimizer_g = optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-3)
+    optimizer_g = optim.AdamW(params_to_optimize, lr=lr, weight_decay=1e-3)
+    # optimizer_g = optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-3)
     
     optimizer_d = optim.AdamW(discriminator.parameters(), lr=disc_lr, weight_decay=1e-3)
 
@@ -193,15 +289,21 @@ def train_vae_with_gan(
                 optimizer_d.zero_grad()
 
                 # 关键：detach 输入，避免任何梯度泄漏
-                real_pred = discriminator(base_image)
+                g_base_image = base_image.clone()
+                base_image.requires_grad=True
+                real_pred, real_patch_pred = discriminator(base_image)
                 with torch.no_grad():
                     output = model(imgs)
                     recon = output.recon
-                fake_pred = discriminator(recon.detach())
+                fake_pred, fake_patch_pred = discriminator(recon.detach())
 
-                d_loss = hinge_discriminator_loss(real_pred, fake_pred)
+                d_loss = d_logistic_loss(real_pred, fake_pred) + \
+                    0.01 * d_patch_loss(real_patch_pred, torch.ones_like(real_patch_pred)) + \
+                    0.01 * d_patch_loss(fake_patch_pred, torch.zeros_like(fake_patch_pred))
+                
+                # d_loss = d_loss + 0.1 * r1_reg(real_pred, base_image)
                 d_loss.backward()
-                clip_grad_norm_(discriminator.parameters(), max_norm=1.0)
+                discriminator_norm = clip_grad_norm_(discriminator.parameters(), max_norm=1.0)
                 optimizer_d.step()
                 scheduler_d.step()
 
@@ -215,19 +317,19 @@ def train_vae_with_gan(
 
                 output = model(imgs)
                 recon = output.recon
-                g_loss, kl = vae_loss(output.recon, base_image, output.mu, output.logvar, beta, p=1)
+                g_loss, kl = vae_loss(output.recon, g_base_image, output.mu, output.logvar, beta, p=1)
                 if output.commit_loss is not None:
                     g_loss = g_loss + commit_beta * output.commit_loss
 
                 if perceptual_loss_fn is not None:
-                    perceptual_loss = perceptual_loss_fn(recon, base_image).mean()
+                    perceptual_loss = perceptual_loss_fn(recon, g_base_image).mean()
                     g_loss = g_loss + perceptual_loss * beta_perceptual
                 else:
                     perceptual_loss = torch.tensor(0.0, device=device)
 
-                fake_pred_for_g = discriminator(recon)
-                adv_loss = hinge_generator_loss(fake_pred_for_g)
-                g_loss = g_loss + gan_weight * adv_loss
+                fake_pred_for_g, _ = discriminator(recon)
+                adv_loss = g_logistic_loss(fake_pred_for_g)
+                # g_loss = g_loss + gan_weight * adv_loss
 
                 g_loss.backward()
                 norm = clip_grad_norm_(model.parameters(), max_norm=1.0).item()
@@ -265,7 +367,9 @@ def train_vae_with_gan(
 # ==============================
 def run():
     dist.init_process_group(backend="nccl")
-    local_rank = dist.get_rank()
+    # local_rank = dist.get_rank()
+    # torch.cuda.set_device(local_rank)
+    local_rank = int(os.environ["LOCAL_RANK"])
     torch.cuda.set_device(local_rank)
     device = torch.device(f'cuda:{local_rank}')
 
@@ -285,7 +389,7 @@ def run():
     sampler = DistributedSampler(dataset, shuffle=True)
     loader = DataLoader(dataset, batch_size=3, sampler=sampler, num_workers=4, pin_memory=True)
     ######### EndoVit-VAE
-    # Initialize VAE
+    # Initialize VAE 
     encoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
     decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
     vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False).to(device).train()
@@ -297,13 +401,8 @@ def run():
     except Exception as e:
         print("No pre-trained VAE found:", e)
     
-    ######### Med-VAE
-    from diffusers.models import AutoencoderKL
-    vae = AutoencoderKL.from_pretrained(
-        '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our').to(device).train()
-    
     # Initialize Discriminator
-    discriminator = PatchDiscriminator(in_channels=3, n_layers=3).to(device)
+    discriminator = DinoV3Discriminator(device=device)
     print(discriminator)
     try:
         discriminator.load_state_dict(torch.load("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae/discriminator_16.pth"))
@@ -311,7 +410,7 @@ def run():
         pass
     # Wrap with DDP
     d_vae = DDP(vae, device_ids=[local_rank], find_unused_parameters=True)
-    d_disc = DDP(discriminator, device_ids=[local_rank], find_unused_parameters=False)
+    d_disc = DDP(discriminator, device_ids=[local_rank], find_unused_parameters=True)
 
     # Start training
     train_vae_with_gan(
@@ -319,17 +418,17 @@ def run():
         discriminator=d_disc,
         loader=loader,
         device=device,
-        epochs=1,
-        lr=1e-5,
-        disc_lr=1e-5,
-        beta=1e-3,
+        epochs=100,
+        lr=1e-4,
+        disc_lr=1e-4,
+        beta=5e-3,
         use_perceptual=False,
-        beta_perceptual=0.25,
+        beta_perceptual=0.125,
         ema_steps=100,
         use_ema=True,
-        ema_decay=0.9,
-        gan_weight=0.2,
-        save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our'
+        ema_decay=0.95,
+        gan_weight=0.1,
+        save_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/vit-vae'
     )
 
     dist.destroy_process_group()

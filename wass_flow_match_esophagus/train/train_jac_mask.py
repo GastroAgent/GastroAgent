@@ -81,7 +81,7 @@ if __name__ == '__main__':
         # break
     
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/data_tsy1/final_eval_json/new_eval_tsy.json",
+        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/new_eval_tsy.json",
     ]
     
     # 初始化模型和优化器

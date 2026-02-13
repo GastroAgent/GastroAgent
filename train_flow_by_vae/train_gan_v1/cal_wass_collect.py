@@ -21,11 +21,11 @@ from diffusers import AutoencoderKL
 from transformers import AutoTokenizer, AutoModel, AutoConfig, ChineseCLIPTextModel, ChineseCLIPTextConfig
 import uuid
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
-from utils.data_loader_test import MedicalJsonDataset
+from utils.data_loader import MedicalJsonDataset
 # from utils.data_utils_test import *
-from my_loss import *
+from model_utils.my_loss import *
 from my_models.unet_2d_condition import UNet2DConditionModel
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],

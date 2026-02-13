@@ -1,16 +1,14 @@
-### 验证 Stop Strategy 的性能。
 from copy import deepcopy
 import os
 import random
 from timm.models.vision_transformer import VisionTransformer
-# os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '4'
 # os.environ["TOKENIZERS_PARALLELISM="] = "False"
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 import glob
-from data_loader_test import MedicalDataset, MedicalJsonDataset
-from data_utils_test import *
+from utils.data_loader import MedicalDataset, MedicalJsonDataset
+from utils.data_utils import *
 from functools import partial
 import torch
 import torch.nn as nn
@@ -29,11 +27,9 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 from PIL import Image
-from data_loader_hiaug import MedicalCLIPTinyAUGDataset
 import ot
 from my_models.unet_2d_condition import UNet2DConditionModel
 from my_models.model_dispatch import dispatch_model
-from my_models.model_wass import AttentionAutoencoder
 from diffusers import AutoencoderKL
 from transformers import ChineseCLIPConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor

@@ -34,7 +34,7 @@ from torchvision import datasets
 from transformers import AutoFeatureExtractor
 from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
-from utils_ import _get_vector_norm
+from utils.utils_ import _get_vector_norm
 from vae_sim import kl_divergence_vae, symmetric_kl_vae, js_kl_vae, VAE, vae_loss, AddGaussianNoise
 from vqae_sim import VQAE
 

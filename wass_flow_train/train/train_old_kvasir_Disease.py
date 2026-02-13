@@ -126,7 +126,8 @@ if __name__ == '__main__':
                                                     transform_A=transform, transform=transform, transform_B=transform,
     ))
     
-    test_json = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease/exam_dataset_419.json"
+    test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_419.json"
+    # test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_extra.json"
     
     # 初始化模型和优化器
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

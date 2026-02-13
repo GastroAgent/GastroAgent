@@ -1,0 +1,303 @@
+[
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ab146ccd-524d-4fc1-a22e-5b180380dfae.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00022502851788885891,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/4c3db910-ff52-45e3-b8f1-6957cd88e11e.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00038567233908300597,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/91391ec6-d297-45b2-b7a7-82a2a473641c.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00034297302287692827,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c09be39d-58b8-4f32-864d-310d39cd300a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003300953540019691,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/69d9d3d4-ceb9-4ad4-a6f7-95d3ca9ed64a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0002920257231582784,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/b0768234-5fd3-42a5-ad88-940fc8159ca2.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0006320159057698523,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/2f36e72b-e789-4649-9054-fda57ed295d7.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00016804350404224047,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/74233815-f763-4c59-90b2-e2ce7b3d69e6.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00030576314505500096,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/3ea886f3-0220-4b8e-ae13-6960a6866846.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00018545489001553506,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4e76b7b-64a2-41f0-b418-21dad8bedc7b.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003444511288156112,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/edf42906-f3a7-4db6-98d6-0a8d2a846fc0.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0003041887878983592,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/a13f92bd-8996-4f40-b37d-30616c743980.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00044631113996729255,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/c2f04625-e5e3-4404-a3e9-b9609430904b.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00030726700788363814,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/29bcacbd-7a7d-47c4-a696-aa74f8e4dffb.jpg",
+    "gt": "Esophagitis",
+    "pred": "Otitis media",
+    "dist": 0.0010178208402875396,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/20fcf45c-065f-484a-bbf3-0969e5cf500f.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0010117821317786972,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/d7ae6930-e393-460c-8e0c-19414dada5a9.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00045446885633282363,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/993000b5-b801-4604-bb22-a4590d743b47.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00032932211373311776,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/ee9948d8-36f7-47b8-9424-999071cc0c7a.jpg",
+    "gt": "Esophagitis",
+    "pred": "Uveitis",
+    "dist": 0.0005002486674735943,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/fd378895-becb-47f0-9a71-560c2cc244fa.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0007516362174000177,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/e4216c39-46ff-47f3-8395-d2c5fdc5d0a4.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.0011328761918573743,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/cf22c0c7-3200-444a-a35d-ed2cfcedc9c6.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00030894114752300084,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/esophagitis/48ea43aa-0e90-421c-a0ff-807b5a136d04.jpg",
+    "gt": "Esophagitis",
+    "pred": "Esophagitis",
+    "dist": 0.00030200091229441267,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/96b241e4-c180-4e17-90b9-a4eaee89ea8b.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00025422578619327396,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/30c1a4f7-b096-4b06-8766-04a75197d613.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0007662994418448458,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/f94ec7a8-52e2-4b99-af5a-e6d4e95a340b.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0011172684996078412,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/19fc878a-905c-4c42-9760-e0c39d728d16.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003926312233993991,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/d7ad9e7c-2ac0-43b9-a6e5-4e15c772454e.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0007546897589539489,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56302cb8-619b-4eaf-a163-549328cac581.jpg",
+    "gt": "Polyps",
+    "pred": "Nodules",
+    "dist": 0.0006008299856653644,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/dbec48ea-ff3c-45a0-932b-73fe23dae6ad.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00023239262130421898,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ccd07ae5-4037-4f6c-a6ad-d9372d8580bf.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0002539293911670231,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/1e15c2d6-b6b3-4804-9b84-f8047356e9cb.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00023884332202012755,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/0fa8810f-f91f-4434-931b-458eabe9543e.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003770999125360201,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56efb458-ec08-4e8a-9baa-bbae08489120.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.000500357328241484,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fd49618e-96fc-45ec-a917-9d04421faa3f.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0020863432437181473,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/fafc5bb2-6d32-445a-97c3-f249ae556f22.jpg",
+    "gt": "Polyps",
+    "pred": "Nodules",
+    "dist": 0.0005430345966791114,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/92177bcd-eeee-4dd4-b904-fb902771f334.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0003952888073399663,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/3f862efc-5bd6-42b5-98b6-659a7fe99679.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0008221790582562486,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/ec2f87eb-d652-4296-9ca0-b60881ce8939.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.001176245432967941,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/53aa8af7-1846-49eb-83ec-2cc531b6babd.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00022959895431995392,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/6a2e9528-7abb-4456-9797-31f3c6b301bb.jpg",
+    "gt": "Polyps",
+    "pred": "Inflammation",
+    "dist": 0.00115592962053294,
+    "correct": false
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/10a1fb7c-6e0a-4d67-9745-3ca48230fdc8.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0004341521222765247,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/17fb3a39-4581-454d-a91d-f7f45b8fb45f.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.00018298418338720998,
+    "correct": true
+  },
+  {
+    "x0": "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/tsy/eval_disease_extra/polyps/56d36c2a-a318-4aef-a454-2b58be054342.jpg",
+    "gt": "Polyps",
+    "pred": "Polyps",
+    "dist": 0.0007155189911524454,
+    "correct": true
+  }
+]

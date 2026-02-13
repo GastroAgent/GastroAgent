@@ -73,7 +73,7 @@ if __name__ == '__main__':
         # break
     
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/final_doctor_exam.json",
+        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/new_eval_tsy.json",
     ]
     
     # 初始化模型和优化器

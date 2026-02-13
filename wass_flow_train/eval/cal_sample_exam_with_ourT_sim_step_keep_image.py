@@ -1220,7 +1220,8 @@ class ImageGenerator:
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--data_path', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/exam_wass_dataset_test_k5_all.json',
+                        default='/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_extra_k5.json',
+                        # default='/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_419_k5.json',
                         help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
                         default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/outputs/image_hint_Disease_extra/otcfm/otcfm_weights_step_50000.pt',

@@ -12,8 +12,6 @@ from tqdm import tqdm
 from timm.models.vision_transformer import VisionTransformer
 from functools import partial
 from torch import nn
-from open_clip import create_model_and_transforms, get_tokenizer
-from open_clip.factory import HF_HUB_PREFIX, _MODEL_CONFIGS
 from transformers import AutoModel, AutoProcessor, AutoImageProcessor
 import torch.nn.functional as F
 from dataclasses import dataclass

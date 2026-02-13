@@ -83,8 +83,8 @@ if __name__ == '__main__':
         dataloaders.append(dataloader)
         # break
     
-    test_json = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data/食管/eval_all.json"
-    
+    test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/new_eval_tsy.json"
+
     # 初始化模型和优化器
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = TripletNetwork(pretrained=False, freeze_base=False, model='attention').to(device)

@@ -72,7 +72,7 @@ if __name__ == '__main__':
     )                                                                                                                      
 
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data/new_eval_all4.json",
+        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/stomach.json",
     ]
     
     # 初始化模型和优化器

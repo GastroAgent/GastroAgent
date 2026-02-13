@@ -1,13 +1,12 @@
 from copy import deepcopy
 import os
 from timm.models.vision_transformer import VisionTransformer
-os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils')
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 from collections import OrderedDict
-from data_loader_test import MedicalDataset, MedicalJsonDataset
-from data_utils_test import *
+from utils.data_loader import MedicalDataset, MedicalJsonDataset
+from utils.data_utils import *
 from functools import partial
 import torch
 import torch.nn as nn
@@ -26,26 +25,15 @@ import torch
 import torch.nn.functional as F
 import numpy as np
 from PIL import Image
-from data_loader_hiaug import MedicalCLIPTinyAUGDataset
 import ot
 from my_models.unet_2d_condition import UNet2DConditionModel
 from my_models.model_dispatch import dispatch_model
-from my_models.model_wass import AttentionAutoencoder
 from diffusers import AutoencoderKL
 from transformers import ChineseCLIPConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor
 from transformers import ChineseCLIPModel as CLIPModel
 from transformers import AutoTokenizer, AutoModel, AutoConfig, ChineseCLIPTextModel, ChineseCLIPTextConfig
 from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
-
-# ---- LPIPS 初始化（若没有安装会跳过） ----
-_lpips_model = None
-try:
-    import lpips  # pip install lpips
-
-    # _lpips_model = lpips.LPIPS(net='alex').to('cuda' if torch.cuda.is_available() else 'cpu').eval()
-except Exception as e:
-    print("[WARN] LPIPS 未安装或初始化失败，将跳过 LPIPS 计算：", e)
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
                          dataset_std=[0.2520, 0.2128, 0.2093]):

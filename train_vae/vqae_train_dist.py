@@ -3,7 +3,7 @@ import os
 import random
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 import sys
-sys.path.append('/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/src')
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/train_vae')
 from vqae_sim import VQAE, AddGaussianNoise, vae_loss
 import torch
 from torch.optim import AdamW
@@ -46,7 +46,7 @@ from transformers import AutoFeatureExtractor
 import torch.nn.functional as F
 from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
-from utils_ import _get_vector_norm
+from utils.utils_ import _get_vector_norm
 import torch.nn.functional as F
 
 class MedicalVAEDataset(Dataset):

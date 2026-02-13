@@ -29,7 +29,7 @@ from torchvision import datasets
 from transformers import AutoFeatureExtractor
 from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
-from utils_ import _get_vector_norm
+from utils.utils_ import _get_vector_norm
 import torch
 from PIL import Image
 import numpy as np

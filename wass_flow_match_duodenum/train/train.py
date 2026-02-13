@@ -90,8 +90,7 @@ if __name__ == '__main__':
         # break
     
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/eval_json/eval_tsy_cut_54.json",
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/eval_json/eval_tsy_cut.json",
+        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/eval_tsy_cut_54.json"
     ]
     label_map_path = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/label_map.json"
     label_map = json.load(open(label_map_path, "r"))

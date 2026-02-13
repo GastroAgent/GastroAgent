@@ -46,7 +46,7 @@ from transformers import AutoFeatureExtractor
 import torch.nn.functional as F
 from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
-from utils_ import _get_vector_norm
+from utils.utils_ import _get_vector_norm
 import torch.nn.functional as F
 
 class MedicalImageDataset(Dataset):

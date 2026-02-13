@@ -1,4 +1,3 @@
-############### 专注于 强力的判别器 ###########
 import argparse
 import copy
 import glob
@@ -31,18 +30,16 @@ from functools import partial
 from PIL import Image
 from tqdm import tqdm
 from safetensors.torch import load_model, load_file
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/utils')
-
-from train_utils import (
+from utils.train_utils import (
     find_latest_checkpoint,
     cleanup_old_checkpoints,
     ema, infiniteloop,
     warmup_lr
 )
 # from data_utils import create_dataset, create_dataloaders
-from data_loader_test import MedicalJsonDataset
+from utils.data_loader import MedicalJsonDataset
 
 from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
 from my_models.unet_model import UNetModelWrapper

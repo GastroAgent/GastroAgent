@@ -68,48 +68,8 @@ if __name__ == '__main__':
     ])
     batch_size = 4
     dataloaders = []
-    # json_paths = glob.glob( # 需要是 同类的数据。
-    #     "/mnt/inaisfs/data/home/tansy_criait/flow_match/data/mask_data_pairs/*.json")
-    
-    # for json_path in json_paths:
-    #     dataset = MedicalJsonDataset(
-    #         path=json_path,
-    #         transform=transform,
-    #         hint_transform=transform_grey,
-    #         transform_A=transform_A,
-    #         transform_B=transform_B,
-    #     )
-    #     if len(dataset) < 8:
-    #         continue
-    #     dataloader = DataLoader(
-    #         dataset,
-    #         batch_size=8,
-    #         shuffle=True,
-    #         num_workers=0,
-    #         drop_last=True,
-    #     )
-    #     dataloaders.append(dataloader)
-    
-    # for json_path in json_paths:
-    #     dataset = MedicalJsonDataset(
-    #         path=json_path,
-    #         transform=transform,
-    #         hint_transform=transform_grey,
-    #         transform_A=transform,
-    #         transform_B=transform,
-    #     )
-    #     if len(dataset) < 8:
-    #         continue
-    #     dataloader = DataLoader(
-    #         dataset,
-    #         batch_size=8,
-    #         shuffle=True,
-    #         num_workers=0,
-    #         drop_last=True,
-    #     )
-    #     dataloaders.append(dataloader)
         
-    json_paths = glob.glob( # 需要是 同类的数据。
+    json_paths = glob.glob( 
         "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/data_pairs/*.json")
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
@@ -167,8 +127,8 @@ if __name__ == '__main__':
                                                     transform_A=transform, transform=transform, transform_B=transform,
     ))
     
-    test_json = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease_Extra/exam_dataset_extra.json"
-    
+    test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_419.json"
+    # test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_extra.json"
     # 初始化模型和优化器
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # model = TripletNetwork(pretrained=False, freeze_base=False, model='resnet34').to(device)

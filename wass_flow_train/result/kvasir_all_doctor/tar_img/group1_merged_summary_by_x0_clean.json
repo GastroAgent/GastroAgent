@@ -1,0 +1,34 @@
+{
+  "overall": {
+    "accuracy": 0.42857142857142855,
+    "correct": 45,
+    "total": 105
+  },
+  "per_label": {
+    "Dyed_and_lifted_polyps": {
+      "accuracy": 0.1956521739130435,
+      "correct": 9,
+      "total": 46
+    },
+    "Dyed_resection_margins": {
+      "accuracy": 0.3333333333333333,
+      "correct": 2,
+      "total": 6
+    },
+    "Ulcerative_colitis": {
+      "accuracy": 0.8,
+      "correct": 8,
+      "total": 10
+    },
+    "Esophagitis": {
+      "accuracy": 0.5909090909090909,
+      "correct": 13,
+      "total": 22
+    },
+    "Polyps": {
+      "accuracy": 0.6190476190476191,
+      "correct": 13,
+      "total": 21
+    }
+  }
+}
