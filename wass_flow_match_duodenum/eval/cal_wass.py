@@ -24,7 +24,6 @@ import sys
 sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
 from utils.data_loader import MedicalJsonDataset
-# from utils.data_utils_test import *
 from model_utils.my_loss import *
 from my_models.unet_2d_condition import UNet2DConditionModel
 
@@ -77,7 +76,7 @@ class ImageGenerator:
                 'r'))
             net_model = UNet2DConditionModel(**config)
             # class_embedding = nn.Embedding(num_class_embeds, time_embed_dim)
-            # init.normal_(class_embedding.weight, mean=0.0, std=0.01)  # 正态分布初始化
+            # init.normal_(class_embedding.weight, mean=0.0, std=0.01)  # Normal distribution initialization
             state_dict = torch.load(f'{checkpoint}', map_location='cpu')
             if use_ema and 'ema_model' in state_dict:
                 net_model.load_state_dict(state_dict['ema_model'], strict=False)
@@ -229,10 +228,10 @@ class ImageGenerator:
         x_min = x.amin(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)
         x_max = x.amax(dim=(1, 2, 3), keepdim=True)  # shape: (B, 1, 1, 1)
 
-        # 防止分母为0
+        # Prevent division by zero
         scale = (x_max - x_min).clamp(min=1e-4)
 
-        # 执行缩放
+        # Perform scaling
         x_scaled = (x - x_min) / scale
         return x_scaled
 
@@ -282,7 +281,7 @@ class ImageGenerator:
         caption_hidden_states = batch['caption_hidden_states']
         y = batch['y']
 
-        # 用来收集每个 time step 的 latent
+        # Collect latent at each time step
         trajectory = [x0.detach().clone()]
         ycache = OrderedDict()
         vcache = OrderedDict()
@@ -347,7 +346,7 @@ class ImageGenerator:
                     x = x + dx * dt
                     ycache[next_key_t] = x.clone()
 
-                    # ### 查看临时的 Temp 图像。
+                    #                     ### View temporary images
                     # if (str(step) + '_' +next_key_t) in imgcache:
                     #     temp = imgcache[(str(step) + '_' +next_key_t)]
                     # else:
@@ -355,7 +354,7 @@ class ImageGenerator:
                     #     img = self.normalize_samples(img)
                     #     os.makedirs(f"{self.args.temp}/{batch_idx}", exist_ok=True)
                     #     imgcache[(str(step) + '_' +next_key_t)] = temp = f"{self.args.temp}/{batch_idx}/{(str(step) + '_' +next_key_t)}.jpg"
-                    #     save_image(img, temp)  
+                    #     save_image(img, temp)
 
             max_t *= 2 
             t_span = torch.linspace(0, 1, max_t + 1, device=self.device)
@@ -378,7 +377,7 @@ class ImageGenerator:
         caption_hidden_states = batch['caption_hidden_states']
         y = batch['y']
 
-        # 用来收集每个 time step 的 latent
+        # Collect latent at each time step
         trajectory = [x0.detach().clone()]
         ycache = OrderedDict()
         vcache = OrderedDict()
@@ -575,7 +574,7 @@ class ImageGenerator:
         image_samples = self.normalize_samples(image_samples)
         self.save_batch(image_samples, image_name)
          
-        print('--------------------- 计算 Wass 距离 --------------------')
+        print('--------------------- Calculate Wasserstein distance --------------------')
         # ====== 在你的生成代码中启用（替换原“计算 W₂”的注释块） ======
         distances_emd_w2 = []
         distances_sinkhorn_w2_latent = []
@@ -915,7 +914,7 @@ class ImageGenerator:
         image_samples = self.vae.decode(samples.to(self.vae.device) / 0.18215).sample
         image_samples = self.normalize_samples(image_samples)
         self.save_batch(image_samples, image_name)
-        print('--------------------- 计算 Wass 距离 --------------------')
+        print('--------------------- Calculate Wasserstein distance --------------------')
         # ====== 在你的生成代码中启用（替换原“计算 W₂”的注释块） ======
         distances_emd_w2 = []
         distances_sinkhorn_w2_latent = []
@@ -1456,7 +1455,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-python generate_samples_grid.py --checkpoint outputs/results_otcfm_32_otcfm-large-batch_exp/otcfm/otcfm_weights_step_2000000.pt  --num_samples 4 --batch_size 4 --output_dir sample_ot-cfm_large_batch --image_size 128 128 --num_steps 8 --use_ema --solver heun --save_grid --save_intermediates --intermediate_freq 
-""" 
