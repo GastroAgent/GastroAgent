@@ -479,6 +479,7 @@ class ImageGenerator:
                     x = x + dx * dt
                     ycache[next_key_t] = x.clone()
 
+                    # ### 查看临时的 Temp 图像。
                     # if (str(step) + '_' +next_key_t) in imgcache:
                     #     temp = imgcache[(str(step) + '_' +next_key_t)]
                     # else:
@@ -509,7 +510,7 @@ class ImageGenerator:
         caption_hidden_states = batch['caption_hidden_states']
         y = batch['y']
 
-        # Used to collect the latent of each time step
+        # 用来收集每个 time step 的 latent
         trajectory = [x0.detach().clone()]
         ycache = OrderedDict()
         vcache = OrderedDict()
@@ -697,7 +698,7 @@ class ImageGenerator:
                 Cmat = ot.dist(Xn, Yn, metric="euclidean") ** 2  # [N',N']
                 a = np.ones(Xn.shape[0]) / Xn.shape[0]
                 b = np.ones(Yn.shape[0]) / Yn.shape[0]
-                W2_sq = ot.sinkhorn2(a, b, Cmat, reg=epsilon, numItermax=200) 
+                W2_sq = ot.sinkhorn2(a, b, Cmat, reg=epsilon, numItermax=200)  # 近似 W2^2
                 w2_list.append(float(np.sqrt(W2_sq)))
             return float(np.mean(w2_list))
         else:  # single
@@ -713,6 +714,10 @@ class ImageGenerator:
 
     @torch.no_grad()
     def _to_minus1_1(self, img):
+        """
+        img: [B,3,H,W]，数值可能在 [-1,1] 或 [0,1]
+        统一转为 LPIPS 需要的 [-1,1]
+        """
         mn, mx = img.min().item(), img.max().item()
         if mx <= 1.0 and mn >= 0.0:
             img = img * 2.0 - 1.0
@@ -729,21 +734,25 @@ class ImageGenerator:
         B, C, H, W = z1.shape
         X = z1.permute(0, 2, 3, 1).reshape(B, H * W, C)  # [B, N, C]
         Y = z2.permute(0, 2, 3, 1).reshape(B, H * W, C)  # [B, N, C]
+        # 为了稳定，中心化（可选）
         Xc = X - X.mean(dim=1, keepdim=True)
         Yc = Y - Y.mean(dim=1, keepdim=True)
 
         swd_list = []
         for _ in range(num_projections):
+            # 生成单位随机方向 u: [B, C]（也可用共享方向，差别不大）
             u = torch.randn(B, C, device=X.device)
-            u = u / (u.norm(dim=1, keepdim=True) + eps)  
+            u = u / (u.norm(dim=1, keepdim=True) + eps)  # 归一化
+            # 投影到 1D: [B, N]
             x1d = (Xc * u.unsqueeze(1)).sum(dim=2)
             y1d = (Yc * u.unsqueeze(1)).sum(dim=2)
+            # 排序后做 L2
             x_sorted, _ = torch.sort(x1d, dim=1)
             y_sorted, _ = torch.sort(y1d, dim=1)
-            w2_1d = (x_sorted - y_sorted).pow(2).mean(dim=1).sqrt() 
-            swd_list.append(w2_1d)  
-        swd_all = torch.stack(swd_list, dim=0).mean(dim=0)  
-        return float(swd_all.mean().item()) 
+            w2_1d = (x_sorted - y_sorted).pow(2).mean(dim=1).sqrt()  # [B]
+            swd_list.append(w2_1d)  # 收集 [B]
+        swd_all = torch.stack(swd_list, dim=0).mean(dim=0)  # [B]，对投影平均
+        return float(swd_all.mean().item())  # 对 batch 平均
 
     @torch.no_grad()
     def cal_Wass_with_T(self, batch_idx, batch=None, pbar=None, result_path=None):
@@ -764,6 +773,8 @@ class ImageGenerator:
         image_samples = self.vae.decode(samples / 0.18215).sample
         image_samples = self.normalize_samples(image_samples)
         self.save_batch(image_samples, image_name)
+        print('--------------------- 计算 Wass 距离 --------------------')
+        # ====== 在你的生成代码中启用（替换原“计算 W₂”的注释块） ======
         distances_emd_w2 = []
         distances_sinkhorn_w2_latent = []
         distances_sinkhorn_w2_latent_mapped = []
