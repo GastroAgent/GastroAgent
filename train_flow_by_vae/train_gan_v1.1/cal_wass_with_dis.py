@@ -1,7 +1,7 @@
 from copy import deepcopy, copy
 import os
 from timm.models.vision_transformer import VisionTransformer
-os.environ['CUDA_VISIBLE_DEVICES'] = '0'
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 from collections import OrderedDict
 from functools import partial
 from safetensors.torch import load_file
@@ -21,11 +21,11 @@ from diffusers import AutoencoderKL
 from transformers import AutoTokenizer, AutoModel, AutoConfig, ChineseCLIPTextModel, ChineseCLIPTextConfig
 import uuid
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
+sys.path.append("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy")
 
-from utils.data_loader import MedicalJsonDataset
+from utils.data_loader_test import MedicalJsonDataset
 # from utils.data_utils_test import *
-from model_utils.my_loss import *
+from my_loss import *
 from my_models.unet_2d_condition import UNet2DConditionModel
 
 def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
@@ -565,6 +565,7 @@ class ImageGenerator:
                 allowed_trajectory.append(trajectory[step])
                 self.store_intermediate(sample, step * self.args.intermediate_freq, need_decode=False)
                 continue
+            
             logits, _ = self.discriminator(sample.to(self.discriminator.device))
             probs = torch.sigmoid(logits).cpu().numpy()
             binary_pred = (probs >= 0.5).astype(int)

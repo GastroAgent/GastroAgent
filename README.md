@@ -126,7 +126,7 @@ pip install -e .
 - **典型训练数据**：
   - 内镜图像/视频帧（或关键帧） + 结构化标注（病灶类型/部位/属性）
   - 文本侧监督（报告、结论、对话式指令数据等）
-- **训练产物**：GastroMLLM 权重（以及 tokenizer / 适配器权重等，如有）。
+- **训练产物**：GastroMLLM 权重。
 - **与其他模块关系**：与 Flow-Match / Wasserstein-GastroFlow **可独立训练**；在 GastroAgent 推理融合阶段被调用以生成解释与报告。
 
 ### Flow-Match 生成器
@@ -151,7 +151,6 @@ pip install -e .
 - **典型流程**：
   - 加载 GastroMLLM 与 Wasserstein-GastroFlow（以及 Flow-Match 生成器）权重/配置
   - 在验证集上做**熵/置信度相关的融合超参数校准** 或者直接使用我们的超参数设置
-  - 固化为推理配置（如 `configs/inference_config.yaml`）供后续批量推理/评估使用
   
 > 如果你希望我把这里的“命令行示例/参数名”也补得非常具体（例如每个模块对应的脚本、参数、输出目录），我可以继续只基于 `README.md` 里已经出现的入口文件名，把示例写成**不依赖阅读其它文件**的形式，并用“占位符变量”保证不会误导。
 
@@ -159,19 +158,19 @@ pip install -e .
 
 > 建议将结果图统一放在 `assets/figures/`，下面先用占位符路径占位，后续直接替换同名文件即可。
 
-### 结果图（占位符）
+### 结果图
 
-- **整体性能对比（各基准数据集/方法对比）**
+- **医生结果**
 
-![Benchmark comparison (placeholder)](assets/figures/benchmark_placeholder.png)
+![Benchmark comparison (placeholder)](assets/figures/doctor-dataset.pdf)
 
-- **长尾类别表现（按器官/类别分组）**
+- **少样本学习示例**
 
-![Long-tail performance (placeholder)](assets/figures/longtail_placeholder.png)
+![Long-tail performance (placeholder)](assets/figures/kshot-case.pdf)
 
-- **可解释证据可视化（轨迹/OT 代价示例）**
+- **工作流结果**
 
-![Evidence visualization (placeholder)](assets/figures/evidence_placeholder.png)
+![Evidence visualization (placeholder)](assets/figures/workflow-result-ill.pdf)
 
 ---
 
@@ -179,33 +178,26 @@ pip install -e .
 
 ```
 GastroAgent/
-├── assets/                   # 文档图片等静态资源
-│   └── figures/              # README 结果图/流程图
-├── data/                     # 数据目录
-│   ├── train/
-│   ├── val/
-│   └── test/
-├── GastroAgent/                 # 核心代码
-│   ├── models/              # 模型定义
-│   ├── datasets/            # 数据集加载
-│   ├── utils/               # 工具函数
-│   └── core/                # 核心算法
-├── scripts/                  # 脚本文件
-│   ├── inference.py
-│   └── video_inference.py
-├── tools/                    # 工具脚本
-│   ├── prepare_data.py
-│   └── generate_report.py
-├── demo/                     # 演示代码
-│   └── app.py
-├── weights/                  # 模型权重
-├── wass_flow_match_duodenum/ # Wasserstein流匹配模块
-│   └── eval/
-│       └── cal_wass.py
-├── train.py                  # 训练脚本
-├── eval.py                   # 评估脚本
-├── requirements.txt          # 依赖列表
-└── README.md                 # 本文件
+├── abnormal_dectect/           # 病灶区域检测
+├── assets/                     # 文档图片等静态资源
+│   └── figures/                # README 结果图/流程图
+├── conditional_flow_matcher/   # 条件流匹配
+├── dataset/                    # 数据处理脚本
+│   ├── eval_data/              # 测试数据
+│   ├── xxx                     # 其他测试脚本
+├── discriminator/              # 判停器的训练相关脚本
+├── GasAgenteent/               # Agent 触发脚本
+│   ├── Agent_pipeline_result/  # 测试结果
+├── model_utils/                # 模型的辅助函数
+├── my_models/                  # Flow-Match 模型结构文件
+├── train_clip/                 # 医学视觉编码器
+├── train_flow_by_vae/          # 训练 Flow-Match 生成器
+├── train_vae/                  # 潜在空间编-解码器
+├── utils/                      # 辅助函数
+├── VLM-R1/                     # MLLM 训练框架
+├── requirements.txt            # 依赖列表
+├── wass_flow_match_duodenum/   # Wasserstein-GastroFlow 
+└── README.md                   # readme
 ```
 
 ## 📄 引用
