@@ -6,7 +6,7 @@
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.5.1+-orange.svg)](https://pytorch.org/)
 
-**A Multimodal AI Medical Assistant for Upper Gastrointestinal Endoscopy**
+**Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics**
 
 *面向上消化道内窥镜的多模态人工智能医学助手*
 
@@ -223,7 +223,7 @@ If this project is helpful for your research, please cite:
 
 ```bibtex
 @article{GastroAgent2026,
-  title={GastroAgent: A Multimodal AI Medical Assistant for Upper Gastrointestinal Endoscopy},
+  title={GastroAgent: Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics},
   author={Your Name and Others},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}

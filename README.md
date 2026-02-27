@@ -8,7 +8,7 @@
 
 **面向上消化道内窥镜的多模态人工智能医学助手**
 
-*A Multimodal AI Medical Assistant for Upper Gastrointestinal Endoscopy*
+*Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics*
 
 [English](README_EN.md) | 简体中文
 
@@ -206,7 +206,7 @@ GastroAgent/
 
 ```bibtex
 @article{GastroAgent2026,
-  title={GastroAgent: A Multimodal AI Medical Assistant for Upper Gastrointestinal Endoscopy},
+  title={GastroAgent: Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics},
   author={Your Name and Others},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}
