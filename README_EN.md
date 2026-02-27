@@ -173,17 +173,17 @@ Overall, **GastroAgent (the full diagnostic framework) = GastroMLLM + Flow-Match
 
 ### Result Figures
 
-- **Doctor results**
+- **Doctor Datasets**
 
-![Benchmark comparison (placeholder)](assets/figures/doctor-dataset.pdf)
+![Benchmark comparison](assets/figures/doctor-dataset.pdf)
 
 - **Few-shot learning example**
 
-![Long-tail performance (placeholder)](assets/figures/kshot-case.pdf)
+![Long-tail performance](assets/figures/kshot-case.pdf)
 
 - **Workflow results**
 
-![Evidence visualization (placeholder)](assets/figures/workflow-result-ill.pdf)
+![Evidence visualization](assets/figures/workflow-result-ill.pdf)
 
 ---
 

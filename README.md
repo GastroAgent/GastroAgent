@@ -160,17 +160,17 @@ pip install -e .
 
 ### 结果图
 
-- **医生结果**
+- **医生数据集**
 
-![Benchmark comparison (placeholder)](assets/figures/doctor-dataset.pdf)
+![Benchmark comparison](assets/figures/doctor-dataset.pdf)
 
 - **少样本学习示例**
 
-![Long-tail performance (placeholder)](assets/figures/kshot-case.pdf)
+![Long-tail performance](assets/figures/kshot-case.pdf)
 
 - **工作流结果**
 
-![Evidence visualization (placeholder)](assets/figures/workflow-result-ill.pdf)
+![Evidence visualization](assets/figures/workflow-result-ill.pdf)
 
 ---
 
