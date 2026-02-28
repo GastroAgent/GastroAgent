@@ -21,9 +21,7 @@ from math import sqrt
 
 # ------------------ 环境设置 ------------------
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6,7"  # 根据实际 GPU 数量调整
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/utils')
-
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/discriminator')
 # ------------------ 自定义模块导入 ------------------
 from utils.data_loader import MedicalJsonDataset
 from utils.data_loader import MedicalTripletJsonDataset

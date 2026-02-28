@@ -1,6 +1,6 @@
 import gc
 import os
-# os.environ['CUDA_VISIBLE_DEVICES'] = '5,6,7'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
 import json
 import torch
 import torch.nn as nn
@@ -10,24 +10,15 @@ from torchvision import transforms
 from PIL import Image
 import os
 from tqdm import tqdm
-from timm.models.vision_transformer import VisionTransformer
-from functools import partial
 from torch import nn
-from torch.nn import Identity
-from safetensors.torch import load_file
-from diffusers.models import AutoencoderKL
-from transformers import ViTModel, ViTConfig, AutoTokenizer, AutoModel
-# from transformers import CLIPModel, CLIPProcessor
+from transformers import AutoTokenizer, AutoModel
 from transformers import ChineseCLIPProcessor as CLIPProcessor
 from transformers import ChineseCLIPModel as CLIPModel
 from torch.optim.lr_scheduler import CosineAnnealingLR
-from diffusers.models.autoencoders.vae import VectorQuantizer
 import torch.nn.functional as F
 from dataclasses import dataclass
-import math
 import numpy as np
 import torchvision.transforms as transforms
-from torchvision import datasets
 import os
 import torch
 from torchvision import transforms
@@ -453,7 +444,6 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
 
 def train_clip_with_cause_text(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path='', freeze_text = False):
-    raise NotImplementedError
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
     processor = CLIPProcessor.from_pretrained(clip_path, use_fast=True)

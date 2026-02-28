@@ -2,7 +2,7 @@ from collections import OrderedDict
 from copy import copy
 import random
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/GasAgent-main")
+sys.path.append("./GasAgent-main")
 from safetensors.torch import load_file
 from functools import partial
 import torch.nn.functional as F
@@ -66,7 +66,7 @@ class ImageGenerator:
         """Initialize and load the model"""
         if not self.only_vae:
             config = json.load(open(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/unet/config.json',
+                './flow_matcher_otcfm/unet/config.json',
                 'r'))
             net_model = UNet2DConditionModel(**config)
             if checkpoint:
@@ -79,15 +79,15 @@ class ImageGenerator:
                 net_model.load_state_dict(state_dict['net_model'], strict=False)
 
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device=self.device).eval()
 
-            text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_encoder/config.json','r'))
+            text_model_config = json.load(open('./flow_matcher_otcfm/text_encoder/config.json','r'))
             text_model_config = ChineseCLIPTextConfig(**text_model_config)
             text_model = ChineseCLIPTextModel(text_model_config).eval()
-            text_model.load_state_dict(load_file("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_model/model.safetensors"), strict=False)
+            text_model.load_state_dict(load_file("./flow_matcher_otcfm/text_model/model.safetensors"), strict=False)
             text_tokenizer = AutoTokenizer.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/text_model', use_fast=True)
+                './flow_matcher_otcfm/text_model', use_fast=True)
             
             if 'text_model' in state_dict:
                 text_model.load_state_dict(state_dict['text_model'], strict=False)
@@ -111,7 +111,7 @@ class ImageGenerator:
                 from my_models.unet_2d_condition_controlnet import ControlUNet2DConditionModel
                 try:
                     controlnet_config = json.load(
-                        open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/unet/controlnet_config.json",
+                        open("./flow_matcher_otcfm/unet/controlnet_config.json",
                             'r'))
                     controlnet_config['in_channels'] = 3
                     controlnet_config['encoder_hid_dim_type'] = 'text_proj'
@@ -202,7 +202,7 @@ class ImageGenerator:
                     return embeds[0] @ embeds[1].T
                 self.similarity = similarity
             elif self.args.sim_model_type == 'convnext':
-                sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match')
+                sys.path.append('.')
                 from discriminator.train_latent_space import TripletNetwork
                 model = TripletNetwork(pretrained=True, freeze_base=False, model='convnext')
                 try:
@@ -227,7 +227,7 @@ class ImageGenerator:
             vision_model = None
             process_single_image = None
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device=self.device).eval()
             return net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image)
 
@@ -689,13 +689,13 @@ class ImageGenerator:
 def generate_parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--data_path', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data/胃/new_eval_all_flatten.json',
+                        default='./data/胃/new_eval_all_flatten.json',
                         help='数据路径') 
     parser.add_argument('--checkpoint', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vae/otcfm/otcfm_weights_step_90000.pt',
+                        default='./outputs/flow-match_vae/otcfm/otcfm_weights_step_90000.pt',
                         help='Path to the checkpoint file') 
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/result/attention_dy_tsy_90000',
+                        default='./result/attention_dy_tsy_90000',
                         help='Directory to save generated images')
     parser.add_argument('--num_steps', type=int, default=8,
                         help='Max Number of steps in the ODE solver')
@@ -709,13 +709,13 @@ def generate_parse_args():
                         help='使用 Cache 加速，但可能会影响结果。')
     parser.add_argument('--bias', type=bool, default=False,
                         help='')  
-    parser.add_argument('--temp', type=str, default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/temp/temp2',
+    parser.add_argument('--temp', type=str, default='./temp/temp2',
                         help='')
     parser.add_argument('--stop_method', type=str, default='direct',
                         choices=['diff', 'second_diff', 'direct'],
                         help='判停策略')
     parser.add_argument('--wass_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights2/attention_tsy.pt",
+                        default="./best_flow_weights2/attention_tsy.pt",
                         help='优先级 高于 权重')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'], 
@@ -729,8 +729,8 @@ def generate_parse_args():
     parser.add_argument('--full', type=bool, default=True,
                         help='')
     parser.add_argument('--sim_model_path', type=str, 
-                        default = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext3.pt",
-                        # default = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vit7b16",
+                        default = "./discriminator/latent_model_weight/convnext3.pt",
+                       
                         help='指定相似模型类型')
     parser.add_argument('--num_channels', type=int, default=128,
                         help='Number of base channels in UNet')

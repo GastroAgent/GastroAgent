@@ -4,8 +4,7 @@ import glob
 import math
 import os
 from timm.models.vision_transformer import VisionTransformer
-import torch.nn.functional as F
-os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0,3,4'
 import gc
 from transformers import ChineseCLIPConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor
@@ -15,35 +14,35 @@ import json
 import torch
 import random
 from torch import nn
+import torchvision.models as models
+import torch.nn.functional as F
 from torch.nn import init
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision import transforms as T
-from tqdm import trange
+from tqdm import tqdm, trange
 from torch.utils.tensorboard import SummaryWriter
 from diffusers import AutoencoderKL
 import sys
 from functools import partial
 from PIL import Image
-from tqdm import tqdm
 from safetensors.torch import load_model, load_file
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
 
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠')
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/utils')
-
-from train_utils import (
+from utils.train_utils import (
     find_latest_checkpoint,
     cleanup_old_checkpoints,
     ema, infiniteloop,
     warmup_lr
 )
 # from data_utils import create_dataset, create_dataloaders
-from data_loader_test import MedicalJsonDataset
+from utils.data_loader import MedicalJsonDataset
 
 from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
 from my_models.unet_model import UNetModelWrapper
 from my_models.unet_2d_condition import UNet2DConditionModel
 from my_models.model_dispatch import dispatch_model
+from model_utils.model import TripletNetwork
 
 def parse_arguments():
     """Parse command-line arguments."""

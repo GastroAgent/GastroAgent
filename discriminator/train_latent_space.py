@@ -3,9 +3,9 @@ import json
 import math
 from tqdm import tqdm
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match')
+sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/discriminator')
 
 import random
 from torch.utils.data import Dataset

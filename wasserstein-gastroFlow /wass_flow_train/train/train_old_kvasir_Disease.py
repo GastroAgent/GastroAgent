@@ -69,7 +69,7 @@ if __name__ == '__main__':
     dataloaders = []
     
     json_paths = glob.glob( 
-        "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/Disease/data_pairs/*.json")
+        "./data/Disease/data_pairs/*.json")
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
             path=json_path,
@@ -117,17 +117,17 @@ if __name__ == '__main__':
         '食管炎D级': '食管炎D级',
         '食管炎B级': '食管炎B级'
     }
-    dataloaders.extend(create_dataloaders_by_pairs("/mnt/inaisfs/data/home/tansy_criait/flow_match/data/食管_Cropped2",
+    dataloaders.extend(create_dataloaders_by_pairs("./食管_Cropped2",
                                                    pairs, batchsize=batch_size, caption_map=caption_map,
                                                     transform_A=transform_A, transform=transform, transform_B=transform_B,
     ))
-    dataloaders.extend(create_dataloaders_by_pairs("/mnt/inaisfs/data/home/tansy_criait/flow_match/data/食管_Cropped2",
+    dataloaders.extend(create_dataloaders_by_pairs("./食管_Cropped2",
                                                    pairs, batchsize=batch_size, caption_map=caption_map,
                                                     transform_A=transform, transform=transform, transform_B=transform,
     ))
     
-    test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_419.json"
-    # test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_extra.json"
+    test_json = "./dataset/eval_data/exam_dataset_419.json"
+    # test_json = "./dataset/eval_data/exam_dataset_extra.json"
     
     # 初始化模型和优化器
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -269,21 +269,21 @@ if __name__ == '__main__':
                 dataset = json.load(open(test_json, "r"))
                 accuracy = evaluate_triplet(model, dataset, device, generator, step)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/old_attention_Disease_Extra.pt")
+                    torch.save(model.state_dict(), f"./best_flow_weights/old_attention_Disease_Extra.pt")
                     best_acc = accuracy
                 else:
                     pass
 
     ### load checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/model_Disease.pt", weights_only=True)
+        state_dict = torch.load("./best_flow_weights/model_Disease.pt", weights_only=True)
         model.load_state_dict(state_dict, strict=False)
     except:
         pass
     
     model = model.to(device)
     print(model)
-    label_map = json.load(open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/utils/label_map.json", "r"))
+    label_map = json.load(open("./utils/label_map.json", "r"))
     
     def evaluate_triplet(model, dataset, device, generator, step=0, k=1):
         if generator is None:
@@ -294,9 +294,9 @@ if __name__ == '__main__':
         correct = 0
         total = 0
         l2_correct = 0
-        save_image_root = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/data/test_Disease_exam_images'
+        save_image_root = './data/test_Disease_exam_images'
         new_dataset = []
-        old_image_root = '/mnt/inaisfs/data/home/tansy_criait/flow_match/data/exam_images_backup'
+        old_image_root = './exam_images_backup'
         answer_map = {"option_A": 0, "option_B": 1, "option_C": 2, "option_D": 3}
         with torch.no_grad():
             for data in tqdm(dataset):

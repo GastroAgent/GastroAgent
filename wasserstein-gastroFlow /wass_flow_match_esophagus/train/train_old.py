@@ -62,7 +62,7 @@ if __name__ == '__main__':
     dataloaders = []
         
     json_paths = glob.glob( # 需要是 同类的数据。
-        "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/simple_data_test/data_pairs/*.json")
+        "./simple_data_test/data_pairs/*.json")
 
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
@@ -83,7 +83,7 @@ if __name__ == '__main__':
         dataloaders.append(dataloader)
         # break
     
-    test_json = "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/new_eval_tsy.json"
+    test_json = "./dataset/eval_data/new_eval_tsy.json"
 
     # 初始化模型和优化器
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -95,9 +95,9 @@ if __name__ == '__main__':
     generator = create_generator()
     # generator = None
     use_generate = True
-    os.makedirs("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/logs_flow", exist_ok=True)
+    os.makedirs("./logs_flow", exist_ok=True)
     # TensorBoard writer
-    writer = SummaryWriter(log_dir='/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/logs_flow')
+    writer = SummaryWriter(log_dir='./logs_flow')
     
     def train_triplet(model, dataloaders, criterion, optimizer, device="cuda",
                       criterion_contrastive=None, generator=None, cal_wasserstein_loss=None, epochs=20):
@@ -210,27 +210,27 @@ if __name__ == '__main__':
                 accuracy = evaluate_triplet(model, dataset, device, generator, step)
                 writer.add_scalar('Evaling/Acc', accuracy, step)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_食管.pt")
+                    torch.save(model.state_dict(), f"./best_flow_weights/attention_食管.pt")
                     best_acc = accuracy
                 else:
                     pass
                 
         if best_acc < accuracy:
-            torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_食管.pt")
+            torch.save(model.state_dict(), f"./best_flow_weights/attention_食管.pt")
             best_acc = accuracy
         else:
             pass
 
     ### 加载 checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_食管.pt", weights_only=True) # 0.
+        state_dict = torch.load("./best_flow_weights/attention_食管.pt", weights_only=True) # 0.
         model.load_state_dict(state_dict)
     except:
         pass
 
     model = model.to(device)
     print(model)
-    label_map = json.load(open("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils/label_map.json", "r"))
+    label_map = json.load(open("./utils/label_map.json", "r"))
     
     def evaluate_triplet(model, dataset, device, generator, step=0, k=5):
         if generator is None:

@@ -9,9 +9,10 @@ export DEBUG_MODE="true"
 
 export WANDB_API_KEY="046193756f0009d71636370009dbcee76f3bd3ac"
 export WANDB_MODE="offline"
-RUN_NAME="Llava-Qwen2-7B-tune-med-SFT-New"
+RUN_NAME="Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500-option-add-cot-sft"
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+# export CUDA_VISIBLE_DEVICES=7
 # 从 SLURM 获取
 NNODES=$SLURM_NNODES
 NODE_RANK=$SLURM_NODEID
@@ -23,12 +24,6 @@ echo "SLURM_NODEID: $SLURM_NODEID"
 echo "MASTER_ADDR: $MASTER_ADDR"
 echo "MASTER_PORT: $MASTER_PORT"
 
-# export CUDA_VISIBLE_DEVICES=7
-# NNODES=1
-# NODE_RANK=0
-# MASTER_ADDR="127.0.0.1"
-# MASTER_PORT=12345
-
 torchrun \
     --nproc_per_node=8 \
     --nnodes=$NNODES \
@@ -36,9 +31,9 @@ torchrun \
     --master_addr=$MASTER_ADDR \
     --master_port=$MASTER_PORT \
     /mnt/inaisfs/data/home/tansy_criait/VLM-R1/src/open-r1-multimodal/src/open_r1/llava/train/train_qwen_mul_next.py \
-    --model_name_or_path /mnt/inaisfs/data/home/tansy_criait/weights/Llava-Qwen2-7B-tune-med-SFT-RL-New \
+    --model_name_or_path /mnt/inaisfs/data/home/tansy_criait/weights/tsy/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-RL-2500 \
     --version qwen2_vl \
-    --data_path /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/SFT/all_cot_think_samples_filter.json \
+    --data_path /mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/mllm/all_disease_vqa/option_add/all_cot_think_samples.json \
     --vision_tower /mnt/inaisfs/data/home/tansy_criait/weights/my-clip-vision \
     --pretrain_mm_mlp_adapter /home/dalhxwlyjsuo/criait_tansy/project/Llava_Qwen2/weight/Llava-Qwen2-7B-knowtune-med-v0-mmtag-mul-next/mm_projector.bin \
     --lora_enable true \
@@ -55,10 +50,10 @@ torchrun \
     --image_aspect_ratio pad \
     --group_by_modality_length True \
     --bf16 True \
-    --output_dir /mnt/inaisfs/data/home/tansy_criait/VLM-R1/checkpoints/$RUN_NAME \
-    --num_train_epochs 3 \
-    --per_device_train_batch_size 6 \
-    --per_device_eval_batch_size 6 \
+    --output_dir /mnt/inaisfs/data/home/tansy_criait/VLM-R1/checkpoints/tsy/$RUN_NAME \
+    --num_train_epochs 5 \
+    --per_device_train_batch_size 8 \
+    --per_device_eval_batch_size 8 \
     --gradient_accumulation_steps 4 \
     --eval_strategy "no" \
     --mm_patch_merge_type none \

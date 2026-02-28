@@ -3,7 +3,7 @@ import json
 import math
 from tqdm import tqdm
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "7"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import random
 from torch.utils.data import Dataset
 from torchvision import transforms
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     )                                                                                                                      
 
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/stomach.json",
+        "./GasAgent-main/dataset/eval_data/stomach.json",
     ]
     
     # 初始化模型和优化器
@@ -81,8 +81,8 @@ if __name__ == '__main__':
     criterion = nn.CrossEntropyLoss()
     use_generate = False
     generator = create_generator(only_vae=(not use_generate))
-    os.makedirs("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/logs_flow", exist_ok=True)
-    writer = SummaryWriter(log_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/logs_flow')
+    os.makedirs("./logs_flow", exist_ok=True)
+    writer = SummaryWriter(log_dir='./logs_flow')
     
     ### attention
     classifer = nn.Sequential(
@@ -175,25 +175,25 @@ if __name__ == '__main__':
                 accuracy = evaluate_triplet(model, classifer, dataset, device, generator, 0)
                 writer.add_scalar('Evaling/Acc', accuracy, step)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_tanh.pt")
-                    torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_classifer_tanh.pt")
+                    torch.save(model.state_dict(), f"./cls_weights/attention_tiny_tanh.pt")
+                    torch.save(classifer.state_dict(), f"./cls_weights/attention_tiny_classifer_tanh.pt")
                     best_acc = accuracy
                 else:
                     pass
                 
         accuracy = evaluate_triplet(model, classifer, dataset, device, generator, 0)      
         if best_acc < accuracy:
-            torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_tanh.pt")
-            torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_classifer_tanh.pt")
+            torch.save(model.state_dict(), f"./cls_weights/attention_tiny_tanh.pt")
+            torch.save(classifer.state_dict(), f"./cls_weights/attention_tiny_classifer_tanh.pt")
             best_acc = accuracy
         else:
             pass
 
     ### 加载 checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_tanh.pt", weights_only=True)
+        state_dict = torch.load("./cls_weights/attention_tiny_tanh.pt", weights_only=True)
         model.load_state_dict(state_dict)
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/cls_weights/attention_tiny_classifer_tanh.pt", weights_only=True)
+        state_dict = torch.load("./cls_weights/attention_tiny_classifer_tanh.pt", weights_only=True)
         classifer.load_state_dict(state_dict)
     except:
         pass
@@ -201,7 +201,7 @@ if __name__ == '__main__':
     model = model.to(device)
     classifer = classifer.to(device)
     print(model)
-    label_map = json.load(open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/utils/label_map.json", "r"))
+    label_map = json.load(open("./utils/label_map.json", "r"))
     
     def evaluate_triplet(model, classifer, dataset, device, generator, step=0, k=5):
         if generator is None:

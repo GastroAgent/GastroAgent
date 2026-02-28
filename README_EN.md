@@ -250,8 +250,8 @@ This project is released under the [MIT License](LICENSE).
 
 ## 📮 Contact
 
-- **Issue tracker**: [GitHub Issues](https://github.com/yourusername/GastroAgent/issues)
-- **Email**: your.email@example.com
+- **Issue tracker**: [GitHub Issues](https://github.com/GastroAgent/GastroAgent/issues)
+- **Email**: shuyuetan0@gmail.com
 - **Homepage**: [Project homepage](https://yourproject.github.io)
 
 ---

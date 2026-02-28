@@ -50,17 +50,17 @@ if __name__ == '__main__':
     batch_size = 4
     dataloaders = []
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/eval_tsy_cut_54.json"
+        "./dataset/eval_data/eval_tsy_cut_54.json"
     ]
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     # model = TripletNetwork(pretrained=False, freeze_base=False, model='attention')
     model = TripletNetwork(pretrained=False, freeze_base=False, model='attention', dy=True, cat=False).to(device) # vit-vae
-    # resumed_path = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights_12/attention_new_raw_remapper" # 0.1778
-    resumed_path = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights_12/attention_new_remapper" # 0.2741
+   
+    resumed_path = "./best_flow_weights_12/attention_new_remapper" # 0.2741
     os.makedirs(resumed_path, exist_ok=True)
     print(resumed_path)
     json_paths = glob.glob(
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/train_json/data_pairs_flow/*.json")
+        "./data_tsy_12/train_json/data_pairs_flow/*.json")
     # json_paths = json_paths[:4]
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
@@ -142,9 +142,9 @@ if __name__ == '__main__':
     criterion_triplet = TripletLoss(margin=1.0)
     criterion_contrastive_wass = ContrastiveLoss(margin=1)
  
-    os.makedirs("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/logs/logs_flow", exist_ok=True)
+    os.makedirs("./logs/logs_flow", exist_ok=True)
     # TensorBoard writer
-    writer = SummaryWriter(log_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/logs/logs_flow')
+    writer = SummaryWriter(log_dir='./logs/logs_flow')
     
     def train_triplet(epochs=20, dataloaders=None):
         if generator is None:
@@ -332,7 +332,7 @@ if __name__ == '__main__':
     
     model = model.to(device)
     classifer = classifer.to(device)
-    label_map = json.load(open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/utils/label_map.json", "r"))
+    label_map = json.load(open("./utils/label_map.json", "r"))
 
     def evaluate_new_triplet(model, dataset, device, generator, step=0, k=1):
         if generator is None:

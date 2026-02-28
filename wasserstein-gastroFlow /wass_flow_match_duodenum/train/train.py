@@ -65,7 +65,7 @@ if __name__ == '__main__':
     class_counts = {}
     
     json_paths = glob.glob(
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/train_json/data_pairs_flow_54/*.json")
+        "./data_tsy_12/train_json/data_pairs_flow_54/*.json")
     # json_paths = json_paths[:4]
     for json_path in tqdm(json_paths):
         class_name = os.path.splitext(os.path.basename(json_path))[0]
@@ -90,9 +90,9 @@ if __name__ == '__main__':
         # break
     
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/eval_tsy_cut_54.json"
+        "./dataset/eval_data/eval_tsy_cut_54.json"
     ]
-    label_map_path = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/label_map.json"
+    label_map_path = "./data_tsy1/label_map.json"
     label_map = json.load(open(label_map_path, "r"))
     
     # 初始化模型和优化器
@@ -138,9 +138,9 @@ if __name__ == '__main__':
     criterion_contrastive_wass = ContrastiveLoss(margin=1.0)
     criterion_contrastive = ContrastiveLoss(margin=1.0)
     generator = create_generator(only_vae=(not use_generate), device="cuda:0")
-    os.makedirs("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/logs/logs_flow", exist_ok=True)
+    os.makedirs("./logs/logs_flow", exist_ok=True)
     # TensorBoard writer
-    writer = SummaryWriter(log_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/logs/logs_flow')
+    writer = SummaryWriter(log_dir='./logs/logs_flow')
     
     hard_neg_map = {
         "胃神经内分泌肿瘤": ["胃MALT淋巴瘤", "胃窦溃疡（A1期）", "胃窦溃疡（S1期）", "皮革胃"],
@@ -314,8 +314,8 @@ if __name__ == '__main__':
                 writer.add_scalar('Evaling/Acc', accuracy, step)
                 update_hard_neg_map(confusion, hard_neg_map)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/attention_tiny_codex.pt")
-                    torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/new_attention_tiny_classifer_codex.pt")
+                    torch.save(model.state_dict(), f"./best_matched_flow_weights/attention_tiny_codex.pt")
+                    torch.save(classifer.state_dict(), f"./best_matched_flow_weights/new_attention_tiny_classifer_codex.pt")
                     best_acc = accuracy
                 else:
                     pass
@@ -331,17 +331,17 @@ if __name__ == '__main__':
         # === 新增代码结束 ===
 
         if best_acc < accuracy:
-            torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/attention_tiny_codex.pt")
-            torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/new_attention_tiny_classifer_codex.pt")
+            torch.save(model.state_dict(), f"./best_matched_flow_weights/attention_tiny_codex.pt")
+            torch.save(classifer.state_dict(), f"./best_matched_flow_weights/new_attention_tiny_classifer_codex.pt")
             best_acc = accuracy
         else:
             pass
 
     ### 加载 checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/attention_tiny_codex.pt", weights_only=True)
+        state_dict = torch.load("./best_matched_flow_weights/attention_tiny_codex.pt", weights_only=True)
         model.load_state_dict(state_dict, strict=True)
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/best_matched_flow_weights/new_attention_tiny_classifer_codex.pt", weights_only=True)
+        state_dict = torch.load("./best_matched_flow_weights/new_attention_tiny_classifer_codex.pt", weights_only=True)
         classifer.load_state_dict(state_dict)
     except:
         pass
@@ -446,7 +446,7 @@ if __name__ == '__main__':
                     l2_correct += 1
 
         accuracy = correct / total
-        # with open('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/errors.json', 'w', encoding='utf-8') as f:
+        # with open('./data/errors.json', 'w', encoding='utf-8') as f:
         #     json.dump(errors, f, ensure_ascii=False, indent=4)
 
         print(f"Evaluation Accuracy: {accuracy:.4f} Label Acc:{(label_correct/total):.4f} L2 Acc:{(l2_correct / total):.4f}")

@@ -19,7 +19,7 @@ from copy import deepcopy
 from torch.utils.tensorboard import SummaryWriter
 from einops.layers.torch import Rearrange
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/GasAgent-main")
+sys.path.append("./GasAgent-main")
 from utils.data_loader import MedicalJsonDataset
 from utils.train_utils import infiniteloop
 from utils.optim import *
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     dataloaders = []
     
     json_paths = glob.glob(
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/train_json/data_pairs_flow/*.json")
+        "./data_tsy1/train_json/data_pairs_flow/*.json")
     # json_paths = json_paths[:4]
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
@@ -78,7 +78,7 @@ if __name__ == '__main__':
         dataloaders.append(dataloader)
     
     test_json = [
-        "/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/new_eval_tsy.json",
+        "./dataset/eval_data/new_eval_tsy.json",
     ]
     
     # 初始化模型和优化器
@@ -142,9 +142,9 @@ if __name__ == '__main__':
             data[key] = batch[key][index:index+1]
         return data
 
-    os.makedirs("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/logs/logs_flow", exist_ok=True)
+    os.makedirs("./logs/logs_flow", exist_ok=True)
     # TensorBoard writer
-    writer = SummaryWriter(log_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/logs/logs_flow')
+    writer = SummaryWriter(log_dir='./logs/logs_flow')
     
     def train_triplet(epochs=20, dataloaders=None):
         if generator is None:
@@ -257,30 +257,30 @@ if __name__ == '__main__':
                 accuracy = evaluate_new_triplet(model, dataset, device, generator, step)
                 writer.add_scalar('Evaling/Acc', accuracy, step)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/sum3_attention_dy_tsy.pt")
-                    torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/sum3_attention_dy_tsy_classifer.pt")
+                    torch.save(model.state_dict(), f"./best_flow_weights/sum3_attention_dy_tsy.pt")
+                    torch.save(classifer.state_dict(), f"./best_flow_weights/sum3_attention_dy_tsy_classifer.pt")
                     best_acc = accuracy
                 else:
                     pass
         if best_acc < accuracy:
-            torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/sum3_attention_dy_tsy.pt")
-            torch.save(classifer.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/sum3_attention_dy_tsy_classifer.pt")
+            torch.save(model.state_dict(), f"./best_flow_weights/sum3_attention_dy_tsy.pt")
+            torch.save(classifer.state_dict(), f"./best_flow_weights/sum3_attention_dy_tsy_classifer.pt")
             best_acc = accuracy
         else:
             pass
 
     ### 加载 checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_dy_tsy.pt", weights_only=True)
+        state_dict = torch.load("./best_flow_weights/attention_dy_tsy.pt", weights_only=True)
         model.load_state_dict(state_dict, strict=True)
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/best_flow_weights/attention_dy_tsy_classifer.pt", weights_only=True)
+        state_dict = torch.load("./best_flow_weights/attention_dy_tsy_classifer.pt", weights_only=True)
         classifer.load_state_dict(state_dict)
     except:
         pass
     
     model = model.to(device)
     classifer = classifer.to(device)
-    label_map = json.load(open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/label_map.json", "r"))
+    label_map = json.load(open("./data_tsy1/label_map.json", "r"))
 
     def evaluate_new_triplet(model, dataset, device, generator, step=0, k=1):
         if generator is None:

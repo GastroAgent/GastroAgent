@@ -2,7 +2,7 @@ import os
 import random
 
 from torch.nn.utils import clip_grad_norm_
-# os.environ['CUDA_VISIBLE_DEVICES'] = '7'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import torch
 from torch.optim import AdamW
 import torch.distributed as dist

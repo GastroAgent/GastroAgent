@@ -1,6 +1,6 @@
 import gc
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '4'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import json
 import torch
 import torch.nn as nn
@@ -23,19 +23,11 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 from diffusers.models.autoencoders.vae import VectorQuantizer
 import torch.nn.functional as F
 from dataclasses import dataclass
-import math
-import numpy as np
-from torchvision import datasets
 from transformers import AutoFeatureExtractor
-from torch.nn.utils import clip_grad_norm_
-from random import choices, choice
-from utils.utils_ import _get_vector_norm
 import torch
 from PIL import Image
-import numpy as np
 from torchvision.utils import save_image
 from vae_sim import VAE
-from vqae_sim import VQAE
 
 # Step 1: 自定义 AddGaussianNoise 类
 class AddGaussianNoise(object):

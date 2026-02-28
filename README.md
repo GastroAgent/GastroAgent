@@ -233,8 +233,8 @@ GastroAgent/
 
 ## 📮 联系方式
 
-- **问题反馈**: [GitHub Issues](https://github.com/yourusername/GastroAgent/issues)
-- **邮件**: your.email@example.com
+- **问题反馈**: [GitHub Issues](https://github.com/GastroAgent/GastroAgent/issues)
+- **邮件**: shuyuetan0@gmail.com
 - **主页**: [项目主页](https://yourproject.github.io)
 
 ---

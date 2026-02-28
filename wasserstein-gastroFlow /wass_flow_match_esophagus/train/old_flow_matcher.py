@@ -14,7 +14,7 @@ from torch.utils.data import DataLoader
 from timm.models.vision_transformer import VisionTransformer
 from torchvision import transforms as T
 import sys
-sys.path.append("/mnt/inaisfs/data/home/tansy_criait/GasAgent-main")
+sys.path.append("./GasAgent-main")
 from PIL import Image
 from diffusers import AutoencoderKL, StableDiffusionPipeline
 from my_models.unet_2d_condition import UNet2DConditionModel
@@ -62,7 +62,7 @@ class ImageGenerator:
         """Initialize and load the model"""
         if not self.only_vae:
             config = json.load(open(
-                '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/unet/config.json',
+                './flow_matcher_otcfm/unet/config.json',
                 'r'))
             net_model = UNet2DConditionModel(**config)
             # class_embedding = nn.Embedding(num_class_embeds, time_embed_dim)
@@ -74,14 +74,14 @@ class ImageGenerator:
                 net_model.load_state_dict(state_dict['net_model'], strict=False)
 
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device='cuda').eval()
             # vae.load_state_dict(torch.load('/dev/shm/jmf/mllm_weight/sd-ema-vae_weight/sd-vae_epoch_ema.pth'), strict=False)
-            text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/text_encoder/config.json','r'))
+            text_model_config = json.load(open('./flow_matcher_otcfm/text_encoder/config.json','r'))
             text_model_config = ChineseCLIPTextConfig(**text_model_config)
             text_model = ChineseCLIPTextModel(text_model_config).eval()
             text_tokenizer = AutoTokenizer.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/text_encoder', use_fast=True)
+                './flow_matcher_otcfm/text_encoder', use_fast=True)
             if 'text_model' in state_dict:
                 text_model.load_state_dict(state_dict['text_model'], strict=False)
 
@@ -103,7 +103,7 @@ class ImageGenerator:
             if self.args.use_controlnet:
                 try:
                     controlnet_config = json.load(
-                        open("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/unet/controlnet_config.json",
+                        open("./flow_matcher_otcfm/unet/controlnet_config.json",
                             'r'))
                     controlnet_config['in_channels'] = 3
                     controlnet_config['encoder_hid_dim_type'] = 'text_proj'
@@ -168,7 +168,7 @@ class ImageGenerator:
             vision_model = None
             process_single_image = None
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device='cuda').eval()
             return net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image)
 
@@ -362,7 +362,7 @@ class ImageGenerator:
             ])
             dataloaders = []
             json_paths = glob.glob(
-                "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/data/mask_data_pairs/*.json")
+                "./data/mask_data_pairs/*.json")
             for json_path in json_paths:
                 dataset = MedicalJsonDataset(
                     path=json_path,
@@ -479,12 +479,7 @@ class ImageGenerator:
 def generate_parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--checkpoint', type=str,
-                        # default = "/mnt/inaisfs/data/home/tansy_criait/flow_match/outputs/disease_self_exam_json_endovit_image_hint_wassmodelDXL_neighbor_nfree/otcfm/otcfm_weights_step_30000.pt",
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/flow_match/outputs/disease_self_exam_json_endovit_image_hint_resnetmodel_neighbor_nfree/otcfm/otcfm_weights_step_30000.pt',
-                        ### All
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/flow_match/outputs/disease_self_exam_json_endovit_image_hint_resnetmodel_neighbor_nfree/otcfm/otcfm_weights_step_50000.pt',
-                        # default = "/mnt/inaisfs/data/home/tansy_criait/flow_match/outputs/disease_self_exam_json_endovit_image_hint_wassmodelDXL_neighbor_nfree/otcfm/otcfm_weights_step_50000.pt",
-                        default = '/mnt/inaisfs/data/home/tansy_criait/flow_match/outputs/disease_self_exam_json_endovit_image_hint_all/otcfm/otcfm_weights_step_50000.pt',
+                        default = './outputs/disease_self_exam_json_endovit_image_hint_all/otcfm/otcfm_weights_step_50000.pt',
                         help='Path to the checkpoint file')
     parser.add_argument('--image_size', type=int, nargs=2, default=[512, 512],
                         help='Image size (height, width)')
@@ -508,7 +503,7 @@ def generate_parse_args():
     parser.add_argument('--op_match', type=bool, default=False,
                         help='')
     parser.add_argument('--wass_model_path', type=str, 
-                        default="/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/model_Disease.pt",
+                        default="./best_flow_weights/model_Disease.pt",
                         help='')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'],

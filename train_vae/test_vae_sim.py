@@ -1,43 +1,25 @@
 import gc
 import os
-os.environ['CUDA_VISIBLE_DEVICES'] = '5'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import json
 import torch
-import torch.nn as nn
-import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from PIL import Image
 from tqdm import tqdm
-from timm.models.vision_transformer import VisionTransformer
-from functools import partial
-from torch import nn
-from torch.nn import Identity
-from safetensors.torch import load_file
-from diffusers.models import AutoencoderKL
 from transformers import ViTModel, ViTConfig, AutoTokenizer, AutoModel, AutoConfig
 from transformers import ChineseCLIPTextConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor
 from transformers import ChineseCLIPModel as CLIPModel
-from transformers import ChineseCLIPModel
-from transformers import ChineseCLIPTextConfig
 
-from torch.optim.lr_scheduler import CosineAnnealingLR
-from diffusers.models.autoencoders.vae import VectorQuantizer
-import torch.nn.functional as F
-from dataclasses import dataclass
 import random
 import math
 import numpy as np
 import torchvision.transforms as transforms
-from torchvision import datasets
 from transformers import AutoFeatureExtractor
-from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
 from utils.utils_ import _get_vector_norm
 from vae_sim import kl_divergence_vae, symmetric_kl_vae, js_kl_vae, VAE, vae_loss, AddGaussianNoise
-from vqae_sim import VQAE
-
 import ot
 
 def compute_wasserstein_ot(z1: torch.Tensor, z2: torch.Tensor, p: int = 2) -> float:

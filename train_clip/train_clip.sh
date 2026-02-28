@@ -10,4 +10,4 @@ source activate unsloth
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 #export CUDA_LAUNCH_BLOCKING=1
 
-python /home/dalhxwlyjsuo/criait_tansy/project/EndoViT/src/train_clip.py
+python /mnt/inaisfs/data/home/tansy_criait/GasAgent-main/train_clip/train_clip.py

@@ -1,6 +1,6 @@
 import gc
 import os
-# os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 import json
 import random
 import torch
@@ -27,8 +27,6 @@ from dataclasses import dataclass
 import math
 import numpy as np
 import torchvision.transforms as transforms
-from torchvision import datasets
-from transformers import AutoFeatureExtractor
 from torch.nn.utils import clip_grad_norm_
 from random import choices, choice
 from utils.utils_ import _get_vector_norm
@@ -206,8 +204,6 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
         clip.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         tokenizer.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         processor.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
-    # with open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/base_device_map_{gpu_num}.json', 'w') as f:
-    #     json.dump(clip.hf_device_map, f, indent=2)
 
     optimizer_clip = torch.optim.AdamW(clip.parameters(), lr=lr, weight_decay=1e-4)
     scheduler_clip = CosineAnnealingLR(optimizer_clip, T_max=1000, eta_min=1e-12)
@@ -426,8 +422,6 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
         clip.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         tokenizer.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         processor.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
-    # with open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/base_device_map_{gpu_num}.json', 'w') as f:
-    #     json.dump(clip.hf_device_map, f, indent=2)
 
     if freeze_text:
         clip.text_model.requires_grad_(False)
@@ -604,8 +598,6 @@ if __name__ == '__main__':
         # 几何变换
         transforms.RandomHorizontalFlip(p=0.25),  # 随机水平翻转
         transforms.RandomVerticalFlip(p=0.25),  # 随机垂直翻转
-        # transforms.RandomApply([transforms.RandomRotation(15)], p=0.4),  # 随机旋转（±15°）
-        # transforms.RandomPerspective(distortion_scale=0.15, p=0.2),  # 透视变换
         transforms.Resize((512, 512)),
         # transforms.Resize((feat.size['width'], feat.size['height'])),
         # 颜色变换
@@ -622,9 +614,9 @@ if __name__ == '__main__':
     src_path = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/disease_data/train_clip_data2_with_disease.json'
 
     dataset = MedicalCLIPDataset(src_path, transform=transform, base_transform=base_transform, text_key='disease')
-    loader  = DataLoader(dataset, batch_size=128, shuffle=True, num_workers=4) # 开启感知为 50，否则为 84.
+    loader  = DataLoader(dataset, batch_size=128, shuffle=True, num_workers=4)
 
-    train_clip(loader, device, clip_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease/CLIPModel_10_712',
+    train_clip(loader, device, clip_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease/CLIPModel',
                epochs=20, lr=1e-6, save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease',
                clip_text_path='')
 
