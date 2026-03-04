@@ -596,15 +596,15 @@ if __name__ == "__main__":
         'max_black': 0.08      # 放宽最大黑色占比
     }
     
-    labels = os.listdir("/mnt/inaisfs/data/home/tansy_criait/Datasets/mini-imagenet-folder")
+    labels = os.listdir("./Datasets/mini-imagenet-folder")
     # labels = ["胃窦溃疡（S1期）v1"]
     for label in labels: 
         print(label)
         # 路径配置（请替换为实际路径）
-        input_root = f"/mnt/inaisfs/data/home/tansy_criait/Datasets/mini-imagenet-folder/{label}"
-        depth_root = f"/mnt/inaisfs/data/home/tansy_criait/Datasets/depth/mini-imagenet-folder/{label}"
-        output_root = f"/mnt/inaisfs/data/home/tansy_criait/Datasets/unused/{label}"
-        crop_root = f"/mnt/inaisfs/data/home/tansy_criait/Datasets/mini-imagenet-folder-region/{label}"
+        input_root = f"./Datasets/mini-imagenet-folder/{label}"
+        depth_root = f"./Datasets/depth/mini-imagenet-folder/{label}"
+        output_root = f"./Datasets/unused/{label}"
+        crop_root = f"./Datasets/mini-imagenet-folder-region/{label}"
         os.makedirs(output_root, exist_ok=True)
         os.makedirs(crop_root, exist_ok=True)
 

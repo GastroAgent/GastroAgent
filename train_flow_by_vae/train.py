@@ -27,7 +27,7 @@ import sys
 from functools import partial
 from PIL import Image
 from safetensors.torch import load_model, load_file
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main')
+sys.path.append('./GasAgent-main')
 
 from utils.train_utils import (
     find_latest_checkpoint,
@@ -53,7 +53,7 @@ def parse_arguments():
                         help="Flow matching model type")
 
     parser.add_argument("--output_dir", type=str,
-                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/outputs/image_hint_十二指肠3",
+                        default="./outputs/image_hint_十二指肠3",
                         help="Output directory")
     
     # UNet configuration
@@ -98,7 +98,7 @@ def parse_arguments():
 
     # Logging parameters
     parser.add_argument("--log_dir", type=str,
-                        default="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/logs",
+                        default="./logs",
                         help="TensorBoard log directory")
 
     # last n checkpoints to save, delete the rest checkpoints for saving the disk space
@@ -157,7 +157,7 @@ def train(args):
 
     dataloaders = []
     json_paths = glob.glob(
-        "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy_12/train_json/data_pairs_flow/*.json")
+        "./data_tsy_12/train_json/data_pairs_flow/*.json")
     
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
@@ -182,14 +182,14 @@ def train(args):
     dataloopers = [infiniteloop(dataloader) for dataloader in dataloaders]
 
     ### Model initialization
-    config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/unet/config.json', 'r'))
+    config = json.load(open('./flow_matcher_otcfm/unet/config.json', 'r'))
     net_model = UNet2DConditionModel(**config)
     try:
-        net_model.load_state_dict(torch.load('/mnt/inaisfs/data/home/tansy_criait/flow_match/flow_matcher_otcfm/unet/diffusion_pytorch_model.bin'), strict=False)
+        net_model.load_state_dict(torch.load('./flow_matcher_otcfm/unet/diffusion_pytorch_model.bin'), strict=False)
     except RuntimeError as e:
         print(e)
         pass
-    vae = AutoencoderKL.from_pretrained('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/vae').eval()
+    vae = AutoencoderKL.from_pretrained('./flow_matcher_otcfm/vae').eval()
     
     if use_image_feature:
         def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.2280, 0.2228],
@@ -209,7 +209,7 @@ def train(args):
         
         vision_model = VisionTransformer(patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4,
                                          qkv_bias=False, norm_layer=partial(nn.LayerNorm, eps=1e-6)).eval()
-        vision_model.load_state_dict(torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/EndoViT/pytorch_model.bin", weights_only=False))
+        vision_model.load_state_dict(torch.load("./flow_matcher_otcfm/EndoViT/pytorch_model.bin", weights_only=False))
     else:
         vision_model = None
 
@@ -217,13 +217,13 @@ def train(args):
             return x
 
     if use_text_feature:
-        config_json = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/text_encoder/config.json', 'r'))
+        config_json = json.load(open('./flow_matcher_otcfm/text_encoder/config.json', 'r'))
         config = ChineseCLIPTextConfig(**config_json)
         text_model = ChineseCLIPTextModel(config, False).eval()
         text_tokenizer = AutoTokenizer.from_pretrained(
-            '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/text_encoder', use_fast=True)
+            './flow_matcher_otcfm/text_encoder', use_fast=True)
         try:
-            state_dict = load_file("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/flow_matcher_otcfm/text_encoder/model.safetensors")
+            state_dict = load_file("./flow_matcher_otcfm/text_encoder/model.safetensors")
             text_model.load_state_dict(state_dict)
         except:
             pass
@@ -251,7 +251,7 @@ def train(args):
     init_weights(net_model)
     state_dict = {}
     # state_dict = torch.load(
-    #     '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/outputs/disease_A2B/otcfm_weights_step_2000_A2D.pt')
+    #     './outputs/disease_A2B/otcfm_weights_step_2000_A2D.pt')
     if 'ema_model' in state_dict:
         net_model.load_state_dict(state_dict['ema_model'], strict=False)
 

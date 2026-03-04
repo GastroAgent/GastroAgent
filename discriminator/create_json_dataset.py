@@ -4,12 +4,12 @@ from glob import glob
 import random
 
 try:
-    dataset = json.load(open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/triplet_all_dataset.json", "r"))
+    dataset = json.load(open("./discriminator/data/triplet_all_dataset.json", "r"))
     # dataset = []
 except:
     dataset = []
 
-image_root = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/similarity_images_draw/Dinov3' # GME
+image_root = './discriminator/data/similarity_images_draw/Dinov3' # GME
 labels = os.listdir(image_root + '/positive')
 
 for label in labels:
@@ -49,9 +49,9 @@ eval_dataset = dataset[-eval_size:]
 print(f'Dataset Size: {len(dataset)}')
 print(f'Train Dataset Size: {len(train_dataset)}')
 print(f'Eval Dataset Size: {len(eval_dataset)}')
-with open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/eval_triplet_all_dataset.json', 'w') as f:
+with open('./discriminator/data/eval_triplet_all_dataset.json', 'w') as f:
     json.dump(eval_dataset, f, indent=4, ensure_ascii=False)
-with open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/train_triplet_all_dataset.json', 'w') as f:
+with open('./discriminator/data/train_triplet_all_dataset.json', 'w') as f:
     json.dump(train_dataset, f, indent=4, ensure_ascii=False)
-with open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/triplet_all_dataset.json', 'w') as f:
+with open('./discriminator/data/triplet_all_dataset.json', 'w') as f:
     json.dump(dataset, f, indent=4, ensure_ascii=False)

@@ -144,7 +144,7 @@ def clip_loss(similarity: torch.Tensor) -> torch.Tensor:
     image_loss = contrastive_loss(similarity.t())
     return (caption_loss + image_loss) / 2.0
 
-def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_clip(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path=''):
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
@@ -154,11 +154,11 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
     if gpu_num > 1:
         print("Avail GPUs: ", gpu_num)
         try:
-            device_map = json.load(open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/device_map_{gpu_num}.json', 'r'))
+            device_map = json.load(open(f'./clip_src/device_map_{gpu_num}.json', 'r'))
         except (FileNotFoundError, FileExistsError):
             print('Load Device Map')
             device_map = json.load(
-                open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/device_map_{gpu_num}.json', 'r'))
+                open(f'./clip_src/device_map_{gpu_num}.json', 'r'))
         except:
             device_map = 'auto'
     else:
@@ -184,7 +184,7 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
     if os.path.exists(clip_text_path) and clip_text_path:
         text_device = clip.text_model.device
         clip.text_model.from_pretrained(clip_text_path).to(text_device)
-    # with open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/base_device_map_{gpu_num}.json', 'w') as f:
+    # with open(f'./clip_src/base_device_map_{gpu_num}.json', 'w') as f:
     #     json.dump(clip.hf_device_map, f, indent=2)
 
     if os.path.exists(clip_text_path) and clip_text_path:
@@ -284,7 +284,7 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
                 print(f"TextModel ↳ saved: {save_clip_text_path}")
             print(f"  ↳ saved: {save_dir}")
 
-def train_biomed_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_biomed_clip(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', model_weight_path=''):
     os.makedirs(save_dir, exist_ok=True)
     from open_clip import create_model_and_transforms, get_tokenizer
@@ -366,7 +366,7 @@ def train_biomed_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tan
             print(f"  ↳ saved: {save_dir}")
 
 
-def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_clip_with_mean_pool(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path='', freeze_text = False):
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
@@ -382,7 +382,7 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
     if gpu_num > 1:
         print("Avail GPUs: ", gpu_num)
         try:
-            device_map = json.load(open(f'/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/freeze_text_device_map_{gpu_num}.json', 'r'))
+            device_map = json.load(open(f'./clip_src/freeze_text_device_map_{gpu_num}.json', 'r'))
         except (FileNotFoundError, FileExistsError):
             device_map = 'auto'
     else:
@@ -611,19 +611,19 @@ if __name__ == '__main__':
         # transforms.RandomErasing(p=0.25, scale=(0.05, 0.1), ratio=(0.67, 1.33), value='random'),  # 随机擦除
     ])
 
-    src_path = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/disease_data/train_clip_data2_with_disease.json'
+    src_path = './clip_src/disease_data/train_clip_data2_with_disease.json'
 
     dataset = MedicalCLIPDataset(src_path, transform=transform, base_transform=base_transform, text_key='disease')
     loader  = DataLoader(dataset, batch_size=128, shuffle=True, num_workers=4)
 
-    train_clip(loader, device, clip_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease/CLIPModel',
-               epochs=20, lr=1e-6, save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease',
+    train_clip(loader, device, clip_path='./clip_src/big_clip_trained_weight_disease/CLIPModel',
+               epochs=20, lr=1e-6, save_dir='./clip_src/big_clip_trained_weight_disease',
                clip_text_path='')
 
-    # train_biomed_clip(loader, device, clip_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/BiomedCLIP/Finetune_BiomedCLIP',
-    #            epochs=10, lr=1e-6, save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/BiomedCLIP')
+    # train_biomed_clip(loader, device, clip_path='./clip_src/BiomedCLIP/Finetune_BiomedCLIP',
+    #            epochs=10, lr=1e-6, save_dir='./clip_src/BiomedCLIP')
 
-    # train_clip_with_mean_pool(loader, device, clip_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_weight_disease/CLIPModel_3',
+    # train_clip_with_mean_pool(loader, device, clip_path='./clip_src/big_clip_trained_weight_disease/CLIPModel_3',
     #            epochs=3, lr=1e-5, freeze_text = True,
-    #            save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_text_med_v4',
-    #            clip_text_path='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/clip_src/big_clip_trained_text_med_v4/medical_embedded_v4_disease_3'
+    #            save_dir='./clip_src/big_clip_trained_text_med_v4',
+    #            clip_text_path='./clip_src/big_clip_trained_text_med_v4/medical_embedded_v4_disease_3'

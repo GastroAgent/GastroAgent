@@ -21,7 +21,7 @@ from math import sqrt
 
 # ------------------ 环境设置 ------------------
 os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3,4,5,6,7"  # 根据实际 GPU 数量调整
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/discriminator')
+sys.path.append('./GasAgent-main/discriminator')
 # ------------------ 自定义模块导入 ------------------
 from utils.data_loader import MedicalJsonDataset
 from utils.data_loader import MedicalTripletJsonDataset
@@ -123,7 +123,7 @@ class TripletNetwork(nn.Module):
             self.embedding = AttentionDownEncoderXL()
         elif model == 'convnext':
             from transformers import AutoImageProcessor, DINOv3ConvNextModel
-            pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-convnext-base"
+            pretrained_model_name = "./weights/dinov3-convnext-base"
             self.processor = AutoImageProcessor.from_pretrained(pretrained_model_name)
             self.embedding = DINOv3ConvNextModel.from_pretrained(pretrained_model_name)
             in_channel = 4
@@ -256,7 +256,7 @@ class Generator:
     def __init__(self):
         self.device = "cuda"
         self.vae = AutoencoderKL.from_pretrained(
-            '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae'
+            './whole_wass_flow_match/flow_matcher_otcfm/vae'
         ).to(self.device).eval()
 
 
@@ -324,7 +324,7 @@ def train_triplet(model, dataloader, eval_dataset, criterion, optimizer, device,
     total_step = epochs * len(dataloader)
     best_acc = 0.0
 
-    writer = SummaryWriter(log_dir="/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/logs") if rank == 0 else None
+    writer = SummaryWriter(log_dir="./whole_wass_flow_match/discriminator/logs") if rank == 0 else None
 
     dataloader_inf = infiniteloop(dataloader)
     model.train()
@@ -365,7 +365,7 @@ def train_triplet(model, dataloader, eval_dataset, criterion, optimizer, device,
             accuracy = evaluate_triplet(model, eval_dataset, device, vae, rank=rank)
             if accuracy > best_acc:
                 best_acc = accuracy
-                save_path = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext5_ddp.pt"
+                save_path = "./discriminator/latent_model_weight/convnext5_ddp.pt"
                 os.makedirs(os.path.dirname(save_path), exist_ok=True)
                 torch.save(model.module.state_dict(), save_path)
             if writer:
@@ -394,11 +394,11 @@ def main():
 
     # Dataset
     train_dataset = MedicalTripletJsonDataset(
-        path="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/step_score_generated/train_triplet_all_dataset.json",
+        path="./train/train_gan_v2/step_score_generated/train_triplet_all_dataset.json",
         transform=transform_B,
     )
     eval_dataset = MedicalTripletJsonDataset(
-        path="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/step_score_generated/eval_triplet_all_dataset.json",
+        path="./train/train_gan_v2/step_score_generated/eval_triplet_all_dataset.json",
         transform=transform_B,
     )
 
@@ -424,7 +424,7 @@ def main():
     # Load checkpoint (only on rank 0, then broadcast)
     # if rank == 0:
     #     try:
-    #         state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext2.pt", map_location=device)
+    #         state_dict = torch.load("./discriminator/latent_model_weight/convnext2.pt", map_location=device)
     #         model.module.load_state_dict(state_dict, strict=False)
     #         print("Checkpoint loaded.")
     #     except Exception as e:

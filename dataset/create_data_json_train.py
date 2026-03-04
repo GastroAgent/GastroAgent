@@ -7,10 +7,10 @@ import random
 dataset = []
 data_id = 0
 question_id = 0
-images_dir = '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match_2十二指肠/simple_data_checked/十二指肠球部/train'
+images_dir = './new_wass_flow_match_2十二指肠/simple_data_checked/十二指肠球部/train'
 labels = os.listdir(images_dir)
 
-label_map = json.load(open('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/utils/label_map.json', 'r'))
+label_map = json.load(open('./new_wass_flow_match/utils/label_map.json', 'r'))
 data_template = {
     'question_id': None,
     'x0': None,
@@ -77,5 +77,5 @@ for label in labels * 20:
 
 ### ----------------------- 可选：保存为 JSON 文件 -----------------------
 print("Dataset Size: ", len(dataset))
-with open('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match_2十二指肠/simple_data_checked/train_十二指肠球部.json', 'w', encoding='utf-8') as f:
+with open('./new_wass_flow_match_2十二指肠/simple_data_checked/train_十二指肠球部.json', 'w', encoding='utf-8') as f:
     json.dump(dataset, f, ensure_ascii=False, indent=4)

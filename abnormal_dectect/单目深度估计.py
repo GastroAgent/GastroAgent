@@ -16,13 +16,13 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm  # 用于显示进度条
 import glob
 
-INPUT_root = "/mnt/inaisfs/data/home/tansy_criait/Datasets/mini-imagenet-folder"
-OUTPUT_root = "/mnt/inaisfs/data/home/tansy_criait/Datasets/depth/mini-imagenet-folder"
+INPUT_root = "./Datasets/mini-imagenet-folder"
+OUTPUT_root = "./Datasets/depth/mini-imagenet-folder"
 INPUT_FOLDERs = glob.glob(f"{INPUT_root}/*")
-# INPUT_FOLDERs = ["/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data/胃/eval/正常胃窦"]
+# INPUT_FOLDERs = ["./wass_flow_match_胃/data/胃/eval/正常胃窦"]
 
 # -------------------------- 配置参数（修改为你的文件夹路径） --------------------------
-PROJECT_PATH = "/mnt/inaisfs/data/home/tansy_criait/abnormal_dectect/Depth-Anything-V2-main/Depth-Anything-V2-main"  # 项目根目录
+PROJECT_PATH = "./abnormal_dectect/Depth-Anything-V2-main/Depth-Anything-V2-main"  # 项目根目录
 MODEL_TYPE = "vitb"  # 模型类型
 SUPPORTED_FORMATS = ('.jpg', '.jpeg', '.png', '.bmp', '.gif')  # 支持的图片格式
 MAX_RECURSION_DEPTH = 0  # 最大递归目录深度，设置为0表示只处理当前目录，-1表示无限制

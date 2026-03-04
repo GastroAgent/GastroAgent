@@ -163,7 +163,7 @@ def clip_loss(similarity: torch.Tensor) -> torch.Tensor:
     image_loss = contrastive_loss(similarity.t())
     return (caption_loss + image_loss) / 2.0
 
-def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_clip(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path='', freeze_text=False):
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
@@ -174,11 +174,11 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
         print("Avail GPUs: ", gpu_num)
         try:
             device_map = json.load(
-                open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/device_map_{gpu_num}.json', 'r'))
+                open(f'./EndoViT/device_map_{gpu_num}.json', 'r'))
         except (FileNotFoundError, FileExistsError):
             print('Load Device Map')
             device_map = json.load(
-                open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/device_map_{gpu_num}.json', 'r'))
+                open(f'./EndoViT/device_map_{gpu_num}.json', 'r'))
         except:
             device_map = 'auto'
     else:
@@ -219,7 +219,7 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
         clip.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         tokenizer.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         processor.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
-    # with open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
+    # with open(f'./EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
     #     json.dump(clip.hf_device_map, f, indent=2)
 
     optimizer_clip = torch.optim.AdamW(clip.parameters(), lr=lr, weight_decay=1e-4)
@@ -299,7 +299,7 @@ def train_clip(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weig
             print(f"  ↳ saved: {save_dir}")
 
 
-def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_clip_with_mean_pool(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path='', freeze_text = False):
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
@@ -315,7 +315,7 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
     if gpu_num > 1:
         print("Avail GPUs: ", gpu_num)
         try:
-            device_map = json.load(open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/freeze_text_device_map_{gpu_num}.json', 'r'))
+            device_map = json.load(open(f'./EndoViT/freeze_text_device_map_{gpu_num}.json', 'r'))
         except (FileNotFoundError, FileExistsError):
             device_map = 'auto'
     else:
@@ -355,7 +355,7 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
         clip.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         tokenizer.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         processor.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
-    # with open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
+    # with open(f'./EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
     #     json.dump(clip.hf_device_map, f, indent=2)
 
     if freeze_text:
@@ -442,7 +442,7 @@ def train_clip_with_mean_pool(loader, device, clip_path = '/home/dalhxwlyjsuo/cr
                 print(f"TextModel ↳ saved: {save_clip_text_path}")
             print(f"  ↳ saved: {save_dir}")
 
-def train_clip_with_cause_text(loader, device, clip_path = '/home/dalhxwlyjsuo/criait_tansy/weight/clip-vit-large-patch14',
+def train_clip_with_cause_text(loader, device, clip_path = './weight/clip-vit-large-patch14',
               epochs=30, lr=1e-5, save_dir='./checkpoints', clip_text_path='', freeze_text = False):
     os.makedirs(save_dir, exist_ok=True)
     tokenizer = AutoTokenizer.from_pretrained(clip_path, use_fast=True)
@@ -458,7 +458,7 @@ def train_clip_with_cause_text(loader, device, clip_path = '/home/dalhxwlyjsuo/c
     if gpu_num > 1:
         print("Avail GPUs: ", gpu_num)
         try:
-            device_map = json.load(open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/freeze_text_device_map_{gpu_num}.json', 'r'))
+            device_map = json.load(open(f'./EndoViT/freeze_text_device_map_{gpu_num}.json', 'r'))
         except (FileNotFoundError, FileExistsError):
             device_map = 'auto'
     else:
@@ -498,7 +498,7 @@ def train_clip_with_cause_text(loader, device, clip_path = '/home/dalhxwlyjsuo/c
         clip.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         tokenizer.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
         processor.save_pretrained(os.path.join(save_dir, f'CLIPModel_Text'))
-    # with open(f'/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
+    # with open(f'./EndoViT/base_device_map_{gpu_num}.json', 'w') as f:
     #     json.dump(clip.hf_device_map, f, indent=2)
 
     if freeze_text:
@@ -664,7 +664,7 @@ if __name__ == '__main__':
     # 先根据 HF 预处理器拿到正确的 mean/std/size
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    feat = AutoFeatureExtractor.from_pretrained('/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/clip_trained_weight_disease/CLIPModel_base')
+    feat = AutoFeatureExtractor.from_pretrained('./EndoViT/clip_trained_weight_disease/CLIPModel_base')
     print('Image Size: ', feat.size)
     base_transform = transforms.Compose([
         transforms.Resize((feat.size['width'], feat.size['height'])),
@@ -682,17 +682,17 @@ if __name__ == '__main__':
         # transforms.RandomErasing(p=0.2, scale=(0.05, 0.2), ratio=(0.67, 1.33), value='random')
     ])
 
-    src_path = '/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/disease_data/train_clip_data2_with_disease.json'
-    # src_path = '/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/disease_data/train_clip_data2_total.json'
+    src_path = './EndoViT/disease_data/train_clip_data2_with_disease.json'
+    # src_path = './EndoViT/disease_data/train_clip_data2_total.json'
     dataset = MedicalCLIPDataset(src_path, transform=transform, base_transform=base_transform, text_key='caption')
     loader  = DataLoader(dataset, batch_size=96, shuffle=True, num_workers=4) # 开启感知为 50，否则为 84.
 
-    train_clip(loader, device, clip_path='/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/clip_trained_weight/CLIPModel_20',
-               epochs=30, lr=1e-6, save_dir='/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/clip_trained_weight', freeze_text=False)
+    train_clip(loader, device, clip_path='./EndoViT/clip_trained_weight/CLIPModel_20',
+               epochs=30, lr=1e-6, save_dir='./EndoViT/clip_trained_weight', freeze_text=False)
 
-    # train_clip_with_mean_pool(loader, device, clip_path='/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/big_clip_trained_weight_disease/CLIPModel_1',
+    # train_clip_with_mean_pool(loader, device, clip_path='./EndoViT/big_clip_trained_weight_disease/CLIPModel_1',
     #            epochs=5, lr=1e-5, freeze_text = True,
-    #            save_dir='/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/clip_trained_weight',
-    #            clip_text_path='/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/big_clip_trained_text_med_v4/medical_embedded_v4_disease_3')
+    #            save_dir='./EndoViT/clip_trained_weight',
+    #            clip_text_path='./EndoViT/big_clip_trained_text_med_v4/medical_embedded_v4_disease_3')
 
 

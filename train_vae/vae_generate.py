@@ -135,18 +135,18 @@ def consistency_generate():
     pipe.vae.cuda()
     decoder_consistency = ConsistencyDecoder(device="cuda", download_root='/home/dalhxwlyjsuo/criait_tansy/weight')  # Model size: 2.49 GB
 
-    image = load_image("/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-VAE/raw_image.jpg", size=(512, 480), center_crop=False)
+    image = load_image("./EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-VAE/raw_image.jpg", size=(512, 480), center_crop=False)
     latent = pipe.vae.encode(image.to(torch.bfloat16).cuda()).latent_dist.mean
 
     # decode with gan
     sample_gan = pipe.vae.decode(latent).sample.detach().float()
-    save_image(sample_gan, "/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-GAN.jpg")
+    save_image(sample_gan, "./EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-GAN.jpg")
     print(pipe.vae)
     print('-'*100)
     # decode with vae
     sample_consistency = decoder_consistency(latent).float()
     print(decoder_consistency)
-    save_image(sample_consistency, "/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-Consistency.jpg")
+    save_image(sample_consistency, "./EndoViT/our_eval_data/new_cropped-2004-2010-endovit/01.2018030100098_7-Consistency.jpg")
 
 if __name__ == '__main__':
     # consistency_generate()
@@ -154,7 +154,7 @@ if __name__ == '__main__':
     # 先根据 HF 预处理器拿到正确的 mean/std/size
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    feat = AutoFeatureExtractor.from_pretrained('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/clip_trained_weight_disease/CLIPModel_base')
+    feat = AutoFeatureExtractor.from_pretrained('./EndoViT/clip_trained_weight_disease/CLIPModel_base')
     base_transform = transforms.Compose([
         transforms.Resize((feat.size['width'], feat.size['height'])),
         transforms.ToTensor(),
@@ -187,19 +187,19 @@ if __name__ == '__main__':
 
     # ### Vit-VQVAE
     # encoder_ckpt = ''
-    # decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vqvae_weight/VQVAEModel'
+    # decoder_ckpt = './EndoViT/vqvae_weight/VQVAEModel'
     # vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=True).to(device).train()
     # if True:
-    #     state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vqvae_weight/vqvae_epoch_ema.pth')
+    #     state_dict = torch.load('./EndoViT/vqvae_weight/vqvae_epoch_ema.pth')
     #     vae.load_state_dict(state_dict, strict=False)
 
     ### Vit-VAE
-    encoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
-    decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
+    encoder_ckpt = './flow_matcher_otcfm/EndoViT/pytorch_model.bin'
+    decoder_ckpt = './EndoViT/vae_weight/VAEModel'
     vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False).to(device).train()
     # Optional: load pre-trained VAE
     try:
-        state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae/vit_vae_ema.pth', map_location=device)
+        state_dict = torch.load('./flow_matcher_otcfm/vit_vae/vit_vae_ema.pth', map_location=device)
         vae.load_state_dict(state_dict, strict=False)
         print("Loaded pre-trained VAE weights.")
     except Exception as e:
@@ -207,13 +207,13 @@ if __name__ == '__main__':
 
     # ### Conv VAE
     # vae = AutoencoderKL.from_pretrained(
-    #     '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/sd-vae-high-res_weight/sd-vae-ft-mse-high-res').to(device).eval()
+    #     './EndoViT/sd-vae-high-res_weight/sd-vae-ft-mse-high-res').to(device).eval()
     # vae.load_state_dict(
-    #     torch.load('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/sd-vae-high-res_weight/sd-vae_epoch_ema_711.pth'), strict=False)
+    #     torch.load('./EndoViT/sd-vae-high-res_weight/sd-vae_epoch_ema_711.pth'), strict=False)
 
     ### Raw ema-VAE
     # vae = AutoencoderKL.from_pretrained(
-    #     '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our').to(device).eval()
+    #     './flow_matcher_otcfm/vae_our').to(device).eval()
 
     # ## Raw mse-VAE
     # vae = AutoencoderKL.from_pretrained(
@@ -225,31 +225,31 @@ if __name__ == '__main__':
 
     # ### VAE
     # encoder_ckpt = ''
-    # decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
+    # decoder_ckpt = './EndoViT/vae_weight/VAEModel'
     # vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False).to(device).eval()
-    # vae.load_state_dict(torch.load('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/vae_epoch8.pth'), strict=False)
+    # vae.load_state_dict(torch.load('./EndoViT/vae_weight/vae_epoch8.pth'), strict=False)
     #
     # print(vae)
-    # images_root = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_eval_data/Fake_DiaEvalImages'
+    # images_root = './EndoViT/our_eval_data/Fake_DiaEvalImages'
 
     # base_transforms = transforms.Compose([
     #     transforms.Resize((336, 336)),
     #     transforms.ToTensor(),
     #     transforms.Normalize(mean=feat.image_mean, std=feat.image_std),
     # ])
-    # image = Image.open('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_eval_data/Fake_DiaEvalImages/出血糜烂性胃炎/01.2017011900019_15.jpg').convert('RGB')
+    # image = Image.open('./EndoViT/our_eval_data/Fake_DiaEvalImages/出血糜烂性胃炎/01.2017011900019_15.jpg').convert('RGB')
     # base_img = base_transforms(image)
     # denorm_image = denormalize(base_img.clone(), mean=feat.image_mean, std=feat.image_std)
     # # 保存图像
-    # save_image(denorm_image, '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/src/336.jpg')
-    # /mnt/inaisfs/data/home/tansy_criait/weights/Qwen-Image-Edit-2511/01.2021082610132_1.jpg
-    # /mnt/inaisfs/data/home/tansy_criait/weights/Qwen-Image-Edit-2511/01.2021083100100_3.jpg
-    single_generated_save(vae, '/mnt/inaisfs/data/home/tansy_criait/weights/Qwen-Image-Edit-2511/01.2021082610132_1.jpg',
+    # save_image(denorm_image, './EndoViT/src/336.jpg')
+    # ./weights/Qwen-Image-Edit-2511/01.2021082610132_1.jpg
+    # ./weights/Qwen-Image-Edit-2511/01.2021083100100_3.jpg
+    single_generated_save(vae, './weights/Qwen-Image-Edit-2511/01.2021082610132_1.jpg',
                           device,
                           transform,
                           base_transform,
                           feat,
-                          "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/vae_src/2021082610132_1-image3-Vit-VAE",
+                          "./vae_src/2021082610132_1-image3-Vit-VAE",
                           sample_posterior = True
     )
 

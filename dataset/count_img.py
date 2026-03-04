@@ -4,7 +4,7 @@
 from pathlib import Path
 
 # ===== 1) 改成你的根目录 =====
-ROOT = Path("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/data_tsy1/suppport_img")   # 例如：/mnt/data_tsy/final_eval_img
+ROOT = Path("./data_tsy1/suppport_img")   # 例如：/mnt/data_tsy/final_eval_img
 
 # ===== 2) 图片后缀 =====
 IMG_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}

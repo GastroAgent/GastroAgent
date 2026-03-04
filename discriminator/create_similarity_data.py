@@ -12,7 +12,7 @@ pattern_step = r'step(\d+)_'
 pattern_score = r'_([0-9]*\.[0-9]+)_'
 
 try:
-    processed_files = json.load(open('/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/processed_files.json', 'r'))
+    processed_files = json.load(open('./discriminator/data/generated_all_data/processed_files.json', 'r'))
 except:
     processed_files = []
 
@@ -40,11 +40,11 @@ def parse_image_name(image_name: str):
 
     return step, score, image_name
     
-image_root = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/image_hint_dinov3"
-new_image_root = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/similarity_images_draw/Dinov3"
-new_image_root_all = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/images_draw/Dinov3'
-image_roots = glob.glob("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/*dinov3*") + \
-     glob.glob("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/*qwen*")
+image_root = "./discriminator/data/generated_all_data/image_hint_dinov3"
+new_image_root = "./discriminator/data/similarity_images_draw/Dinov3"
+new_image_root_all = './discriminator/data/images_draw/Dinov3'
+image_roots = glob.glob("./discriminator/data/generated_all_data/*dinov3*") + \
+     glob.glob("./discriminator/data/generated_all_data/*qwen*")
 
 os.makedirs(new_image_root, exist_ok=True)
 
@@ -122,5 +122,5 @@ for image_dir in tqdm(label2labels_dirs):
                     image = Image.open(os.path.join(image_dir, image_path)).convert("RGB")
                 image.save(new_image_path)
         
-with open("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/processed_files.json", 'w') as f:
+with open("./discriminator/data/generated_all_data/processed_files.json", 'w') as f:
     json.dump(processed_files, f, indent=4, ensure_ascii=False)

@@ -55,7 +55,7 @@ from transformers import AutoModel
 class DinoV3Discriminator(nn.Module):
     def __init__(
         self,
-        pretrained_model_name="/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vitb16",
+        pretrained_model_name="./weights/dinov3-vitb16",
         device="cuda",  # ← 这个 device 应该是当前进程的 cuda:local_rank
         mode="patch",
         freeze_backbone=True,
@@ -384,18 +384,18 @@ def run():
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
     ])
 
-    image_root = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit'
+    image_root = './data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit'
     dataset = MedicalImageDataset(image_root, transform, base_transform)
     sampler = DistributedSampler(dataset, shuffle=True)
     loader = DataLoader(dataset, batch_size=3, sampler=sampler, num_workers=4, pin_memory=True)
     ######### EndoVit-VAE
     # Initialize VAE 
-    encoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
-    decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
+    encoder_ckpt = './whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
+    decoder_ckpt = './data2/tsy/EndoViT/vae_weight/VAEModel'
     vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False).to(device).train()
     # Optional: load pre-trained VAE
     try:
-        state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae/vit_vae_ema.pth', map_location=device)
+        state_dict = torch.load('./whole_wass_flow_match/flow_matcher_otcfm/vit_vae/vit_vae_ema.pth', map_location=device)
         vae.load_state_dict(state_dict, strict=False)
         print("Loaded pre-trained VAE weights.")
     except Exception as e:
@@ -405,7 +405,7 @@ def run():
     discriminator = DinoV3Discriminator(device=device)
     print(discriminator)
     try:
-        discriminator.load_state_dict(torch.load("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae/discriminator_16.pth"))
+        discriminator.load_state_dict(torch.load("./whole_wass_flow_match/flow_matcher_otcfm/vit_vae/discriminator_16.pth"))
     except:
         pass
     # Wrap with DDP
@@ -428,7 +428,7 @@ def run():
         use_ema=True,
         ema_decay=0.95,
         gan_weight=0.1,
-        save_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/vit-vae'
+        save_dir='./wass_flow_match_tsy/train/train_gan_v2/vit-vae'
     )
 
     dist.destroy_process_group()

@@ -342,7 +342,7 @@ def requires_grad(model, flag=True):
     for p in model.parameters():
         p.requires_grad = flag
 
-# torchrun --nnodes=1 --nproc_per_node=2 --master_port=25001 /mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_train_dist.py
+# torchrun --nnodes=1 --nproc_per_node=2 --master_port=25001 ./EndoViT/vae_train_dist.py
 def run():
     # 分布式初始化
     dist.init_process_group(backend="nccl")
@@ -367,18 +367,18 @@ def run():
         # transforms.RandomErasing(p=0.05, scale=(0.05, 0.1), ratio=(0.67, 1.33), value='random')
     ])
 
-    image_root = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit'
+    image_root = './EndoViT/our_data/new_cropped-2004-2010-endovit'
     # image_root = '/home/dalhxwlyjsuo/criait_tansy/project/CropImages/All'
 
     dataset = MedicalImageDataset(image_root, transform, base_transform)
     sampler = DistributedSampler(dataset, shuffle=True)
     loader = DataLoader(dataset, batch_size=4, sampler=sampler, num_workers=0)
 
-    encoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/EndoViT/pytorch_model.bin'
-    decoder_ckpt = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/vae_weight/VAEModel'
+    encoder_ckpt = './flow_matcher_otcfm/EndoViT/pytorch_model.bin'
+    decoder_ckpt = './EndoViT/vae_weight/VAEModel'
     vae = VAE(latent_dim=4, encoder_ckpt=encoder_ckpt, decoder_ckpt=decoder_ckpt, use_VQVAE=False).to(device).train()
     try:
-        state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae/vit_vae_ema.pth')
+        state_dict = torch.load('./flow_matcher_otcfm/vit_vae/vit_vae_ema.pth')
         vae.load_state_dict(state_dict, strict=False)
     except:
         pass
@@ -386,7 +386,7 @@ def run():
     d_vae = DDP(vae, device_ids=[local_rank], find_unused_parameters=True)
     train_vae(d_vae, loader, device, epochs=100, lr=1e-5, beta=1e-3, use_perceptual = True, beta_perceptual = 0.25,
               ema_steps=15, use_ema=True, ema_decay = 0.9,
-              save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vit_vae')
+              save_dir='./flow_matcher_otcfm/vit_vae')
 
     dist.destroy_process_group()
 

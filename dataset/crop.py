@@ -66,21 +66,21 @@ def crop_save(path, save_path='./cropped', faild_dir=''):
             cv2.imwrite(os.path.join(faild_dir, file_name), image)
         return path
 
-images = glob('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit/*.jpg')
+images = glob('./data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit/*.jpg')
 num_failed = 0
 num_total = 0
 file_idx = 1
 for image in tqdm(images):
     num_total += 1
     
-    new_path = os.path.join(f'/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/new_cropped-2004-2010',
+    new_path = os.path.join(f'./wass_flow_match_tsy/train/train_gan_v2/new_cropped-2004-2010',
                             image.split('/')[-1])
     if os.path.exists(new_path):
         continue
         
     failed = crop_save(image,
                        save_path=new_path, # new_path: 新存放路径。image: 旧的路径。
-                       faild_dir='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/Crop_Failed')
+                       faild_dir='./wass_flow_match_tsy/train/train_gan_v2/Crop_Failed')
     if failed:
         num_failed += 1
         print(failed)

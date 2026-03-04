@@ -18,5 +18,4 @@ export MASTER_ADDR=$(scontrol show hostname $SLURM_JOB_NODELIST | head -n1)
 # echo "SLURM_NNODES=$SLURM_NNODES"
 # echo "SLURM_NODEID=$SLURM_NODEID"
 
-# 只启动一次脚本（每个节点 1 次）
 srun bash /mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/vae_train_dist_gan.sh

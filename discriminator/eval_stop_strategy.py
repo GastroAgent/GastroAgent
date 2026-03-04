@@ -6,7 +6,7 @@ from timm.models.vision_transformer import VisionTransformer
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
 # os.environ["TOKENIZERS_PARALLELISM="] = "False"
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match')
+sys.path.append('.')
 
 import glob
 from data_loader_test import MedicalDataset, MedicalJsonDataset
@@ -95,16 +95,14 @@ def process_single_image(image_path, input_size=224, dataset_mean=[0.3464, 0.228
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--checkpoint', type=str,
-                        default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/outputs/flow-match_vae_gan_十二指肠3/otcfm/otcfm_weights_step_100000.pt',
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/outputs/image_hint_胃/otcfm/otcfm_weights_step_50000.pt',
-                        # default = '/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/outputs/image_hint_十二指肠3/otcfm/otcfm_weights_step_70000.pt',
+                        default = './outputs/flow-match_vae_gan_十二指肠3/otcfm/otcfm_weights_step_100000.pt',
                         help='Path to the checkpoint file')
     parser.add_argument('--num_samples', type=int, default=4,
                         help='Total number of images to generate')
     parser.add_argument('--batch_size', type=int, default=1,
                         help='Batch size for generation')
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/data/generated_all_data/image_hint_qwen_100000',
+                        default='./discriminator/data/generated_all_data/image_hint_qwen_100000',
                         help='Directory to save generated images')
     parser.add_argument('--image_size', type=int, nargs=2, default=[512, 512],
                         help='Image size (height, width)')
@@ -172,7 +170,7 @@ class ImageGenerator:
         """Initialize and load the model"""
         if not self.use_gt_vt:
             config = json.load(open(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/unet/config.json',
+                './flow_matcher_otcfm/unet/config.json',
                 'r'))
             net_model = UNet2DConditionModel(**config)
             # class_embedding = nn.Embedding(num_class_embeds, time_embed_dim)
@@ -184,14 +182,14 @@ class ImageGenerator:
                 net_model.load_state_dict(state_dict['net_model'], strict=False)
 
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device='cuda:0').eval()
             # vae.load_state_dict(torch.load('/dev/shm/jmf/mllm_weight/sd-ema-vae_weight/sd-vae_epoch_ema.pth'), strict=False)
-            text_model_config = json.load(open('/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/text_encoder/config.json','r'))
+            text_model_config = json.load(open('./flow_matcher_otcfm/text_encoder/config.json','r'))
             text_model_config = ChineseCLIPTextConfig(**text_model_config)
             text_model = ChineseCLIPTextModel(text_model_config).eval()
             text_tokenizer = AutoTokenizer.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/text_encoder', use_fast=True)
+                './flow_matcher_otcfm/text_encoder', use_fast=True)
             if 'text_model' in state_dict:
                 text_model.load_state_dict(state_dict['text_model'], strict=False)
 
@@ -257,7 +255,7 @@ class ImageGenerator:
             vision_model = None
             process_single_image = None
             vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/flow_matcher_otcfm/vae').to(
+                './flow_matcher_otcfm/vae').to(
                 device='cuda:0').eval()
             return net_model, vae, (text_model, text_tokenizer), (vision_model, process_single_image)
 
@@ -622,7 +620,7 @@ class ImageGenerator:
 
         datasets = []
         json_paths = glob.glob(
-            "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_胃/data_tsy/train_flow/data_pairs_wass/*.json")
+            "./data_tsy/train_flow/data_pairs_wass/*.json")
         for json_path in tqdm(json_paths):
             dataset = MedicalJsonDataset(
                 path=json_path,
@@ -749,8 +747,8 @@ class ImageGenerator:
                 for x in trajectory[1:-1]:
                     x = self.vae.decode(x / 0.18215).sample
                     sample = self.normalize_samples(x)
-                    save_image(sample, "/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/discriminator/tmp4.jpg") # 临时保存
-                    img = Image.open("/mnt/inaisfs/data/home/tansy_criait/new_wass_flow_match/discriminator/tmp4.jpg").convert("RGB")
+                    save_image(sample, "./discriminator/tmp4.jpg") # 临时保存
+                    img = Image.open("./discriminator/tmp4.jpg").convert("RGB")
                     score = float(similarity(img, new_x1).item())
                     img_path = os.path.join(image_dir, f'step{step}_{score:.4f}_{x0_name2}#to#{x1_name}')
                     img.save(img_path)
@@ -781,7 +779,7 @@ def tensor_to_pil(tensor):
 
 # ### llm env
 # from gme_inference import GmeQwen2VL
-# gme = GmeQwen2VL("/mnt/inaisfs/data/home/tansy_criait/weights/gme-Qwen2-VL-7B-Instruct", device="cuda:1")
+# gme = GmeQwen2VL("./weights/gme-Qwen2-VL-7B-Instruct", device="cuda:1")
 
 # def similarity(image1: str, image2: str):
 #     e_image = gme.get_image_embeddings(images=[image1, image2])
@@ -791,7 +789,7 @@ def tensor_to_pil(tensor):
 ### flow env
 # from transformers import AutoImageProcessor, DINOv3ConvNextModel, DINOv3ViTModel
 # from transformers.image_utils import load_image
-# pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vit7b16"
+# pretrained_model_name = "./weights/dinov3-vit7b16"
 # processor = AutoImageProcessor.from_pretrained(pretrained_model_name)
 # model = DINOv3ViTModel.from_pretrained(
 #     pretrained_model_name, 
@@ -813,7 +811,7 @@ def tensor_to_pil(tensor):
 ### vllm_serve
 from qwen3_vl_embedding import Qwen3VLEmbedder
 # 加载模型（仅视觉部分，不加载语言头以节省显存）
-model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/Qwen3-VL-Embedding-8B"
+model_name = "./weights/Qwen3-VL-Embedding-8B"
 
 # model = Qwen3VLEmbedder(model_name_or_path=model_name, torch_dtype=torch.float16, attn_implementation="flash_attention_2")
 model = Qwen3VLEmbedder(model_name_or_path=model_name, torch_dtype=torch.float)

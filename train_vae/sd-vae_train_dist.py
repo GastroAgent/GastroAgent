@@ -227,7 +227,7 @@ def numpy_topk_simple(arr, k, axis=-1, largest=True):
         indices = np.flip(indices, axis=axis)  # 降序排列
     return indices
 
-# torchrun --nnodes=1 --nproc_per_node=2 --master_port=25001 /home/dalhxwlyjsuo/criait_tansy/project/EndoViT/vae_train_dist.py
+# torchrun --nnodes=1 --nproc_per_node=2 --master_port=25001 ./EndoViT/vae_train_dist.py
 def run():
     # 分布式初始化
     dist.init_process_group(backend="nccl")
@@ -252,28 +252,28 @@ def run():
         # transforms.RandomErasing(p=0.05, scale=(0.05, 0.1), ratio=(0.67, 1.33), value='random')
     ])
 
-    # src_path = '/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/disease_data/train_clip_data2_with_disease.json'
+    # src_path = './EndoViT/disease_data/train_clip_data2_with_disease.json'
     # dataset = MedicalVAEDataset(src_path, transform=transform, base_transform=base_transform, text_key='disease',
     #                             positive_dict=None,
-    #                             # positive_dict=json.load(open('/home/dalhxwlyjsuo/criait_tansy/project/EndoViT/disease_data/positive_dict_total.json', 'r'))
+    #                             # positive_dict=json.load(open('./EndoViT/disease_data/positive_dict_total.json', 'r'))
     # )
 
-    image_root = '/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/our_data/new_cropped-2004-2010-endovit'
-    # image_root = '/home/dalhxwlyjsuo/criait_tansy/project/CropImages/All'
+    image_root = './EndoViT/our_data/new_cropped-2004-2010-endovit'
+    # image_root = './CropImages/All'
 
     dataset = MedicalImageDataset(image_root, transform, base_transform)
     sampler = DistributedSampler(dataset, shuffle=True)
     loader = DataLoader(dataset, batch_size=3, sampler=sampler, num_workers=0)
 
     vae = AutoencoderKL.from_pretrained(
-        '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our').to(device).train()
-    # state_dict = torch.load('/mnt/inaisfs/data/home/tansy_criait/data2/tsy/EndoViT/sd-ema-vae_weight/sd-vae_epoch_ema_711.pth')
+        './flow_matcher_otcfm/vae_our').to(device).train()
+    # state_dict = torch.load('./EndoViT/sd-ema-vae_weight/sd-vae_epoch_ema_711.pth')
     # vae.load_state_dict(state_dict, strict=False)
 
     d_vae = DDP(vae, device_ids=[local_rank], find_unused_parameters=True)
     train_vae(d_vae, loader, device, epochs=1, lr=1e-5, beta=1e-3, use_perceptual = True, beta_perceptual = 0.25,
               ema_steps=5, use_ema=True, ema_decay = 0.9,
-              save_dir='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our')
+              save_dir='./flow_matcher_otcfm/vae_our')
 
     dist.destroy_process_group()
 

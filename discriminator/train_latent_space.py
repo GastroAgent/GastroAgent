@@ -5,7 +5,7 @@ from tqdm import tqdm
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 import sys
-sys.path.append('/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/discriminator')
+sys.path.append('./GasAgent-main/discriminator')
 
 import random
 from torch.utils.data import Dataset
@@ -136,7 +136,7 @@ class TripletNetwork(nn.Module):
             self.embedding = AttentionDownEncoderXL()
         elif model == 'convnext':
             from transformers import AutoImageProcessor, DINOv3ConvNextModel
-            pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-convnext-base"
+            pretrained_model_name = "./weights/dinov3-convnext-base"
             self.processor = AutoImageProcessor.from_pretrained(pretrained_model_name)
             self.embedding = DINOv3ConvNextModel.from_pretrained(
                 pretrained_model_name, 
@@ -404,7 +404,7 @@ class Generator():
     def __init__(self):
         self.device = "cuda"
         self.vae = AutoencoderKL.from_pretrained(
-                '/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/flow_matcher_otcfm/vae_our').to(
+                './whole_wass_flow_match/flow_matcher_otcfm/vae_our').to(
                 device=self.device).eval()
 
 if __name__ == '__main__':
@@ -426,7 +426,7 @@ if __name__ == '__main__':
     ])
 
     train_dataset = MedicalTripletJsonDataset(
-            path="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/step_score_generated/ssim_train_triplet_all_dataset.json",
+            path="./train/train_gan_v2/step_score_generated/ssim_train_triplet_all_dataset.json",
             # transform=transform,
             transform=transform_B,
     )
@@ -440,7 +440,7 @@ if __name__ == '__main__':
     )
     
     eval_dataset = MedicalTripletJsonDataset(
-        path="/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/train/train_gan_v2/step_score_generated/ssim_eval_triplet_all_dataset.json",
+        path="./train/train_gan_v2/step_score_generated/ssim_eval_triplet_all_dataset.json",
         # transform=transform,
         transform=transform_B,
     )
@@ -461,7 +461,7 @@ if __name__ == '__main__':
 
     generator = Generator()
     # generator = None
-    writer = SummaryWriter(log_dir="/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/logs")
+    writer = SummaryWriter(log_dir="./whole_wass_flow_match/discriminator/logs")
     def train_triplet(model, dataloader, criterion, optimizer, device="cuda",
                       criterion_contrastive=None, generator=None, cal_wasserstein_loss=None, epochs=20):
         if generator is None:
@@ -522,10 +522,10 @@ if __name__ == '__main__':
 
             if (step + 1) % 5000 == 0:
                 print("Eval...")
-                os.makedirs("/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight", exist_ok=True)
+                os.makedirs("./whole_wass_flow_match/discriminator/latent_model_weight", exist_ok=True)
                 accuracy = evaluate_triplet(model, eval_dataset, device, vae)
                 if best_acc < accuracy:
-                    torch.save(model.state_dict(), f"/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext5.pt")
+                    torch.save(model.state_dict(), f"./discriminator/latent_model_weight/convnext5.pt")
                     best_acc = accuracy
                 else:
                     pass
@@ -534,7 +534,7 @@ if __name__ == '__main__':
 
     # 加载 checkpoints
     try:
-        state_dict = torch.load("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/discriminator/latent_model_weight/convnext5.pt", weights_only=True)
+        state_dict = torch.load("./discriminator/latent_model_weight/convnext5.pt", weights_only=True)
         model.load_state_dict(state_dict, strict=False)
     except:
         pass

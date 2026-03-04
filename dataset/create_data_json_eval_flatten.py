@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Dict, List, Any
 
 # ================== 1) 路径配置：改这里 ==================
-IN_JSON  = Path("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/final_doctor_exam.json")
-OUT_JSON = Path("/mnt/inaisfs/data/home/tansy_criait/wass_flow_match_tsy/data_tsy1/食管_doctor/final_doctor_exam_flat.json")
+IN_JSON  = Path("./wass_flow_match_tsy/data_tsy1/食管_doctor/final_doctor_exam.json")
+OUT_JSON = Path("./wass_flow_match_tsy/data_tsy1/食管_doctor/final_doctor_exam_flat.json")
 
 # 若你希望把路径前缀整体替换成新的目录结构（可选）
 # 例如把 data_tsy/final_eval_img -> data/十二指肠/final_eval1
