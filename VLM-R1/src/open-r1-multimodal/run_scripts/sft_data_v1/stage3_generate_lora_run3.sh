@@ -7,7 +7,7 @@ source /mnt/inaisfs/data/home/tansy_criait/miniconda3/bin/activate llm
 export PYTHONPATH=/mnt/inaisfs/data/home/tansy_criait/VLM-R1/src/open-r1-multimodal/src/open_r1:$PYTHONPATH
 export DEBUG_MODE="true"
 
-export WANDB_API_KEY="046193756f0009d71636370009dbcee76f3bd3ac"
+export WANDB_API_KEY="xxx"
 export WANDB_MODE="offline"
 RUN_NAME="LlavaQwen2-GRPO-Tricks-Total-CoT-6000-option1-add-sft"
 

@@ -266,14 +266,14 @@ def run():
     loader = DataLoader(dataset, batch_size=3, sampler=sampler, num_workers=0)
 
     vae = AutoencoderKL.from_pretrained(
-        './flow_matcher_otcfm/vae_our').to(device).train()
+        './flow_matcher_otcfm/vae').to(device).train()
     # state_dict = torch.load('./EndoViT/sd-ema-vae_weight/sd-vae_epoch_ema_711.pth')
     # vae.load_state_dict(state_dict, strict=False)
 
     d_vae = DDP(vae, device_ids=[local_rank], find_unused_parameters=True)
     train_vae(d_vae, loader, device, epochs=1, lr=1e-5, beta=1e-3, use_perceptual = True, beta_perceptual = 0.25,
               ema_steps=5, use_ema=True, ema_decay = 0.9,
-              save_dir='./flow_matcher_otcfm/vae_our')
+              save_dir='./flow_matcher_otcfm/vae')
 
     dist.destroy_process_group()
 

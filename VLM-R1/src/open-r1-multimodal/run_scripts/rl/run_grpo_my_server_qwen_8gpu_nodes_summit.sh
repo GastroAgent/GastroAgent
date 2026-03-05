@@ -1,13 +1,12 @@
 #!/bin/bash
 #SBATCH -J tsy_rl
 #SBATCH -p gpu
-#SBATCH -N 1                          # 节点个数
-#SBATCH --ntasks-per-node=1           # ← 关键！每个节点只跑 1 个主进程
-#SBATCH --gres=gpu:8                  # 每个节点 8 张 GPU（供 torchrun 使用）
-#SBATCH --cpus-per-task=64            # 给足 CPU（如 4~8 倍 GPU 数）
+#SBATCH -N 4                          # number of nodes
+#SBATCH --ntasks-per-node=1           # ← critical! only 1 main process per node
+#SBATCH --gres=gpu:8                  # 8 GPUs per node (used by torchrun)
+#SBATCH --cpus-per-task=64            # sufficient CPUs (e.g. 4~8x the number of GPUs)
 
 #SBATCH -o /mnt/inaisfs/data/home/tansy_criait/VLM-R1/src/open-r1-multimodal/run_scripts/tsy/slurm_out/Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-option-add-cot-sft-rl.out
-
 
 source /mnt/inaisfs/data/apps/cuda12.4.sh
 source /mnt/inaisfs/data/home/tansy_criait/miniconda3/bin/activate llm

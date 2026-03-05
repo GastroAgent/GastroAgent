@@ -1,0 +1,47 @@
+# Model arguments
+model_name_or_path: /mnt/inaisfs/data/home/tansy_criait/weights/Qwen2.5-3B-Instruct
+model_revision: main
+torch_dtype: bfloat16
+attn_implementation: flash_attention_2
+
+dataset_name: /mnt/inaisfs/data/home/tansy_criait/jmf/Dataset/numeric ## this is just placeholder
+dataset_prompt_column: question ## this is just placeholder
+
+# GDPO trainer config
+bf16: true
+use_vllm: true
+do_eval: false
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+hub_model_id: Qwen2.5-3B-Open-R1-GRPO
+hub_strategy: every_save
+learning_rate: 5.0e-06
+log_completions: true
+log_level: info
+logging_first_step: true
+logging_steps: 1
+logging_strategy: steps
+lr_scheduler_type: cosine
+max_prompt_length: 512
+max_completion_length: 1024
+max_steps: -1
+num_generations: 8
+num_train_epochs: 1
+output_dir: /mnt/inaisfs/data/home/tansy_criait/jmf/GitHub/GDPO-main/trl-GDPO/checkpoints/Qwen2.5-3B-numeric-GRPO-3-rewards-zh
+overwrite_output_dir: true
+per_device_eval_batch_size: 8
+per_device_train_batch_size: 8
+vllm_tensor_parallel_size: 1
+vllm_gpu_memory_utilization: 0.3
+push_to_hub: false
+report_to:
+- wandb
+wandb_project: "open-r1-numeric-3-rewards"
+run_name: "Qwen2.5-3B-numeric-GRPO"
+save_strategy: "steps"
+save_steps: 20
+save_total_limit: 1
+seed: 42
+warmup_ratio: 0.1

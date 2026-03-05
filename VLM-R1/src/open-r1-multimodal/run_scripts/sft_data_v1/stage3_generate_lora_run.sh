@@ -1,5 +1,5 @@
 #!/bin/bash
-# 不再接收 $1 $2 $3... 参数
+# No longer accepts $1 $2 $3... arguments
 
 source /mnt/inaisfs/data/apps/cuda12.4.sh
 source /mnt/inaisfs/data/home/tansy_criait/miniconda3/bin/activate llm
@@ -13,7 +13,7 @@ RUN_NAME="Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-option1-add-sft"
 
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 # export CUDA_VISIBLE_DEVICES=7
-# 从 SLURM 获取
+# Retrieved from SLURM
 NNODES=$SLURM_NNODES
 NODE_RANK=$SLURM_NODEID
 MASTER_ADDR=${MASTER_ADDR}  
@@ -37,8 +37,8 @@ torchrun \
     --vision_tower /mnt/inaisfs/data/home/tansy_criait/weights/my-clip-vision \
     --pretrain_mm_mlp_adapter /home/dalhxwlyjsuo/criait_tansy/project/Llava_Qwen2/weight/Llava-Qwen2-7B-knowtune-med-v0-mmtag-mul-next/mm_projector.bin \
     --lora_enable true \
-    --lora_r 64 \
-    --lora_alpha 32 \
+    --lora_r 128 \
+    --lora_alpha 64 \
     --tune_mm_mlp_adapter false \
     --freeze_mm_mlp_adapter false \
     --freeze_vision_module false \

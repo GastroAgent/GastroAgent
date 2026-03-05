@@ -18,10 +18,8 @@ import torch
 import torch.nn as nn
 import torchvision.models as models
 import torch.nn.functional as F
-from utils.data_loader import MedicalJsonDataset
-from utils.data_loader import MedicalTripletJsonDataset
-from utils.train_utils import infiniteloop
-from utils.data_utils import create_dataloaders_by_pairs
+from utils_.data_loader import MedicalTripletJsonDataset
+from utils_.train_utils import infiniteloop
 from torch.utils.tensorboard import SummaryWriter
 from diffusers import AutoencoderKL
 
@@ -136,7 +134,7 @@ class TripletNetwork(nn.Module):
             self.embedding = AttentionDownEncoderXL()
         elif model == 'convnext':
             from transformers import AutoImageProcessor, DINOv3ConvNextModel
-            pretrained_model_name = "./weights/dinov3-convnext-base"
+            pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-convnext-tiny"
             self.processor = AutoImageProcessor.from_pretrained(pretrained_model_name)
             self.embedding = DINOv3ConvNextModel.from_pretrained(
                 pretrained_model_name, 

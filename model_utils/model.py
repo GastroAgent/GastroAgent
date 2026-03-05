@@ -5,6 +5,177 @@ import torch.nn.functional as F
 from math import sqrt
 from typing import Optional
 from timm.layers import LayerNorm2d
+from einops.layers.torch import Rearrange
+
+class DinoV3Discriminator(nn.Module):
+    def __init__(
+        self,
+        pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vitb16",
+        device="cuda", 
+        mode="patch",
+        freeze_backbone=True,
+        img_size=512,
+        patch_size=16,
+    ):
+        super().__init__()
+        self.mode = mode
+        self.img_size = img_size
+        self.patch_size = patch_size
+        self.feat_h = img_size // patch_size
+        self.feat_w = img_size // patch_size
+        self.N_orig = self.feat_h * self.feat_w
+
+        # ❌ 移除 device_map="auto"
+        self.backbone = AutoModel.from_pretrained(pretrained_model_name)
+        
+        dim = self.backbone.norm.weight.shape[0]
+        # dim = self.backbone.layer_norm.weight.shape[0]
+        
+        self.head = nn.Sequential(
+            nn.LayerNorm(dim),
+            nn.Linear(dim, dim // 2),
+            nn.GELU(),
+            nn.Linear(dim // 2, 1),
+        )
+
+        self.patch_head = nn.Sequential(
+            nn.LayerNorm(dim),
+            Rearrange('b (h w) d -> b d h w', h=self.feat_h, w=self.feat_w),
+            nn.Conv2d(dim, dim // 2, kernel_size=3, stride=2, padding=1),
+            nn.GELU(),
+            nn.Conv2d(dim // 2, 1, kernel_size=3, stride=2, padding=1),
+            Rearrange('b 1 h w -> b (h w) 1')
+        )
+
+        # ✅ 手动将整个模型移到指定设备（由外部传入）
+        self.to(device)
+
+        if freeze_backbone:
+            for p in self.backbone.parameters():
+                p.requires_grad_(False)
+
+    def forward(self, x, return_features=False, mode='cls'):
+        """
+        return:
+          - logits: (B, 1) 真假判别分数（未sigmoid）
+          - patch_logits (可选): (B, N, 1) patch 分数
+          - features (可选): (B, D) 或 (B, N, D)
+        """
+        outputs = self.backbone(x) # [cls_token, register_tokens, patch_embeddings]
+
+        # 1) 取 token 表示（更稳：优先用 last_hidden_state）
+        if hasattr(outputs, "last_hidden_state") and outputs.last_hidden_state is not None:
+            tokens = outputs.last_hidden_state          # (B, N+1, D) 通常含 CLS
+        else:
+            tokens = None
+
+        # 2) global 表示：优先 CLS token；其次 pooler_output
+        if tokens is not None and mode == 'cls':
+            global_feat = tokens[:, 0, :]              # CLS (B, D)
+        elif hasattr(outputs, "pooler_output"):
+            global_feat = outputs.pooler_output        # (B, D)
+        else:
+            raise ValueError("Model outputs has neither last_hidden_state nor pooler_output.")
+
+        logits = self.head(global_feat)                # (B, 1)
+
+        patch_logits = None
+        patch_feat = None
+        if self.mode == "patch":
+            if tokens is None:
+                raise ValueError("Patch mode requires last_hidden_state.")
+            patch_feat = tokens[:, -self.N_orig:, :]              # (B, N, D)
+            patch_logits = self.patch_head(patch_feat) # (B, N, 1)
+
+        if return_features:
+            return logits, patch_logits, global_feat, patch_feat
+        return logits, patch_logits
+
+class DinoV3ConvDiscriminator(nn.Module):
+    def __init__(
+        self,
+        # pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-vitb16",
+        pretrained_model_name = "/mnt/inaisfs/data/home/tansy_criait/weights/dinov3-convnext-large",
+        device="cuda",  # ← 这个 device 应该是当前进程的 cuda:local_rank
+        mode="patch",
+        freeze_backbone=True,
+        img_size=512,
+        patch_size=16,
+    ):
+        super().__init__()
+        self.mode = mode
+        self.img_size = img_size
+        self.patch_size = patch_size
+        self.feat_h = img_size // patch_size
+        self.feat_w = img_size // patch_size
+        self.N_orig = self.feat_h * self.feat_w
+
+        # ❌ 移除 device_map="auto"
+        self.backbone = AutoModel.from_pretrained(pretrained_model_name)
+        
+        # dim = self.backbone.norm.weight.shape[0]
+        dim = self.backbone.layer_norm.weight.shape[0]
+        
+        self.head = nn.Sequential(
+            nn.LayerNorm(dim),
+            nn.Linear(dim, dim // 2),
+            nn.GELU(),
+            nn.Linear(dim // 2, 1),
+        )
+
+        self.patch_head = nn.Sequential(
+            nn.LayerNorm(dim),
+            Rearrange('b (h w) d -> b d h w', h=16, w=16),
+            nn.Conv2d(dim, dim // 2, kernel_size=3, stride=2, padding=1),
+            nn.GELU(),
+            nn.Conv2d(dim // 2, 1, kernel_size=3, stride=2, padding=1),
+            Rearrange('b 1 h w -> b (h w) 1')
+        )
+
+        # ✅ 手动将整个模型移到指定设备（由外部传入）
+        self.to(device)
+
+        if freeze_backbone:
+            for p in self.backbone.parameters():
+                p.requires_grad_(False)
+
+    def forward(self, x, return_features=False, mode='cls'):
+        """
+        return:
+          - logits: (B, 1) 真假判别分数（未sigmoid）
+          - patch_logits (可选): (B, N, 1) patch 分数
+          - features (可选): (B, D) 或 (B, N, D)
+        """
+        outputs = self.backbone(x) # [cls_token, register_tokens, patch_embeddings]
+
+        # 1) 取 token 表示（更稳：优先用 last_hidden_state）
+        if hasattr(outputs, "last_hidden_state") and outputs.last_hidden_state is not None:
+            tokens = outputs.last_hidden_state          # (B, N+1, D) 通常含 CLS
+        else:
+            tokens = None
+
+        # 2) global 表示：优先 CLS token；其次 pooler_output
+        if tokens is not None and mode == 'cls':
+            global_feat = tokens[:, 0, :]              # CLS (B, D)
+        elif hasattr(outputs, "pooler_output"):
+            global_feat = outputs.pooler_output        # (B, D)
+        else:
+            raise ValueError("Model outputs has neither last_hidden_state nor pooler_output.")
+
+        logits = self.head(global_feat)                # (B, 1)
+
+        patch_logits = None
+        patch_feat = None
+        if self.mode == "patch":
+            if tokens is None:
+                raise ValueError("Patch mode requires last_hidden_state.")
+            patch_feat = tokens[:, 1:, :]              # (B, N, D)
+            patch_logits = self.patch_head(patch_feat) # (B, N // 4, 1)
+
+        if return_features:
+            return logits, patch_logits, global_feat, patch_feat
+        return logits, patch_logits
+
 
 class AveragedKeyCircularConvolutionalAttention(nn.Module):
     """

@@ -1,5 +1,5 @@
 #!/bin/bash
-# 不再接收 $1 $2 $3... 参数
+# No longer accepts $1 $2 $3... positional arguments
 
 source /mnt/inaisfs/data/apps/cuda12.4.sh
 source /mnt/inaisfs/data/home/tansy_criait/miniconda3/bin/activate llm
@@ -13,10 +13,10 @@ RUN_NAME="Llava-Qwen2-7B-tune-med-v0-mmtag-mul-Latest-all-option-add-cot-sft-rl"
 OUTPUT_DIR="/mnt/inaisfs/data/home/tansy_criait/VLM-R1/checkpoints/tsy"
 export LOG_PATH="/mnt/inaisfs/data/home/tansy_criait/VLM-R1/logs/debug_log_$RUN_NAME.txt"
 
-# 从 SLURM 获取
+# Retrieved from SLURM
 NNODES=$SLURM_NNODES
 NODE_RANK=$SLURM_NODEID
-MASTER_ADDR=${MASTER_ADDR}      # 来自父脚本 export
+MASTER_ADDR=${MASTER_ADDR}      # exported from the parent script
 MASTER_PORT=${MASTER_PORT:-12345}
 ## /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/RL_7B_train_correct.json
 ## /mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/GSM8K/formated_off_7B_train_correct.json
@@ -25,7 +25,7 @@ echo "SLURM_NNODES: $SLURM_NNODES"
 echo "SLURM_NODEID: $SLURM_NODEID"
 echo "MASTER_ADDR: $MASTER_ADDR"
 echo "MASTER_PORT: $MASTER_PORT"
-# 若使用 vllm_reward，先启动 奖励模型 并检查对应的 openai_api_base 设置。
+# If using vllm_reward, start the reward model first and verify the corresponding openai_api_base setting.
 
 # export CUDA_VISIBLE_DEVICES=7
 # NNODES=1
