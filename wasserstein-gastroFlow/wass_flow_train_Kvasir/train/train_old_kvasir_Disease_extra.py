@@ -1,8 +1,8 @@
 import glob
 import json
+import argparse
 from tqdm import tqdm
 import os
-# os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 import random
 from torchvision import transforms
 from torch.utils.data import DataLoader
@@ -11,7 +11,7 @@ from PIL import Image
 from copy import deepcopy
 import sys
 sys.path.append("./GasAgent-main")
-from old_flow_matcher import create_generator # 不包含 x0, x1.
+from old_flow_matcher import create_generator # Does not include x0, x1.
 from utils_.data_loader import MedicalJsonDataset
 from utils_.data_utils import create_dataloaders_by_pairs
 from utils_.train_utils import infiniteloop
@@ -19,7 +19,22 @@ from model_utils.model import *
 from model_utils.my_loss import *
 
 if __name__ == '__main__':
-    # 加载数据集
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--train_json_glob",
+        type=str,
+        default="./data/Disease_Extra/data_pairs/*.json",
+        help="Glob pattern for training json files.",
+    )
+    parser.add_argument(
+        "--test_json",
+        type=str,
+        default="./dataset/eval_data/exam_dataset_419.json",
+        help="Path to evaluation json file.",
+    )
+    args = parser.parse_args()
+
+    # Load datasets
     transform = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
@@ -30,9 +45,9 @@ if __name__ == '__main__':
         # transforms.RandomApply([        
         #     transforms.RandomRotation(
         #         degrees=30,
-        #         expand=True,            # 是否扩展画布以容纳完整图像（True会改变图像大小）
-        #         center=None,             # 旋转中心，默认中心点；可设为 (x, y)
-        #         fill=(0, 0, 0)           # 填充颜色，例如填白色：(255, 255, 255)
+        #         expand=True,            # Whether to expand canvas to include full image (True may change output size)
+        #         center=None,             # Rotation center; defaults to image center, can be set to (x, y)
+        #         fill=(0, 0, 0)           # Fill color, e.g., white: (255, 255, 255)
         #     )], p=0.25),
         transforms.Resize((512, 512)), 
         transforms.RandomHorizontalFlip(p=0.25), 
@@ -47,9 +62,9 @@ if __name__ == '__main__':
         # transforms.RandomApply([        
         #     transforms.RandomRotation(
         #         degrees=30,
-        #         expand=True,            # 是否扩展画布以容纳完整图像（True会改变图像大小）
-        #         center=None,             # 旋转中心，默认中心点；可设为 (x, y)
-        #         fill=(0, 0, 0)           # 填充颜色，例如填白色：(255, 255, 255)
+        #         expand=True,            # Whether to expand canvas to include full image (True may change output size)
+        #         center=None,             # Rotation center; defaults to image center, can be set to (x, y)
+        #         fill=(0, 0, 0)           # Fill color, e.g., white: (255, 255, 255)
         #     )], p=0.25),
         transforms.Resize((512, 512)), 
         transforms.RandomHorizontalFlip(p=0.25), 
@@ -63,14 +78,13 @@ if __name__ == '__main__':
     transform_grey = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
-        transforms.RandomGrayscale(p=1),  # 数据增强：50% 概率灰度化
+        transforms.RandomGrayscale(p=1),  # Data augmentation: convert to grayscale
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
     batch_size = 4
     dataloaders = []
         
-    json_paths = glob.glob( 
-        "./data/Disease_Extra/data_pairs/*.json")
+    json_paths = glob.glob(args.train_json_glob)
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
             path=json_path,
@@ -127,9 +141,9 @@ if __name__ == '__main__':
                                                     transform_A=transform, transform=transform, transform_B=transform,
     ))
     
-    test_json = "./dataset/eval_data/exam_dataset_419.json"
+    test_json = args.test_json
     # test_json = "./dataset/eval_data/exam_dataset_extra.json"
-    # 初始化模型和优化器
+    # Initialize model and optimizer
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     # model = TripletNetwork(pretrained=False, freeze_base=False, model='resnet34').to(device)
     model = TripletNetwork(pretrained=False, freeze_base=False, model='attention').to(device)
@@ -170,7 +184,7 @@ if __name__ == '__main__':
                 generator.args.op_match = True if random.random() < 0.5 else False
                 generator.num_steps = random.choice([4, 6, 8, 10, 12])
                 generator.args.num_steps = generator.num_steps
-                if generator.use_gt_vt:  # 插值的 数据增强。
+                if generator.use_gt_vt:  # Interpolation-based data augmentation.
                     sample_step = random.choice([-1, -1, 1])
                     result = generator.generate(batch, sample_step=sample_step)
                     anchor = result["x0"] if random.random() < 0.5 else result["samples"]
@@ -180,14 +194,14 @@ if __name__ == '__main__':
                     if random.random() < 0.5:
                         anchor, positive = batch["x0"], batch["x1"]
                         anchor, positive = anchor.to(vae.device), positive.to(vae.device)
-                        # 压缩至 潜在空间
+                        # Compress into latent space
                         with torch.no_grad():
                             anchor = vae.encode(anchor).latent_dist
                             anchor = anchor.sample() * 0.18215
                             positive = vae.encode(positive).latent_dist
                             positive = positive.sample() * 0.18215
                     else:
-                        sample_step = random.choice([-1, 1, -1, -2]) # 考虑信噪比
+                        sample_step = random.choice([-1, 1, -1, -2]) # Consider signal-to-noise ratio
                         result = generator.generate(batch, sample_step=sample_step)
                         positive = result["samples"]
                         anchor = result["x0_vaed"]
@@ -198,7 +212,7 @@ if __name__ == '__main__':
                             negative = negative.to(vae.device)    
                             negative = vae.encode(negative).latent_dist
                             negative = negative.sample() * 0.18215
-                    else: # 9月23号 新增。
+                    else:
                         new_neg_batch = deepcopy(neg_batch)
                         new_neg_batch['x0'] = anchor
                         new_neg_batch['label_A'] = batch['label_A']
@@ -213,7 +227,7 @@ if __name__ == '__main__':
                 negative = neg_batch["x0"]
 
                 anchor, positive, negative = anchor.to(vae.device), positive.to(vae.device), negative.to(vae.device)
-                # 压缩至 潜在空间
+                # Compress into latent space
                 with torch.no_grad():
                     anchor = vae.encode(anchor).latent_dist
                     anchor = anchor.sample() * 0.18215
@@ -230,11 +244,11 @@ if __name__ == '__main__':
                 loss = criterion(anchor_emb, positive_emb, negative_emb)
 
                 if criterion_contrastive is not None:
-                    # 2. Contrastive Loss（直接从三元组中构造样本对）
-                    # 正样本对 (anchor, positive)
+                    # 2. Contrastive loss (construct sample pairs directly from triplets)
+                    # Positive pair (anchor, positive)
                     loss_pos = criterion_contrastive(anchor_emb, positive_emb, torch.ones_like(anchor_emb[:, 0]))  # y=1
 
-                    # 负样本对 (anchor, negative)
+                    # Negative pair (anchor, negative)
                     loss_neg = criterion_contrastive(anchor_emb, negative_emb, torch.zeros_like(anchor_emb[:, 0]))  # y=0
 
                     loss = loss + (loss_pos + loss_neg) / 2
@@ -242,11 +256,11 @@ if __name__ == '__main__':
                     
 
             if cal_wasserstein_loss is not None and step >= wass_step:
-                ### 三元组 wass loss
+                ### Triplet Wasserstein loss
                 ## loss = torch.mean(torch.clamp(d_pos - d_neg + self.margin, min=0.0))
                 loss = torch.clamp(cal_wasserstein_loss(anchor_emb, positive_emb, reduction='none') - 2 * cal_wasserstein_loss(anchor_emb, negative_emb, reduction='none') + 2.0,  min=0.0).mean()
                 ###
-                ## distance = torch.norm(anchor - other, p=2, dim=1)  # 欧氏距离
+                ## distance = torch.norm(anchor - other, p=2, dim=1)  # Euclidean distance
                 ## loss = torch.mean(
                 ##     target * distance + (1 - target) * torch.clamp(self.margin - distance, min=0.0)
                 ## )
@@ -276,7 +290,7 @@ if __name__ == '__main__':
                 else:
                     pass
 
-    ### 加载 checkpoints
+    ### Load checkpoints
     try:
         state_dict = torch.load("./best_flow_weights/old_attention_Disease_Extra.pt", weights_only=True)
         model.load_state_dict(state_dict, strict=False)
@@ -493,7 +507,7 @@ if __name__ == '__main__':
                 answer_id = answer_map[data["answer"]]
                 wass_A_list = []
                 for _ in range(k):
-                    ### 选项A
+                    ### Option A
                     batch_A = deepcopy(batch)
                     batch_A['label_B'] = [data['option_A']]
                     batch_A['caption'] = [data['option_A']]
@@ -519,7 +533,7 @@ if __name__ == '__main__':
 
                 wass_B_list = []
                 for _ in range(k):
-                    ### 选项B
+                    ### Option B
                     batch_B = deepcopy(batch)
                     batch_B['label_B'] = [data['option_B']]
                     batch_B['caption'] = [data['option_B']]
@@ -568,7 +582,7 @@ if __name__ == '__main__':
 
                 wass_D_list = []
                 for _ in range(k):
-                    ### 选项D
+                    ### Option D
                     batch_D = deepcopy(batch)
                     batch_D['label_B'] = [data['option_D']]
                     batch_D['caption'] = [data['option_D']]
@@ -663,9 +677,9 @@ if __name__ == '__main__':
         print(f"Evaluation Accuracy: {accuracy:.4f}")
         return accuracy
     
-    # train_triplet(model, dataloaders, criterion=criterion, optimizer=optimizer, device=device,
-    #               generator=generator, criterion_contrastive=criterion_contrastive,
-    #               cal_wasserstein_loss=cal_wasserstein_loss, epochs=10) 
+    train_triplet(model, dataloaders, criterion=criterion, optimizer=optimizer, device=device,
+                  generator=generator, criterion_contrastive=criterion_contrastive,
+                  cal_wasserstein_loss=cal_wasserstein_loss, epochs=10) 
 
     dataset = json.load(open(test_json, "r"))
     # evaluate_triplet_option(model, dataset, device, generator, 0, 1)

@@ -4,7 +4,7 @@ import glob
 import math
 import os
 from timm.models.vision_transformer import VisionTransformer
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0,3,4'
+# os.environ['CUDA_VISIBLE_DEVICES'] = '0,1,2'
 import gc
 from transformers import ChineseCLIPConfig as CLIPConfig
 from transformers import ChineseCLIPProcessor as CLIPProcessor
@@ -29,20 +29,19 @@ from PIL import Image
 from safetensors.torch import load_model, load_file
 sys.path.append('./GasAgent-main')
 
-from utils.train_utils import (
+from utils_.train_utils import (
     find_latest_checkpoint,
     cleanup_old_checkpoints,
     ema, infiniteloop,
     warmup_lr
 )
 # from data_utils import create_dataset, create_dataloaders
-from utils.data_loader import MedicalJsonDataset
+from utils_.data_loader import MedicalJsonDataset
 
 from conditional_flow_matcher import ConditionalFlowMatcher, OptimalTransportConditionalFlowMatcher
 from my_models.unet_model import UNetModelWrapper
 from my_models.unet_2d_condition import UNet2DConditionModel
 from my_models.model_dispatch import dispatch_model
-from model_utils.model import TripletNetwork
 
 def parse_arguments():
     """Parse command-line arguments."""

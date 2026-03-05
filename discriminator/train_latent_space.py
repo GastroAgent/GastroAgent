@@ -69,7 +69,6 @@ class PatchEmbed(nn.Module):
         x = x.transpose(1, 2)  # [B, 64, embed_dim]
         return x  # [B, num_patches, embed_dim]
 
-
 class SimpleTransformer(nn.Module):
     def __init__(self, embed_dim=64, depth=2, num_heads=4, mlp_ratio=2, dropout=0.1):
         super().__init__()
@@ -115,7 +114,7 @@ class AttentionDownEncoderXL(nn.Module):
         super().__init__()
         self.patch_embed = PatchEmbed(img_size=64, patch_size=4, in_chans=4, embed_dim=512)
         self.transformer = SimpleTransformer(embed_dim=512, depth=16, num_heads=8, mlp_ratio=4)
-        self.decoder = UpsampleDecoder(embed_dim=512, patch_size=2, out_chans=4)
+        self.decoder = UpsampleDecoder(embed_dim=512, patch_size=4, out_chans=4)
 
     def forward(self, x):
         # x: [B, 4, 64, 64]

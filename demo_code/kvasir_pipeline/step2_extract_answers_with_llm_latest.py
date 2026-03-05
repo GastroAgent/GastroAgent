@@ -1,0 +1,251 @@
+"""
+================================================================================
+步骤2: LLM提取答案
+================================================================================
+功能: 使用LLM从生成的文本中提取标准化答案
+输入: new_eval_tsy_llm_with_trigger.json (步骤1的输出)
+输出: new_eval_tsy_llm_extracted.json (添加 extracted_answer 字段)
+
+说明:
+- 使用更强的LLM（如GPT-4/Gemini）来理解复杂的生成文本
+- 提取标准化的答案字母（A/B/C/D）
+- 处理各种边缘情况和格式变化
+"""
+
+import json
+import os
+import re
+from typing import Optional
+import time
+
+# ===== 配置参数 =====
+data_name = 'kvasir'
+input_data_path = f'/mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/kvasir_doctor_exam/cot-all5/new_eval_tsy_llm_with_trigger.json'
+output_data_path = f'/mnt/inaisfs/data/home/tansy_criait/VLM-R1/data/Eval/kvasir_doctor_exam/cot-all5/new_eval_tsy_llm_extracted.json'
+
+# LLM API配置（根据实际使用的API调整）
+USE_LLM_API = True  # 设置为False则使用规则提取
+LLM_API_TYPE = "gemini"  # 可选: "openai", "gemini", "anthropic"
+LLM_API_KEY = os.getenv("GEMINI_API_KEY")  # 从环境变量读取
+LLM_MODEL = "gemini-1.5-flash"  # 或 "gpt-4o-mini", "claude-3-haiku"
+
+os.makedirs(os.path.dirname(output_data_path), exist_ok=True)
+
+# ===== trigger_final v2 配置（与 Step1 保持一致）=====
+THRES_MAX_P = 0.65      # 最大概率阈值
+THRES_GAP = 0.20        # 概率差距阈值
+THRES_ENTROPY = 0.40    # 归一化熵阈值
+OVERWRITE_TRIGGER_FINAL = False  # True: 覆盖 Step1 的 trigger_final
+
+# ===== LLM客户端初始化 =====
+if USE_LLM_API and LLM_API_TYPE == "gemini":
+    try:
+        import google.generativeai as genai
+        genai.configure(api_key=LLM_API_KEY)
+        llm_model = genai.GenerativeModel(LLM_MODEL)
+        print(f"已初始化 Gemini 模型: {LLM_MODEL}")
+    except Exception as e:
+        print(f"Gemini初始化失败: {e}")
+        print("将使用规则提取方法")
+        USE_LLM_API = False
+
+elif USE_LLM_API and LLM_API_TYPE == "openai":
+    try:
+        from openai import OpenAI
+        client = OpenAI(api_key=LLM_API_KEY)
+        print(f"已初始化 OpenAI 模型: {LLM_MODEL}")
+    except Exception as e:
+        print(f"OpenAI初始化失败: {e}")
+        print("将使用规则提取方法")
+        USE_LLM_API = False
+
+# ===== 答案提取函数 =====
+def extract_answer_by_rule(text: str, options: dict = None) -> Optional[str]:
+    """
+    基于规则的答案提取（后备方案）
+    """
+    # 首先尝试提取 <answer> 标签内的完整内容
+    answer_match = re.search(r"<answer>\s*(.*?)\s*</answer>", text, flags=re.IGNORECASE | re.DOTALL)
+    if answer_match and options:
+        answer_content = answer_match.group(1).strip()
+
+        # 尝试直接匹配选项字母格式（option_C / _C / C）
+        letter_match = re.search(r"(?:option[_\s]*)?([A-H])\b", answer_content, flags=re.IGNORECASE)
+        if letter_match:
+            return letter_match.group(1).upper()
+
+        # 如果不是字母格式，则将答案内容与选项值进行匹配
+        for option_key, option_value in options.items():
+            if option_value and answer_content in option_value:
+                # 从 option_A 中提取字母 A
+                letter = option_key.split('_')[1]
+                return letter.upper()
+            # 也尝试反向匹配（选项值包含在答案中）
+            if option_value and option_value in answer_content:
+                letter = option_key.split('_')[1]
+                return letter.upper()
+
+    # 兼容 <answer>_C</answer> 这类格式
+    m = re.search(r"<answer>\s*[_:\-]?\s*([A-H])\b[^<]*</answer>", text, flags=re.IGNORECASE)
+    if m:
+        return m.group(1).upper()
+
+    # 识别常见短语中的 option_X / X
+    m = re.search(r"\b(?:option[_\s]*)?([A-H])\b", text, flags=re.IGNORECASE)
+    if m:
+        return m.group(1).upper()
+
+    return None
+
+
+def extract_answer_with_llm(generated_text: str, question_text: str, options: dict) -> Optional[str]:
+    """
+    使用LLM提取答案（主要方法）
+    """
+    if not USE_LLM_API:
+        return extract_answer_by_rule(generated_text, options)
+
+    # 构建选项文本
+    options_text = "\n".join([f"{k.split('_')[1]}: {v}" for k, v in options.items() if v is not None])
+
+    # 构建提示词
+    prompt = f"""Please analyze the following medical VQA model response and extract the answer option letter.
+
+Question: {question_text}
+
+Available Options:
+{options_text}
+
+Model Response:
+{generated_text}
+
+Requirements:
+1. Extract ONLY the option letter (A-H) that the model selected as the final answer
+2. Look for explicit answer markers like <answer>, "The answer is", "I choose", etc.
+3. Handle formats like "option_C", "<answer>_C</answer>", or "The answer is: option_C"
+4. IMPORTANT: If the <answer> tag contains the actual disease name (not a letter), match it against the available options to find the corresponding letter
+5. If multiple letters appear, prioritize the one in the answer section
+6. If no clear answer is found, return "UNKNOWN"
+7. Return ONLY the letter, nothing else
+
+Extracted Answer:"""
+
+    try:
+        if LLM_API_TYPE == "gemini":
+            response = llm_model.generate_content(prompt)
+            answer_text = response.text.strip()
+
+        elif LLM_API_TYPE == "openai":
+            response = client.chat.completions.create(
+                model=LLM_MODEL,
+                messages=[
+                    {"role": "system", "content": "You are a precise answer extraction assistant."},
+                    {"role": "user", "content": prompt}
+                ],
+                temperature=0.0,
+                max_tokens=10
+            )
+            answer_text = response.choices[0].message.content.strip()
+
+        else:
+            return extract_answer_by_rule(generated_text, options)
+
+        # 提取字母
+        match = re.search(r"\b([A-H])\b", answer_text, flags=re.IGNORECASE)
+        if match:
+            return match.group(1).upper()
+
+        if "UNKNOWN" in answer_text:
+            return None
+
+        return extract_answer_by_rule(generated_text, options)
+
+    except Exception as e:
+        print(f"LLM提取失败: {e}, 使用规则提取")
+        return extract_answer_by_rule(generated_text, options)
+
+
+# ===== 主处理流程 =====
+print(f"正在读取数据: {input_data_path}")
+with open(input_data_path, 'r', encoding='utf-8') as f:
+    dataset = json.load(f)
+
+print(f"数据集大小: {len(dataset)}")
+print("开始提取答案...\n")
+
+results = []
+success_count = 0
+fail_count = 0
+
+for i, item in enumerate(dataset):
+    if (i + 1) % 50 == 0:
+        print(f"进度: {i+1}/{len(dataset)}")
+
+    # 准备选项字典
+    options = {
+        k: item.get(k)
+        for k in ['option_A', 'option_B', 'option_C', 'option_D',
+                  'option_E', 'option_F', 'option_G', 'option_H']
+        if item.get(k) is not None
+    }
+
+    # 提取答案
+    generated_text = item.get('generated_text', '')
+    question_text = item.get('formatted_text', '')
+
+    if USE_LLM_API:
+        extracted_answer = extract_answer_with_llm(generated_text, question_text, options)
+        time.sleep(0.1)  # 避免API限流
+    else:
+        extracted_answer = extract_answer_by_rule(generated_text, options)
+
+    # 记录结果
+    if extracted_answer:
+        success_count += 1
+    else:
+        fail_count += 1
+
+    # 添加字段
+    item['extracted_answer'] = extracted_answer
+    pred_letter = item.get('pred_letter')
+    is_consistent_extracted = bool(extracted_answer) and (extracted_answer == pred_letter)
+    item['is_consistent_extracted'] = is_consistent_extracted
+
+    max_prob = item.get('max_prob')
+    prob_gap = item.get('prob_gap')
+    h_norm = item.get('h_norm')
+
+    if max_prob is not None and prob_gap is not None and h_norm is not None:
+        trigger_final_v2 = (
+            (max_prob < THRES_MAX_P) or
+            (prob_gap < THRES_GAP) or
+            (h_norm > THRES_ENTROPY) or
+            (not is_consistent_extracted)
+        )
+        item['trigger_final_v2'] = bool(trigger_final_v2)
+        if OVERWRITE_TRIGGER_FINAL:
+            item['trigger_final'] = item['trigger_final_v2']
+    else:
+        item['trigger_final_v2'] = None
+
+    results.append(item)
+
+    # 随机打印调试信息
+    if i < 5 or (extracted_answer is None and fail_count <= 10):
+        print(f"\n--- 样本 {i+1} ---")
+        print(f"生成文本片段: {generated_text[:200]}...")
+        print(f"提取答案: {extracted_answer}")
+        print(f"Ground Truth: {item.get('gt_answer', 'N/A')}")
+        print("----------------\n")
+
+# ===== 保存结果 =====
+print(f"\n正在保存结果到: {output_data_path}")
+with open(output_data_path, 'w', encoding='utf-8') as f:
+    json.dump(results, f, indent=4, ensure_ascii=False)
+
+print('=' * 80)
+print('步骤2完成！')
+print(f'成功提取: {success_count}/{len(dataset)} ({success_count/len(dataset)*100:.1f}%)')
+print(f'提取失败: {fail_count}/{len(dataset)} ({fail_count/len(dataset)*100:.1f}%)')
+print(f'输出文件: {output_data_path}')
+print('=' * 80)

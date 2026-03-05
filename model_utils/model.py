@@ -6,6 +6,7 @@ from math import sqrt
 from typing import Optional
 from timm.layers import LayerNorm2d
 from einops.layers.torch import Rearrange
+from transformers.models import AutoModel
 
 class DinoV3Discriminator(nn.Module):
     def __init__(
@@ -573,6 +574,24 @@ def convert_ln_to_dyt(module):
     del module
     return module_output
 
+class OldUpsampleDecoder(nn.Module):
+    def __init__(self, embed_dim=64, patch_size=8, out_chans=4):
+        super().__init__()
+        self.patch_size = patch_size
+        self.embed_dim = embed_dim
+        # 将嵌入还原为特征图
+        self.proj = nn.Linear(embed_dim, patch_size * patch_size * out_chans)
+
+    def forward(self, x):
+        # x: [B, num_patches, embed_dim]
+        x = self.proj(x)  # [B, num_patches, 8*8*4]
+        # 重塑为 [B, C, H, W]
+        B, N, _ = x.shape
+        h = w = int(N ** 0.5)  # 假设是正方形
+        x = x.reshape(B, h, w, self.patch_size, self.patch_size, -1)
+        x = x.permute(0, 5, 1, 3, 2, 4).reshape(B, -1, h * self.patch_size, w * self.patch_size)
+        return x  # [B, 4, 64, 64]
+
 class UpsampleDecoder(nn.Module):
     def __init__(self, embed_dim=64, patch_size=8, out_chans=4):
         super().__init__()
@@ -593,25 +612,31 @@ class UpsampleDecoder(nn.Module):
         return x.permute(0,3,1,2)  # [B, 16, 16, 4]
 
 class AttentionDownEncoderXL(nn.Module):
-    def __init__(self, dy=False, ortho=False):
+    def __init__(self, dy=False, ortho=False, deep=True):
         super().__init__()
-        self.patch_embed = PatchEmbed(img_size=64, patch_size=4, in_chans=4, embed_dim=512)
-        if dy:
-            if ortho:
-                self.transformer = SimpleTransformerWithOrtho(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4, ortho_lambda=0.05, dy=True)
-            else:
-                self.transformer = TanhTransformer(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4)
-        else:
-            if ortho:
-                self.transformer = SimpleTransformerWithOrtho(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4, ortho_lambda=0.05, dy=False)
-            else:
-                self.transformer = SimpleTransformer(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4)
         self.ortho = ortho
         self.dy = dy
-        if ortho:
-            self.decoder = UpsampleDecoderWithOrtho(embed_dim=512, patch_size=4, out_chans=4)
+        self.deep = deep
+        if deep:
+            self.patch_embed = PatchEmbed(img_size=64, patch_size=4, in_chans=4, embed_dim=512)
+            self.transformer = SimpleTransformer(embed_dim=512, depth=16, num_heads=8, mlp_ratio=4)
+            self.decoder = OldUpsampleDecoder(embed_dim=512, patch_size=2, out_chans=4)
         else:
-            self.decoder = UpsampleDecoder(embed_dim=512, patch_size=4, out_chans=4)
+            self.patch_embed = PatchEmbed(img_size=64, patch_size=4, in_chans=4, embed_dim=512)
+            if dy:
+                if ortho:
+                    self.transformer = SimpleTransformerWithOrtho(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4, ortho_lambda=0.05, dy=True)
+                else:
+                    self.transformer = TanhTransformer(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4)
+            else:
+                if ortho:
+                    self.transformer = SimpleTransformerWithOrtho(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4, ortho_lambda=0.05, dy=False)
+                else:
+                    self.transformer = SimpleTransformer(embed_dim=512, depth=12, num_heads=8, mlp_ratio=4)
+            if ortho:
+                self.decoder = UpsampleDecoderWithOrtho(embed_dim=512, patch_size=4, out_chans=4)
+            else:
+                self.decoder = UpsampleDecoder(embed_dim=512, patch_size=4, out_chans=4)
 
     def forward(self, x, return_hidden=False):
         # x: [B, 4, 64, 64]
@@ -745,10 +770,10 @@ class GatedMLPClassifier(nn.Module):
         return x
 
 class TripletNetwork(nn.Module):
-    def __init__(self, pretrained=False, freeze_base=False, model='resnet34', dy=False, ortho=False):
+    def __init__(self, pretrained=False, freeze_base=False, model='resnet34', dy=False, ortho=False, deep=True):
         super(TripletNetwork, self).__init__()
         if model == 'attention':
-            self.embedding = AttentionDownEncoderXL(dy, ortho)
+            self.embedding = AttentionDownEncoderXL(dy, ortho, deep)
         else:
             self.embedding = EmbeddingNetwork(pretrained=pretrained, freeze_base=freeze_base, model=model)
         self.dy = dy
