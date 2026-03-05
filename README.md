@@ -178,6 +178,9 @@ python "wasserstein-gastroFlow /wass_flow_train_Kvasir/eval/cal_wass.py" \
   --output_dir your_path/wass_flow_train_Kvasir/result \
   --wass_model_path your_path/best_flow_weights/attention_dy_tsy.pt \
   --sim_model_path your_path/discriminator/latent_model_weight/convnext2.pt
+
+或者直接使用
+sbatch wasserstein-gastroFlow/wass_flow_train_Kvasir/eval/cal_wass.sh
 ```
 
 推理完成后，结果将保存在 `--output_dir` 指定目录（默认生成 `result.json`）。终端会输出病灶类型、部位、置信度及少样本匹配证据摘要。
