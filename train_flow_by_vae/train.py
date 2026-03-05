@@ -52,7 +52,7 @@ def parse_arguments():
                         help="Flow matching model type")
 
     parser.add_argument("--output_dir", type=str,
-                        default="./outputs/image_hint_十二指肠3",
+                        default="./outputs/image_hint",
                         help="Output directory")
     
     # UNet configuration
@@ -66,7 +66,7 @@ def parse_arguments():
     parser.add_argument("--grad_clip", type=float, default=2.0,
                         help="Gradient norm clipping")
 
-    parser.add_argument("--total_steps", type=int, default=70000,
+    parser.add_argument("--total_steps", type=int, default=50000,
                         help="Total training steps")
 
     parser.add_argument("--warmup", type=int, default=1500,
@@ -150,7 +150,7 @@ def train(args):
     transform_grey = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
-        transforms.RandomGrayscale(p=1),  # 数据增强：20% 概率灰度化
+        transforms.RandomGrayscale(p=1),  # Data augmentation: force grayscale conversion.
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
@@ -177,7 +177,7 @@ def train(args):
         )
         dataloaders.append(dataloader)
         
-    print('DataLoad Total Steps: ', sum([len(dataloader) for dataloader in dataloaders]))
+    print('DataLoad Total Steps: ', sum(len(dataloader) for dataloader in dataloaders))
     dataloopers = [infiniteloop(dataloader) for dataloader in dataloaders]
 
     ### Model initialization
@@ -235,15 +235,15 @@ def train(args):
     def init_weights(model):
         for module in model.modules():
             if isinstance(module, nn.Linear):
-                # 使用 Kaiming 正态分布初始化（适用于 ReLU）
+                # Initialize with Kaiming normal distribution (suitable for ReLU).
                 init.kaiming_normal_(module.weight, mode='fan_in', nonlinearity='relu')
                 if module.bias is not None:
                     init.constant_(module.bias, 0)
             elif isinstance(module, nn.Embedding):
-                # 使用 Xavier 正态分布初始化
+                # Initialize with Xavier normal distribution.
                 init.xavier_normal_(module.weight)
             elif isinstance(module, nn.LayerNorm):
-                # LayerNorm 的 weight 和 bias 初始化
+                # Initialize LayerNorm weights and biases.
                 init.constant_(module.weight, 1)
                 init.constant_(module.bias, 0)
 
@@ -303,17 +303,26 @@ def train(args):
         print(f"Resuming from step {start_step}")
     net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model)
 
-    # Ptach work for now. TODO: Remove the Global steps later
+    # Patch workaround for now. TODO: remove global steps later.
     global_step = start_step
+
+    def encode_with_vae(images):
+        with torch.no_grad():
+            images = images.to(vae.device)
+            posterior = vae.encode(images).latent_dist
+            if random_sample_posterior:
+                images = posterior.sample() * 0.18215 if random.random() > 0.5 else posterior.mode() * 0.18215
+            elif sample_posterior:
+                images = posterior.sample() * 0.18215
+            else:
+                images = posterior.mode() * 0.18215
+        return images
 
     # Training Loop
     with trange(start_step, args.total_steps, initial=start_step, total=args.total_steps,
                 dynamic_ncols=True) as step_pbar:
         for step in step_pbar:
-            if random.random() < 0.25:
-                args.op_match_batch = False
-            else:
-                args.op_match_batch = True
+            args.op_match_batch = random.random() >= 0.25
 
             global_step += 1
 
@@ -340,81 +349,30 @@ def train(args):
 
             if random.random() > 0.75:
                 y = (torch.ones_like(batch['class_id']) * 999).long() 
-                caption = ['将当前症状表现转变为相关条件所描述出的症状。' for x in batch['caption']]
+                caption = ['将当前症状表现转变为相关条件所描述出的症状。' for _ in batch['caption']]
             else: 
                 y = batch['class_id']
-                
-            if vae is None:
-                pass
-            else:
-                if True:
-                    images = torch.cat([x0, x1], dim=0)
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x0, x1 = images.chunk(2, dim=0)
-                else:
-                    images = x0
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x0 = images.detach()
-                    images = x1
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x1 = images.detach()
 
-            if not train_text_encoder and text_model is not None:
-                with torch.no_grad():
-                    caption_input = text_tokenizer(caption, return_tensors="pt", padding=True).to(text_model.device)
-                    caption_outputs = text_model(**caption_input)
-                    text_embeds = caption_outputs['last_hidden_state'].to(text_model.device)  # [B, S, D]
-            elif text_model is not None:
+            if vae is not None:
+                images = encode_with_vae(torch.cat([x0, x1], dim=0))
+                x0, x1 = images.chunk(2, dim=0)
+
+            if text_model is not None:
                 caption_input = text_tokenizer(caption, return_tensors="pt", padding=True).to(text_model.device)
-                caption_outputs = text_model(**caption_input)
+                with torch.set_grad_enabled(train_text_encoder):
+                    caption_outputs = text_model(**caption_input)
                 text_embeds = caption_outputs['last_hidden_state'].to(text_model.device)  # [B, S, D]
             else:
                 text_embeds = torch.empty((len(y)))
 
-            if not train_vision_encoder and vision_model is not None:
-                with torch.no_grad():
-                    x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                    vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
-            elif vision_model is not None:
+            if vision_model is not None:
                 x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
+                with torch.set_grad_enabled(train_vision_encoder):
+                    vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
             else:
                 vision_embeds = torch.empty((len(y)))
 
-            if caption_hidden_states_mode == 'cat':  # 剔除 CLS 向量。
+            if caption_hidden_states_mode == 'cat':  # Remove the CLS token.
                 caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(net_model.device),
                                                    text_embeds[:, 1:, ...].to(net_model.device)], dim=1)
             elif caption_hidden_states_mode == 'only_text':

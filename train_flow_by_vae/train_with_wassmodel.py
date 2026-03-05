@@ -86,7 +86,7 @@ def parse_arguments():
                         help="op_match_batch")
 
     parser.add_argument("--reflow", type=bool, default=False,
-                        help="矫正流")
+                        help="Rectified flow")
 
     # Evaluation parameters
     parser.add_argument("--save_step", type=int, default=2500,
@@ -124,29 +124,22 @@ def sinkhorn_loss(bx, bx1, epsilon=0.1, n_iter=50, reduction='mean'):
     Returns:
         Tensor: Scalar loss
     """
-    if bx.ndim == 2:
-        B, D = bx.shape
-        H = W = int((D // 4) ** 0.5)
-        bx = bx.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx.ndim == 4:
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx.ndim == 3:
-        bx = bx.unsqueeze(0)
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
+    def _reshape_for_sinkhorn(x):
+        if x.ndim == 2:
+            B, D = x.shape
+            H = W = int((D // 4) ** 0.5)
+            return x.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H * W, -1)
+        if x.ndim == 4:
+            B, C, H, W = x.shape
+            return x.permute(0, 2, 3, 1).reshape(B, H * W, C)
+        if x.ndim == 3:
+            x = x.unsqueeze(0)
+            B, C, H, W = x.shape
+            return x.permute(0, 2, 3, 1).reshape(B, H * W, C)
+        return x
 
-    if bx1.ndim == 2:
-        B, D = bx1.shape
-        H = W = int((D // 4) ** 0.5)
-        bx1 = bx1.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx1.ndim == 4:
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx1.ndim == 3:
-        bx1 = bx1.unsqueeze(0)
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
+    bx = _reshape_for_sinkhorn(bx)
+    bx1 = _reshape_for_sinkhorn(bx1)
     loss = loss_fn(bx, bx1)
     return loss
 
@@ -232,25 +225,13 @@ str_map = {
     "溃疡结肠炎": "Ulcerative_colitis"
 }
 def check_str(st1, st2):
-    if st1 == st2:
-        return True
-    if st1 in str_map:
-        str1 = str_map[st1]
-    else:
-        str1 = st1
-    if st2 in str_map:
-        str2 = str_map[st2]
-    else:
-        str2 = st2
-    if str1 == str2:
-        return True
-    return False
+    return st1 == st2 or str_map.get(st1, st1) == str_map.get(st2, st2)
 
-def neg_betas(**kwargs):  # 负样本的优化权重。
+def neg_betas(**kwargs):  # Optimization weight for negative samples.
     '''
 
     return:
-        int, Tensor.scaler 或 Tensor.Shape: [B]
+        int, Tensor.scaler or Tensor.Shape: [B]
     '''
     return -1
 
@@ -266,7 +247,7 @@ def train(args):
     use_text_feature = True
     caption_hidden_states_mode = 'cat' # only_text
     use_image_mask = True
-    checkpoints = './outputs/image_hint_十二指肠/otcfm/otcfm_weights_step_30000.pt'
+    checkpoints = ''
     train_wass_model = True
 
     # Create output and log directories
@@ -301,13 +282,12 @@ def train(args):
     transform_grey = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
-        transforms.RandomGrayscale(p=1),  # 数据增强：20% 概率灰度化
+        transforms.RandomGrayscale(p=1),  # Data augmentation: convert to grayscale.
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
     dataloaders = []
     json_paths = glob.glob("./data/data_pairs_small/*.json")
-    # json_paths = json_paths[:5] # debug
     for json_path in tqdm(json_paths):
         dataset = MedicalJsonDataset(
             path=json_path,
@@ -328,7 +308,7 @@ def train(args):
         dataloaders.append(dataloader)
         # break
 
-    print('DataLoad Total Steps: ', sum([len(dataloader) for dataloader in dataloaders]))
+    print('DataLoad Total Steps: ', sum(len(dataloader) for dataloader in dataloaders))
     dataloopers = [infiniteloop(dataloader) for dataloader in dataloaders]
 
     ### Model initialization
@@ -383,18 +363,30 @@ def train(args):
 
     net_model = net_model.to(device=device).train()
 
+    def _encode_latent(images):
+        with torch.no_grad():
+            images = images.to(vae.device)
+            posterior = vae.encode(images).latent_dist
+            if random_sample_posterior:
+                latent = posterior.sample() if random.random() > 0.5 else posterior.mode()
+            elif sample_posterior:
+                latent = posterior.sample()
+            else:
+                latent = posterior.mode()
+        return latent * 0.18215
+
     def init_weights(model):
         for module in model.modules():
             if isinstance(module, nn.Linear):
-                # 使用 Kaiming 正态分布初始化（适用于 ReLU）
+                # Initialize with Kaiming normal (suitable for ReLU).
                 init.kaiming_normal_(module.weight, mode='fan_in', nonlinearity='relu')
                 if module.bias is not None:
                     init.constant_(module.bias, 0)
             elif isinstance(module, nn.Embedding):
-                # 使用 Xavier 正态分布初始化
+                # Initialize with Xavier normal.
                 init.xavier_normal_(module.weight)
             elif isinstance(module, nn.LayerNorm):
-                # LayerNorm 的 weight 和 bias 初始化
+                # Initialize LayerNorm weight and bias.
                 init.constant_(module.weight, 1)
                 init.constant_(module.bias, 0)
 
@@ -428,7 +420,7 @@ def train(args):
     print(f"Wass Model params: {model_size / 1024 / 1024:.2f} M")
     state_dict = torch.load("./best_flow_weights/attention_tiny.pt")
     
-    # ############# Resnet34 #############
+    # ############# CNN #############
     # wass_model = TripletNetwork(model='resnet34').to("cuda:2").eval()
     # wass_model.device = "cuda:2"
     # model_size = sum(p.data.nelement() for p in wass_model.parameters())
@@ -482,7 +474,7 @@ def train(args):
         print(f"Resuming from step {start_step}")
     net_model, vae, text_model, vision_model = dispatch_model(net_model, vae, text_model, vision_model, num_device=2)
 
-    # Ptach work for now. TODO: Remove the Global steps later
+    # Temporary patch. TODO: remove global_step later.
     global_step = start_step
 
     # Training Loop
@@ -490,10 +482,7 @@ def train(args):
                 dynamic_ncols=True) as step_pbar:
         for step in step_pbar:
             global_step += 1
-            if random.random() < 0.25:
-                args.op_match_batch = False
-            else:
-                args.op_match_batch = True
+            args.op_match_batch = random.random() >= 0.25
 
             optim.zero_grad()
             if train_wass_model:
@@ -523,78 +512,36 @@ def train(args):
             else: 
                 y = batch['class_id']
 
-            if vae is None:
-                pass
-            else:
+            if vae is not None:
                 if args.batch_size <= 8:
-                    images = torch.cat([x0, x1], dim=0)
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x0, x1 = images.chunk(2, dim=0)
+                    latents = _encode_latent(torch.cat([x0, x1], dim=0))
+                    x0, x1 = latents.chunk(2, dim=0)
                 else:
-                    images = x0
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x0 = images.detach()
-                    images = x1
-                    with torch.no_grad():
-                        images = images.to(vae.device)
-                        posterior = vae.encode(images).latent_dist
-                        if random_sample_posterior:
-                            if random.random() > 0.5:
-                                images = posterior.sample() * 0.18215
-                            else:
-                                images = posterior.mode() * 0.18215
-                        elif sample_posterior:
-                            images = posterior.sample() * 0.18215
-                        else:
-                            images = posterior.mode() * 0.18215
-                    x1 = images.detach()
+                    x0 = _encode_latent(x0).detach()
+                    x1 = _encode_latent(x1).detach()
 
-            if not train_text_encoder and text_model is not None:
-                with torch.no_grad():
-                    caption_input = text_tokenizer(caption, return_tensors="pt", padding=True).to(text_model.device)
-                    caption_outputs = text_model(**caption_input)
-                    text_embeds = caption_outputs['last_hidden_state'].to(text_model.device)  # [B, S, D]
-            elif text_model is not None:
+            if text_model is not None:
                 caption_input = text_tokenizer(caption, return_tensors="pt", padding=True).to(text_model.device)
-                caption_outputs = text_model(**caption_input)
+                if train_text_encoder:
+                    caption_outputs = text_model(**caption_input)
+                else:
+                    with torch.no_grad():
+                        caption_outputs = text_model(**caption_input)
                 text_embeds = caption_outputs['last_hidden_state'].to(text_model.device)  # [B, S, D]
             else:
                 text_embeds = torch.empty((len(y)))
 
-            if not train_vision_encoder and vision_model is not None:
-                with torch.no_grad():
-                    x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                    vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
-            elif vision_model is not None:
+            if vision_model is not None:
                 x1_images = torch.stack([process_single_image(image_path) for image_path in x1_path])
-                vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
-           
+                if train_vision_encoder:
+                    vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
+                else:
+                    with torch.no_grad():
+                        vision_embeds = vision_model.forward_features(x1_images.to(vision_model.device))
             else:
                 vision_embeds = torch.empty((len(y)))
 
-            if caption_hidden_states_mode == 'cat':  # 剔除 CLS 向量。
+            if caption_hidden_states_mode == 'cat':  # Remove CLS tokens.
                 caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(net_model.device),
                                                    text_embeds[:, 1:, ...].to(net_model.device)], dim=1)
             elif caption_hidden_states_mode == 'only_text':
@@ -654,12 +601,12 @@ def train(args):
                         vt = vt.to(wass_model.device)
                         x = x0[mask].to(wass_model.device)
 
-                        ### 固定时间步长
+                        ### Fixed time steps
                         num_points = random.choice([8, 12, 16, 20, 24])
 
                         random_t = torch.rand(num_points, device=wass_model.device)
                         t_span = torch.sort(random_t)[0]
-                        t_span = torch.clamp(t_span / (t_span.max() + 0.1), 0.0, 1.0) # 归一化.
+                        t_span = torch.clamp(t_span / (t_span.max() + 0.1), 0.0, 1.0) # Normalize.
                         t_start = 0
                         for t_idx in range(len(t_span)):
                             t = t_span[t_idx]
@@ -677,10 +624,10 @@ def train(args):
                         vt = vt.to(wass_model.device)
                         dt = torch.clamp(t.to(wass_model.device), min=0.2, max=0.8)
                         wass_loss = wasserstein_loss_beta * cal_wasserstein_loss(wass_model.encode(x0[mask] + vt[mask] * dt[mask]), wass_model.encode(x1[mask])).mean().to(loss.device)
-                        loss = loss + wass_loss  # 原loss是直接优化 x+vt和x1 的MSE。
+                        loss = loss + wass_loss  # The original loss directly optimizes MSE between x+vt and x1.
                 
                 # if mask.sum() < len(mask):
-                #     mask = ~ mask # mask 取非
+                #     mask = ~ mask # Invert mask.
                 #     if mask.sum() > 0:
                 #         print("Cal Wasserstein Negative Batch-Size: ", mask.sum().item())
                 #         if Wasserstein_loss_multi_step and random.random() > 0.5:

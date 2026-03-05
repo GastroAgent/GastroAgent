@@ -8,4 +8,4 @@
 source /mnt/inaisfs/data/apps/cuda12.4.sh
 source /mnt/inaisfs/data/home/tansy_criait/miniconda3/bin/activate flow
 
-python /mnt/inaisfs/data/home/tansy_criait/wass_flow_match_十二指肠/train/train_with_resnetwass_neighbor.py
+python /mnt/inaisfs/data/home/tansy_criait/GasAgent-main/train_flow_by_vae/train_with_neighbor.py

@@ -474,41 +474,75 @@ class ImageGenerator:
 def generate_parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--checkpoint', type=str,
-                        # default = "./outputs/disease_self_exam_json_endovit_image_hint_wassmodelDXL_neighbor_nfree/otcfm/otcfm_weights_step_30000.pt",
-                        # default = './outputs/disease_self_exam_json_endovit_image_hint_resnetmodel_neighbor_nfree/otcfm/otcfm_weights_step_30000.pt',
-                        ### All
-                        # default = './outputs/disease_self_exam_json_endovit_image_hint_resnetmodel_neighbor_nfree/otcfm/otcfm_weights_step_50000.pt',
-                        # default = "./outputs/disease_self_exam_json_endovit_image_hint_wassmodelDXL_neighbor_nfree/otcfm/otcfm_weights_step_50000.pt",
-                        default = './outputs/disease_self_exam_json_endovit_image_hint_all/otcfm/otcfm_weights_step_50000.pt',
-                        help='Path to the checkpoint file')
-    parser.add_argument('--image_size', type=int, nargs=2, default=[512, 512],
-                        help='Image size (height, width)')
-    parser.add_argument('--num_steps', type=int, default=10,
-                        help='Number of steps in the ODE solver')
-    parser.add_argument('--min_num_steps', type=int, default=-1,
-                        help='Number of steps in the ODE solver')
+                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/outputs/image_hint_Disease_extra/otcfm/otcfm_weights_step_50000.pt',
+                        help='Path to the checkpoint file about the Flow-Match.') 
+    parser.add_argument('--output_dir', type=str,
+                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/result/test/attention_disease_extra_419_image_hint_Disease_extra',
+                        help='Directory to save results')
+    parser.add_argument('--num_steps', type=int, default=8,
+                        help='Max Number of steps in the ODE solver')   
+    parser.add_argument('--min_num_steps', type=int, default=2,
+                        help='Min Number of steps in the ODE solver')   
+    parser.add_argument('--fix_num_steps', type=int, default=-1,
+                        help='Fix Number of steps in the ODE solver')                                   
+    parser.add_argument('--stop_beta', type=float, default=0.92,
+                        help='Control the threshold for stopping generation.')
+    parser.add_argument('--use_cache', type=bool, default=False,
+                        help='Use Cache for acceleration, but it may affect the results.')
+    parser.add_argument('--bias', type=bool, default=False,
+                        help='Reduce the approximation error of the Sk algorithm')  
+    parser.add_argument('--temp', type=str, default='./temp/temp',
+                        help='')
+    parser.add_argument('--stop_method', type=str, default='direct',
+                        choices=['diff', 'second_diff', 'direct'],
+                        help='Stopping decision strategy.')
+    parser.add_argument('--wass_model_path', type=str, 
+                        default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/attention_disease_extra.pt",
+                        help='Path to the checkpoint file about the Wasserstein-GastroFlow.')
+    parser.add_argument('--wass_model_type', type=str, 
+                        choices=['resnet34', 'attention'], 
+                        default="attention", 
+                        help='Model type for Wasserstein encoder') 
+    parser.add_argument('--sim_model_type', type=str, 
+                        choices=['convnext', 'gme', 'dinov3'],
+                        default="convnext",
+                        help='Similarity model type (convnext, gme, dinov3)')
+    parser.add_argument('--full', type=bool, default=True,
+                        help='')
+    parser.add_argument('--sim_model_path', type=str, 
+                        default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight/convnext3.pt",
+                        help='Similarity model type (convnext, gme, dinov3)')
     parser.add_argument('--num_channels', type=int, default=128,
                         help='Number of base channels in UNet')
-    parser.add_argument('--use_ema', action='store_true', default=False,
+    parser.add_argument('--use_ema', action='store_true', default=True,
                         help='Use EMA model for inference')
     parser.add_argument('--solver', type=str, default='heun',
                         choices=['euler', 'heun'],
                         help='ODE solver type')
-    parser.add_argument('--intermediate_freq', type=int, default=2,
+    parser.add_argument('--use_gt_vt', type=bool, default=False,
+                        help='Force guided generation using Euler solver.')
+    parser.add_argument('--save_grid', action='store_true', default=False,
+                        help='Save grid of samples for each batch')
+    parser.add_argument('--save_intermediates', action='store_true', default=True,
+                        help='Save intermediate steps during generation')
+    parser.add_argument('--intermediate_freq', type=int, default=1,
                         help='Frequency of saving intermediate steps')
-    parser.add_argument('--use_controlnet', type=bool, default=False,
-                        help='Frequency of saving intermediate steps')
-    parser.add_argument('--caption_hidden_states_mode', type=str, default='cat',
+    parser.add_argument('--max_points', type=int, default=1024,
+                        help='Max points for Sinkhorn (scale parameter).')
+    parser.add_argument('--num_samples', type=int, default=4,
                         help='')
-    parser.add_argument('--op_match', type=bool, default=False,
-                        help='')
-    parser.add_argument('--wass_model_path', type=str, 
-                        default="./best_flow_weights/model_Disease.pt",
-                        help='')
-    parser.add_argument('--wass_model_type', type=str, 
-                        choices=['resnet34', 'attention'],
-                        default="resnet34", # resnet34 或 attention
-                        help='指定模型类型')
+    parser.add_argument('--batch_size', type=int, default=1,
+                        help='Batch size for generation')
+    parser.add_argument('--image_size', type=int, nargs=2, default=[512, 512],
+                        help='Image size (height, width)')
+    parser.add_argument(
+        '--wass_space',
+        type=str,
+        choices=['latent', 'image_pixels', 'image_feats'],
+        default='latent',
+        help="Where to compute distances: 'latent' (VAE latent), 'image_pixels' (decode to RGB), "
+             "'image_feats' (decode then feature space)."
+    )
     return parser.parse_args()
 
 def create_generator(**kwargs):

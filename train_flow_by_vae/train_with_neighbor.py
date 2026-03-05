@@ -17,6 +17,7 @@ from torch import nn
 import torchvision.models as models
 import torch.nn.functional as F
 from torch.nn import init
+from torch.nn.utils import spectral_norm
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision import transforms as T
@@ -119,29 +120,8 @@ def sinkhorn_custom_loss(bx, bx1, epsilon=0.1, n_iter=25, reduction='sum'):
         Tensor: Scalar loss
     """
     # Reshape input to [B, N, D]
-    if bx.ndim == 2:
-        B, D = bx.shape
-        H = W = int((D // 4) ** 0.5)
-        bx = bx.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx.ndim == 4:
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx.ndim == 3:
-        bx = bx.unsqueeze(0)
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-
-    if bx1.ndim == 2:
-        B, D = bx1.shape
-        H = W = int((D // 4) ** 0.5)
-        bx1 = bx1.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx1.ndim == 4:
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx1.ndim == 3:
-        bx1 = bx1.unsqueeze(0)
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
+    bx, _, _ = _to_sequence_features(bx)
+    bx1, _, _ = _to_sequence_features(bx1)
 
     B, N, D = bx.shape
     _, M, _ = bx1.shape
@@ -186,6 +166,25 @@ from geomloss import SamplesLoss
 # loss_fn = SamplesLoss("laplacian", p=2, blur=0.1**0.5)
 loss_fn = SamplesLoss("sinkhorn", p=2, blur=0.1**0.5)
 # sinkhorn hausdorff energy gaussian laplacian
+
+
+def _to_sequence_features(x):
+    if x.ndim == 2:
+        bsz, dim = x.shape
+        height = width = int((dim // 4) ** 0.5)
+        x = x.view(bsz, 4, height, width).permute(0, 2, 3, 1).reshape(bsz, height * width, -1)
+    elif x.ndim == 4:
+        bsz, channels, height, width = x.shape
+        x = x.permute(0, 2, 3, 1).reshape(bsz, height * width, channels)
+    elif x.ndim == 3:
+        x = x.unsqueeze(0)
+        bsz, channels, height, width = x.shape
+        x = x.permute(0, 2, 3, 1).reshape(bsz, height * width, channels)
+    else:
+        raise ValueError(f"Unsupported tensor shape for Sinkhorn loss: {x.shape}")
+    return x, height, width
+
+
 def sinkhorn_loss(bx, bx1, epsilon=0.1, n_iter=50, reduction='mean'):
     """
     Compute Sinkhorn loss (approximate Wasserstein distance) between two sets of samples.
@@ -200,47 +199,26 @@ def sinkhorn_loss(bx, bx1, epsilon=0.1, n_iter=50, reduction='mean'):
     Returns:
         Tensor: Scalar loss
     """
-    if bx.ndim == 2:
-        B, D = bx.shape
-        H = W = int((D // 4) ** 0.5)
-        bx = bx.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx.ndim == 4:
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx.ndim == 3:
-        bx = bx.unsqueeze(0)
-        B, C, H, W = bx.shape
-        bx = bx.permute(0, 2, 3, 1).reshape(B, H*W, C)
-
-    if bx1.ndim == 2:
-        B, D = bx1.shape
-        H = W = int((D // 4) ** 0.5)
-        bx1 = bx1.view(B, 4, H, W).permute(0, 2, 3, 1).reshape(B, H*W, -1)
-    elif bx1.ndim == 4:
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    elif bx1.ndim == 3:
-        bx1 = bx1.unsqueeze(0)
-        B, C, H, W = bx1.shape
-        bx1 = bx1.permute(0, 2, 3, 1).reshape(B, H*W, C)
-    loss = loss_fn(bx, bx1) * H * W
+    bx, height, width = _to_sequence_features(bx)
+    bx1, _, _ = _to_sequence_features(bx1)
+    loss = loss_fn(bx, bx1) * height * width
     return loss
 
 def cal_wasserstein_loss(anchor_emb, positive_emb, matched=False, **kwargs):
     if matched:
         with torch.no_grad():
-            # 计算成对平方距离 [B, B]
+            # Compute pairwise squared distance [B, B]
             diff = anchor_emb.unsqueeze(1) - positive_emb.unsqueeze(0)  # [B, B, D]
             pairwise_sq_dist = torch.sum(diff ** 2, dim=-1)
 
-            # 可选：防止自匹配（如果 anchor[i] 和 positive[i] 是同一实例）
+            # Optional: avoid self-match when anchor[i] and positive[i] are the same instance
             # pairwise_sq_dist.fill_diagonal_(float('inf'))
 
-            # 找到每个 anchor 最近的 positive 索引
+            # Find nearest positive index for each anchor
             min_indices = torch.argmin(pairwise_sq_dist, dim=1)  # [B]
 
-        # 使用索引提取匹配的 positive（此操作可导，因为索引是常量）
-        matched_positive = positive_emb[min_indices] 
+        # Gather matched positive embeddings using fixed indices
+        matched_positive = positive_emb[min_indices]
     else:
         matched_positive = positive_emb
         
@@ -258,32 +236,22 @@ str_map = {
 def check_str(st1, st2):
     if st1 == st2:
         return True
-    if st1 in str_map:
-        str1 = str_map[st1]
-    else:
-        str1 = st1
-    if st2 in str_map:
-        str2 = str_map[st2]
-    else:
-        str2 = st2
+    str1 = str_map.get(st1, st1)
+    str2 = str_map.get(st2, st2)
     if str1 == str2:
         return True
     return False
 
-def neg_betas(**kwargs):  # 负样本的优化权重。
+def neg_betas(**kwargs):  # Optimization weight for negative samples.
     '''
 
     return:
-        int, Tensor.scaler 或 Tensor.Shape: [B]
+        int, Tensor.scaler or Tensor.Shape: [B]
     '''
     return -1
 
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.nn.utils import spectral_norm
 # ----------------------------
-# 带轻量通道注意力的残差下采样块（2 conv + SE）
+# Residual downsample block with lightweight channel attention (2 conv + SE)
 # ----------------------------
 class AttentiveResBlock(nn.Module):
     def __init__(self, in_ch, out_ch, downsample=True):
@@ -302,8 +270,8 @@ class AttentiveResBlock(nn.Module):
         else:
             self.skip = None
 
-        # 轻量 SE 注意力（不增加卷积层计数，视为附属模块）
-        reduction = min(8, out_ch // 8)  # 避免过小通道
+        # Lightweight SE attention (auxiliary module, not counted as backbone conv layers)
+        reduction = min(8, out_ch // 8)  # Avoid too few channels
         self.se = nn.Sequential(
             nn.AdaptiveAvgPool2d(1),
             spectral_norm(nn.Conv2d(out_ch, out_ch // reduction, 1)),
@@ -325,21 +293,21 @@ class AttentiveResBlock(nn.Module):
             out = self.downsample(out)
 
         out = out + identity
-        out = out * self.se(out)  # 通道加权
+        out = out * self.se(out)  # Channel-wise reweighting
         return self.relu(out)
 
 # ----------------------------
-# 主模型：带注意力 + 多级融合
+# Main model: attention + multi-scale fusion
 # ----------------------------
 class AttentiveFusionPatchDiscriminator(nn.Module):
     """
-    16 层强力判别器，集成：
-      - 分阶段下采样
-      - 每个主干块含通道注意力
-      - 多尺度特征融合（16x16, 8x8, 4x4）
-    输入: (B, 4, 64, 64)
-    输出: (B, 1, 4, 4)
-    卷积层数统计（仅计 Conv2d）：
+    16-layer discriminator that integrates:
+      - Staged downsampling
+      - Channel attention in each backbone block
+      - Multi-scale feature fusion (16x16, 8x8, 4x4)
+    Input: (B, 4, 64, 64)
+    Output: (B, 1, 4, 4)
+    Conv layer count (Conv2d only):
       - init: 2
       - s1 (32→16): 2
       - s2 (16→8): 2
@@ -347,7 +315,7 @@ class AttentiveFusionPatchDiscriminator(nn.Module):
       - refine4: 2
       - proj16/proj8/proj4: 3
       - fuse head: 2
-      - 总计: 15 层 Conv2d（注意力中的 1x1 不额外计为主干层）
+      - total: 15 Conv2d layers (1x1 in attention is not counted as backbone layer)
     """
     def __init__(self, in_channels=4, ndf=64, device="cuda:2"):
         super().__init__()
@@ -433,11 +401,11 @@ def hinge_generator_loss(fake_pred):
 
 def requires_grad(model, flag):
     """
-    设置模型中所有参数的 requires_grad 属性。
+    Set `requires_grad` for all model parameters.
 
     Args:
-        model (torch.nn.Module): 要操作的模型。
-        flag (bool): True 表示启用梯度（训练），False 表示冻结参数（不计算梯度）。
+        model (torch.nn.Module): Target model.
+        flag (bool): True to enable gradients, False to freeze parameters.
     """
     for param in model.parameters():
         param.requires_grad = flag
@@ -492,7 +460,7 @@ def train(args):
     transform_grey = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
-        transforms.RandomGrayscale(p=1),  # 数据增强：20% 概率灰度化
+        transforms.RandomGrayscale(p=1),  # Data augmentation: force grayscale
         transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
 
@@ -581,19 +549,19 @@ def train(args):
         
     net_model = net_model.to(device=device).train()
 
-    # 定义初始化函数（不再是类方法）
+    # Define initialization function (not a class method)
     def init_weights(model):
         for module in model.modules():
             if isinstance(module, nn.Linear):
-                # 使用 Kaiming 正态分布初始化（适用于 ReLU）
+                # Kaiming normal initialization (suitable for ReLU)
                 init.kaiming_normal_(module.weight, mode='fan_in', nonlinearity='relu')
                 if module.bias is not None:
                     init.constant_(module.bias, 0)
             elif isinstance(module, nn.Embedding):
-                # 使用 Xavier 正态分布初始化
+                # Xavier normal initialization
                 init.xavier_normal_(module.weight)
             elif isinstance(module, nn.LayerNorm):
-                # LayerNorm 的 weight 和 bias 初始化
+                # Initialize LayerNorm weights and bias
                 init.constant_(module.weight, 1)
                 init.constant_(module.bias, 0)
 
@@ -818,7 +786,7 @@ def train(args):
             else:
                 vision_embeds = torch.empty((len(y)))
 
-            if caption_hidden_states_mode == 'cat':  # 剔除 CLS 向量。
+            if caption_hidden_states_mode == 'cat':  # Remove CLS token.
                 caption_hidden_states = torch.cat([vision_embeds[:, 1:, ...].to(net_model.device),
                                                    text_embeds[:, 1:, ...].to(net_model.device)], dim=1)
             elif caption_hidden_states_mode == 'only_text':
@@ -870,16 +838,16 @@ def train(args):
                     vt = vt.to(wass_model.device)
                     x = x0.to(wass_model.device)
 
-                    ### 固定时间步长
+                    ### Fixed time steps
                     # t_span = torch.linspace(0, 1, 5, device=net_model.device)
-                    ### 随机时间步长 Batch一致.
+                    ### Random time steps shared across the batch.
                     num_points = random.choice([8, 12, 16, 20, 24, 28])
                     # num_points = 5
 
-                    # 生成 [0, 1] 范围内的随机时间点，保持递增
+                    # Generate random time points in [0, 1] and keep them sorted.
                     random_t = torch.rand(num_points, device=wass_model.device)
                     t_span = torch.sort(random_t)[0]
-                    t_span = torch.clamp(t_span / (t_span.max() + 0.05), 0.0, 1.0) # 归一化.
+                    t_span = torch.clamp(t_span / (t_span.max() + 0.05), 0.0, 1.0)  # Normalize.
                     t_start = 0
                     
                     for t_idx in range(len(t_span)):
@@ -892,7 +860,7 @@ def train(args):
                         else:
                             x = x + ut.to(wass_model.device) * dt
                         wass_loss = wass_loss + (wasserstein_loss_beta_neighbor * (cal_wasserstein_loss(wass_model.encode(x_last), wass_model.encode(x)) * optim_neg).sum()).to(loss.device)
-                    ### 终点对齐增强：可在多步模式末尾额外加一项，确保最终生成质量。
+                    # Final endpoint alignment enhancement for multi-step mode.
                     wass_loss = wass_loss + (wasserstein_loss_beta_neighbor * (cal_wasserstein_loss(wass_model.encode(x), wass_model.encode(x1)) * optim_neg).sum()).to(loss.device)
                 else:
                     """Euler solver with one-Step"""
@@ -905,7 +873,7 @@ def train(args):
                     # fake_pred_for_g = discriminator(x0.to(discriminator.device) + vt.to(discriminator.device) * dt.to(discriminator.device))
                     # adv_loss = hinge_generator_loss(fake_pred_for_g)
                     # wass_loss = wass_loss + 0.05 * adv_loss.to(wass_loss.device)
-            loss = loss + torch.clamp_min(wass_loss, - loss.detach().item() + 0.1)  # 原loss是直接优化 x+vt和x1 的MSE。
+            loss = loss + torch.clamp_min(wass_loss, - loss.detach().item() + 0.1)  # Original loss optimizes MSE between x + vt and x1.
             loss.backward()
             grad_norm = torch.nn.utils.clip_grad_norm_(net_model.parameters(), args.grad_clip)
             if train_wass_model:

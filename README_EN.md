@@ -2,6 +2,487 @@
 
 <div align="center">
 
+[![License](https://img.shields.io/badge/license-APACHE-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/pytorch-2.5.1+-orange.svg)](https://pytorch.org/)
+
+**Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics**
+
+*Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics*
+
+English | [简体中文](README.md)
+
+</div>
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Changelog](#changelog)
+- [System Requirements](#system-requirements)
+- [Installation Guide](#installation-guide)
+- [Model Weights and Demo Data](#model-weights-and-demo-data)
+- [Quick Reproduction Demos](#quick-reproduction-demos)
+  - [Demo A - Wasserstein-GastroFlow Inference and Evaluation](#demo-a---wasserstein-gastroflow-inference-and-evaluation)
+  - [Demo B - End-to-End Fusion Inference with GastroAgent](#demo-b---end-to-end-fusion-inference-with-gastroagent)
+- [Training Guide](#training-guide)
+- [Project Structure](#project-structure)
+- [Visualization Results](#visualization-results)
+- [Citation](#citation)
+- [Acknowledgments](#acknowledgments)
+- [Data Availability Statement](#data-availability-statement)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
+## Overview
+
+GastroAgent is a multimodal AI diagnostic framework for upper gastrointestinal endoscopy. Its core goal is to achieve both **stable recognition of common lesions** and **reliable coverage of rare long-tail lesions** in real clinical scenarios.
+
+The system consists of three core modules and one fusion controller:
+
+| Module | Responsibility |
+|------|------|
+| **GastroMLLM** | Multimodal large language model for medical reasoning and report generation |
+| **Flow-Match Generator** | Learns generative trajectories from query images to reference distributions |
+| **Wasserstein-GastroFlow** | Computes optimal transport cost along generative trajectories for few-shot geometric matching |
+| **Entropy-aware Adaptive Weight Controller** | Dynamically fuses predictions from GastroMLLM and Wasserstein-GastroFlow |
+
+On the standardized Kvasir dataset, GastroAgent achieves **93.7%** diagnostic accuracy. On long-tail cohorts, it reaches **81.4%** for uncommon esophageal lesions, **84.8%** for gastric lesions, and **83.8%** for duodenal lesions.
+
+Overall workflow figure (JPG): [`assets/figures/overview-ill.jpg`](assets/figures/overview-ill.jpg)
+
+---
+
+## Key Features
+
+- **Long-tail-friendly diagnosis**: Improves recognition of rare lesions under imbalanced GI data distributions.
+- **Multimodal medical reasoning**: Combines visual evidence and text reasoning for more complete diagnostic explanations.
+- **Interpretable geometric matching**: Uses optimal transport cost to provide trajectory-level evidence from query to reference samples.
+- **Reproducible demo workflows**: Covers both standalone Wasserstein-GastroFlow evaluation and GastroAgent fusion evaluation.
+- **Modular training design**: GastroMLLM, Flow-Match, and Wasserstein-GastroFlow can be trained and replaced independently.
+
+---
+
+## Changelog
+
+- **2026-03-05**
+  - Unified and completed the Chinese README sections for installation, demos, and training.
+  - Added visualization examples and a more detailed project structure description.
+  - Improved path placeholders and command annotations for one-command reproduction.
+
+---
+
+## System Requirements
+
+### Hardware
+
+| Item | Requirement |
+|------|------|
+| **GPU** | NVIDIA GPU, VRAM >= 24 GB (A100 40 GB recommended) |
+| **Memory** | >= 32 GB RAM |
+| **Storage** | >= 40 GB available space (including model weights and datasets) |
+
+### Software
+
+| Item | Version |
+|------|------|
+| **Operating System** | Linux (Ubuntu 20.04 / 22.04 recommended) |
+| **Python** | >= 3.11 |
+| **PyTorch** | >= 2.5.1 |
+| **CUDA** | >= 12.1 |
+| **cuDNN** | Compatible with your CUDA version |
+
+Verified environment: Ubuntu 22.04 / Python 3.11.8 / PyTorch 2.5.1 / CUDA 12.1
+
+---
+
+## Installation Guide
+
+Estimated setup time: about 10-15 minutes (depending on network speed).
+
+### 1) Clone the repository
+
+```bash
+git clone https://github.com/GastroAgent/GastroAgent.git
+cd GastroAgent
+```
+
+### 2) Create and activate environment
+
+```bash
+conda create -n GastroAgent python=3.11 -y
+conda activate GastroAgent
+```
+
+### 3) Install PyTorch (CUDA 12.1 example)
+
+```bash
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 \
+    --index-url https://download.pytorch.org/whl/cu121
+```
+
+If you use another CUDA version, see the [official PyTorch installation page](https://pytorch.org/get-started/locally/).
+
+### 4) Install project dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If `flash-attn` fails to install from `requirements.txt`, comment it out first and install it manually following the [Flash Attention official guide](https://github.com/Dao-AILab/flash-attention).
+
+### 5) Verify installation
+
+```bash
+python -c "import torch; print('PyTorch:', torch.__version__); print('CUDA:', torch.cuda.is_available())"
+```
+
+---
+
+## Model Weights and Demo Data
+
+All model weights and demo data are hosted on Hugging Face:  
+[https://huggingface.co/GastroAgent/GastroAgent](https://huggingface.co/GastroAgent/GastroAgent)
+
+### Recommended downloads
+
+| File Name | Size | Purpose |
+|--------|------|------|
+| `LlavaQwen2-GRPO-Tricks-Total-CoT-6000.tar.gz` | 12.6 GB | GastroMLLM weights |
+| `kvasir-extra.zip` | 7.44 GB | Wasserstein-GastroFlow weights for kvasir-two-label |
+| `kvasir.zip` | 7.42 GB | Wasserstein-GastroFlow weights for kvasir-three-label |
+| `image_option_two_label/` | - | two-label reference images |
+| `image_options/` | - | three-label reference images |
+
+### Example download and extraction
+
+Assume all files are stored under `<WEIGHT_DIR>`:
+
+```bash
+huggingface-cli download GastroAgent/GastroAgent --local-dir <WEIGHT_DIR>
+cd <WEIGHT_DIR>
+tar -xzf LlavaQwen2-GRPO-Tricks-Total-CoT-6000.tar.gz
+unzip kvasir-extra.zip -d kvasir-extra
+unzip kvasir.zip -d kvasir
+```
+
+Key files in `kvasir-extra`:
+
+- `wass_model.pt`: Wasserstein metric model (for `--wass_model_path`)
+- `otcfm_weights_step_50000.pt`: Flow-Match weights (for `--checkpoint`)
+- `convnext2.pt`: early-stop discriminator weights (for `--sim_model_path`)
+
+---
+
+## Quick Reproduction Demos
+
+The following commands use placeholders. Replace them with your actual paths:
+
+- `<PROJECT_ROOT>`: project root directory (i.e., `GastroAgent/`)
+- `<WEIGHT_DIR>`: root directory where model weights are extracted
+
+Estimated runtime: on a single A100 40 GB GPU, each demo takes about 10-15 minutes (the main cost is Wasserstein distance approximation).
+
+### Demo A - Wasserstein-GastroFlow Inference and Evaluation
+
+Goal: compute Wasserstein distances and classification accuracy on `kvasir-two-label`.
+
+1) Data preparation:
+- Download `image_option_two_label/` from Hugging Face (recommended path: `<WEIGHT_DIR>/image_option_two_label/`)
+- Check `<PROJECT_ROOT>/demo_data/kvasir-two-label/final_eval/final_eval_flat.json`:
+  - `x0` points to `<PROJECT_ROOT>/demo_data/kvasir-two-label/final_eval/`
+  - `x1` points to `<WEIGHT_DIR>/image_option_two_label/`
+
+2) Run distance computation:
+
+```bash
+conda activate GastroAgent
+
+python wasserstein-gastroFlow/wass_flow_train_Kvasir/eval/cal_wass.py \
+  --data_path <PROJECT_ROOT>/demo_data/kvasir-two-label/final_eval/final_eval_flat.json \
+  --checkpoint <WEIGHT_DIR>/kvasir-extra/otcfm_weights_step_50000.pt \
+  --output_dir <PROJECT_ROOT>/results/wass_kvasir_two_label \
+  --wass_model_path <WEIGHT_DIR>/kvasir-extra/wass_model.pt \
+  --sim_model_path <WEIGHT_DIR>/kvasir-extra/convnext2.pt
+```
+
+Expected output: `<PROJECT_ROOT>/results/wass_kvasir_two_label/result.json`
+
+Optional (cluster submission): `sbatch wasserstein-gastroFlow/wass_flow_train_Kvasir/eval/cal_wass.sh` (please update paths in the script first).
+
+3) Compute classification accuracy:
+
+```bash
+python demo_code/wass_flow_match/cal_label_acc.py
+```
+
+Before running, set `in_path` in the script to the `result.json` path produced in the previous step. Common output files:
+- `eval_by_x0_clean.json`
+- `summary_by_x0_clean.json`
+
+### Demo B - End-to-End Fusion Inference with GastroAgent
+
+Goal: fuse outputs from GastroMLLM and Wasserstein-GastroFlow to obtain final accuracy.
+
+1) Run the MLLM prediction pipeline (4 steps total):
+
+```bash
+python demo_code/kvasir_pipeline/run_full_pipeline.py
+```
+
+Before running, edit `demo_code/kvasir_pipeline/step1_model_inference.py`:
+- `model_id` -> `<WEIGHT_DIR>/LlavaQwen2-GRPO-Tricks-Total-CoT-6000`
+- `input_data_path` -> `<PROJECT_ROOT>/demo_data/kvasir-two-label/mllm/final_doctor_exam_43.json`
+- `output_data_path` -> target output path
+
+This script runs the following 4 steps in order. Track each output file:
+
+| Step | Script | Main Output |
+|------|------|----------|
+| 1 | `step1_model_inference.py` | `new_eval_tsy_llm_with_trigger.json` |
+| 2 | `step2_extract_answers_with_llm_latest.py` | `new_eval_tsy_llm_extracted.json` |
+| 3 | `step3_reevaluate_correct.py` | `new_eval_tsy_llm_final.json` |
+| 4 | `step4_reanalyze_trigger_performance.py` | `new_eval_tsy_llm_trigger_report.json` |
+
+2) Fuse MLLM and Flow results:
+
+```bash
+python demo_code/kvasir_pipeline/fusion/run_fusion_only.py \
+  --mllm-path <new_eval_tsy_llm_final.json path> \
+  --flow-path <eval_by_x0_clean.json path> \
+  --output-dir <PROJECT_ROOT>/results/fusion_kvasir_two_label
+```
+
+Output files:
+- `fusion_results.json`
+- `fusion_statistics.json`
+
+> To fully reproduce the paper's Kvasir complete-set results, repeat the same workflow on `kvasir-three-label` and merge statistics. Key mappings are:  
+> - Wasserstein distance input: `<PROJECT_ROOT>/demo_data/kvasir-three-label/final_eval/final_eval_flat.json`  
+> - Reference image directory: `<WEIGHT_DIR>/image_options/`  
+> - MLLM input: `<PROJECT_ROOT>/demo_data/kvasir-three-label/mllm/final_doctor_exam_62.json`
+
+---
+
+## Training Guide
+
+Training is modular. The three core modules can be trained independently and then combined in the fusion stage:
+
+```text
+GastroMLLM (independent)        Flow-Match Generator (independent)
+       \                       |
+        \                      v
+         \           Wasserstein-GastroFlow
+          \                   /
+           v                 v
+         GastroAgent (load weights + fusion calibration)
+```
+
+### 1) GastroMLLM
+
+**Goal**
+- Obtain a multimodal model with endoscopic scene understanding, medical reasoning, and report generation capabilities.
+
+**Typical Inputs**
+- Endoscopic images/video frames (or keyframes) with structured annotations (lesion type, location, attributes, etc.).
+- Text supervision data (reports, conclusions, instruction data, etc.).
+
+**Training Outputs**
+- GastroMLLM weights (used in inference and fusion stages).
+
+**Relationship with Other Modules**
+- Can be trained independently of Flow-Match and Wasserstein-GastroFlow.
+- Provides medical reasoning and text-side evidence in the final GastroAgent workflow.
+
+**Launch Commands**
+
+SFT training:
+
+```bash
+bash VLM-R1/src/open-r1-multimodal/run_scripts/sft_data_v1/stage3_generate_lora_run.sh
+# or Slurm:
+sbatch VLM-R1/src/open-r1-multimodal/run_scripts/sft_data_v1/stage3_submmit.sh
+```
+
+RL (GRPO) fine-tuning:
+
+```bash
+bash VLM-R1/src/open-r1-multimodal/run_scripts/rl/run_grpo_my_server_qwen_8gpu_nodes_run.sh
+# or Slurm:
+sbatch VLM-R1/src/open-r1-multimodal/run_scripts/rl/run_grpo_my_server_qwen_8gpu_nodes_summit.sh
+```
+
+### 2) Flow-Match Generator
+
+**Goal**
+- Learn the generative trajectory from query samples to reference distributions, providing trajectory evidence for downstream optimal transport cost computation.
+
+**Typical Inputs**
+- Primarily endoscopic images, optionally split into training subdomains by organ/location/lesion category.
+
+**Training Outputs**
+- Flow-Match generator weights (e.g., `otcfm_weights_step_*.pt`).
+
+**Relationship with Other Modules**
+- Its generated trajectories are used by Wasserstein-GastroFlow for cost evaluation, so this module is usually trained first.
+
+**Launch Command**
+
+```bash
+python train_flow_by_vae/train.py \
+  --output_dir <output directory> \
+  --total_steps 10000 \
+  --batch_size 4 \
+  --save_step 2000
+```
+
+### 3) Wasserstein-GastroFlow
+
+**Goal**
+- Achieve robust geometric matching in few-shot and long-tail scenarios using optimal transport cost along generated trajectories.
+
+**Typical Inputs**
+- Few-shot support set (labeled) and query set (to be recognized).
+- Flow-Match trajectories and related configuration parameters.
+
+**Training Outputs**
+- Wasserstein metric model weights (e.g., `wass_model.pt`) and evaluation result files.
+
+**Relationship with Other Modules**
+- Depends on the Flow-Match generator; its outputs are used as important few-shot evidence in GastroAgent fusion.
+
+**Launch Command**
+- It is recommended to first configure Flow-Match-related parameters in `wasserstein-gastroFlow/wass_flow_train_Kvasir/train/old_flow_matcher.py`, then run:
+
+```bash
+python wasserstein-gastroFlow/wass_flow_train_Kvasir/train/train_old_kvasir_Disease_extra.py \
+  --train_json_glob <training data directory> \
+  --test_json <test data JSON>
+```
+
+### 4) GastroAgent Fusion
+
+The fusion stage is typically not "training a new model from scratch." Instead, it loads the three module weights above and performs fusion-parameter calibration on a validation set (e.g., `alpha-min`, `alpha-max`, `steepness`), or directly uses the default settings from the paper.
+
+---
+
+## Project Structure
+
+```text
+GastroAgent/
+├── abnormal_dectect/                   # Lesion region detection
+├── assets/                             # Static resources such as doc images
+│   └── figures/                        # README result figures / workflow figures
+├── conditional_flow_matcher/           # Core conditional flow-matching library
+├── dataset/                            # Data processing scripts
+│   ├── eval_data/                      # Evaluation data
+│   └── xxx                             # Other test scripts
+├── demo_code/                          # Demo reproduction scripts
+│   ├── kvasir_pipeline/                #   End-to-end GastroAgent pipeline
+│   │   ├── run_full_pipeline.py        #     One-click execution of all 4 steps
+│   │   ├── step1_model_inference.py    #     MLLM inference
+│   │   ├── step2_extract_answers_with_llm_latest.py
+│   │   ├── step3_reevaluate_correct.py
+│   │   ├── step4_reanalyze_trigger_performance.py
+│   │   └── fusion/
+│   │       ├── run_fusion_only.py      #     Fusion entrypoint
+│   │       └── fusion_pipeline.py      #     Fusion logic
+│   └── wass_flow_match/                #   Wasserstein-GastroFlow evaluation
+│       ├── cal_wass.py                 #     Compute Wasserstein distance
+│       └── cal_label_acc.py            #     Compute classification accuracy
+├── demo_data/                          # Demo data
+│   ├── kvasir-two-label/
+│   │   ├── final_eval/final_eval_flat.json
+│   │   └── mllm/final_doctor_exam_43.json
+│   └── kvasir-three-label/
+│       ├── final_eval/final_eval_flat.json
+│       └── mllm/final_doctor_exam_62.json
+├── discriminator/                      # Early-stop discriminator training
+├── GasAgenteent/                       # Agent trigger scripts
+│   └── Agent_pipeline_result/          # Test results
+├── model_utils/                        # Model utility functions
+├── my_models/                          # Flow-Match model definitions
+├── train_clip/                         # Medical vision encoder
+├── train_flow_by_vae/                  # Flow-Match generator training
+├── train_vae/                          # Latent-space encoder-decoder
+├── utils/                              # Common utility functions
+├── VLM-R1/                             # GastroMLLM training framework
+├── wasserstein-gastroFlow/             # Wasserstein-GastroFlow training and evaluation
+│   ├── wass_flow_train_Kvasir/
+│   ├── wass_flow_match_esophagus/
+│   ├── wass_flow_match_stomach/
+│   └── wass_flow_match_duodenum/
+├── requirements.txt                    # Python dependencies
+└── README.md
+```
+
+---
+
+## Visualization Results
+
+![Benchmark comparison](assets/figures/doctor-dataset.jpg)
+![Long-tail performance](assets/figures/kshot-case.jpg)
+![Workflow result](assets/figures/workflow-result-ill.jpg)
+
+---
+
+## Citation
+
+If this project helps your research, please cite:
+
+```bibtex
+@article{GastroAgent2026,
+  title={GastroAgent: Geometry-aware multimodal AI resolves the long-tail paradox in gastrointestinal diagnostics},
+  author={Shuyue Tan and Nuoya Zhou and Mingfei Jin and Xingwu Liu and Xianglei Yuan and Yahui Zhang and Yuyan Zhang and Qi Luo and Ruide Liu and Huan Jiang and Shunyao Wang and Hengduo Jiang and Dongbo Bu and Bing Hu and Ming Li and Shuaicheng Li},
+  year={2026}
+}
+```
+
+---
+
+## Acknowledgments
+
+- Thanks to all data providers and medical experts for their support.
+- This project is developed based on [PyTorch](https://pytorch.org/).
+- Thanks to the open-source community for its contributions.
+
+---
+
+## Data Availability Statement
+
+In addition to public datasets, we conducted systematic evaluation on three additional datasets with richer categories and achieved better overall performance. Due to patient privacy protection and ethical compliance requirements, the corresponding raw data are not publicly available at this stage. Please refer to the main paper and supplementary materials for detailed experimental settings and results.
+
+---
+
+## License
+
+This project is released under the [Apache-2.0 License](LICENSE).
+
+**Note**: This project is for research use only and must not be used for clinical diagnosis. Any medical decision should be made by qualified physicians.
+
+---
+
+## Contact
+
+- Issue tracker: [GitHub Issues](https://github.com/GastroAgent/GastroAgent/issues)
+- Email: shuyuetan0@gmail.com
+- Project page: [https://yourproject.github.io](https://yourproject.github.io)
+
+---
+
+## Star History
+
+If this project is helpful to you, a Star is welcome.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/GastroAgent&type=Date)](https://star-history.com/#yourusername/GastroAgent&Date)
+# GastroAgent
+
+<div align="center">
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/pytorch-2.5.1+-orange.svg)](https://pytorch.org/)
