@@ -470,7 +470,7 @@ This project is released under the [Apache-2.0 License](LICENSE).
 
 - Issue tracker: [GitHub Issues](https://github.com/GastroAgent/GastroAgent/issues)
 - Email: shuyuetan0@gmail.com
-- Project page: [https://yourproject.github.io](https://yourproject.github.io)
+<!-- - Project page: [https://yourproject.github.io](https://yourproject.github.io) -->
 
 ---
 
