@@ -984,13 +984,13 @@ class ImageGenerator:
 def parse_args():
     parser = argparse.ArgumentParser(description='Sampling script for CFM model')
     parser.add_argument('--data_path', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_419_flatten.json',
+                        default='/mnt/inaisfs/data/home/tansy_criait/GasAgent-main/dataset/eval_data/exam_dataset_extra_flatten.json',
                         help='The test data path, flattened.') 
     parser.add_argument('--checkpoint', type=str,
                         default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/outputs/image_hint_Disease_extra/otcfm/otcfm_weights_step_50000.pt',
                         help='Path to the checkpoint file about the Flow-Match.') 
     parser.add_argument('--output_dir', type=str,
-                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/result/test/old_attention_Disease_Extra_419_image_hint_Disease_extra',
+                        default='/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/result/test/model_extra_image_hint_Disease_extra2',
                         help='Directory to save results')
     parser.add_argument('--num_steps', type=int, default=8,
                         help='Max Number of steps in the ODE solver')   
@@ -1010,14 +1010,14 @@ def parse_args():
                         choices=['diff', 'second_diff', 'direct'],
                         help='Stopping decision strategy.')
     parser.add_argument('--wass_model_path', type=str, 
-                        # default = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/generatedAUGnoMask_vae_model_weight/model.pt",
-                        default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/old_attention_Disease_Extra.pt",
+                        default = "/mnt/inaisfs/data/home/tansy_criait/wass_flow_match/generatedAUGnoMask_vae_model_weight/model.pt",
+                        # default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/old_attention_Disease_Extra.pt",
                         # default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/attention_Disease.pt",
                         # default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/best_flow_weights/old_attention_Disease_Extra.pt",
                         help='Path to the checkpoint file about the Wasserstein-GastroFlow.')
     parser.add_argument('--wass_model_type', type=str, 
                         choices=['resnet34', 'attention'], 
-                        default="attention", 
+                        default="resnet34", 
                         help='Model type for Wasserstein encoder') 
     parser.add_argument('--sim_model_type', type=str, 
                         choices=['convnext', 'gme', 'dinov3'],
@@ -1026,8 +1026,8 @@ def parse_args():
     parser.add_argument('--full', type=bool, default=True,
                         help='')
     parser.add_argument('--sim_model_path', type=str, 
-                        default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight/convnext3.pt",
-                        # default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight/convnext2.pt",
+                        # default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight/convnext3.pt",
+                        default = "/mnt/inaisfs/data/home/tansy_criait/whole_wass_flow_match/discriminator/latent_model_weight/convnext2.pt",
                         help='Similarity model type (convnext, gme, dinov3)')
     parser.add_argument('--num_channels', type=int, default=128,
                         help='Number of base channels in UNet')
